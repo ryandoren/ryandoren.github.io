@@ -1,13 +1,11 @@
 ---
-title: The Calling of Saint Mathew
-subtitle: 圣马太蒙召
+title: The Calling of Saint Mathew 圣马太蒙召
 autor: Ryan
 tags: Caravaggio, Baroque/Barocco, Western Art
 category: Art
 date: 2021-10-18            # 文章编写日期
 lastmod:          # 文章修改日期
 draft: false
-grammar_cjkRuby: true
 ---
 
 
