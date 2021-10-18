@@ -7,7 +7,6 @@ category: Art
 date: 2021-10-18            # 文章编写日期
 lastmod:          # 文章修改日期
 draft: false
-renderNumberedHeading: true
 grammar_cjkRuby: true
 ---
 
