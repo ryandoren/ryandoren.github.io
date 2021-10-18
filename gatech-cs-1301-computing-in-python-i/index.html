@@ -9,7 +9,7 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://ryandoren.github.io/gatech-cs-1301-computing-in-python-i/"><meta property="og:image" content="https://ryandoren.github.io/logo.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2021-10-17T00:00:00+00:00">
-<meta property="article:modified_time" content="2021-10-18T14:14:40+08:00">
+<meta property="article:modified_time" content="2021-10-18T14:19:24+08:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://ryandoren.github.io/logo.png">
 <meta name=twitter:title content="Gatech CS 1301">
@@ -17,7 +17,7 @@
 <meta name=application-name content="Worgen">
 <meta name=apple-mobile-web-app-title content="Worgen"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://ryandoren.github.io/gatech-cs-1301-computing-in-python-i/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Gatech CS 1301","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/ryandoren.github.io\/gatech-cs-1301-computing-in-python-i\/"},"image":["https:\/\/ryandoren.github.io\/images\/Apple-Devices-Preview.png"],"genre":"posts","wordcount":674,"url":"https:\/\/ryandoren.github.io\/gatech-cs-1301-computing-in-python-i\/","datePublished":"2021-10-17T00:00:00+00:00","dateModified":"2021-10-18T14:14:40+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"Ryan","logo":"https:\/\/ryandoren.github.io\/images\/avatar.jpg"},"author":{"@type":"Person","name":"Ryan"},"description":"Intro to Computing in Python"}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://ryandoren.github.io/gatech-cs-1301-computing-in-python-i/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Gatech CS 1301","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/ryandoren.github.io\/gatech-cs-1301-computing-in-python-i\/"},"image":["https:\/\/ryandoren.github.io\/images\/Apple-Devices-Preview.png"],"genre":"posts","wordcount":707,"url":"https:\/\/ryandoren.github.io\/gatech-cs-1301-computing-in-python-i\/","datePublished":"2021-10-17T00:00:00+00:00","dateModified":"2021-10-18T14:19:24+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"Ryan","logo":"https:\/\/ryandoren.github.io\/images\/avatar.jpg"},"author":{"@type":"Person","name":"Ryan"},"description":"Intro to Computing in Python"}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
@@ -89,7 +89,7 @@ Cancel
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">Gatech CS 1301</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>Ryan</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-10-17>2021-10-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;674 words&nbsp;
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-10-17>2021-10-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;707 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;<span id=/gatech-cs-1301-computing-in-python-i/ class=leancloud_visitors data-flag-title="Gatech CS 1301">
 <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;views
 </span>&nbsp;</div>
@@ -197,12 +197,16 @@ Cancel
 <li>You then <em>apply</em> them to a particular <strong>domain</strong>.</li>
 </ul>
 <h3 id=python>Python</h3>
+<ul>
+<li>Python is a <strong>high-level, platform independent</strong> programming language. Python abstracts further away from the inner workings of the computer than lower-level languages (like memory management), thus is easier to use.</li>
+<li>dynamic & interpreted</li>
+</ul>
 </div><div class=post-footer id=post-footer>
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>Updated on 2021-10-18&nbsp;<a class=git-hash href=https://github.com/ryandoren/commit/1a5ff450219326afea127682445605669ed80efc target=_blank title="commit by Ryan Doren(55754917+ryandoren@users.noreply.github.com) 1a5ff450219326afea127682445605669ed80efc: 修改文件: content/posts/Gatech-CS-1301-Computing-in-Python-I.md">
-<i class="fas fa-hashtag fa-fw"></i>1a5ff45</a></span>
+<span>Updated on 2021-10-18&nbsp;<a class=git-hash href=https://github.com/ryandoren/commit/53e743da2a2c3893563af09705c4d48cbb00b23e target=_blank title="commit by Ryan Doren(55754917+ryandoren@users.noreply.github.com) 53e743da2a2c3893563af09705c4d48cbb00b23e: 修改文件: content/posts/Gatech-CS-1301-Computing-in-Python-I.md">
+<i class="fas fa-hashtag fa-fw"></i>53e743d</a></span>
 </div>
 <div class=post-info-license></div>
 </div>

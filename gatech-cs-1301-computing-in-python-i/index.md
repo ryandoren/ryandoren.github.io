@@ -69,4 +69,5 @@ Categorization of languages:
 - You then *apply* them to a particular **domain**.
 
 ### Python
-
+- Python is a **high-level, platform independent** programming language. Python abstracts further away from the inner workings of the computer than lower-level languages (like memory management), thus is easier to use.
+- dynamic & interpreted
