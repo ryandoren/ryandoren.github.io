@@ -78,3 +78,5 @@ Categorization of languages:
 - Python is a **high-level, platform independent** programming language. Python abstracts further away from the inner workings of the computer than lower-level languages (like memory management), thus is easier to use.
 - Python is **dynamic & interpreted**, which means that Python will *run our code line by line* when we ask it to without trying to compile it first. That opens up the possibility of using Python in a command line interface where we write and run lines of code one at a time. Whereas in the **scripting mode**, we write a bunch of code, then *run it all at once*.
 - The main takeaway of Python being an interpreted language is that we might not be aware of errors until we actually try to run those lines.
+
+## Chapter 1.2: Programing
