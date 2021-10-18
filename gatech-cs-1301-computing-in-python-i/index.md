@@ -30,8 +30,6 @@
 ## Unit 5
 1.  **Objects:** Creating and using custom data types so our programs can reason about the world the way we do.
 2.  **Algorithms:** Complex sequences of instructions that transform data or generate useful conclusions.
-
-
 ----------
 
 
@@ -70,4 +68,5 @@ Categorization of languages:
 - These foundational principles are then *implemented* in specific **programming languages**.
 - You then *apply* them to a particular **domain**.
 
+### Python
 
