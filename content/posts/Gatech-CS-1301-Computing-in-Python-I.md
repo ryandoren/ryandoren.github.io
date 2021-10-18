@@ -126,3 +126,7 @@ An error occurs when we ask for information *about* a variable that doesn't ma
 
 #### SyntaxError
 An error that occurs when the line of code we've written can't be read by the computer because it doesn't match the computer's expectation for the programming language's grammar.
+
+### Basic debugging
+- **Print Debugging:** A form of debugging where print statements are added throughout the code to check how the program is flowing.
+- **Scope Debugging:** A form of debugging where print statements are added to check the status of the variables in the program at different  stages to see how they are changing.
