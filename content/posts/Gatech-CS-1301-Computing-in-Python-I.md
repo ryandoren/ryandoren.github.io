@@ -128,5 +128,8 @@ An error occurs when we ask for information *about* a variable that doesn't ma
 An error that occurs when the line of code we've written can't be read by the computer because it doesn't match the computer's expectation for the programming language's grammar.
 
 ### Basic debugging
-- **Print Debugging:** A form of debugging where print statements are added throughout the code to check how the program is flowing.
-- **Scope Debugging:** A form of debugging where print statements are added to check the status of the variables in the program at different  stages to see how they are changing.
+- **Print Debugging:** A form of debugging where print statements are added *throughout the code* to check how the program is flowing.
+- **Scope Debugging:** A form of debugging where print statements are added to check the status of the *variables in the program at different  stages* to see how they are changing. (Debugging *small sections* of a program to make sure things have run correctly so far.)
+- **Rubber Duck Debugging:** A form of debugging where the programmer explains the logic, goals, and operations to an inanimate listener to methodically step through the code. The point is when faced with a hard to solve problem, try explaining it from scratch. Oftentimes, you'll find the solution.
+
+> Rubber duck debugging was introduced by the 1999 book *The Pragmatic Programmer*, and it refers to a programmer who carried around a rubber duck to which to explain problems. By explaining things to the duck, the programmer often found the solution.
