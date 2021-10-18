@@ -1,9 +1,9 @@
 ---
 title: Gatech CS 1301
 author: "Ryan"              # 文章作者
-description : "描述信息"    # 文章描述信息
+description : "Intro to Computing in Python"    # 文章描述信息
 date: 2021-10-17            # 文章编写日期
-lastmod: 2021-10-18         # 文章修改日期
+lastmod:          # 文章修改日期
 draft: false
 ---
 
@@ -36,8 +36,6 @@ draft: false
 ## Unit 5
 1.  **Objects:** Creating and using custom data types so our programs can reason about the world the way we do.
 2.  **Algorithms:** Complex sequences of instructions that transform data or generate useful conclusions.
-
-
 ----------
 
 
@@ -76,3 +74,4 @@ Categorization of languages:
 - These foundational principles are then *implemented* in specific **programming languages**.
 - You then *apply* them to a particular **domain**.
 
+### Python
