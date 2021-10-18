@@ -80,6 +80,43 @@ Categorization of languages:
 - Python is **dynamic & interpreted**, which means that Python will *run our code line by line* when we ask it to without trying to compile it first. That opens up the possibility of using Python in a command line interface where we write and run lines of code one at a time. Whereas in the **scripting mode**, we write a bunch of code, then *run it all at once*.
 - The main takeaway of Python being an interpreted language is that we might not be aware of errors until we actually try to run those lines.
  ### Extra materials
-1. [How to Think Like a Computer Scientist -- Chapter 1.3](https://runestone.academy/runestone/books/published/thinkcspy/index.html)
+1. [How to Think Like a Computer Scientist: Interactive Edition](https://runestone.academy/runestone/books/published/thinkcspy/index.html)
+2. [How to Think Like a Computer Scientist: Learning with Python 3](http://openbookproject.net/thinkcs/python/english3e/)
 
 ## Chapter 1.2: Programing
+- **Programming** is an iterative process of writing code, attempting to run it, and evaluating the results (write⇨run⇨evaluate cycle). Interchangeable with **coding**.
+- Work in Small Chunks
+- Chaining Together Instructions
+- Debugging to address errors, incorrect results
+
+## Chapter 1.3: Debugging
+- **Debugging:** Resolving problems in code, whether it be errors thrown in compilation or running or mismatches between the desired and observed output.
+
+> The terms "bug" and "debugging" are popularly attributed to Admiral Grace Hopper in the 1940s. While she was working on a Mark II Computer at Harvard University, her associates discovered a moth stuck in a relay and thereby impeding operation, whereupon she remarked that they were "debugging" the system.
+
+![](./images/1634551637826.png)
+
+### Types of errors
+- **Compilation Errors:** Errors that occur during the computer’s read through of the code. Compilation errors in writing programs are often similar to grammatical errors in writing essays.
+  - *sytax errors*: code that doesn't work with the current programming language.
+  - *name errors*: code that tries to use something that doesn't exist.
+  - *type errors*: code that matches different types together, which doesn't make sense. Depending on the language, some of these might turn up as runtime errors instead.
+- **Runtime errors:** Errors that arise when trying to *actually execute* the code. Languages that don't have compilation will only have runtime errors. Even languages that do require compilation can have runtime errors because we can't anticipate every error just by looking at the code.
+  - *Divide by zero errors*: code that divides a value by zero.
+  - *Null errors*: code that refers to some variable that has no value.
+  - *Memory errors*: code that surpasses your computer's memory.
+
+### Types of errors in Python
+#### NameError
+An error that usually occurs when you use a variable name that doesn't yet exist. When you encounter these, *check first for misspellings*; you very likely might have misspelled a variable name, causing the computer to see it as a completely different variable! If that doesn't work, try to *find where you first defined the variable*.
+
+#### TypeError
+An error that occurs when we try to perform an operation on an object that doesn't make sense with the operation, like calculating the length of a number or to print an omelette.
+> The function cannot deal with the object.
+
+#### AttributeError
+An error occurs when we ask for information *about* a variable that doesn't make sense, like the happiness of a potato or the GPA of a turnip.
+> The object does not have the attribute.
+
+#### SyntaxError
+An error that occurs when the line of code we've written can't be read by the computer because it doesn't match the computer's expectation for the programming language's grammar.
