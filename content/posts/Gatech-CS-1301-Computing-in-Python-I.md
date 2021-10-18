@@ -1,7 +1,7 @@
 ---
 title: Gatech CS 1301
 author: "Ryan"              # 文章作者
-description : "Intro to Computing in Python"    # 文章描述信息
+description : "Intro to Computing in Python by David Joyner"    # 文章描述信息
 date: 2021-10-17            # 文章编写日期
 lastmod:          # 文章修改日期
 draft: false
