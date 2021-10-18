@@ -48,12 +48,19 @@ Compilation could potentially be skipped.
 - Languages that require compilation are called **static/compiled**  languages.
 - Languages that do not require compilation are called **dynamic/interpreted**  languages.
 
-*Nonetheless though, even with dynamic languages, we often mimic the workflow of static languages.*
+> Two kinds of programs process high-level languages into low-level languages: **interpreters and compilers**. An interpreter reads a high-level program and executes it. It processes the program a little at a time, alternately reading lines and performing computations. 
+![Interpreter](./images/1634540777963.png)
+
+> A compiler reads the program and translates it *completely* before the program starts running. In this case, the high-level program is called the **source code**, and the translated program is called the **object code** or the executable. Once a program is compiled, you can execute it repeatedly without further translation. 
+![Compiler](./images/1634540772278.png)
+
+> Many modern languages use both processes. They are first compiled into a lower level language, called **byte code**, and then interpreted by a program called a **virtual machine**. *Python uses both processes*, but because of the way programmers interact with it, it is usually considered an interpreted language.
+
 
 ### Programming Language
 Categorization of languages: 
 - **Static & Dynamic**: whether compilation is required
-- **Hight-level languages** involve a great deal of abstraction from the low-level details of the computer like memory, whereas **low-level languages** require these details to be addressed manually.
+- **Hight-level languages** involve a great deal of abstraction from the low-level details of the computer like memory, whereas **low-level languages** such as machine languages or assembly languages require these details to be addressed manually.
 
 [Popularity of different languages](https://www.tiobe.com/tiobe-index/)
 
@@ -72,5 +79,7 @@ Categorization of languages:
 - Python is a **high-level, platform independent** programming language. Python abstracts further away from the inner workings of the computer than lower-level languages (like memory management), thus is easier to use.
 - Python is **dynamic & interpreted**, which means that Python will *run our code line by line* when we ask it to without trying to compile it first. That opens up the possibility of using Python in a command line interface where we write and run lines of code one at a time. Whereas in the **scripting mode**, we write a bunch of code, then *run it all at once*.
 - The main takeaway of Python being an interpreted language is that we might not be aware of errors until we actually try to run those lines.
+ ### Extra materials
+1. [How to Think Like a Computer Scientist -- Chapter 1.3](https://runestone.academy/runestone/books/published/thinkcspy/index.html)
 
 ## Chapter 1.2: Programing
