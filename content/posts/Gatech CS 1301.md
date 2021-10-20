@@ -153,7 +153,8 @@ Check the [debugging guide](https://www.cc.gatech.edu/classes/AY2016/cs1301_spri
 ### Operators
  - **Logical Operators:**
  ![enter description here](./images/1634711801315.png)
- - **Mathematical Operators:**
+ 
+ - **Mathematical Operators:** + - \* / % **
 ### Comments and Documentation
 - **Comments:** Notes from the programmer supplied in-line alongside the code itself, designated in a way that prevents the computer from reading or attempting to execute them as code. [in-line comments (pound/hash mark #) & block comments]
   
@@ -213,6 +214,7 @@ Python's comment syntax is in the minority.
 ### Basic concepts
 - **Variables:** Alphanumeric (letters and numbers) identifiers that hold values, like integers, strings of characters, and dates.
 - **Value:** The content of some variable. The variable my_age might hold the value 21. The variable your_name might hold the value “Greymane”.
+- **Null:** The “value” a variable has when it doesn’t actually have a value.
 - **Naming rules:** 
   1. Variables (as well as functions, methods, classes, and other stuff we'll learn about later) cannot have spaces in them. Variable names can ==only contain letters, numbers, and underscores==.
   2. Variable names must ==start with letters==. Technically underscores are also allowed, but we generally only use those in certain situations.
@@ -222,3 +224,33 @@ Python's comment syntax is in the minority.
     Two common conventions are used if the name has more than one word: camel case and underscores. Each programming language has its own accepted style. **In Python, you should use underscores. In Java and C#, you would use camel case**. Other languages have their own conventions.
   - **Camel case** mushes the words together and capitalizes each word, like this: thisIsMyVariableName. Note that *the first letter of a variable's name is usually in lowercase, while the first letter of a function's name is often in uppercase*.
   - **Underscores** just replaces spaces with underscores, usually keeping the variable name in all-lower case, like this: this_is_my_variable_name.
+
+### Data types
+Integer, real number, character, string, boolean...self-defined types...
+
+*In **strongly-typed languages**, assigning a type to a variable is actually a separate step from assigning a value to the variable; and assigning a different type to this variable will cause crashing.*
+
+We can multiply a sequence (string, list...) by an integer, and Python just takes that sequence and repeats it however many times we multiplied it by. But we can't multiply a sequence by a float or a string by a string. Also, when Python is asked to use a boolean like a number (such as multiplying by a boolean), it interprets True as 1 and False as 0.
+
+Now, let's meet a weird guy in Python—the **NoneType**—which only has one value: **None**. None is Python's implementation of the programming concept of [==null==](https://en.wikipedia.org/wiki/Null_pointer) (like the null pointer in C++). This is how Python represents that a variable has no value. This is slightly different from a variable simply not existing: ==the variable name exists, it just doesn't point to any value==. Because there is no value, it also doesn't fit into any of the above types.
+
+**Where Does None Come From?** First, the trivial way, we could just do that intentionally. The way it will happen more commonly is that you'll set it equal to some operation that doesn't result in anything, like you put on the right of an equal sign a function that has no return value (eg. the print() function)
+
+### Type conversion
+To treat a certain type of data with operations, functions, or methods of a different data type, we have to use functions for converting between the two. 
+
+> **Implicit conversion:** In practice, you may not always need to do this manually, though. For example, when you put a value other than a string into Python's print function, it automatically tries to convert it to a string.
+
+When we use **comma instead of plus sign**, it tells the print statement to interpret each individual thing in the parentheses as a *separate piece of data*. The print statement ==implicitly converts each thing to a string if needed and then puts them together==. **By default, it puts each thing together separated by a space**.
+
+You'll receive a ==ValueError== whenever you try to do a type conversion, like float or integer, on a value that can't actually be converted to that type.
+
+- ==int(variable)==: Takes as input some variable (usually a string) and attempts to convert it to an integer, returning the integer if successful or raising a ValueError if unsuccessful. This function will work if variable is a string made up **only of digits and, optionally, the negative sign**.
+
+- ==bool(variable)==: Takes as input some variable (usually a string) and attempts to convert it to a boolean, returning the boolean value if successful or raising a ValueError if unsuccessful. **Generally, this function returns False if variable is 0 or an empty string, True if variable is anything else**.
+
+- ==float(variable)==: Takes as input some variable (usually a string/integer) and attempts to convert it to a float, returning the float if successful or raising a ValueError if unsuccessful. This function will work if variable is a string made up **only of digits and, optionally, a negative sign and a decimal point**.
+
+The computer interprets anything that the user enters by the ==input(variable)== function as **a string** of characters because it has no way of knowing that it's a number. So, type conversion is needed under certain circumstances.
+
+### Reserved key words in Python
