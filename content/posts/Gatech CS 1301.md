@@ -141,3 +141,17 @@ Check the [debugging guide](https://www.cc.gatech.edu/classes/AY2016/cs1301_spri
 - **Step by step execution**: run your code one line at a time.
 - **Variable visualization**: you can view the status of every variable at any time.
 - **In-line debugging**: while you're writing code, it'll show you right there if you've done something wrong; visualized very similarly to spell check. It's almost as if the computer is constantly compiling your code, just to make sure it works, while you're writing it.
+ 
+## Chapter 2.1: Procedural Programming
+1. **Function and Method**
+  - **Function**: A segment of code that performs a specific task, sometimes taking some input and sometimes returning some output.
+  - **Method**: A function that is *part of a class* in object-oriented programming (but colloquially, often used interchangeably with function).
+2. **Programming paradigms**
+  - **Procedural Programming:** where procedural code is the one that directly instructs a device on how to finish a task in logical steps.
+  - **Object-Oriented Programming:** A programming paradigm where programmers define custom data types that have custom methods embedded within them. A concept or an abstraction is created before excuting some other commands.
+  - **Event-Driven Programming:** A type of programming where the program generally awaits and reacts to events rather than running code linearly.
+3. **Operators**
+ - **Logical Operators:**
+ ![enter description here](./images/1634711801315.png)
+ - **Mathematical Operators:**
+4. **Comments and Documentation**
