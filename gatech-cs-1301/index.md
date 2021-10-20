@@ -149,3 +149,29 @@ Check the [debugging guide](https://www.cc.gatech.edu/classes/AY2016/cs1301_spri
  ![enter description here](./images/1634711801315.png)
  - **Mathematical Operators:**
 4. **Comments and Documentation**
+- **Comments:** Notes from the programmer supplied in-line alongside the code itself, designated in a way that prevents the computer from reading or attempting to execute them as code. [in-line comments (pound/hash mark #) & block comments]
+  
+> There exist ways of writing comments that can be pulled out to generate separate, standalone documentation.
+
+- **Documentation:** Collected and set-aside descriptions and instructions for a body of code.
+- **Self-Documenting Code:** Code whose variables and functions are named in a way that makes it clear what their underlying content and operations clear to the reader.
+![enter description here](./images/1634713784532.png)
+> [Supplemental material](https://en.wikibooks.org/wiki/Python_Programming/Source_Documentation_and_Comments)
+
+5. Language differences
+ - **Print Statements and Line-Ending Behaviors**
+
+| **Language** | **Syntax** | **Notes** |
+| --- | --- | --- |
+| Python | print("Here's a line of code")<br>print("Here's another one!") | By default, print() adds a line break to the end of the printed text. |
+| Java | System.out.println("Here's a line of code");<br>System.out.println("Here's another one!"); | Like Python's print(), Java's System.out.println() adds a line break after the printed text. In contrast, System.out.print() will print some text without creating a new line afterward. |
+| C | printf("Here's a line of code");<br>printf("Here's another one!"); | In C, the printf() function does not add a line break after the printed text. To do that, you need to include "\n" inside the printed text itself, e.g. printf("New line please!\n"). |
+| C++ | std::cout << "Here's a line of code";<br>std::cout << "Here's another one!"; | Like C, C++'s cout will not add a new line after the printed text. To add one, we would need to write std:cout << "New Line please!\n". |
+| C# | Console.WriteLine("Here's a line of code");<br>Console.WriteLine("Here's another one!"); | C#'s Console.WriteLine() function add a line break after the printed text. Like Java, C# also has a Console.Write() function that will write without starting a new line afterward. |
+| JavaScript | console.log("Here's a line of code")<br>console.log("Here's another one!") | By default, console.log() adds a line break to the end of the printed text. |
+| VB.NET | Console.WriteLine("Here's a line of code")<br>Console.WriteLine("Here's another one!") | C# and VB.NET use the same underlying library, so you'll find that oftentimes syntax like Console.WriteLine is shared between them. |
+| Matlab | fprintf("Here's a line of code);<br>fprintf("Here's another one!"); | Like C, Matlab's fprintf will not add a new line after the printed text. To add one, we would need to write fprintf("New Line please!\n"). |
+| Swift | print("Here's a line of code")<br>print("Here's another one!") | By default, print() adds a line break to the end of the printed text. |
+| Ruby |  puts "Here's a line of code"<br>puts "Here's another one!" | By default, puts adds a line break to the end of the printed text. |
+
+Scripting languages (Python, JavaScript) generally do not use a semi-colon to mark the ends of lines. Most compiled languages (Java, C, C++, C#) use semi-colons. There are exceptions, though; Swift and VB.NET are a compiled languages that do not use semi-colons, while MatLab is a scripting language that does.
