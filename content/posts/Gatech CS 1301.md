@@ -143,18 +143,18 @@ Check the [debugging guide](https://www.cc.gatech.edu/classes/AY2016/cs1301_spri
 - **In-line debugging**: while you're writing code, it'll show you right there if you've done something wrong; visualized very similarly to spell check. It's almost as if the computer is constantly compiling your code, just to make sure it works, while you're writing it.
  
 ## Chapter 2.1: Procedural Programming
-1. **Function and Method**
+### Function and Method
   - **Function**: A segment of code that performs a specific task, sometimes taking some input and sometimes returning some output.
   - **Method**: A function that is *part of a class* in object-oriented programming (but colloquially, often used interchangeably with function).
-2. **Programming paradigms**
+### Programming paradigms
   - **Procedural Programming:** where procedural code is the one that directly instructs a device on how to finish a task in logical steps.
   - **Object-Oriented Programming:** A programming paradigm where programmers define custom data types that have custom methods embedded within them. A concept or an abstraction is created before excuting some other commands.
   - **Event-Driven Programming:** A type of programming where the program generally awaits and reacts to events rather than running code linearly.
-3. **Operators**
+### Operators
  - **Logical Operators:**
  ![enter description here](./images/1634711801315.png)
  - **Mathematical Operators:**
-4. **Comments and Documentation**
+### Comments and Documentation
 - **Comments:** Notes from the programmer supplied in-line alongside the code itself, designated in a way that prevents the computer from reading or attempting to execute them as code. [in-line comments (pound/hash mark #) & block comments]
   
 > There exist ways of writing comments that can be pulled out to generate separate, standalone documentation.
@@ -164,11 +164,22 @@ Check the [debugging guide](https://www.cc.gatech.edu/classes/AY2016/cs1301_spri
 ![enter description here](./images/1634713784532.png)
 > [Supplemental material](https://en.wikibooks.org/wiki/Python_Programming/Source_Documentation_and_Comments)
 
-5. Language differences
- - **Print Statements and Line-Ending Behaviors**
+### Language differences
+#### Print Statements and Line-Ending Behaviors
+<style>
+table th:first-of-type {
+    width: 10%;
+}
+table th:nth-of-type(2) {
+    width: 40%;
+}
+table th:nth-of-type(3) {
+    width: 50%;
+}
+</style>
 
 | **Language** | **Syntax** | **Notes** |
-| --- | --- | --- |
+| --- | ----- | --- |
 | Python | print("Here's a line of code")<br>print("Here's another one!") | By default, print() adds a line break to the end of the printed text. |
 | Java | System.out.println("Here's a line of code");<br>System.out.println("Here's another one!"); | Like Python's print(), Java's System.out.println() adds a line break after the printed text. In contrast, System.out.print() will print some text without creating a new line afterward. |
 | C | printf("Here's a line of code");<br>printf("Here's another one!"); | In C, the printf() function does not add a line break after the printed text. To do that, you need to include "\n" inside the printed text itself, e.g. printf("New line please!\n"). |
@@ -180,4 +191,34 @@ Check the [debugging guide](https://www.cc.gatech.edu/classes/AY2016/cs1301_spri
 | Swift | print("Here's a line of code")<br>print("Here's another one!") | By default, print() adds a line break to the end of the printed text. |
 | Ruby |  puts "Here's a line of code"<br>puts "Here's another one!" | By default, puts adds a line break to the end of the printed text. |
 
-Scripting languages (Python, JavaScript) generally do not use a semi-colon to mark the ends of lines. Most compiled languages (Java, C, C++, C#) use semi-colons. There are exceptions, though; Swift and VB.NET are a compiled languages that do not use semi-colons, while MatLab is a scripting language that does.
+*Scripting languages* (Python, JavaScript) **generally** *do not use a semi-colon to mark the ends of lines*. **Most** *compiled languages* (Java, C, C++, C#) *use semi-colons*. There are exceptions, though; Swift and VB.NET are a compiled languages that do not use semi-colons, while MatLab is a scripting language that does.
+
+#### Comment Syntax
+Python's comment syntax is in the minority.
+
+| **Language** | **Syntax** | **Notes** |
+| --- | --- | --- |
+| Python | #This is a comment in Python<br><br>#This is a<br>#multiline comment<br>#in Python | Triple quotes can also be used in Python to create multi-line comments. |
+| Java | //This is a comment in Java<br><br>/* <br> \* This is a<br> \* multi-line comment<br> \* in Java<br> */ | The asterisks at the beginning of each line inside the multi-line comment are customary, but not required. Java, C++, JavaScript, and C# use the same syntax. |
+| C | /* This is a comment in C*/ <br><br> /\*  This is a<br> * multiline comment<br> * comment in C<br> */ | The asterisks at the beginning of each line inside the multi-line comment are customary, but not required. C does not have a dedicated single-line comment syntax. |
+| C++ | //This is a comment in C++<br><br>/*<br> * This is a<br> * multi-line comment<br> * in C++<br> */ | The asterisks at the beginning of each line inside the multi-line comment are customary, but not required. Java, C++, JavaScript, and C# use the same syntax. |
+| C# | //This is a comment in C#<br><br>/*<br> * This is a<br> * multi-line comment<br> * in C#<br> */ | The asterisks at the beginning of each line inside the multi-line comment are customary, but not required. Java, C++, JavaScript, and C# use the same syntax. |
+| JavaScript | //This is a comment in JavaScript<br><br>/* <br> * This is a<br> * multi-line comment<br> * in JavaScript<br> */  | The asterisks at the beginning of each line inside the multi-line comment are customary, but not required. Java, C++, JavaScript, and C# use the same syntax. |
+| VB.NET | 'This is a comment in VB.NET<br><br>'This is a<br>'multiline comment<br>'in VB.NET | VB.NET has no special way of creating multi-line comments. |
+| Matlab | %This is a comment in Matlab<br><br>%{<br>This is a<br>multiline comment<br>in Matlab<br>%} |  |
+| Swift | //This is a comment in Swift<br><br>/* <br> This is a<br> multi-line comment<br> in Swift<br>*/ | 
+| Ruby| # This is a comment in Ruby<br><br>=begin<br>This is a<br>multiline comment<br>in Ruby<br>=end | Ruby is weird. |
+
+## Chapter 2.2: Variables
+### Basic concepts
+- **Variables:** Alphanumeric (letters and numbers) identifiers that hold values, like integers, strings of characters, and dates.
+- **Value:** The content of some variable. The variable my_age might hold the value 21. The variable your_name might hold the value “Greymane”.
+- **Naming rules:** 
+  1. Variables (as well as functions, methods, classes, and other stuff we'll learn about later) cannot have spaces in them. Variable names can ==only contain letters, numbers, and underscores==.
+  2. Variable names must ==start with letters==. Technically underscores are also allowed, but we generally only use those in certain situations.
+  3. Variable names must not duplicate certain ==reserved words==.
+  4. A good name is ==self-documenting==.
+
+    Two common conventions are used if the name has more than one word: camel case and underscores. Each programming language has its own accepted style. **In Python, you should use underscores. In Java and C#, you would use camel case**. Other languages have their own conventions.
+  - **Camel case** mushes the words together and capitalizes each word, like this: thisIsMyVariableName. Note that *the first letter of a variable's name is usually in lowercase, while the first letter of a function's name is often in uppercase*.
+  - **Underscores** just replaces spaces with underscores, usually keeping the variable name in all-lower case, like this: this_is_my_variable_name.
