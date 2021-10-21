@@ -216,13 +216,13 @@ When we use **comma instead of plus sign**, it tells the print statement to inte
 
 You'll receive a ==ValueError== whenever you try to do a type conversion, like float or integer, on a value that can't actually be converted to that type.
 
-- ==int(variable)==: Takes as input some variable (usually a string) and attempts to convert it to an integer, returning the integer if successful or raising a ValueError if unsuccessful. This function will work if variable is a string made up **only of digits and, optionally, the negative sign**.
+- ==int(variable)==: Takes as input some variable (usually a string) and attempts to convert it to an integer, returning the integer if successful or raising a ValueError if unsuccessful. This function will work if variable is a string made up **only of digits and, optionally, the negative sign**. Note that conversion from float to int by `int()` just wipe out the decical part. If you want to convert float to int type value in Python with a round figure. You have to use the `round()` function of Python inside the `int()` function.
 
 - ==bool(variable)==: Takes as input some variable (usually a string) and attempts to convert it to a boolean, returning the boolean value if successful or raising a ValueError if unsuccessful. **Generally, this function returns False if variable is 0 or an empty string, True if variable is anything else**.
 
 - ==float(variable)==: Takes as input some variable (usually a string/integer) and attempts to convert it to a float, returning the float if successful or raising a ValueError if unsuccessful. This function will work if variable is a string made up **only of digits and, optionally, a negative sign and a decimal point**.
 
-The computer interprets anything that the user enters by the ==input(variable)== function as **a string** of characters because it has no way of knowing that it's a number. So, type conversion is needed under certain circumstances.
+The computer interprets anything that the user enters by the ==input(variable)== function as **a string** of characters because it has no way of knowing that it's a number. So, type conversion is needed under certain circumstances. Usually, `int(input(variable))` is used if we want to use the user input as a number.
 
 ### Reserved key words in Python
 
@@ -248,8 +248,10 @@ Operators that facilitate numeric comparison between values. Typically, these ar
 
 These operators can sometimes be used for comparisons that are not numeric, but that nonetheless **have an underlying order**:
 
-*   A string of characters is 'less' than another string if it **comes earlier alphabetically**. "Apple" would be 'less' than "Banana".
+*   A string of characters is 'less' than another string if it **comes earlier alphabetically**. "Apple" would be *less* than "Banana". "Z" would be *less* than "a". “12” would be *less* than "3". "Quick" < "Quicker", "Quicker" < "Quickly"
 *   A date is 'less' than another date if it **comes earlier in time**. January 1st, 2017 would be 'less' than January 15th, 2017.
+
+It's also worth noting that the greater than and less than operators do work for strings as well, and they operate based on **sorting the strings alphabetically**. Besides, in Python, **all capital letters are sorted before all lowercase letters**, so a string beginning with a capital Z would be treated as less than a string beginning with a lowercase a.
 
 #### Non-Numeric Equality Comparisons
 Nearly any kind of data can compare for equality, even if it isn't numeric. We can't ask if an apple is greater than an orange, but we can ask if apples and oranges are 'equal', or the same thing.
@@ -267,8 +269,6 @@ With lists, we can check to see if a certain item is on our list. For example, i
 In many of these examples, we'll have a logical expression, and we'll set the result of it equal to a variable. Then, we can check the variable to see what the result of the expression was. We may also print the results of a logical expression directly.
 
 Note that a single equal sign (=) is for assignment, while a double equal sign (\==) is for comparison.
-
-It's also worth noting that the greater than and less than operators do work for strings as well, and they operate based on sorting the strings alphabetically. Besides, in Python, all capital letters are sorted before all lowercase letters, so a string beginning with a capital Z would be treated as less than a string beginning with a lowercase a.
 
 The ==in== operator checks to see if something is contained within a list of other things. For one example, we can use the in operator in the context of strings to see if a certain smaller string is contained within a larger string. Note, the empty string ==""== is in all the strings.
 
@@ -294,7 +294,6 @@ Properties of Boolean Operators:
 ### Extra materials
 > [Python Boolean Logic: Not As Scary As It Sounds](http://www.thehelloworldprogram.com/python/python-boolean-logic-not-as-scary-as-it-sounds/)
 
-
 ## Chapter 2.4: Mathematical Operators
 ### Basics
 Operators that mimic basic mathematical functions: 
@@ -305,7 +304,7 @@ Division `/`
 Modulus `%`
 Assignment Operator `=`
 
-Note that in Python, **division in Python will automatically convert integers into a float/decimal number**. The reason for that is that whenever we do addition, subtraction, or multiplication on integers, we're guaranteed to end up with an integer. However when we do division, we might end up with a decimal number. And it's probably worth noting that this actually sets Python apart from other languages as well. Some other languages will **automatically round down** when you round integers. **But if there is a float anywhere in a mathematical expression, the result will also be a float.** Eg. the result of `1.5//2` is `0.0`.
+Note that in Python, **division in Python will automatically convert integers into a float/decimal number**. The reason for that is that whenever we do addition, subtraction, or multiplication on integers, we're guaranteed to end up with an integer. However when we do division, we might end up with a decimal number. And it's probably worth noting that this actually sets Python apart from other languages as well. Some other languages will **automatically round down** when you round integers. **But if there is a float anywhere in a mathematical expression, Python automatically converts the other type to a float, and the result will also be a float.** Eg. the result of `1.5//2` is `0.0`.
 
 Python specifically supplies two additional operators:
 - **Floor division**, represented by a double-slash (`\\`), which is division that **rounds down** to the next lowest integer (not round towards 0). For example, 5 // 2 would be 2, because 5 divided by 2 is 2.5, which is rounded down to the nearest integer, 2.
@@ -317,6 +316,9 @@ Python specifically supplies two additional operators:
 > Self-assignment reveals something very important about the assignment operator: Python (and most other programming languages) will **evaluate everything on the right side of the assignment before attempting to assign the result to the variable on the left**. That's why self-assignment works: Python initially replaces the variables with their values, so by the time we assign a new value to a variable, Python doesn't remember that the variable receiving a new value was used in the calculation.
 
 - **Self-Assignment Shortcuts:** `+=`, `-=`, `*=`, `**=`, `/=`, `//=`, `%=`<br>Sometimes these shortcuts even work for those strange non-mathematical applications of these mathematical operators. For example, we can use the shortcut `+=` to add something to an existing string.
+
+### Extra materials
+> [Python Operators are Mathematical!](https://thehelloworldprogram.com/python/python-operators/)
 
 ## Appendix 1. Python Translation Guide
 ### Print Statements and Line-Ending Behaviors
@@ -416,3 +418,19 @@ The three boolean operators--and, or, not--are generally represented in one of t
 | Matlab | true ==\&== false  #And<br>true ==\|== false   #Or<br>==\~== true        #Not<br>true ==xor== false  #Exclusive-Or | Matlab also offers an **exclusive-or** operator. |
 | Swift | true ==&&== false   #And<br>true ==\|\|== false   #Or<br>==\!== true           #Not |  |
 | Ruby | true ==and== false  #And<br>true ==&&== false   #Also And<br>true ==or== false   #Or<br>true ==\|\|== false   #Also Or<br>==not== true        #Not<br>==\!== true           #Also Not | Ruby lets you use either symbols or words. |
+
+#### Mathematical Operators
+Most languages share the same mathematical operators: it's hard to get away from plus for addition, minus for subtraction, etc. There are some unique ones, though: floor division, modulus, and exponentiation may differ by language.
+
+| **Language** | **Syntax** | **Notes** |
+| --- | --- | --- |
+| Python | a // b  #Floor Division<br>a ** b  #Exponentiation, a to the b<br>a % b   #Modulus |  |
+| Java | a / b   //See notes<br>a % b   //Modulus | Java has no floor division operator, but it does not automatically convert to floating point numbers either. If you divide two integers, it will round down like floor division. If either number is a decimal number, the result will be the real quotient. Java has no exponent operator: instead it would use Math.pow(a, b). |
+| C, C++, C# | a / b   /* See notes \*/<br>a % b   /* Modulus \*/ | C's (and its derivatives') floor division works like Java's: if the numbers are integers, it will perform floor division, but if not, it will return a decimal number. C has no exponent operator, and instead uses separate functions. |
+| JavaScript | a % b   //Modulus | JavaScript has neither a floor division operator nor an exponent operator. It uses separate functions for both. |
+| VB.NET | a \ b   'Floor division<br>a ^ b   'Exponentiation, a to the b<br>a mod b 'Modulus | VB.NET's operator for modulus is just the keyword mod. |
+| Matlab | a .^ b  %Exponentiation, a to the b | Matlab has no dedicated operators for floor division and modulus; it uses functions instead. |
+| Swift | a % b   ///Modulus | Swift has no dedicated exponentiation or floor division operator; it uses functions instead. |
+| Ruby | a / b   #See notes<br>a ** b  #Exponentiation, a to the b<br>a % b   #Modulus | Ruby's division operator works like C and Java: if the numbers are integers it performs floor division, otherwise it performs regular division. |
+
+Most languages support self-assignment like in Python: a += 5, for example, will work in almost every language listed here. Some languages, like C++ and Java, also have a shorthand or adding or subtracting one: a++ will add one to a (same as a += 1), and a-- will subtract one from a (same as a -= 1).
