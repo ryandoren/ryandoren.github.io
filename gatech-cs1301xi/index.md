@@ -227,6 +227,10 @@ print(keyword.kwlist)
 
 If a reserved word is used as a variable name or a function name, a **SyntaxError** will be triggered. But if a function name in Python like print is used for a new variable name, assigning value to this variable will not cause any problem, but we've hidden the fact that it can also be used as a function. It can only mean one thing for a given block of code, and we're changing its meaning. When we try to use the word as a function name, a **TypeError** will arise.
 
+## Chapter 2.3: Logical Operators
+
+## Chapter 2.4: Mathematical Operators
+
 ## Appendix 1. Python Translation Guide
 ### Print Statements and Line-Ending Behaviors
 <style>
@@ -273,3 +277,17 @@ Python's comment syntax is in the minority.
 | Ruby| # This is a comment in Ruby<br><br>=begin<br>This is a<br>multiline comment<br>in Ruby<br>=end | Ruby is weird. |
 
 ### Variable Declarations and Assignments
+Note that in Python, we create a variable by assigning it an initial value. In other languages, it's possible to create a variable without assigning it any value.
+
+| **Language** | **Syntax** | **Notes** |
+| --- | --- | --- |
+| Python | my_int = 5<br>my_str = "Hello world!" | Python prefers snake_case for variable style. |
+| Java | int myVar = 5;<br>string myStr = "Hello world!"; | The first item in the variable declaration line (==int, string==, etc.) is the data type. The variable cannot change types once declared to be a certain type. Java prefers camelCase for variable names. |
+| C, C++, C# | int myVar = 5;<br>string myStr = "Hello world!"; | The first item in the variable declaration line (==int, string==, etc.) is the data type. The variable cannot change types once declared to be a certain type. C prefers camelCase for variable names. |
+| JavaScript | var myVar = 5;<br>var myStr = "Hello world!"; | ==var== is used whenever creating a new variable, but it does not represent a type. JavaScript prefers camelCase for variable names. |
+| VB.NET | Dim MyVar As Integer = 5<br>Dim MyStr As String = "Hello world!" | types (==As Integer, As String==) are optional but recommended in VB.NET. VB.NET prefers camelCase for variable names, but **often capitalizes the first letter**, too (e.g. ==MyVar== instead of ==myVar==). |
+| Matlab | my_var = 5<br>my_str = "Hello world!" | Matlab has few consistent variable name styles. |
+| Swift | var myVar = 5<br>var myStr = "Hello world!" | Swift prefers camelCase for variable names. |
+| Ruby | my_var = 5<br>my_str = "Hello world!" | Ruby prefers snake_case for variable names. |
+
+Many languages (Java, C/C++/C#, VB.NET) are statically typed, meaning that once when you create a variable, you have to decide what its type will be. Afterward, it can never take a different type. Other languages (Python, Swift, Ruby, JavaScript) are dynamically typed, meaning that a variable's type comes from its value. If you change its value, the variable's type can change.
