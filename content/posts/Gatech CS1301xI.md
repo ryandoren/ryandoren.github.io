@@ -155,10 +155,15 @@ Check the [debugging guide](https://www.cc.gatech.edu/classes/AY2016/cs1301_spri
   - **Object-Oriented Programming:** A programming paradigm where programmers define custom data types that have custom methods embedded within them. A concept or an abstraction is created before excuting some other commands.
   - **Event-Driven Programming:** A type of programming where the program generally awaits and reacts to events rather than running code linearly.
 ### Operators
- - **Logical Operators:**
- ![enter description here](./images/1634711801315.png)
- 
- - **Mathematical Operators:** + - \* / % **
+- **Operators:** Specific, simple functions that act on primitive data types, like integers and strings.
+- **Mathematical Operators:** Operators that perform mathematical functions, like adding numbers together or assigning values to variables. (+ - \* / % \**)
+- **Logical Operators:** Operators that perform logical operations, such as comparing relative values, checking equality, checking set membership, or evaluating combinations of other logical operators.
+![enter description here](./images/1634711801315.png)
+
+Typically, operators work on the most primitive types in programming languages: mathematical operators work on integers and floats, while logical operators work on booleans.
+
+Some languages, though, allow us to use operators in creative ways. In Python, we can use the mathematical plus (+) operator to concatenate strings (put two strings together), and the multiplication (\*) operator to multiply a string by an integer to duplicate it. We can also use subtraction with dates to find the time between different dates.
+
 ### Comments and Documentation
 - **Comments:** Notes from the programmer supplied in-line alongside the code itself, designated in a way that prevents the computer from reading or attempting to execute them as code. [in-line comments (pound/hash mark #) & block comments]
   
@@ -234,6 +239,59 @@ print(keyword.kwlist)
 If a reserved word is used as a variable name or a function name, a **SyntaxError** will be triggered. But if a function name in Python like print is used for a new variable name, assigning value to this variable will not cause any problem, but we've hidden the fact that it can also be used as a function. It can only mean one thing for a given block of code, and we're changing its meaning. When we try to use the word as a function name, a **TypeError** will arise.
 
 ## Chapter 2.3: Logical Operators
+### Relational Operators
+Check the relationships between multiple variables.
+#### Numeric Comparison Operators
+Operators that facilitate numeric comparison between values. Typically, these are 'greater than' (>), 'greater than or equal to' (>=), 'equal to' (\==), 'less than' (<), and 'less than or equal to' (<=).
+
+These operators can sometimes be used for comparisons that are not numeric, but that nonetheless **have an underlying order**:
+
+*   A string of characters is 'less' than another string if it **comes earlier alphabetically**. "Apple" would be 'less' than "Banana".
+*   A date is 'less' than another date if it **comes earlier in time**. January 1st, 2017 would be 'less' than January 15th, 2017.
+
+#### Non-Numeric Equality Comparisons
+Nearly any kind of data can compare for equality, even if it isn't numeric. We can't ask if an apple is greater than an orange, but we can ask if apples and oranges are 'equal', or the same thing.
+
+In practice, sometimes this will compare values to see if the values of two variables are the same, and other times it will compare if two variables are pointing to the same data in memory. It could be that two variables have the same values, but those values are stored in separate places, and so the computer doesn't recognize them as equal. 
+
+#### Set Operators
+Check to see if a value is a member of a set of multiple values. Most often this comes up in strings and lists.
+
+With strings, we can check to see if a certain smaller string occurs inside a larger string. For example, "cde" is in the string "abcdefg", but "ijk" is not.
+
+With lists, we can check to see if a certain item is on our list. For example, if we had a list containing "grapes", "apples", and "oranges", then "apples" would be in that set, but "papaya" would not.
+
+#### Relational Operators in Python
+In many of these examples, we'll have a logical expression, and we'll set the result of it equal to a variable. Then, we can check the variable to see what the result of the expression was. We may also print the results of a logical expression directly.
+
+Note that a single equal sign (=) is for assignment, while a double equal sign (\==) is for comparison.
+
+It's also worth noting that the greater than and less than operators do work for strings as well, and they operate based on sorting the strings alphabetically. Besides, in Python, all capital letters are sorted before all lowercase letters, so a string beginning with a capital Z would be treated as less than a string beginning with a lowercase a.
+
+The ==in== operator checks to see if something is contained within a list of other things. For one example, we can use the in operator in the context of strings to see if a certain smaller string is contained within a larger string. Note, the empty string ==""== is in all the strings.
+
+### Boolean Operators
+Operators like “and” and “or” that act on pairs of boolean (true or false) values, or that act on single boolean values, like “not”. They check the combination of multiple relational operators.
+
+- **==And==:** An operator that acts on **two boolean** (true or false) values and evaluates to “true” **if and only if both are true**.
+- **==Or==:** An operator that acts on **two boolean** (true or false) values and evaluates to “true” **if and only if at least one is true**.
+- **==Not==:** An operator that acts on **one boolean** (true or false) value and **evaluates to the opposite value** (false becomes true, true becomes false).
+ 
+Priority sequence: parentheses → not → and → or
+>Refer to [Operator precedence](https://docs.python.org/3/reference/expressions.html#operator-precedence)
+
+### Truth Tables
+Tables that map out the results of a statement in boolean logic (that is, using boolean operators) depending on the values of the individual variables.
+![enter description here](./images/1634803606129.png)
+
+Properties of Boolean Operators: 
+- First, Boolean operators are **commutative**. What that means is it doesn't matter what order they come in. ==A and B=B and A==
+- Logical expressions or logical operators are also **distributive**. ==A and (B or C)=(A and B) or (A and C)==
+- ==De Morgan's Law #03A9F4==: ==not (A and B)=not A or not B==; ==not (A or B)=not A and not B==.
+
+### Extra materials
+> [Boolean logic](http://www.thehelloworldprogram.com/python/python-boolean-logic-not-as-scary-as-it-sounds/)
+
 
 ## Chapter 2.4: Mathematical Operators
 
@@ -297,3 +355,42 @@ Note that in Python, we create a variable by assigning it an initial value. In o
 | Ruby | my_var = 5<br>my_str = "Hello world!" | Ruby prefers snake_case for variable names. |
 
 Many languages (Java, C/C++/C#, VB.NET) are statically typed, meaning that once when you create a variable, you have to decide what its type will be. Afterward, it can never take a different type. Other languages (Python, Swift, Ruby, JavaScript) are dynamically typed, meaning that a variable's type comes from its value. If you change its value, the variable's type can change.
+
+### Operators
+The rules of logic are generally the same across all programming languages. Python's [operator precedence](http://www.mathcs.emory.edu/~valerie/courses/fall10/155/resources/op_precedence.html) is relatively universal, although there can be slight differences (for example, not all languages have slicing, subscription, or lambda expressions). The syntax used for various operators, however, can differ.
+
+#### Relational Operators
+Most relational operators are the same in all languages. These are the same in Python, Java, C, C++, C#, JavaScript, VB.NET, Matlab, Swift, and Ruby:
+
+*   a < b: Less than
+*   a <= b: Less than or equal to
+*   a == b: Equal to
+*   a >= b: Greater than or equal to
+*   a > b: Greater than
+
+If a and b are not the same type, JavaScript will automatically try to convert them to the same type before comparison. To avoid this conversion, you'd use ===.
+
+The languages differ a little bit more with the 'not equal to' operator:
+
+| **Language** | **Syntax** | **Notes** |
+| --- | --- | --- |
+| Python, Java, C, C++, C# | a != b  |  |
+| JavaScript | a != b  | If a and b are not the same type, JavaScript will automatically try to convert them to the same type before comparison. To avoid this conversion, you'd use !==. |
+| VB.NET | a <> b | Technically, the <> operator works in most other languages as well for 'not equal to', but != is more common. |
+| Matlab | a ~= b |  |
+
+#### Boolean Operators
+The three boolean operators--and, or, not--are generally represented in one of three ways: with symbols, with double-symbols, or with plaintext words. Different languages also use slightly different capitalizations for booleans, so we'll use the language-appropriate ones here, too.
+
+| **Language** | **Syntax** | **Notes** |
+| --- | --- | --- |
+| Python | True ==and== False  #And<br>True ==or== False   #Or<br>==not== True        #Not | You can also use ==\&== (for and) and ==\|== (for or) in Python, but they technically do something slightly different. They perform **bitwise operations**. |
+| Java | true ==&&== false   #And<br>true ==\|\|== false     #Or<br>==!== true           #Not<br>true ==^== false    #Exclusive-Or | You can also use single-operators (==&== or ==\|== instead of ==&&== or ==\|\|==), but **it's generally better to use double operators**. Double operators only evaluate later conditions if they might change the end result. Java also offers an **exclusive-or** operator ==^==, which is True if exactly *one of the two conditions is True, not both or neither*. |
+| C | 1 ==&&== 0   #And<br>1 ==\|\|== 0   #Or<br>==\!==1       #Not | C does not natively have boolean types: it treats 0 as False and 1 (or any non-zero number) as True. |
+| C++, C# | true && false   #And<br>true || false   #Or<br>!true           #Not | C++ and C# are the same as C, but includes true boolean types like Java. |
+| JavaScript | true && false   #And<br>true || false   #Or<br>!true           #Not |  |
+| VB.NET | True And False  #And<br>True Or False   #Or<br>Not True        #Not
+True Xor False  #Exclusive-Or | Following its style, VB.NET capitalizes both the boolean values and the logical operators. It also offers an exclusive-or operator. It also includes two additional operators, AndAlso and OrElse, which function like && and || in Java. For more, see our later interlude on short-circuiting. |
+| Matlab | TRUE And FALSE  #And<br>TRUE Or FALSE   #Or<br>Not TRUE        #Not<br>TRUE xor FALSE  #Exclusive-Or | Matlab also offers an exclusive or operator. |
+| Swift | true && false   #And<br>true \|\| false   #Or<br>!true           #Not |  |
+| Ruby | true and false  #And<br>true && false   #Also And<br>true or false   #Or<br>true \|\| false   #Also Or<br>not true        #Not<br>!true           #Also Not | Ruby lets you use either symbols or words. |
