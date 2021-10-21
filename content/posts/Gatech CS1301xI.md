@@ -305,6 +305,8 @@ Assignment Operator `=`
 
 Note that in Python, **division in Python will automatically convert integers into a float/decimal number**. The reason for that is that whenever we do addition, subtraction, or multiplication on integers, we're guaranteed to end up with an integer. However when we do division, we might end up with a decimal number. And it's probably worth noting that this actually sets Python apart from other languages as well. Some other languages will **automatically round down** when you round integers. **But if there is a float anywhere in a mathematical expression, Python automatically converts the other type to a float, and the result will also be a float.** Eg. the result of `1.5//2` is `0.0`.
 
+Besides, the Modulus Operation will only return the remainder having the same sign as the divisor. Eg. the result of `-8%3` is 1, the result of `8%-3` is -1, and the result of `-8%-3` is -2.
+
 Python specifically supplies two additional operators:
 - **Floor division**, represented by a double-slash (`\\`), which is division that **rounds down** to the next lowest integer (not round towards 0). For example, 5 // 2 would be 2, because 5 divided by 2 is 2.5, which is rounded down to the nearest integer, 2.
 - **Exponentiation**, represented by a double-asterisk (`**`), which raises the first number to the second number. For example, 5 ** 2 would be 25, because 5 raised to the 2nd power is 25.
