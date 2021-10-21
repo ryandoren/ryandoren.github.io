@@ -174,6 +174,8 @@ Check the [debugging guide](https://www.cc.gatech.edu/classes/AY2016/cs1301_spri
   3. Variable names must not duplicate certain ==reserved words==.
   4. A good name is ==self-documenting==.
 
+> [See more on this website.](https://thehelloworldprogram.com/python/python-variable-assignment-statements-rules-conventions-naming/)
+
     Two common conventions are used if the name has more than one word: camel case and underscores. Each programming language has its own accepted style. **In Python, you should use underscores. In Java and C#, you would use camel case**. Other languages have their own conventions.
   - **Camel case** mushes the words together and capitalizes each word, like this: thisIsMyVariableName. Note that *the first letter of a variable's name is usually in lowercase, while the first letter of a function's name is often in uppercase*.
   - **Underscores** just replaces spaces with underscores, usually keeping the variable name in all-lower case, like this: this_is_my_variable_name.
@@ -224,8 +226,8 @@ print(keyword.kwlist)
 
 If a reserved word is used as a variable name or a function name, a **SyntaxError** will be triggered. But if a function name in Python like print is used for a new variable name, assigning value to this variable will not cause any problem, but we've hidden the fact that it can also be used as a function. It can only mean one thing for a given block of code, and we're changing its meaning. When we try to use the word as a function name, a **TypeError** will arise.
 
-### Python Translation Guide
-#### Print Statements and Line-Ending Behaviors
+## Appendix 1. Python Translation Guide
+### Print Statements and Line-Ending Behaviors
 <style>
 table th:first-of-type {
     width: 10%;
