@@ -273,7 +273,7 @@ Operators like “and” and “or” that act on pairs of boolean (true or fals
 - **==Or==:** An operator that acts on **two boolean** (true or false) values and evaluates to “true” **if and only if at least one is true**.
 - **==Not==:** An operator that acts on **one boolean** (true or false) value and **evaluates to the opposite value** (false becomes true, true becomes false).
  
-Priority sequence: parentheses → not → and → or
+Priority sequence: parentheses > mathematical operators > not > and > or
 >Refer to [Operator precedence](https://docs.python.org/3/reference/expressions.html#operator-precedence)
 
 ### Truth Tables
