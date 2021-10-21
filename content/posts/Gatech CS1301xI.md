@@ -390,6 +390,6 @@ The three boolean operators--and, or, not--are generally represented in one of t
 | C++, C# | true ==&&== false   #And<br>true ==\|\|== false   #Or<br>==\!== true           #Not | C++ and C# are the same as C, but includes true boolean types like Java. |
 | JavaScript | true ==&&== false   #And<br>true ==\|\|== false   #Or<br>==\!== true           #Not |  |
 | VB.NET | True ==And== False  #And<br>True ==Or== False   #Or<br>==Not== True        #Not<br>True ==Xor== False  #Exclusive-Or | Following its style, VB.NET **capitalizes** both the boolean values and the logical operators. It also offers an **exclusive-or** operator. It also includes two additional operators, **AndAlso** and **OrElse**, which function like ==&&== and ==\|\|== in Java.|
-| Matlab | TRUE ==And== FALSE  #And<br>TRUE ==Or== FALSE   #Or<br>==Not== TRUE        #Not<br>TRUE ==Xor== FALSE  #Exclusive-Or | Matlab also offers an **exclusive-or** operator. |
+| Matlab | true ==\&== false  #And<br>true ==\|== false   #Or<br>==\~== true        #Not<br>true ==xor== false  #Exclusive-Or | Matlab also offers an **exclusive-or** operator. |
 | Swift | true ==&&== false   #And<br>true ==\|\|== false   #Or<br>==\!== true           #Not |  |
 | Ruby | true ==and== false  #And<br>true ==&&== false   #Also And<br>true ==or== false   #Or<br>true ==\|\|== false   #Also Or<br>==not== true        #Not<br>==\!== true           #Also Not | Ruby lets you use either symbols or words. |
