@@ -371,10 +371,10 @@ Note that in Python, we create a variable by assigning it an initial value. In o
 | **Language** | **Syntax** | **Notes** |
 | --- | --- | --- |
 | Python | my_int = 5<br>my_str = "Hello world!" | Python prefers snake_case for variable style. |
-| Java | int myVar = 5;<br>string myStr = "Hello world!"; | The first item in the variable declaration line (==int, string==, etc.) is the data type. The variable cannot change types once declared to be a certain type. Java prefers camelCase for variable names. |
-| C, C++, C# | int myVar = 5;<br>string myStr = "Hello world!"; | The first item in the variable declaration line (==int, string==, etc.) is the data type. The variable cannot change types once declared to be a certain type. C prefers camelCase for variable names. |
-| JavaScript | var myVar = 5;<br>var myStr = "Hello world!"; | ==var== is used whenever creating a new variable, but it does not represent a type. JavaScript prefers camelCase for variable names. |
-| VB.NET | Dim MyVar As Integer = 5<br>Dim MyStr As String = "Hello world!" | types (==As Integer, As String==) are optional but recommended in VB.NET. VB.NET prefers camelCase for variable names, but **often capitalizes the first letter**, too (e.g. ==MyVar== instead of ==myVar==). |
+| Java | int myVar = 5;<br>string myStr = "Hello world!"; | The first item in the variable declaration line (`int, string`, etc.) is the data type. The variable cannot change types once declared to be a certain type. Java prefers camelCase for variable names. |
+| C, C++, C# | int myVar = 5;<br>string myStr = "Hello world!"; | The first item in the variable declaration line (`int, string`, etc.) is the data type. The variable cannot change types once declared to be a certain type. C prefers camelCase for variable names. |
+| JavaScript | var myVar = 5;<br>var myStr = "Hello world!"; | `var` is used whenever creating a new variable, but it does not represent a type. JavaScript prefers camelCase for variable names. |
+| VB.NET | Dim MyVar As Integer = 5<br>Dim MyStr As String = "Hello world!" | types (`As Integer, As String`) are optional but recommended in VB.NET. VB.NET prefers camelCase for variable names, but **often capitalizes the first letter**, too (e.g. `MyVar` instead of `myVar`). |
 | Matlab | my_var = 5<br>my_str = "Hello world!" | Matlab has few consistent variable name styles. |
 | Swift | var myVar = 5<br>var myStr = "Hello world!" | Swift prefers camelCase for variable names. |
 | Ruby | my_var = 5<br>my_str = "Hello world!" | Ruby prefers snake_case for variable names. |
@@ -409,15 +409,15 @@ The three boolean operators--and, or, not--are generally represented in one of t
 
 | **Language** | **Syntax** | **Notes** |
 | --- | --- | --- |
-| Python | True ==and== False  #And<br>True ==or== False   #Or<br>==not== True        #Not | You can also use ==\&== (for and) and ==\|== (for or) in Python, but they technically do something slightly different. They perform **bitwise operations**. |
-| Java | true ==&&== false   #And<br>true ==\|\|== false     #Or<br>==!== true           #Not<br>true ==^== false    #Exclusive-Or | You can also use single-operators (==&== or ==\|== instead of ==&&== or ==\|\|==), but **it's generally better to use double operators**. Double operators only evaluate later conditions if they might change the end result. Java also offers an **exclusive-or** operator ==^==, which is True if exactly *one of the two conditions is True, not both or neither*. |
-| C | 1 ==&&== 0   #And<br>1 ==\|\|== 0     #Or<br>==\!== 1       #Not | C does not natively have boolean types: it treats 0 as False and 1 (or any non-zero number) as True. |
-| C++, C# | true ==&&== false   #And<br>true ==\|\|== false   #Or<br>==\!== true           #Not | C++ and C# are the same as C, but includes true boolean types like Java. |
-| JavaScript | true ==&&== false   #And<br>true ==\|\|== false   #Or<br>==\!== true           #Not |  |
-| VB.NET | True ==And== False  #And<br>True ==Or== False   #Or<br>==Not== True        #Not<br>True ==Xor== False  #Exclusive-Or | Following its style, VB.NET **capitalizes** both the boolean values and the logical operators. It also offers an **exclusive-or** operator. It also includes two additional operators, **AndAlso** and **OrElse**, which function like ==&&== and ==\|\|== in Java.|
-| Matlab | true ==\&== false  #And<br>true ==\|== false   #Or<br>==\~== true        #Not<br>true ==xor== false  #Exclusive-Or | Matlab also offers an **exclusive-or** operator. |
-| Swift | true ==&&== false   #And<br>true ==\|\|== false   #Or<br>==\!== true           #Not |  |
-| Ruby | true ==and== false  #And<br>true ==&&== false   #Also And<br>true ==or== false   #Or<br>true ==\|\|== false   #Also Or<br>==not== true        #Not<br>==\!== true           #Also Not | Ruby lets you use either symbols or words. |
+| Python | True `and` False  #And<br>True `or` False   #Or<br>`not` True        #Not | You can also use `&` (for and) and `|` (for or) in Python, but they technically do something slightly different. They perform **bitwise operations**. |
+| Java | true `&&` false   #And<br>true `||` false     #Or<br>`!`true           #Not<br>true `^` false    #Exclusive-Or | You can also use single-operators (`&` or `|` instead of `&&` or `||`), but **it's generally better to use double operators**. Double operators only evaluate later conditions if they might change the end result. Java also offers an **exclusive-or** operator `^`, which is True if exactly *one of the two conditions is True, not both or neither*. |
+| C | 1 `&&` 0   #And<br>1 `||` 0     #Or<br>`!`1       #Not | C does not natively have boolean types: it treats 0 as False and 1 (or any non-zero number) as True. |
+| C++, C# | true `&&` false   #And<br>true `||` false   #Or<br>`!`true           #Not | C++ and C# are the same as C, but includes true boolean types like Java. |
+| JavaScript | true `&&` false   #And<br>true `||` false   #Or<br>`!`true           #Not |  |
+| VB.NET | True `And` False  #And<br>True `Or` False   #Or<br>`Not` True        #Not<br>True `Xor` False  #Exclusive-Or | Following its style, VB.NET **capitalizes** both the boolean values and the logical operators. It also offers an **exclusive-or** operator. It also includes two additional operators, **AndAlso** and **OrElse**, which function like `&&` and `||` in Java.|
+| Matlab | true `&` false  #And<br>true `|` false   #Or<br>`~`true        #Not<br>true `xor` false  #Exclusive-Or | Matlab also offers an **exclusive-or** operator. |
+| Swift | true `&&` false   #And<br>true `||` false   #Or<br>`!`true           #Not |  |
+| Ruby | true `and` false  #And<br>true `&&` false   #Also And<br>true `or` false   #Or<br>true `||` false   #Also Or<br>`not` true        #Not<br>`!`true           #Also Not | Ruby lets you use either symbols or words. |
 
 #### Mathematical Operators
 Most languages share the same mathematical operators: it's hard to get away from plus for addition, minus for subtraction, etc. There are some unique ones, though: floor division, modulus, and exponentiation may differ by language.
