@@ -3,7 +3,7 @@ title: Gatech CS1301xI
 author: "Ryan"              # 文章作者
 description : "Intro to Computing in Python by David Joyner"    # 文章描述信息
 date: 2021-10-17            # 文章编写日期
-lastmod:          # 文章修改日期
+lastmod: 2021-10-21         # 文章修改日期
 draft: false
 ---
 
