@@ -409,8 +409,8 @@ The three boolean operators--and, or, not--are generally represented in one of t
 
 | **Language** | **Syntax** | **Notes** |
 | --- | --- | --- |
-| Python | True `and` False  #And<br>True `or` False   #Or<br>`not` True        #Not | You can also use `&` (for and) and `|` (for or) in Python, but they technically do something slightly different. They perform **bitwise operations**. |
-| Java | true `&&` false   #And<br>true `||` false     #Or<br>`!`true           #Not<br>true `^` false    #Exclusive-Or | You can also use single-operators (`&` or `|` instead of `&&` or `||`), but **it's generally better to use double operators**. Double operators only evaluate later conditions if they might change the end result. Java also offers an **exclusive-or** operator `^`, which is True if exactly *one of the two conditions is True, not both or neither*. |
+| Python | True `and` False  #And<br>True `or` False   #Or<br>`not` True        #Not | You can also use `&` (for and) and `\|` (for or) in Python, but they technically do something slightly different. They perform **bitwise operations**. |
+| Java | true `&&` false   #And<br>true `\|\|` false     #Or<br>`!`true           #Not<br>true `^` false    #Exclusive-Or | You can also use single-operators (`&` or `\|` instead of `&&` or `||`), but **it's generally better to use double operators**. Double operators only evaluate later conditions if they might change the end result. Java also offers an **exclusive-or** operator `^`, which is True if exactly *one of the two conditions is True, not both or neither*. |
 | C | 1 `&&` 0   #And<br>1 `||` 0     #Or<br>`!`1       #Not | C does not natively have boolean types: it treats 0 as False and 1 (or any non-zero number) as True. |
 | C++, C# | true `&&` false   #And<br>true `||` false   #Or<br>`!`true           #Not | C++ and C# are the same as C, but includes true boolean types like Java. |
 | JavaScript | true `&&` false   #And<br>true `||` false   #Or<br>`!`true           #Not |  |
