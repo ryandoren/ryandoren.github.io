@@ -147,6 +147,7 @@ Check the [debugging guide](https://www.cc.gatech.edu/classes/AY2016/cs1301_spri
 - **Variable visualization**: you can view the status of every variable at any time.
 - **In-line debugging**: while you're writing code, it'll show you right there if you've done something wrong; visualized very similarly to spell check. It's almost as if the computer is constantly compiling your code, just to make sure it works, while you're writing it.
  
+ # Unit 2
 ## Chapter 2.1: Procedural Programming
 ### Function and Method
   - **Function**: A segment of code that performs a specific task, sometimes taking some input and sometimes returning some output.
