@@ -131,6 +131,8 @@ An error occurs when we ask for information *about* a variable that doesn't ma
 #### SyntaxError
 An error that occurs when the line of code we've written can't be read by the computer because it doesn't match the computer's expectation for the programming language's grammar.
 
+> Usually, unclosed parentheses will cause a SyntaxError on the **next** line of *code*. But depending on your code, unclosed parentheses can actually manifest as other kinds of errors. For example, if it was actually the _last_ line that had a missing close-parentheses, you would still get a syntax error, but it would read "**unexpected EOF while parsing**". EOF stands for "end of file" and "parsing" is a fancy word for "reading", so "unexpected EOF while parsing" means that Python encountered the end of the file before it expected to. So, **when you get an error on a line that looks okay, learn to quickly check for unclosed parentheses on the line of *code* before**.
+
 #### Others
 Check the [debugging guide](https://www.cc.gatech.edu/classes/AY2016/cs1301_spring/CS-1301-Debugging-Guide/index.html).
 
@@ -311,8 +313,10 @@ Python specifically supplies two additional operators:
 
 ### Self-Assignment and Incrementing
 - **Self-Assignment** means assigning a variable to a value that is in part determined by the variable itself.
-- **Increment:** Repeatedly adding a constant, typically one, to a variable. `+=`
+- **Increment:** Repeatedly adding a constant, typically one, to a variable.
 > Self-assignment reveals something very important about the assignment operator: Python (and most other programming languages) will **evaluate everything on the right side of the assignment before attempting to assign the result to the variable on the left**. That's why self-assignment works: Python initially replaces the variables with their values, so by the time we assign a new value to a variable, Python doesn't remember that the variable receiving a new value was used in the calculation.
+
+- **Self-Assignment Shortcuts:** `+=`, `-=`, `*=`, `**=`, `/=`, `//=`, `%=`<br>Sometimes these shortcuts even work for those strange non-mathematical applications of these mathematical operators. For example, we can use the shortcut `+=` to add something to an existing string.
 
 ## Appendix 1. Python Translation Guide
 ### Print Statements and Line-Ending Behaviors
@@ -387,16 +391,16 @@ Most relational operators are the same in all languages. These are the same in P
 *   a >= b: Greater than or equal to
 *   a > b: Greater than
 
-If a and b are not the same type, JavaScript will automatically try to convert them to the same type before comparison. To avoid this conversion, you'd use ===.
+If a and b are not the same type, JavaScript will automatically try to convert them to the same type before comparison. To avoid this conversion, you'd use `===`.
 
 The languages differ a little bit more with the 'not equal to' operator:
 
 | **Language** | **Syntax** | **Notes** |
 | --- | --- | --- |
-| Python, Java, C, C++, C# | a != b  |  |
-| JavaScript | a != b  | If a and b are not the same type, JavaScript will automatically try to convert them to the same type before comparison. To avoid this conversion, you'd use !==. |
-| VB.NET | a <> b | Technically, the <> operator works in most other languages as well for 'not equal to', but != is more common. |
-| Matlab | a ~= b |  |
+| Python, Java, C, C++, C# | a `!=` b  |  |
+| JavaScript | a `!=` b  | If a and b are not the same type, JavaScript will automatically try to convert them to the same type before comparison. To avoid this conversion, you'd use `!==`. |
+| VB.NET | a `<>` b | Technically, the `<>` operator works in most other languages as well for *not equal to*, but `!=` is more common. |
+| Matlab | a `~=` b |  |
 
 #### Boolean Operators
 The three boolean operators--and, or, not--are generally represented in one of three ways: with symbols, with double-symbols, or with plaintext words. Different languages also use slightly different capitalizations for booleans, so we'll use the language-appropriate ones here, too.
