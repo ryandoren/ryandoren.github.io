@@ -46,7 +46,7 @@ post = ""
 name = "Posts"
 url = "/posts/"
 # title will be shown when you hover on this menu link.
-title = "Personal thoughts"
+title = "🤔💬🧠"
 weight = 1
 [[languages.en.menu.main]]
 identifier = "tags"
@@ -54,15 +54,15 @@ pre = "<i class='fas fa-tags'></i>"
 post = ""
 name = "Tags"
 url = "/tags/"
-title = "General impression"
+title = "🔖📜📑"
 weight = 2
 [[languages.en.menu.main]]
 identifier = "projects"
 pre = "<i class='fas fa-laptop-code'></i>"
 post = ""
 name = "Projects"
-url = "/categories/"
-title = "Valuable experience"
+url = "/projects/"
+title = "🐱‍💻🤖💻"
 weight = 3
 [[languages.en.menu.main]]
 identifier = "resume"
@@ -70,7 +70,7 @@ pre = "<i class='fab fa-black-tie'></i>"
 post = ""
 name = "Resume"
 url = "/categories/documentation/"
-title = "More about me"
+title = "🐱‍👓🐱‍👤🐱‍🚀"
 weight = 4
 [[languages.en.menu.main]]
 identifier = "photos"
@@ -78,7 +78,7 @@ pre = "<i class='fas fa-camera-retro'></i>"
 post = ""
 name = "Gallery"
 url = "/about/"
-title = "Pics and photos"
+title = "🎥📷😺"
 weight = 5
 [[languages.en.menu.main]]
 identifier = "github"
@@ -90,9 +90,9 @@ title = "GitHub"
 weight = 6
 [languages.en.params]
 # site description
-description = "About LoveIt Theme"
+description = "Worgen in the Woods"
 # site keywords
-keywords = ["Theme", "Hugo"]
+keywords = ["Tech", "Brain", "Art", "Intelligence"]
 # App icon config
 [languages.en.params.app]
 # optional site title override for the app when added to an iOS home screen or Android launcher
@@ -156,7 +156,7 @@ enable = true
 paginate = 6
 # Social config in home page
 [languages.en.params.social]
-GitHub = "xxxx"
+GitHub = "ryandoren"
 Linkedin = ""
 Twitter = "xxxx"
 Instagram = "xxxx"
@@ -245,7 +245,7 @@ identifier = "posts"
 pre = ""
 # 你可以在名称 (允许 HTML 格式) 之后添加其他信息, 例如图标
 post = ""
-name = "所有文章"
+name = "脑洞"
 url = "/posts/"
 title = ""
 weight = 1
@@ -290,9 +290,9 @@ title = "GitHub"
 weight = 6
 [languages.zh-cn.params]
 # 网站描述
-description = "关于 LoveIt 主题"
+description = "林中之狼"
 # 网站关键词
-keywords = ["Theme", "Hugo"]
+keywords = ["Tech", "Brain", "Art", "Intelligence"]
 # 应用图标配置
 [languages.zh-cn.params.app]
 # 当添加到 iOS 主屏幕或者 Android 启动器时的标题, 覆盖默认标题
@@ -342,7 +342,7 @@ avatarURL = "/images/avatar.jpg"
 # 主页显示的网站标题 (支持 HTML 格式)
 title = ""
 # 主页显示的网站副标题
-subtitle = "一个简洁、优雅且高效的 Hugo 主题"
+subtitle = "生命是一场熵增的狂欢！"
 # 是否为副标题显示打字机动画
 typeit = true
 # 是否显示社交账号
@@ -353,10 +353,10 @@ disclaimer = ""
 [languages.zh-cn.params.home.posts]
 enable = true
 # 主页每页显示文章数量
-paginate = 6
+paginate = 12
 # 主页的社交信息设置
 [languages.zh-cn.params.social]
-GitHub = "xxxx"
+GitHub = "ryandoren"
 Linkedin = ""
 Twitter = ""
 Instagram = ""
@@ -674,7 +674,7 @@ enable = true
 custom = ''
 # whether to show Hugo and theme info
 # 是否显示 Hugo 和主题信息
-hugo = true
+hugo = false
 # whether to show copyright info
 # 是否显示版权信息
 copyright = true
@@ -696,7 +696,7 @@ license = '<a rel="license external nofollow noopener noreffer" href="https://cr
 [params.section]
 # special amount of posts in each section page
 # section 页面每页显示文章数量
-paginate = 20
+paginate = 10
 # date format (month and day)
 # 日期格式 (月和日)
 dateFormat = "01-02"
@@ -709,7 +709,7 @@ rss = 10
 [params.list]
 # special amount of posts in each list page
 # list 页面每页显示文章数量
-paginate = 20
+paginate = 10
 # date format (month and day)
 # 日期格式 (月和日)
 dateFormat = "01-02"
@@ -771,7 +771,7 @@ maxShownLines = 10
 # KaTeX mathematical formulas config (KaTeX https://katex.org/)
 # KaTeX 数学公式配置 (KaTeX https://katex.org/)
 [params.page.math]
-enable = false
+enable = true
 # default block delimiter is $$ ... $$ and \\[ ... \\]
 # 默认块定界符是 $$ ... $$ 和 \\[ ... \\]
 blockLeftDelimiter = ""
@@ -848,14 +848,14 @@ enable = true
 # Disqus comment config (https://disqus.com/)
 # Disqus 评论系统设置 (https://disqus.com/)
 [params.page.comment.disqus]
-enable = false
+enable = true
 # Disqus shortname to use Disqus in posts
 # Disqus 的 shortname，用来在文章中启用 Disqus 评论系统
 shortname = ""
 # Gitalk comment config (https://github.com/gitalk/gitalk)
 # Gitalk 评论系统设置 (https://github.com/gitalk/gitalk)
 [params.page.comment.gitalk]
-enable = false
+enable = true
 owner = ""
 repo = ""
 clientId = ""
@@ -874,7 +874,7 @@ lang = ""
 visitor = true
 recordIP = true
 highlight = true
-enableQQ = false
+enableQQ = true
 serverURLs = "https://leancloud.hugoloveit.com"
 # emoji data file name, default is "google.yml"
 # ("apple.yml", "google.yml", "facebook.yml", "twitter.yml")
@@ -890,7 +890,7 @@ emoji = ""
 # Facebook comment config (https://developers.facebook.com/docs/plugins/comments)
 # Facebook 评论系统设置 (https://developers.facebook.com/docs/plugins/comments)
 [params.page.comment.facebook]
-enable = false
+enable = true
 width = "100%"
 numPosts = 10
 appId = ""
@@ -898,7 +898,7 @@ languageCode = ""
 # Telegram comments config (https://comments.app/)
 # Telegram comments 评论系统设置 (https://comments.app/)
 [params.page.comment.telegram]
-enable = false
+enable = true
 siteID = ""
 limit = 5
 height = ""
@@ -1064,7 +1064,7 @@ unsafe = true
 # Table Of Contents settings
 # 目录设置
 [markup.tableOfContents]
-startLevel = 2
+startLevel = 1
 endLevel = 6
 
 # Author config
