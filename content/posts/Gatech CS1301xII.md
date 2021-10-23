@@ -49,7 +49,7 @@ Fine.
 ### For Loops
 - **Loop Control Variable**: A variable whose value is the number of times a loop has run. It is used to check if the loop should keep running (e.g. if it has run as many times as it’s supposed to). **We actually can't change the variable within the loop**. Nothing we do to that variable inside the body of this loop will be carried over to the next time that loop runs. No matter what has been done with the variable within the body of the loop, it will take the next value in the list.
   
-Actually, in Python, every for loop is actually a for each loop. It runs the indented code for each item in the list given
+Actually, in Python, every for loop is a for-each loop. It runs the indented code for each item in the list given. In a for loop, `range()` is used so that you know exactly how many iterations have occured, but you have to manually look up each item by its index. In a for-each loop, a pre-defined list is used, you iterate directly over the items, but you have to use other ways to get the index `(list.index(value))`.
 
 > 📕When we're just printing, we'll sometimes just use **commas** instead, and then we don't have to worry about actually converting an integer into a string. But `input` is a different function. It's not the `print` function, and it doesn't know how to put together variables the same way as our `print` function does. So, here, if we want to use a variable that holds an integer in the prompt that we give to our user, we have to **explicitly convert it to a string**.
 
