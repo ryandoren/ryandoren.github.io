@@ -38,6 +38,8 @@ Fine.
 
 ## Chapter 3.3: Loops
 - **For Loop:** A loop control structure that runs a block of code a **predetermined** number of times. For loops run with some advanced knowledge about how many times the loop will run. However, this number can be a variable (eg. a user input), just make sure that it is defined before the for loop.
+- **For-Each Loop:** A loop control structure that runs a block of code a predetermined number of times, where the number of times comes from the length of some list and the items in the list are automatically loaded into a variable for usage in the block of code.
+- **Iterate:** To repeat code a number of times.
 - **Iteration:**  A single execution of a repeated task or block of code.
 - **While Loop:** A loop control structure that runs a block of code until a certain logical expression is not satisfied. They run while something remains true. 
  > **Anything we can express in a for loop can also be expressed in a while loop. But not all loops are interchangeable.** For loops must have some pre-knowledge about the number of times it should run.
@@ -46,8 +48,10 @@ Fine.
 
 ### For Loops
 - **Loop Control Variable**: A variable whose value is the number of times a loop has run. It is used to check if the loop should keep running (e.g. if it has run as many times as it’s supposed to). **We actually can't change the variable within the loop**. Nothing we do to that variable inside the body of this loop will be carried over to the next time that loop runs. No matter what has been done with the variable within the body of the loop, it will take the next value in the list.
+  
+Actually, in Python, every for loop is actually a for each loop. It runs the indented code for each item in the list given
 
-When we're just printing, we'll sometimes just use **commas** instead, and then we don't have to worry about actually converting an integer into a string. But `input` is a different function. It's not the `print` function, and it doesn't know how to put together variables the same way as our `print` function does. So, here, if we want to use a variable that holds an integer in the prompt that we give to our user, we have to **explicitly convert it to a string**.
+> 📕When we're just printing, we'll sometimes just use **commas** instead, and then we don't have to worry about actually converting an integer into a string. But `input` is a different function. It's not the `print` function, and it doesn't know how to put together variables the same way as our `print` function does. So, here, if we want to use a variable that holds an integer in the prompt that we give to our user, we have to **explicitly convert it to a string**.
 
 
 
