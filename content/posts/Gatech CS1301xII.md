@@ -53,15 +53,39 @@ Actually, in Python, every for loop is a for-each loop. It runs the indented cod
 
 > 📕When we're just printing, we'll sometimes just use **commas** instead, and then we don't have to worry about actually converting an integer into a string. But `input` is a different function. It's not the `print` function, and it doesn't know how to put together variables the same way as our `print` function does. So, here, if we want to use a variable that holds an integer in the prompt that we give to our user, we have to **explicitly convert it to a string**.
 
+### While Loops
+While loops are good for code where we don't know how many times we need to repeat in advance.
 
+Infinite loop--a loop that, because of the way it's designed, never stops running. Useful for game design. For loops cannot be infinite loops (even we use 'Infinite' to create a range, because 'Infinite' is just a large constant).
 
+Although we can't do a do-while loop in Python, we can create our initial variables and assign values to our variables such that it guarantees the while loop will run at least once.
 
+### Advanced Loop Keywords
+- `continue`: Skip the rest of the current iteration of the loop and **continue** with the next iteration of the loop (if there is a next iteration). If this for loop was actually nested-- if it was inside of another for loop-- continue will correspond to the closest for loop.
+- `break`: Skip the rest of the current iteration of the loop and **break** out of the loop altogether, skipping any later iterations, too. Break forces execution to skip to the next line of code **after** this loop.
+- `pass`: **Pass is just like Python's way of leaving a blank indented line**. It breaks the requirement that control structures must have code within them and **skip the body of the control structure**. 
+> Pass exists because there will be certain rare times when we need to use a control structure, but we don't want to do anything inside of it. One example might be-- imagine we know we're going to want to loop somewhere, but we haven't implemented its contents yet. We want to leave the loop there for now, but we don't want to bother with the interior of it. We could use pass just to skip over the inside of that loop for now until we come back to implement it.
 
+### Extra materials
+> 🐍[Beginning Python Programming for Aspiring Web Developers](http://www.openbookproject.net/books/bpp4awd/ch04.html)
+> 🐍[Hands-on Python 3 Tutorial](http://anh.cs.luc.edu/python/hands-on/3.1/handsonHtml/index.html)
+## Chapter 3.4: Functions
+- **Function Call**: A place where a function is actually used in some code.
+- **Function Definition:** A segment of code that creates a function, including its name, parameters, and code, to be used by other portions of a program.
+- **Function Header:** The name and list of parameters a function expects, provided as reference to the rest of the program to use when calling the function.
+- **Function Body:** The code that a function runs when called.
+- **Return Statement:** The line of code that defines what output will be sent back at the end of a function.
+  > Not all functions and all languages have return statements. Some might not need to return in the output of the main program. Similarly, not all functions require any input.
+- **Parameter:** A variable for which a function expects to receive a value when called, whose scope is the function’s own execution.
+- **Arguments:** Values passed into parameters during a function call. Essentially, these are the values assigned to the function’s dedicated variables (i.e., parameters).
+  > Parameters are like variables, and arguments are like values.
 
+Note that when Python runs the code, it doesn't initially run the function body. **The header of the function definition loads into the computer's memory the knowledge that there exists a function defined on that line.** The body of the function isn't run until it's called from somewhere else in the code. And at that time execution will jump to the begining line of the function body.
 
+> 🤖Define a function: Hey, there exists a function called ××××. Just keep that in mind for now.
+> 🤖Call a function: Hey, remember the function that I told you about earlier? Go ahead and run it now.
 
-
-
+The scope of a function is from the line where it's defined to the end of the code. If we tried to call it before it was defined, it's out of scope and we'd receive an error because it hasn't yet been defined. This is a little bit different from compiled languages.
 
 ## Appendix 1. Python Translation Guide
 <style>
