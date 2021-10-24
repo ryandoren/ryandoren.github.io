@@ -13,6 +13,8 @@ draft: false
 > 1. [How to Think Like a Computer Scientist: Interactive Edition](https://runestone.academy/runestone/books/published/thinkcspy/index.html)
 > 2. [How to Think Like a Computer Scientist: Learning with Python 3](http://openbookproject.net/thinkcs/python/english3e/)
 > 3. [Python for Everybody (PY4E)](https://www.py4e.com/lessons)
+> 4. [Hands-on Python 3 Tutorial](http://anh.cs.luc.edu/python/hands-on/3.1/handsonHtml/index.html)
+> 5. [Beginning Python Programming for Aspiring Web Developers](http://www.openbookproject.net/books/bpp4awd/index.html)
 
 # Course Outline
 ## Unit 1
