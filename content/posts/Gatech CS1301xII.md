@@ -69,6 +69,7 @@ Although we can't do a do-while loop in Python, we can create our initial variab
 ### Extra materials
 > 🐍[Beginning Python Programming for Aspiring Web Developers](http://www.openbookproject.net/books/bpp4awd/ch04.html)
 > 🐍[Hands-on Python 3 Tutorial](http://anh.cs.luc.edu/python/hands-on/3.1/handsonHtml/index.html)
+
 ## Chapter 3.4: Functions
 - **Function Call**: A place where a function is actually used in some code.
 - **Function Definition:** A segment of code that creates a function, including its name, parameters, and code, to be used by other portions of a program.
@@ -109,6 +110,43 @@ Positional parameters are called "positional" specifically because Python assume
 ### Extra Materials
 🐍[Python's official documentation on functions](https://docs.python.org/3/tutorial/controlflow.html#more-on-defining-functions)
 🐍[Hands-on Python Tutorial](http://anh.cs.luc.edu/python/hands-on/3.1/handsonHtml/functions.html)
+
+## Chapter 3.5: Error Handling
+- **Catching Errors:** Using error handling to prevent a program from crashing when an error is encountered.
+- **Uncaught Error:** An error that is not handled by error handling code, and thus usually forces the program to crash.
+
+Sometimes, instead of preventing errors, we want to use the fact that an error arose to direct or control our program. The actual structure of error handling is itself a control structure. The three main structures for exception handling in most languages are the **try**, **catch**, and **finally** statements:
+
+- The **Try** statement marks a block of code to attempt, but in which we anticipate an error might arise.
+> Error handling is kind of like a conditional statement. We could handle errors with a conditional by saying, if an error is going to arise, don't run this code. Else, do run it. In that structure, we would put the code that we actually want to run in the else portion of the structure. **The try block is thus similar to the else block**. It's a block of code marked off to run if some other code didn't take place. However, the try block is slightly different in that it will always **try** to run, and **stop** only when an error is encountered.
+
+- The **Catch** statement names the errors to anticipate, and marks a block of code to run if an anticipated error arises. (Python often refers to this as the **Except** block as well.)
+> When a try block didn't succeed, and encountered an error, the computer jumps forward to the catch block (`except:` in Python). It contains the code the computer should run if an expected error was encountered. The catch block also has one additional detail declared with it-- the **type of error** to be expected. We can tell the computer exactly what kind of error to catch. In some languages, we can even skip the catch block altogether. A try without a catch just tells the computer not to crash if the code inside the try block raises any kind of error.
+
+- The **Finally** statement marks a block of code to run after the above two blocks no matter what.
+> The finally block contains code that should be executed after the code in the try block whether it succeeded or not. If the code in the try block ran without errors, then execution will jump to the finally block when the try block is done. If the code in the try block did hit an error execution, will in most languages, run what is in the catch block next and then will always run the code in the finally block. The finally block is typically used for code that **absolutely needs to run**, even if other things have gone wrong.
+
+> 🐍Python is not a language that allows a try without catching something, So we need to include both the try and the catch.
+> 🐍In Python, there is also an **Else** block for exception handling: it runs some code only if no errors arose in the Try block.
+
+### Examples
+Three kinds of errors are specifically generated:
+- `my_int = int(my_string)`: This line generates a ValueError if `my_string` does not hold a string that can be read as an integer. For example, if `my_string` was "5" or "1885", no error would arise; if `my_string` was "Taco." or "Boggle.", an error would arise.
+- `print("String #" + 1 + ": " + my_string)`: This line generates a TypeError because we cannot use the + operator to put together strings (like "`String #`") and integers (like `1`).
+- `print(1 / 0)`: This line generates a ZeroDivisionError error because we cannot divide by zero.
+
+#### `my_int = int(my_string)`
+```python
+myString = "This string is not a number!"
+try:
+		print("Converting myString to int...")
+		myInt = int(myString)
+		print(myInt)
+except:
+		pass
+print("Done!")
+```
+
 
 ## Appendix 1. Python Translation Guide
 <style>
