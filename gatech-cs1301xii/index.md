@@ -75,12 +75,35 @@ Although we can't do a do-while loop in Python, we can create our initial variab
 - **Arguments:** Values passed into parameters during a function call. Essentially, these are the values assigned to the function’s dedicated variables (i.e., parameters).
   > Parameters are like variables, and arguments are like values.
 
+### Define a Function
 Note that when Python runs the code, it doesn't initially run the function body. **The header of the function definition loads into the computer's memory the knowledge that there exists a function defined on that line.** The body of the function isn't run until it's called from somewhere else in the code. And at that time execution will jump to the begining line of the function body.
 
 > 🤖Define a function: Hey, there exists a function called ××××. Just keep that in mind for now.
 > 🤖Call a function: Hey, remember the function that I told you about earlier? Go ahead and run it now.
 
+### Scope of a Function
 The scope of a function is from the line where it's defined to the end of the code. If we tried to call it before it was defined, it's out of scope and we'd receive an error because it hasn't yet been defined. This is a little bit different from compiled languages.
+
+### Common Function Errors
+The two common errors we'll encounter with functions are:
+- **Parameter Mismatch:** We gave a function more or fewer parameters than it expected.
+- **Scope Error:** We tried to use a variable in a function that was created outside the function, or similarly, we tried to use a variable outside a function that was created inside the function.  The scope of any variable created inside a function ends when the function ends.
+
+### Functions Returning None
+**If a function does not otherwise return anything, it returns None**. You can imagine adding `return None` as the last line in any function. If no other return statement has already been run, then `return None` is run and None is returned. Remember, though, running a return statement terminates the function: as soon as one runs, the entire function ends no matter what.
+
+### Keyword Parameters
+A special kind of optional parameter to which the program may choose to assign an argument during a function call, or may ignore. Typically, keyword parameters have a default value that is used if it is not overridden by a function call.
+
+For acquired parameters, Python assumes that arguments come in the order that parameters are defined in a function definition. For keyword parameters, we have to use the variable names, because Python can't assume anything based on the order of these parameters.
+
+> **Keyword (optional) parameters must go after all positional (required) parameters.** 
+
+Positional parameters are called "positional" specifically because Python assumes the match-up between argument and parameter based on position.
+
+### Extra Materials
+🐍[Python's official documentation on functions](https://docs.python.org/3/tutorial/controlflow.html#more-on-defining-functions)
+🐍[Hands-on Python Tutorial](http://anh.cs.luc.edu/python/hands-on/3.1/handsonHtml/functions.html)
 
 ## Appendix 1. Python Translation Guide
 <style>
