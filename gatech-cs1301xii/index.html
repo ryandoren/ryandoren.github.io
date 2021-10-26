@@ -1,0 +1,366 @@
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="noodp">
+<meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
+<title>Gatech CS1301xII - Worgen</title><meta name=Description content="Intro to Computing in Python by David Joyner"><meta property="og:title" content="Gatech CS1301xII">
+<meta property="og:description" content="Intro to Computing in Python by David Joyner">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ryandoren.github.io/gatech-cs1301xii/"><meta property="og:image" content="https://ryandoren.github.io/logo.png"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-10-25T00:00:00+00:00">
+<meta property="article:modified_time" content="2021-10-26T13:29:49+08:00">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://ryandoren.github.io/logo.png">
+<meta name=twitter:title content="Gatech CS1301xII">
+<meta name=twitter:description content="Intro to Computing in Python by David Joyner">
+<meta name=application-name content="Worgen">
+<meta name=apple-mobile-web-app-title content="Worgen"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://ryandoren.github.io/gatech-cs1301xii/><link rel=prev href=https://ryandoren.github.io/gatech-cs1301xi/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Gatech CS1301xII","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/ryandoren.github.io\/gatech-cs1301xii\/"},"image":["https:\/\/ryandoren.github.io\/images\/Apple-Devices-Preview.png"],"genre":"posts","wordcount":2482,"url":"https:\/\/ryandoren.github.io\/gatech-cs1301xii\/","datePublished":"2021-10-25T00:00:00+00:00","dateModified":"2021-10-26T13:29:49+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"Ryan","logo":"https:\/\/ryandoren.github.io\/images\/avatar.jpg"},"author":{"@type":"Person","name":"Ryan"},"description":"Intro to Computing in Python by David Joyner"}</script></head>
+<body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
+<div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=Worgen><span class=header-title-pre><i class="fab fa-wolf-pack-battalion fa-fw"></i></span>Worgen</a>
+</div>
+<div class=menu>
+<div class=menu-inner><a class=menu-item href=/posts/ title=🤔💬🧠><i class="fas fa-pen-nib"></i> Posts </a><a class=menu-item href=/tags/ title=🔖📜📑><i class="fas fa-tags"></i> Tags </a><a class=menu-item href=/projects/ title=🐱‍💻🤖💻><i class="fas fa-laptop-code"></i> Projects </a><a class=menu-item href=/categories/documentation/ title=🐱‍👓🐱‍👤🐱‍🚀><i class="fab fa-black-tie"></i> Resume </a><a class=menu-item href=/about/ title=🎥📷😺><i class="fas fa-camera-retro"></i> Gallery </a><a class=menu-item href=https://github.com/ryandoren title=GitHub rel="noopener noreffer" target=_blank><i class="fab fa-github"></i> </a><span class="menu-item delimiter"></span><a href=javascript:void(0); class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+<select class=language-select id=language-select-desktop onchange="location=this.value"><option value=/gatech-cs1301xii/ selected>English</option></select>
+</a><span class="menu-item search" id=search-desktop>
+<input type=text placeholder="Search titles or contents..." id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-desktop>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw"></i>
+</a>
+</div>
+</div>
+</div>
+</header><header class=mobile id=header-mobile>
+<div class=header-container>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=Worgen><span class=header-title-pre><i class="fab fa-wolf-pack-battalion fa-fw"></i></span>Worgen</a>
+</div>
+<div class=menu-toggle id=menu-toggle-mobile>
+<span></span><span></span><span></span>
+</div>
+</div>
+<div class=menu id=menu-mobile><div class=search-wrapper>
+<div class="search mobile" id=search-mobile>
+<input type=text placeholder="Search titles or contents..." id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-mobile>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</div>
+<a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>
+Cancel
+</a>
+</div><a class=menu-item href=/posts/ title=🤔💬🧠><i class="fas fa-pen-nib"></i>Posts</a><a class=menu-item href=/tags/ title=🔖📜📑><i class="fas fa-tags"></i>Tags</a><a class=menu-item href=/projects/ title=🐱‍💻🤖💻><i class="fas fa-laptop-code"></i>Projects</a><a class=menu-item href=/categories/documentation/ title=🐱‍👓🐱‍👤🐱‍🚀><i class="fab fa-black-tie"></i>Resume</a><a class=menu-item href=/about/ title=🎥📷😺><i class="fas fa-camera-retro"></i>Gallery</a><a class=menu-item href=https://github.com/ryandoren title=GitHub rel="noopener noreffer" target=_blank><i class="fab fa-github"></i></a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw"></i>
+</a><a href=javascript:void(0); class=menu-item title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+<select class=language-select onchange="location=this.value"><option value=/gatech-cs1301xii/ selected>English</option></select>
+</a></div>
+</div>
+</header>
+<div class="search-dropdown desktop">
+<div id=search-dropdown-desktop></div>
+</div>
+<div class="search-dropdown mobile">
+<div id=search-dropdown-mobile></div>
+</div>
+<main class=main>
+<div class=container><div class=toc id=toc-auto>
+<h2 class=toc-title>Contents</h2>
+<div class=toc-content id=toc-content-auto></div>
+</div><article class="page single"><h1 class="single-title animated flipInX">Gatech CS1301xII</h1><div class=post-meta>
+<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>Ryan</a></span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-10-25>2021-10-25</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2482 words&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;12 minutes&nbsp;<span id=/gatech-cs1301xii/ class=leancloud_visitors data-flag-title="Gatech CS1301xII">
+<i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;views
+</span>&nbsp;</div>
+</div><div class="details toc" id=toc-static kept>
+<div class="details-summary toc-title">
+<span>Contents</span>
+<span><i class="details-icon fas fa-angle-right"></i></span>
+</div>
+<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
+<ul>
+<li><a href=#unit-3>Unit 3</a>
+<ul>
+<li><a href=#chapter-31-basics-of-control-structures>Chapter 3.1: Basics of Control Structures</a></li>
+<li><a href=#chapter-32-conditionals>Chapter 3.2: Conditionals</a></li>
+<li><a href=#chapter-33-loops>Chapter 3.3: Loops</a>
+<ul>
+<li><a href=#for-loops>For Loops</a></li>
+<li><a href=#while-loops>While Loops</a></li>
+<li><a href=#advanced-loop-keywords>Advanced Loop Keywords</a></li>
+<li><a href=#extra-materials>Extra materials</a></li>
+</ul>
+</li>
+<li><a href=#chapter-34-functions>Chapter 3.4: Functions</a></li>
+<li><a href=#appendix-1-python-translation-guide>Appendix 1. Python Translation Guide</a>
+<ul>
+<li><a href=#indicating-control-structures>Indicating Control Structures</a></li>
+<li><a href=#if-else-if-and-else>If, Else If, and Else</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav></div>
+</div><div class=content id=content><blockquote>
+<p>&ldquo;Always code as if whoever ends up maintaining your code will be a violent psychopath who knows where you live.&rdquo; -Martin Golding</p>
+</blockquote>
+<p>😂😂😂😂😂😂😂😂😂😂😂😂
+Fine.</p>
+<h1 id=unit-3>Unit 3</h1>
+<h2 id=chapter-31-basics-of-control-structures>Chapter 3.1: Basics of Control Structures</h2>
+<ul>
+<li><strong>Control Structures:</strong> Statements that control the flow of execution of the program. Or, more simply, lines of code that control when other lines of code run. They allow us to loop over certain lines of code multiple times, changing the data that they act on each time.
+<ul>
+<li><strong>Conditional Statements:</strong> Programming statements that control what code is executed based on certain conditions; usually of the form “if”, “else if”, and “else”.</li>
+<li><strong>Loop:</strong> A programming control structure that executes a segment of code multiple times.</li>
+<li><strong>Function:</strong> A segment of code that performs a specific task, sometimes taking some input and sometimes returning some output. (Eg. purchasing something is a common behavior regardless of what you&rsquo;re buying. The steps are always the same: get the total, swipe or insert your card, enter your PIN, sign your name, and remove the card. So, we can imagine grouping those actions together into a common function to use.)</li>
+<li><strong>Exception:</strong> An error that a program might want to anticipate and catch instead of outright avoiding.</li>
+<li><strong>Exception Handling:</strong> A control structure that catches certain anticipated errors and reacts to them accordingly.</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>Condition vs. Exception</strong>: Conditionals are most often decisions when the computer has access to all the necessary information. The condition is intentionally checked. Exception handling also feels like a decision, but typically exception handling occurs when we didn&rsquo;t check some piece of information beforehand. (Eg. we don&rsquo;t usually check for an insufficient balance, but it could occur.)</p>
+</blockquote>
+<ul>
+<li><strong>Indentation:</strong> Spaces at the beginning of a line that are used to group together blocks of code. All consecutive lines of code at the same level of indentation are in a single code block.</li>
+<li><strong>Scope:</strong> The portion of a program’s execution during which a variable can be seen and accessed. Similar to a computer&rsquo;s short-term memory.
+<ul>
+<li>A single variable usually <strong>lives within the control structures definition</strong>. And once the computer leaves that control structure, the variable is lost. So the code that runs after the conditional can&rsquo;t see any variables that were created inside of it. The reason is that the computer can&rsquo;t guarantee that the contents of a conditional statement actually ran.</li>
+</ul>
+<blockquote>
+<p>🧐 Note that in Python, a variable created in a control structure lives since the line it is created (and run) to the end of the code, which is a bit wierd though. 🤔 In other languages like Java, for example, if you define a variable inside a conditional, then the variable ceases to exist when the condition is done. 😓<br>
+🤓So, it&rsquo;s better to never create variables inside a conditional that will need to be accessed outside the conditional.</p>
+</blockquote>
+<ul>
+<li>Functions define scope even more narrowly. A function scope is generally just a variable sent to it or created within it. Functions don&rsquo;t automatically see anything created before their run. They only see those things that are sent into them intentionally.</li>
+</ul>
+</li>
+</ul>
+<h2 id=chapter-32-conditionals>Chapter 3.2: Conditionals</h2>
+<ul>
+<li><strong>Conditional Statements:</strong> Programming statements that control what code is executed based on certain conditions; usually of the form “if”, “else if”, and “else”.</li>
+<li><strong>If-Then Statement:</strong> A conditional control structure that runs a block of code only if a certain condition is true. <code>if</code></li>
+<li><strong>Else Statement:</strong> A conditional control structure that runs a block of code if all preceding if-then and else-if statements have been false. <code>else</code></li>
+<li><strong>Else-If Statement:</strong> A conditional control structure that runs a block of code if all preceding if-then and else-if statements have been false and some other conditions are met. <code>elif</code></li>
+<li><strong>Nested Conditional:</strong> A conditional statement that is itself controlled by another conditional statement. More simply, an if-then statement within another if-then statement.</li>
+</ul>
+<h2 id=chapter-33-loops>Chapter 3.3: Loops</h2>
+<ul>
+<li><strong>For Loop:</strong> A loop control structure that runs a block of code a <strong>predetermined</strong> number of times. For loops run with some advanced knowledge about how many times the loop will run. However, this number can be a variable (eg. a user input), just make sure that it is defined before the for loop.</li>
+<li><strong>For-Each Loop:</strong> A loop control structure that runs a block of code a predetermined number of times, where the number of times comes from the length of some list and the items in the list are automatically loaded into a variable for usage in the block of code.</li>
+<li><strong>Iterate:</strong> To repeat code a number of times.</li>
+<li><strong>Iteration:</strong>  A single execution of a repeated task or block of code.</li>
+<li><strong>While Loop:</strong> A loop control structure that runs a block of code until a certain logical expression is not satisfied. They run while something remains true.</li>
+</ul>
+<blockquote>
+<p><strong>Anything we can express in a for loop can also be expressed in a while loop. But not all loops are interchangeable.</strong> For loops must have some pre-knowledge about the number of times it should run.</p>
+</blockquote>
+<blockquote>
+<p>Some languages also have a special kind of while loop called a do while loop. We can think of the standard while loop that we talked about before as a while do loop&ndash;while a condition is true, do something. A do while loop is identical except that it guarantees the something will be run at least once. It does it before checking the condition the first time.</p>
+</blockquote>
+<h3 id=for-loops>For Loops</h3>
+<ul>
+<li><strong>Loop Control Variable</strong>: A variable whose value is the number of times a loop has run. It is used to check if the loop should keep running (e.g. if it has run as many times as it’s supposed to). <strong>We actually can&rsquo;t change the variable within the loop</strong>. Nothing we do to that variable inside the body of this loop will be carried over to the next time that loop runs. No matter what has been done with the variable within the body of the loop, it will take the next value in the list.</li>
+</ul>
+<p>Actually, in Python, every for loop is a for-each loop. It runs the indented code for each item in the list given. In a for loop, <code>range()</code> is used so that you know exactly how many iterations have occured, but you have to manually look up each item by its index. In a for-each loop, a pre-defined list is used, you iterate directly over the items, but you have to use other ways to get the index <code>(list.index(value))</code>.</p>
+<blockquote>
+<p>📕When we&rsquo;re just printing, we&rsquo;ll sometimes just use <strong>commas</strong> instead, and then we don&rsquo;t have to worry about actually converting an integer into a string. But <code>input</code> is a different function. It&rsquo;s not the <code>print</code> function, and it doesn&rsquo;t know how to put together variables the same way as our <code>print</code> function does. So, here, if we want to use a variable that holds an integer in the prompt that we give to our user, we have to <strong>explicitly convert it to a string</strong>.</p>
+</blockquote>
+<h3 id=while-loops>While Loops</h3>
+<p>While loops are good for code where we don&rsquo;t know how many times we need to repeat in advance.</p>
+<p>Infinite loop&ndash;a loop that, because of the way it&rsquo;s designed, never stops running. Useful for game design. For loops cannot be infinite loops (even we use &lsquo;Infinite&rsquo; to create a range, because &lsquo;Infinite&rsquo; is just a large constant).</p>
+<p>Although we can&rsquo;t do a do-while loop in Python, we can create our initial variables and assign values to our variables such that it guarantees the while loop will run at least once.</p>
+<h3 id=advanced-loop-keywords>Advanced Loop Keywords</h3>
+<ul>
+<li><code>continue</code>: Skip the rest of the current iteration of the loop and <strong>continue</strong> with the next iteration of the loop (if there is a next iteration). If this for loop was actually nested&ndash; if it was inside of another for loop&ndash; continue will correspond to the closest for loop.</li>
+<li><code>break</code>: Skip the rest of the current iteration of the loop and <strong>break</strong> out of the loop altogether, skipping any later iterations, too. Break forces execution to skip to the next line of code <strong>after</strong> this loop.</li>
+<li><code>pass</code>: <strong>Pass is just like Python&rsquo;s way of leaving a blank indented line</strong>. It breaks the requirement that control structures must have code within them and <strong>skip the body of the control structure</strong>.</li>
+</ul>
+<blockquote>
+<p>Pass exists because there will be certain rare times when we need to use a control structure, but we don&rsquo;t want to do anything inside of it. One example might be&ndash; imagine we know we&rsquo;re going to want to loop somewhere, but we haven&rsquo;t implemented its contents yet. We want to leave the loop there for now, but we don&rsquo;t want to bother with the interior of it. We could use pass just to skip over the inside of that loop for now until we come back to implement it.</p>
+</blockquote>
+<h3 id=extra-materials>Extra materials</h3>
+<blockquote>
+<p>🐍<a href=http://www.openbookproject.net/books/bpp4awd/ch04.html target=_blank rel="noopener noreffer">Beginning Python Programming for Aspiring Web Developers</a>
+🐍<a href=http://anh.cs.luc.edu/python/hands-on/3.1/handsonHtml/index.html target=_blank rel="noopener noreffer">Hands-on Python 3 Tutorial</a></p>
+</blockquote>
+<h2 id=chapter-34-functions>Chapter 3.4: Functions</h2>
+<ul>
+<li><strong>Function Call</strong>: A place where a function is actually used in some code.</li>
+<li><strong>Function Definition:</strong> A segment of code that creates a function, including its name, parameters, and code, to be used by other portions of a program.</li>
+<li><strong>Function Header:</strong> The name and list of parameters a function expects, provided as reference to the rest of the program to use when calling the function.</li>
+<li><strong>Function Body:</strong> The code that a function runs when called.</li>
+<li><strong>Return Statement:</strong> The line of code that defines what output will be sent back at the end of a function.
+<blockquote>
+<p>Not all functions and all languages have return statements. Some might not need to return in the output of the main program. Similarly, not all functions require any input.</p>
+</blockquote>
+</li>
+<li><strong>Parameter:</strong> A variable for which a function expects to receive a value when called, whose scope is the function’s own execution.</li>
+<li><strong>Arguments:</strong> Values passed into parameters during a function call. Essentially, these are the values assigned to the function’s dedicated variables (i.e., parameters).
+<blockquote>
+<p>Parameters are like variables, and arguments are like values.</p>
+</blockquote>
+</li>
+</ul>
+<p>Note that when Python runs the code, it doesn&rsquo;t initially run the function body. <strong>The header of the function definition loads into the computer&rsquo;s memory the knowledge that there exists a function defined on that line.</strong> The body of the function isn&rsquo;t run until it&rsquo;s called from somewhere else in the code. And at that time execution will jump to the begining line of the function body.</p>
+<blockquote>
+<p>🤖Define a function: Hey, there exists a function called ××××. Just keep that in mind for now.
+🤖Call a function: Hey, remember the function that I told you about earlier? Go ahead and run it now.</p>
+</blockquote>
+<p>The scope of a function is from the line where it&rsquo;s defined to the end of the code. If we tried to call it before it was defined, it&rsquo;s out of scope and we&rsquo;d receive an error because it hasn&rsquo;t yet been defined. This is a little bit different from compiled languages.</p>
+<h2 id=appendix-1-python-translation-guide>Appendix 1. Python Translation Guide</h2>
+<style>table th:first-of-type{width:10%}table th:nth-of-type(2){width:45%}table th:nth-of-type(3){width:45%}</style>
+<h3 id=indicating-control-structures>Indicating Control Structures</h3>
+<p>Python is actually considered somewhat odd in its formal use of indentation to indicate control structures. Most language indent by convention, but have more formal mechanisms to indicate the scope of a control structure.</p>
+<p>Most languages use brackets <code>{ }</code> to indicate the scope of a control structure. The lines inside the control structure are typically indented for readability, but it would be possible to remove all indentation and still have working code in these languages.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Language</strong></th>
+<th><strong>Syntax</strong></th>
+<th><strong>Notes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python</td>
+<td>if True:<br>    #Some code would go here!<br>#The control structure is over when the indentation ends.</td>
+<td></td>
+</tr>
+<tr>
+<td>Java, C, C++, C#, JavaScript, Swift</td>
+<td>if (true) { /* An open bracket starts the control structure. */<br>    /* Some code would go here! */<br>} /* A close bracket ends the control structure. */</td>
+<td>You will find <a href=http://i.imgur.com/NQ6jItG.jpg target=_blank rel="noopener noreffer">vicious arguments</a> online over whether the open bracket should go alongside the control structure or on the next line. Personally, I prefer the same-line structure.</td>
+</tr>
+<tr>
+<td>VB.NET</td>
+<td>If True Then<br>    &lsquo;Some code would go here!<br>End If &lsquo;The VB.NET keyword End If ends the control structure</td>
+<td>VB.NET does not require an additional character or keyword to start a control structure, but does require one to end a structure. It infers the control structure starts when it sees a control structure keyword like <code>If</code>, and then it formally declares the control structure over with something like <code>End If</code>.</td>
+</tr>
+<tr>
+<td>Matlab</td>
+<td>if true<br>    %Some code would go here!<br>end %The keyword end ends the control structure.</td>
+<td>Like VB.NET, Matlab has a formal keyword reserved for ending control structures: <code>end</code>.</td>
+</tr>
+<tr>
+<td>Ruby</td>
+<td>if true<br>    #Some code would go here!<br>end #The keyword end ends the control structure.</td>
+<td>Like VB.NET, Ruby has a formal keyword reserved for ending control structures: <code>end</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id=if-else-if-and-else>If, Else If, and Else</h3>
+<p>Every major language offers the basic functionality of an if, else-if, and else. Some languages even offer a single operator that lets you do these all on one line, called a ternary operator, but we&rsquo;ll focus on the more general structure.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Language</strong></th>
+<th><strong>Syntax</strong></th>
+<th><strong>Notes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python</td>
+<td>if some_bool:<br>    #Some code would go here!<br>elif some_other_bool:<br>    #Some other code would go here!<br>else:<br>    #Some other code would go here!</td>
+<td></td>
+</tr>
+<tr>
+<td>Java, C, C++, C#, JavaScript</td>
+<td>if (some_bool) {<br>    /* Some code would go here! */<br>} else if (some_other_bool) {<br>    /* Some other code would go here! */<br>} else {<br>    /* Some other code would go here! */<br>}</td>
+<td>You&rsquo;ll also find lots of arguments online about whether the closing bracket should go on the same line as the else if and the else. I prefer to keep the brackets on the same line; we can always add extra blank lines if we want to for readability. Note that in these languages, the condition itself must go inside parentheses.</td>
+</tr>
+<tr>
+<td>VB.NET</td>
+<td>If some_bool Then<br>    &lsquo;Some code would go here!<br>ElseIf some_other_bool Then<br>    &lsquo;Some other code would go here!<br>Else<br>    &lsquo;Some other code would go here!<br>End If</td>
+<td>VB.NET capitalizes its conditional keywords (<code>If</code>, <code>ElseIf</code>, <code>Else</code>, and <code>End If</code>), and it also has an optional keyword <code>Then</code> that makes the code read a little more like natural language. It reads quite nicely if we use boolean names like <code>today_is_monday</code>. It also ends a conditional with the dedicated keyword <code>End</code> If instead of a close bracket.</td>
+</tr>
+<tr>
+<td>Matlab</td>
+<td>if some_bool<br>    %Some code would go here!<br>elseif some_other_bool<br>    %Some other code would go here!<br>else<br>    %Some other code would go here!<br>end</td>
+<td>Like VB.NET, Matlab has a dedicated keyword to end a conditional structure: <code>end</code>.</td>
+</tr>
+<tr>
+<td>Swift</td>
+<td>if some_bool {<br>    /* Some code would go here! */<br>} else if some_other_bool {<br>    /* Some other code would go here! */<br>} else {<br>    /* Some other code would go here! */<br>}</td>
+<td>Swift is identical to Java and C except that it does not require parentheses around the conditional expression.</td>
+</tr>
+<tr>
+<td>Ruby</td>
+<td>if some_bool<br>    #Some code would go here!<br>elseif some_other_bool<br>    #Some other code would go here!<br>else<br>    #Some other code would go here!<br>end</td>
+<td>Ruby is identical to Matlab, which is weird.</td>
+</tr>
+</tbody>
+</table>
+</div><div class=post-footer id=post-footer>
+<div class=post-info>
+<div class=post-info-line>
+<div class=post-info-mod>
+<span>Updated on 2021-10-26&nbsp;<a class=git-hash href=https://github.com/ryandoren/commit/86c1bab196aa60a1600ee79b3852d859d477dfe1 target=_blank title="commit by Ryan Doren(Ryan-Doren@github.com) 86c1bab196aa60a1600ee79b3852d859d477dfe1: update blog">
+<i class="fas fa-hashtag fa-fw"></i>86c1bab</a></span>
+</div>
+<div class=post-info-license></div>
+</div>
+<div class=post-info-line>
+<div class=post-info-md><span>
+<a class=link-to-markdown href=/gatech-cs1301xii/index.md target=_blank>Read Markdown</a>
+</span></div>
+<div class=post-info-share>
+<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://ryandoren.github.io/gatech-cs1301xii/ data-title="Gatech CS1301xII" data-via=xxxx><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://ryandoren.github.io/gatech-cs1301xii/><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on Hacker News" data-sharer=hackernews data-url=https://ryandoren.github.io/gatech-cs1301xii/ data-title="Gatech CS1301xII"><i class="fab fa-hacker-news fa-fw"></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://ryandoren.github.io/gatech-cs1301xii/ data-title="Gatech CS1301xII"><i data-svg-src=https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://ryandoren.github.io/gatech-cs1301xii/ data-title="Gatech CS1301xII"><i class="fab fa-weibo fa-fw"></i></a></span>
+</div>
+</div>
+</div>
+<div class=post-info-more>
+<section class=post-tags></section>
+<section>
+<span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span>
+</section>
+</div>
+<div class=post-nav><a href=/gatech-cs1301xi/ class=prev rel=prev title="Gatech CS1301xI"><i class="fas fa-angle-left fa-fw"></i>Gatech CS1301xI</a></div>
+</div>
+<div id=comments><div id=disqus_thread class=comment></div><noscript>
+Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.
+</noscript><div id=gitalk class=comment></div><noscript>
+Please enable JavaScript to view the comments powered by <a href=https://github.com/gitalk/gitalk></a>Gitalk</a>.
+</noscript><div id=valine class=comment></div><noscript>
+Please enable JavaScript to view the comments powered by <a href=https://valine.js.org/>Valine</a>.
+</noscript><div id=fb-root class=comment></div>
+<div class=fb-comments data-href=https://ryandoren.github.io/gatech-cs1301xii/ data-width=100% data-numposts=10></div><noscript>
+Please enable JavaScript to view the comments powered by <a href=https://developers.facebook.com/docs/plugins/comments/></a>Facebook</a>.
+</noscript><div id=telegram-comments class=comment></div><noscript>
+Please enable JavaScript to view the comments powered by <a href=https://comments.app/>Telegram Comments</a>.
+</noscript></div></article></div>
+</main><footer class=footer>
+<div class=footer-container><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank>Ryan</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div>
+</div>
+</footer></div>
+<div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top">
+<i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title="View Comments">
+<i class="fas fa-comment fa-fw"></i>
+</a>
+</div><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/gitalk@1.6.2/dist/gitalk.min.css><link rel=stylesheet href=/lib/valine/valine.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.css><script type=text/javascript src=https://.disqus.com/embed.js defer></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/gitalk@1.6.2/dist/gitalk.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js></script><script type=text/javascript src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0&appId=&autoLogAppEvents=1" defer></script><script type=text/javascript src=https://comments.app/js/widget.js?2 defer data-comments-app-website data-limit=5 data-colorful=1></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mhchem.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:10},comment:{gitalk:{admin:[""],clientID:"",clientSecret:"",id:"2021-10-25T00:00:00Z",owner:"",repo:"",title:"Gatech CS1301xII"},valine:{appId:"QGzwQXOqs5JOhN4RGPOkR2mR-MdYXbMMI",appKey:"WBmoGyJtbqUswvfLh6L8iEBr",avatar:"mp",el:"#valine",emojiCDN:"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/",emojiMaps:{100:"1f4af.png",alien:"1f47d.png",anger:"1f4a2.png",angry:"1f620.png",anguished:"1f627.png",astonished:"1f632.png",black_heart:"1f5a4.png",blue_heart:"1f499.png",blush:"1f60a.png",bomb:"1f4a3.png",boom:"1f4a5.png",broken_heart:"1f494.png",brown_heart:"1f90e.png",clown_face:"1f921.png",cold_face:"1f976.png",cold_sweat:"1f630.png",confounded:"1f616.png",confused:"1f615.png",cry:"1f622.png",crying_cat_face:"1f63f.png",cupid:"1f498.png",dash:"1f4a8.png",disappointed:"1f61e.png",disappointed_relieved:"1f625.png",dizzy:"1f4ab.png",dizzy_face:"1f635.png",drooling_face:"1f924.png",exploding_head:"1f92f.png",expressionless:"1f611.png",face_vomiting:"1f92e.png",face_with_cowboy_hat:"1f920.png",face_with_hand_over_mouth:"1f92d.png",face_with_head_bandage:"1f915.png",face_with_monocle:"1f9d0.png",face_with_raised_eyebrow:"1f928.png",face_with_rolling_eyes:"1f644.png",face_with_symbols_on_mouth:"1f92c.png",face_with_thermometer:"1f912.png",fearful:"1f628.png",flushed:"1f633.png",frowning:"1f626.png",ghost:"1f47b.png",gift_heart:"1f49d.png",green_heart:"1f49a.png",grimacing:"1f62c.png",grin:"1f601.png",grinning:"1f600.png",hankey:"1f4a9.png",hear_no_evil:"1f649.png",heart:"2764-fe0f.png",heart_decoration:"1f49f.png",heart_eyes:"1f60d.png",heart_eyes_cat:"1f63b.png",heartbeat:"1f493.png",heartpulse:"1f497.png",heavy_heart_exclamation_mark_ornament:"2763-fe0f.png",hole:"1f573-fe0f.png",hot_face:"1f975.png",hugging_face:"1f917.png",hushed:"1f62f.png",imp:"1f47f.png",innocent:"1f607.png",japanese_goblin:"1f47a.png",japanese_ogre:"1f479.png",joy:"1f602.png",joy_cat:"1f639.png",kiss:"1f48b.png",kissing:"1f617.png",kissing_cat:"1f63d.png",kissing_closed_eyes:"1f61a.png",kissing_heart:"1f618.png",kissing_smiling_eyes:"1f619.png",laughing:"1f606.png",left_speech_bubble:"1f5e8-fe0f.png",love_letter:"1f48c.png",lying_face:"1f925.png",mask:"1f637.png",money_mouth_face:"1f911.png",nauseated_face:"1f922.png",nerd_face:"1f913.png",neutral_face:"1f610.png",no_mouth:"1f636.png",open_mouth:"1f62e.png",orange_heart:"1f9e1.png",partying_face:"1f973.png",pensive:"1f614.png",persevere:"1f623.png",pleading_face:"1f97a.png",pouting_cat:"1f63e.png",purple_heart:"1f49c.png",rage:"1f621.png",relaxed:"263a-fe0f.png",relieved:"1f60c.png",revolving_hearts:"1f49e.png",right_anger_bubble:"1f5ef-fe0f.png",robot_face:"1f916.png",rolling_on_the_floor_laughing:"1f923.png",scream:"1f631.png",scream_cat:"1f640.png",see_no_evil:"1f648.png",shushing_face:"1f92b.png",skull:"1f480.png",skull_and_crossbones:"2620-fe0f.png",sleeping:"1f634.png",sleepy:"1f62a.png",slightly_frowning_face:"1f641.png",slightly_smiling_face:"1f642.png",smile:"1f604.png",smile_cat:"1f638.png",smiley:"1f603.png",smiley_cat:"1f63a.png",smiling_face_with_3_hearts:"1f970.png",smiling_imp:"1f608.png",smirk:"1f60f.png",smirk_cat:"1f63c.png",sneezing_face:"1f927.png",sob:"1f62d.png",space_invader:"1f47e.png",sparkling_heart:"1f496.png",speak_no_evil:"1f64a.png",speech_balloon:"1f4ac.png","star-struck":"1f929.png",stuck_out_tongue:"1f61b.png",stuck_out_tongue_closed_eyes:"1f61d.png",stuck_out_tongue_winking_eye:"1f61c.png",sunglasses:"1f60e.png",sweat:"1f613.png",sweat_drops:"1f4a6.png",sweat_smile:"1f605.png",thinking_face:"1f914.png",thought_balloon:"1f4ad.png",tired_face:"1f62b.png",triumph:"1f624.png",two_hearts:"1f495.png",unamused:"1f612.png",upside_down_face:"1f643.png",weary:"1f629.png",white_frowning_face:"2639-fe0f.png",white_heart:"1f90d.png",wink:"1f609.png",woozy_face:"1f974.png",worried:"1f61f.png",yawning_face:"1f971.png",yellow_heart:"1f49b.png",yum:"1f60b.png",zany_face:"1f92a.png",zipper_mouth_face:"1f910.png",zzz:"1f4a4.png"},enableQQ:!0,highlight:!0,lang:"en",pageSize:10,placeholder:"Your comment ...",recordIP:!0,serverURLs:"https://leancloud.hugoloveit.com",visitor:!0}},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{algoliaAppID:"PASDMWALPK",algoliaIndex:"index.en",algoliaSearchKey:"b42948e51daaa93df92381c8e2ac0f93",highlightTag:"em",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"algolia"}}</script><script type=text/javascript src=/js/theme.min.js></script></body>
+</html>
