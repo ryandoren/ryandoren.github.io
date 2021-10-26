@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Gatech CS1301xI - Worgen</title><meta name="Description" content="Intro to Computing in Python by David Joyner"><meta property="og:title" content="Gatech CS1301xI" />
+<meta property="og:description" content="Intro to Computing in Python by David Joyner" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ryandoren.github.io/gatech-cs1301xi/" /><meta property="og:image" content="https://ryandoren.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-10-21T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-10-24T15:42:40+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://ryandoren.github.io/logo.png"/>
+
+<meta name="twitter:title" content="Gatech CS1301xI"/>
+<meta name="twitter:description" content="Intro to Computing in Python by David Joyner"/>
+<meta name="application-name" content="Worgen">
+<meta name="apple-mobile-web-app-title" content="Worgen"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://ryandoren.github.io/gatech-cs1301xi/" /><link rel="prev" href="https://ryandoren.github.io/the-calling-of-saint-mathew/" /><link rel="next" href="https://ryandoren.github.io/gatech-cs1301xii/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Gatech CS1301xI",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/ryandoren.github.io\/gatech-cs1301xi\/"
+        },"image": ["https:\/\/ryandoren.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","wordcount":  6090 ,
+        "url": "https:\/\/ryandoren.github.io\/gatech-cs1301xi\/","datePublished": "2021-10-21T00:00:00+00:00","dateModified": "2021-10-24T15:42:40+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "Ryan","logo": "https:\/\/ryandoren.github.io\/images\/avatar.jpg"},"author": {
+                "@type": "Person",
+                "name": "Ryan"
+            },"description": "Intro to Computing in Python by David Joyner"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Worgen"><span class="header-title-pre"><i class='fab fa-wolf-pack-battalion fa-fw'></i></span>Worgen</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/" title="🤔💬🧠"><i class='fas fa-pen-nib'></i> Posts </a><a class="menu-item" href="/tags/" title="🔖📜📑"><i class='fas fa-tags'></i> Tags </a><a class="menu-item" href="/projects/" title="🐱‍💻🤖💻"><i class='fas fa-laptop-code'></i> Projects </a><a class="menu-item" href="/categories/documentation/" title="🐱‍👓🐱‍👤🐱‍🚀"><i class='fab fa-black-tie'></i> Resume </a><a class="menu-item" href="/about/" title="🎥📷😺"><i class='fas fa-camera-retro'></i> Gallery </a><a class="menu-item" href="https://github.com/ryandoren" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/gatech-cs1301xi/" selected>English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Worgen"><span class="header-title-pre"><i class='fab fa-wolf-pack-battalion fa-fw'></i></span>Worgen</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="🤔💬🧠"><i class='fas fa-pen-nib'></i>Posts</a><a class="menu-item" href="/tags/" title="🔖📜📑"><i class='fas fa-tags'></i>Tags</a><a class="menu-item" href="/projects/" title="🐱‍💻🤖💻"><i class='fas fa-laptop-code'></i>Projects</a><a class="menu-item" href="/categories/documentation/" title="🐱‍👓🐱‍👤🐱‍🚀"><i class='fab fa-black-tie'></i>Resume</a><a class="menu-item" href="/about/" title="🎥📷😺"><i class='fas fa-camera-retro'></i>Gallery</a><a class="menu-item" href="https://github.com/ryandoren" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/gatech-cs1301xi/" selected>English</option></select>
+                </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Gatech CS1301xI</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Ryan</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-10-21">2021-10-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;6090 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;29 minutes&nbsp;<span id="/gatech-cs1301xi/" class="leancloud_visitors" data-flag-title="Gatech CS1301xI">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;views
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#extra-materials">Extra materials</a></li>
+    <li><a href="#course-outline">Course Outline</a>
+      <ul>
+        <li><a href="#unit-1">Unit 1</a></li>
+        <li><a href="#unit-2">Unit 2</a></li>
+        <li><a href="#unit-3">Unit 3</a></li>
+        <li><a href="#unit-4">Unit 4</a></li>
+        <li><a href="#unit-5">Unit 5</a></li>
+      </ul>
+    </li>
+    <li><a href="#unit-1-1">Unit 1</a>
+      <ul>
+        <li><a href="#chapter-11-computing">Chapter 1.1: Computing</a>
+          <ul>
+            <li><a href="#programming-vocabulary">Programming Vocabulary</a></li>
+            <li><a href="#programming-language">Programming Language</a></li>
+            <li><a href="#console-vs-gui">Console vs. GUI</a></li>
+            <li><a href="#fundations-language-and-domain">Fundations, language, and domain</a></li>
+            <li><a href="#python">Python</a></li>
+            <li><a href="#extra-materials-1">Extra materials</a></li>
+          </ul>
+        </li>
+        <li><a href="#chapter-12-programing">Chapter 1.2: Programing</a></li>
+        <li><a href="#chapter-13-debugging">Chapter 1.3: Debugging</a>
+          <ul>
+            <li><a href="#types-of-errors">Types of errors</a></li>
+            <li><a href="#types-of-errors-in-python">Types of errors in Python</a>
+              <ul>
+                <li><a href="#nameerror">NameError</a></li>
+                <li><a href="#typeerror">TypeError</a></li>
+                <li><a href="#attributeerror">AttributeError</a></li>
+                <li><a href="#syntaxerror">SyntaxError</a></li>
+                <li><a href="#others">Others</a></li>
+              </ul>
+            </li>
+            <li><a href="#basic-debugging">Basic debugging</a></li>
+            <li><a href="#advanced-debugging">Advanced debugging</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#unit-2-1">Unit 2</a>
+      <ul>
+        <li><a href="#chapter-21-procedural-programming">Chapter 2.1: Procedural Programming</a>
+          <ul>
+            <li><a href="#function-and-method">Function and Method</a></li>
+            <li><a href="#programming-paradigms">Programming paradigms</a></li>
+            <li><a href="#operators">Operators</a></li>
+            <li><a href="#comments-and-documentation">Comments and Documentation</a></li>
+          </ul>
+        </li>
+        <li><a href="#chapter-22-variables">Chapter 2.2: Variables</a>
+          <ul>
+            <li><a href="#basic-concepts">Basic concepts</a></li>
+            <li><a href="#data-types">Data types</a></li>
+            <li><a href="#type-conversion">Type conversion</a></li>
+            <li><a href="#reserved-key-words-in-python">Reserved key words in Python</a></li>
+          </ul>
+        </li>
+        <li><a href="#chapter-23-logical-operators">Chapter 2.3: Logical Operators</a>
+          <ul>
+            <li><a href="#relational-operators">Relational Operators</a>
+              <ul>
+                <li><a href="#numeric-comparison-operators">Numeric Comparison Operators</a></li>
+                <li><a href="#non-numeric-equality-comparisons">Non-Numeric Equality Comparisons</a></li>
+                <li><a href="#set-operators">Set Operators</a></li>
+                <li><a href="#relational-operators-in-python">Relational Operators in Python</a></li>
+              </ul>
+            </li>
+            <li><a href="#boolean-operators">Boolean Operators</a></li>
+            <li><a href="#truth-tables">Truth Tables</a></li>
+            <li><a href="#extra-materials-2">Extra materials</a></li>
+          </ul>
+        </li>
+        <li><a href="#chapter-24-mathematical-operators">Chapter 2.4: Mathematical Operators</a>
+          <ul>
+            <li><a href="#basics">Basics</a></li>
+            <li><a href="#self-assignment-and-incrementing">Self-Assignment and Incrementing</a></li>
+            <li><a href="#extra-materials-3">Extra materials</a></li>
+          </ul>
+        </li>
+        <li><a href="#appendix-1-python-translation-guide">Appendix 1. Python Translation Guide</a>
+          <ul>
+            <li><a href="#print-statements-and-line-ending-behaviors">Print Statements and Line-Ending Behaviors</a></li>
+            <li><a href="#comment-syntax">Comment Syntax</a></li>
+            <li><a href="#variable-declarations-and-assignments">Variable Declarations and Assignments</a></li>
+            <li><a href="#operators-1">Operators</a>
+              <ul>
+                <li><a href="#relational-operators-1">Relational Operators</a></li>
+                <li><a href="#boolean-operators-1">Boolean Operators</a></li>
+                <li><a href="#mathematical-operators">Mathematical Operators</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><hr>
+<h1 id="extra-materials">Extra materials</h1>
+<blockquote>
+<ol>
+<li><a href="https://runestone.academy/runestone/books/published/thinkcspy/index.html" target="_blank" rel="noopener noreffer">How to Think Like a Computer Scientist: Interactive Edition</a></li>
+<li><a href="http://openbookproject.net/thinkcs/python/english3e/" target="_blank" rel="noopener noreffer">How to Think Like a Computer Scientist: Learning with Python 3</a></li>
+<li><a href="https://www.py4e.com/lessons" target="_blank" rel="noopener noreffer">Python for Everybody (PY4E)</a></li>
+<li><a href="http://anh.cs.luc.edu/python/hands-on/3.1/handsonHtml/index.html" target="_blank" rel="noopener noreffer">Hands-on Python 3 Tutorial</a></li>
+<li><a href="http://www.openbookproject.net/books/bpp4awd/index.html" target="_blank" rel="noopener noreffer">Beginning Python Programming for Aspiring Web Developers</a></li>
+</ol>
+</blockquote>
+<h1 id="course-outline">Course Outline</h1>
+<h2 id="unit-1">Unit 1</h2>
+<ol>
+<li><strong>Computing:</strong> the basic principles of working with computers.</li>
+<li><strong>Programming:</strong> the general workflow of writing and running programs. Writing code, compiling it, executing it, and evaluating the results.</li>
+<li><strong>Debugging:</strong> the process of finding and fixing errors in your programs.</li>
+</ol>
+<h2 id="unit-2">Unit 2</h2>
+<ol>
+<li><strong>Procedural Programming:</strong> The general idea of writing sequences of instructions for the computer to perform.</li>
+<li><strong>Variables:</strong> Creating and modifying data in our programs.</li>
+<li><strong>Logical Operators:</strong> Establishing the truth or falsehood of relationships among variables in our programs.</li>
+<li><strong>Mathematical Operators:</strong> Using arithmetic operators (addition, multiplication, etc.) to modify the values of variables in our programs.</li>
+</ol>
+<h2 id="unit-3">Unit 3</h2>
+<ol>
+<li><strong>Control Structures:</strong> The general idea of lines of code that can control other lines of code.</li>
+<li><strong>Conditionals:</strong> Lines of code (called if statements) that check logical expressions to see if certain code blocks should run.</li>
+<li><strong>Loops:</strong> Lines of code that instruct the computer to repeat a block of code until some condition is met.</li>
+<li><strong>Functions:</strong> Miniature programs within a larger program, each with their own input, code, and output.</li>
+<li><strong>Exception Handling:</strong> Lines of code that instruct the computer how to fail gracefully when errors are encountered.</li>
+</ol>
+<h2 id="unit-4">Unit 4</h2>
+<ol>
+<li><strong>Data Structures:</strong> The general idea of data types more complex than individual letters and numbers.</li>
+<li><strong>Strings:</strong> Ordered series of characters that often represent natural human language.</li>
+<li><strong>Lists:</strong> Ordered series of other kinds of data, collected under one variable name and accessed via numeric indices.</li>
+<li><strong>File Input/Output:</strong> Writing a program&rsquo;s data to a file so it can later be re-loaded after the program is closed and reopened.</li>
+<li><strong>Dictionaries:</strong> Pairs of keys and values collected under one variable name, like lists with non-numeric indices.</li>
+</ol>
+<h2 id="unit-5">Unit 5</h2>
+<ol>
+<li><strong>Objects:</strong> Creating and using custom data types so our programs can reason about the world the way we do.</li>
+<li><strong>Algorithms:</strong> Complex sequences of instructions that transform data or generate useful conclusions.</li>
+</ol>
+<hr>
+<h1 id="unit-1-1">Unit 1</h1>
+<h2 id="chapter-11-computing">Chapter 1.1: Computing</h2>
+<h3 id="programming-vocabulary">Programming Vocabulary</h3>
+<ul>
+<li><strong>Code</strong>: Commands given to a computer in order to perform a task.</li>
+<li><strong>Line of code</strong>: A single command.</li>
+<li><strong>Program</strong>: A collection of lines of code that serve one or more overall functions.</li>
+<li><strong>Input</strong> (files, user input, websites) 👉 code 👉 <strong>output</strong> (files, screen, sound)</li>
+<li><strong>Compile</strong>: To translate human-readable computer code into low-level commands the computer can execute. In the programming flow, this functions as reading over code and looking for errors. (proofreading by compilers)</li>
+<li><strong>Run/Excution</strong>: Running some code and having it actually perform its operations.</li>
+</ul>
+<blockquote>
+<p>Compiling just makes sure what we told the program to do makes sense; running checks whether the program actually do what we want it to do.</p>
+</blockquote>
+<p>Compilation could potentially be skipped.</p>
+<ul>
+<li>Languages that require compilation are called <strong>static/compiled</strong>  languages.</li>
+<li>Languages that do not require compilation are called <strong>dynamic/interpreted</strong>  languages.</li>
+</ul>
+<blockquote>
+<p>Two kinds of programs process high-level languages into low-level languages: <strong>interpreters and compilers</strong>. An interpreter reads a high-level program and executes it. It processes the program a little at a time, alternately reading lines and performing computations. 
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="./images/1634540777963.png"
+        data-srcset="./images/1634540777963.png, ./images/1634540777963.png 1.5x, ./images/1634540777963.png 2x"
+        data-sizes="auto"
+        alt="./images/1634540777963.png"
+        title="Interpreter" /></p>
+</blockquote>
+<blockquote>
+<p>A compiler reads the program and translates it <em>completely</em> before the program starts running. In this case, the high-level program is called the <strong>source code</strong>, and the translated program is called the <strong>object code</strong> or the executable. Once a program is compiled, you can execute it repeatedly without further translation. 
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="./images/1634540772278.png"
+        data-srcset="./images/1634540772278.png, ./images/1634540772278.png 1.5x, ./images/1634540772278.png 2x"
+        data-sizes="auto"
+        alt="./images/1634540772278.png"
+        title="Compiler" /></p>
+</blockquote>
+<blockquote>
+<p>Many modern languages use both processes. They are first compiled into a lower level language, called <strong>byte code</strong>, and then interpreted by a program called a <strong>virtual machine</strong>. <em>Python uses both processes</em>, but because of the way programmers interact with it, it is usually considered an interpreted language.</p>
+</blockquote>
+<h3 id="programming-language">Programming Language</h3>
+<p>Categorization of languages:</p>
+<ul>
+<li><strong>Static &amp; Dynamic</strong>: whether compilation is required</li>
+<li><strong>Hight-level languages</strong> involve a great deal of abstraction from the low-level details of the computer like memory, whereas <strong>low-level languages</strong> such as machine languages or assembly languages require these details to be addressed manually.</li>
+</ul>
+<p><a href="https://www.tiobe.com/tiobe-index/" target="_blank" rel="noopener noreffer">Popularity of different languages</a></p>
+<blockquote>
+<p>C++ and C# are two successors to the programming language C, which is a low-level language used a lot in developing operating systems, video games, and other highly complex programs. C++ adds a few more features to C, while C# is more of a high-level version. Java, C, C++, and C# are static, compiled languages; Python is the top dynamic, scripting language on this list.</p>
+</blockquote>
+<h3 id="console-vs-gui">Console vs. GUI</h3>
+<ul>
+<li>Graphical user interfaces (GUIs): An output medium that uses more than just text, like forms, buttons, tabs, and more. Eg. a web brower, a word processor like Microsoft Word, a smartphone app, a modern operating system like Windows or Mac OS.</li>
+<li>Console: An output medium for a program to show exclusively text-based output. Eg. command line interfaces like the terminal on a Mac or the command window on a PC.</li>
+</ul>
+<h3 id="fundations-language-and-domain">Fundations, language, and domain</h3>
+<ul>
+<li><strong>Foundations</strong> are the <em>core principles of computing</em> that transcend specific programming languages.</li>
+<li>These foundational principles are then <em>implemented</em> in specific <strong>programming languages</strong>.</li>
+<li>You then <em>apply</em> them to a particular <strong>domain</strong>.</li>
+</ul>
+<h3 id="python">Python</h3>
+<ul>
+<li>Python is a <strong>high-level, platform independent</strong> programming language. Python abstracts further away from the inner workings of the computer than lower-level languages (like memory management), thus is easier to use.</li>
+<li>Python is <strong>dynamic &amp; interpreted</strong>, which means that Python will <em>run our code line by line</em> when we ask it to without trying to compile it first. That opens up the possibility of using Python in a command line interface where we write and run lines of code one at a time. Whereas in the <strong>scripting mode</strong>, we write a bunch of code, then <em>run it all at once</em>.</li>
+<li>The main takeaway of Python being an interpreted language is that we might not be aware of errors until we actually try to run those lines.</li>
+</ul>
+<h3 id="extra-materials-1">Extra materials</h3>
+<ol>
+<li><a href="https://runestone.academy/runestone/books/published/thinkcspy/index.html" target="_blank" rel="noopener noreffer">How to Think Like a Computer Scientist: Interactive Edition</a></li>
+<li><a href="http://openbookproject.net/thinkcs/python/english3e/" target="_blank" rel="noopener noreffer">How to Think Like a Computer Scientist: Learning with Python 3</a></li>
+</ol>
+<h2 id="chapter-12-programing">Chapter 1.2: Programing</h2>
+<ul>
+<li><strong>Programming</strong> is an iterative process of writing code, attempting to run it, and evaluating the results (write⇨run⇨evaluate cycle). Interchangeable with <strong>coding</strong>.</li>
+<li>Work in Small Chunks</li>
+<li>Chaining Together Instructions</li>
+<li>Debugging to address errors, incorrect results</li>
+</ul>
+<h2 id="chapter-13-debugging">Chapter 1.3: Debugging</h2>
+<ul>
+<li><strong>Debugging:</strong> Resolving problems in code, whether it be errors thrown in compilation or running or mismatches between the desired and observed output.</li>
+</ul>
+<blockquote>
+<p>The terms &ldquo;bug&rdquo; and &ldquo;debugging&rdquo; are popularly attributed to Admiral Grace Hopper in the 1940s. While she was working on a Mark II Computer at Harvard University, her associates discovered a moth stuck in a relay and thereby impeding operation, whereupon she remarked that they were &ldquo;debugging&rdquo; the system.</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="./images/1634551637826.png"
+        data-srcset="./images/1634551637826.png, ./images/1634551637826.png 1.5x, ./images/1634551637826.png 2x"
+        data-sizes="auto"
+        alt="./images/1634551637826.png"
+        title="./images/1634551637826.png" /></p>
+<h3 id="types-of-errors">Types of errors</h3>
+<ul>
+<li><strong>Compilation Errors:</strong> Errors that occur during the computer’s read through of the code. Compilation errors in writing programs are often similar to grammatical errors in writing essays.
+<ul>
+<li><em>sytax errors</em>: code that doesn&rsquo;t work with the current programming language.</li>
+<li><em>name errors</em>: code that tries to use something that doesn&rsquo;t exist.</li>
+<li><em>type errors</em>: code that matches different types together, which doesn&rsquo;t make sense. Depending on the language, some of these might turn up as runtime errors instead.</li>
+</ul>
+</li>
+<li><strong>Runtime errors:</strong> Errors that arise when trying to <em>actually execute</em> the code. Languages that don&rsquo;t have compilation will only have runtime errors. Even languages that do require compilation can have runtime errors because we can&rsquo;t anticipate every error just by looking at the code.
+<ul>
+<li><em>Divide by zero errors</em>: code that divides a value by zero.</li>
+<li><em>Null errors</em>: code that refers to some variable that has no value.</li>
+<li><em>Memory errors</em>: code that surpasses your computer&rsquo;s memory.</li>
+</ul>
+</li>
+</ul>
+<h3 id="types-of-errors-in-python">Types of errors in Python</h3>
+<h4 id="nameerror">NameError</h4>
+<p>An error that usually occurs when you use a variable name that doesn&rsquo;t yet exist. When you encounter these, <em>check first for misspellings</em>; you very likely might have misspelled a variable name, causing the computer to see it as a completely different variable! If that doesn&rsquo;t work, try to <em>find where you first defined the variable</em>.</p>
+<h4 id="typeerror">TypeError</h4>
+<p>An error that occurs when we try to perform an operation on an object that doesn&rsquo;t make sense with the operation, like calculating the length of a number or to print an omelette.</p>
+<blockquote>
+<p>The function cannot deal with the object.</p>
+</blockquote>
+<h4 id="attributeerror">AttributeError</h4>
+<p>An error occurs when we ask for information <em>about</em> a variable that doesn&rsquo;t make sense, like the happiness of a potato or the GPA of a turnip.</p>
+<blockquote>
+<p>The object does not have the attribute.</p>
+</blockquote>
+<h4 id="syntaxerror">SyntaxError</h4>
+<p>An error that occurs when the line of code we&rsquo;ve written can&rsquo;t be read by the computer because it doesn&rsquo;t match the computer&rsquo;s expectation for the programming language&rsquo;s grammar.</p>
+<blockquote>
+<p>Usually, unclosed parentheses will cause a SyntaxError on the <strong>next</strong> line of <em>code</em>. But depending on your code, unclosed parentheses can actually manifest as other kinds of errors. For example, if it was actually the <em>last</em> line that had a missing close-parentheses, you would still get a syntax error, but it would read &ldquo;<strong>unexpected EOF while parsing</strong>&rdquo;. EOF stands for &ldquo;end of file&rdquo; and &ldquo;parsing&rdquo; is a fancy word for &ldquo;reading&rdquo;, so &ldquo;unexpected EOF while parsing&rdquo; means that Python encountered the end of the file before it expected to. So, <strong>when you get an error on a line that looks okay, learn to quickly check for unclosed parentheses on the line of <em>code</em> before</strong>.</p>
+</blockquote>
+<h4 id="others">Others</h4>
+<p>Check the <a href="https://www.cc.gatech.edu/classes/AY2016/cs1301_spring/CS-1301-Debugging-Guide/index.html" target="_blank" rel="noopener noreffer">debugging guide</a>.</p>
+<h3 id="basic-debugging">Basic debugging</h3>
+<ul>
+<li><strong>Print Debugging:</strong> A form of debugging where print statements are added <em>throughout the code</em> to check how the program is flowing.</li>
+<li><strong>Scope Debugging:</strong> A form of debugging where print statements are added to check the status of the <em>variables in the program at different  stages</em> to see how they are changing. (Debugging <em>small sections/scopes</em> of a program to make sure things have run correctly so far.)</li>
+<li><strong>Rubber Duck Debugging:</strong> A form of debugging where the programmer explains the logic, goals, and operations to an inanimate listener to methodically step through the code. The point is when faced with a hard to solve problem, try explaining it from scratch. Oftentimes, you&rsquo;ll find the solution.</li>
+</ul>
+<blockquote>
+<p>Rubber duck debugging was introduced by the 1999 book <em>The Pragmatic Programmer</em>, and it refers to a programmer who carried around a rubber duck to which to explain problems. By explaining things to the duck, the programmer often found the solution.</p>
+</blockquote>
+<h3 id="advanced-debugging">Advanced debugging</h3>
+<ul>
+<li><strong>Step by step execution</strong>: run your code one line at a time.</li>
+<li><strong>Variable visualization</strong>: you can view the status of every variable at any time.</li>
+<li><strong>In-line debugging</strong>: while you&rsquo;re writing code, it&rsquo;ll show you right there if you&rsquo;ve done something wrong; visualized very similarly to spell check. It&rsquo;s almost as if the computer is constantly compiling your code, just to make sure it works, while you&rsquo;re writing it.</li>
+</ul>
+<h1 id="unit-2-1">Unit 2</h1>
+<h2 id="chapter-21-procedural-programming">Chapter 2.1: Procedural Programming</h2>
+<h3 id="function-and-method">Function and Method</h3>
+<ul>
+<li><strong>Function</strong>: A segment of code that performs a specific task, sometimes taking some input and sometimes returning some output.</li>
+<li><strong>Method</strong>: A function that is <em>part of a class</em> in object-oriented programming (but colloquially, often used interchangeably with function).</li>
+</ul>
+<h3 id="programming-paradigms">Programming paradigms</h3>
+<ul>
+<li><strong>Procedural Programming:</strong> where procedural code is the one that directly instructs a device on how to finish a task in logical steps.</li>
+<li><strong>Object-Oriented Programming:</strong> A programming paradigm where programmers define custom data types that have custom methods embedded within them. A concept or an abstraction is created before excuting some other commands.</li>
+<li><strong>Event-Driven Programming:</strong> A type of programming where the program generally awaits and reacts to events rather than running code linearly.</li>
+</ul>
+<h3 id="operators">Operators</h3>
+<ul>
+<li><strong>Operators:</strong> Specific, simple functions that act on primitive data types, like integers and strings.</li>
+<li><strong>Mathematical Operators:</strong> Operators that perform mathematical functions, like adding numbers together or assigning values to variables. (+ - * / % **)</li>
+<li><strong>Logical Operators:</strong> Operators that perform logical operations, such as comparing relative values, checking equality, checking set membership, or evaluating combinations of other logical operators.
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="./images/1634711801315.png"
+        data-srcset="./images/1634711801315.png, ./images/1634711801315.png 1.5x, ./images/1634711801315.png 2x"
+        data-sizes="auto"
+        alt="./images/1634711801315.png"
+        title="enter description here" /></li>
+</ul>
+<p>Typically, operators work on the most primitive types in programming languages: mathematical operators work on integers and floats, while logical operators work on booleans.</p>
+<p>Some languages, though, allow us to use operators in creative ways. In Python, we can use the mathematical plus (+) operator to concatenate strings (put two strings together), and the multiplication (*) operator to multiply a string by an integer to duplicate it. We can also use subtraction with dates to find the time between different dates.</p>
+<h3 id="comments-and-documentation">Comments and Documentation</h3>
+<ul>
+<li><strong>Comments:</strong> Notes from the programmer supplied in-line alongside the code itself, designated in a way that prevents the computer from reading or attempting to execute them as code. [in-line comments (pound/hash mark #) &amp; block comments]</li>
+</ul>
+<blockquote>
+<p>There exist ways of writing comments that can be pulled out to generate separate, standalone documentation.</p>
+</blockquote>
+<ul>
+<li><strong>Documentation:</strong> Collected and set-aside descriptions and instructions for a body of code.</li>
+<li><strong>Self-Documenting Code:</strong> Code whose variables and functions are named in a way that makes it clear what their underlying content and operations clear to the reader.
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="./images/1634713784532.png"
+        data-srcset="./images/1634713784532.png, ./images/1634713784532.png 1.5x, ./images/1634713784532.png 2x"
+        data-sizes="auto"
+        alt="./images/1634713784532.png"
+        title="enter description here" /></li>
+</ul>
+<blockquote>
+<p><a href="https://en.wikibooks.org/wiki/Python_Programming/Source_Documentation_and_Comments" target="_blank" rel="noopener noreffer">Supplemental material</a></p>
+</blockquote>
+<h2 id="chapter-22-variables">Chapter 2.2: Variables</h2>
+<h3 id="basic-concepts">Basic concepts</h3>
+<ul>
+<li><strong>Variables:</strong> Alphanumeric (letters and numbers) identifiers that hold values, like integers, strings of characters, and dates.</li>
+<li><strong>Value:</strong> The content of some variable. The variable my_age might hold the value 21. The variable your_name might hold the value “Greymane”.</li>
+<li><strong>Null:</strong> The “value” a variable has when it doesn’t actually have a value.</li>
+<li><strong>Naming rules:</strong>
+<ol>
+<li>Variables (as well as functions, methods, classes, and other stuff we&rsquo;ll learn about later) cannot have spaces in them. Variable names can ==only contain letters, numbers, and underscores==.</li>
+<li>Variable names must ==start with letters==. Technically underscores are also allowed, but we generally only use those in certain situations.</li>
+<li>Variable names must not duplicate certain ==reserved words==.</li>
+<li>Names are case sensitive.</li>
+<li>A good name is ==self-documenting==.</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p><a href="https://thehelloworldprogram.com/python/python-variable-assignment-statements-rules-conventions-naming/" target="_blank" rel="noopener noreffer">See more on this website.</a></p>
+</blockquote>
+<pre><code>Two common conventions are used if the name has more than one word: camel case and underscores. Each programming language has its own accepted style. **In Python, you should use underscores. In Java and C#, you would use camel case**. Other languages have their own conventions.
+</code></pre>
+<ul>
+<li><strong>Camel case</strong> mushes the words together and capitalizes each word, like this: thisIsMyVariableName. Note that <em>the first letter of a variable&rsquo;s name is usually in lowercase, while the first letter of a function&rsquo;s name is often in uppercase</em>.</li>
+<li><strong>Underscores</strong> just replaces spaces with underscores, usually keeping the variable name in all-lower case, like this: this_is_my_variable_name.</li>
+</ul>
+<h3 id="data-types">Data types</h3>
+<p>Integer, real number, character, string, boolean&hellip;self-defined types&hellip;</p>
+<blockquote>
+<p><a href="https://en.wikibooks.org/wiki/Python_Programming/Data_Types" target="_blank" rel="noopener noreffer">See more on this website.</a></p>
+</blockquote>
+<p><em>In <strong>strongly-typed languages</strong>, assigning a type to a variable is actually a separate step from assigning a value to the variable; and assigning a different type to this variable will cause crashing.</em></p>
+<p>We can multiply a sequence (string, list&hellip;) by an integer, and Python just takes that sequence and repeats it however many times we multiplied it by. But we can&rsquo;t multiply a sequence by a float or a string by a string. Also, when Python is asked to use a boolean like a number (such as multiplying by a boolean), it interprets True as 1 and False as 0.</p>
+<p>Now, let&rsquo;s meet a weird guy in Python—the <strong>NoneType</strong>—which only has one value: <strong>None</strong>. None is Python&rsquo;s implementation of the programming concept of <a href="https://en.wikipedia.org/wiki/Null_pointer" target="_blank" rel="noopener noreffer">==null==</a> (like the null pointer in C++). This is how Python represents that a variable has no value. This is slightly different from a variable simply not existing: ==the variable name exists, it just doesn&rsquo;t point to any value==. Because there is no value, it also doesn&rsquo;t fit into any of the above types.</p>
+<p><strong>Where Does None Come From?</strong> First, the trivial way, we could just do that intentionally. The way it will happen more commonly is that you&rsquo;ll set it equal to some operation that doesn&rsquo;t result in anything, like you put on the right of an equal sign a function that has no return value (eg. the print() function)</p>
+<h3 id="type-conversion">Type conversion</h3>
+<p>To treat a certain type of data with operations, functions, or methods of a different data type, we have to use functions for converting between the two.</p>
+<blockquote>
+<p><strong>Implicit conversion:</strong> In practice, you may not always need to do this manually, though. For example, when you put a value other than a string into Python&rsquo;s print function, it automatically tries to convert it to a string.</p>
+</blockquote>
+<p>When we use <strong>comma instead of plus sign</strong>, it tells the print statement to interpret each individual thing in the parentheses as a <em>separate piece of data</em>. The print statement ==implicitly converts each thing to a string if needed and then puts them together==. <strong>By default, it puts each thing together separated by a space</strong>.</p>
+<p>You&rsquo;ll receive a ==ValueError== whenever you try to do a type conversion, like float or integer, on a value that can&rsquo;t actually be converted to that type.</p>
+<ul>
+<li>
+<p>==int(variable)==: Takes as input some variable (usually a string) and attempts to convert it to an integer, returning the integer if successful or raising a ValueError if unsuccessful. This function will work if variable is a string made up <strong>only of digits and, optionally, the negative sign</strong>. Note that conversion from float to int by <code>int()</code> just wipe out the decical part. If you want to convert float to int type value in Python with a round figure. You have to use the <code>round()</code> function of Python inside the <code>int()</code> function.</p>
+</li>
+<li>
+<p>==bool(variable)==: Takes as input some variable (usually a string) and attempts to convert it to a boolean, returning the boolean value if successful or raising a ValueError if unsuccessful. <strong>Generally, this function returns False if variable is 0 or an empty string, True if variable is anything else</strong>.</p>
+</li>
+<li>
+<p>==float(variable)==: Takes as input some variable (usually a string/integer) and attempts to convert it to a float, returning the float if successful or raising a ValueError if unsuccessful. This function will work if variable is a string made up <strong>only of digits and, optionally, a negative sign and a decimal point</strong>.</p>
+</li>
+</ul>
+<p>The computer interprets anything that the user enters by the ==input(variable)== function as <strong>a string</strong> of characters because it has no way of knowing that it&rsquo;s a number. So, type conversion is needed under certain circumstances. Usually, <code>int(input(variable))</code> is used if we want to use the user input as a number.</p>
+<h3 id="reserved-key-words-in-python">Reserved key words in Python</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">keyword</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">keyword</span><span class="o">.</span><span class="n">kwlist</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Importing Libraries. ==import, from==.</li>
+<li>Logical Operators. ==and, is, not, or, False, True, None==.</li>
+<li>Control Structures. ==as, break, continue, if, elif, else, for, in, while, pass, with==.</li>
+<li>Functions. ==def, return==.</li>
+<li>Object-Oriented Programming Syntax. ==class==.</li>
+<li>Error Handling. ==except, finally, raise, try==.</li>
+<li>The remaining words: ==assert, del, global, lambda, non-local, yield== are outside of the scope of the course.</li>
+</ul>
+<p>If a reserved word is used as a variable name or a function name, a <strong>SyntaxError</strong> will be triggered. But if a function name in Python like print is used for a new variable name, assigning value to this variable will not cause any problem, but we&rsquo;ve hidden the fact that it can also be used as a function. It can only mean one thing for a given block of code, and we&rsquo;re changing its meaning. When we try to use the word as a function name, a <strong>TypeError</strong> will arise.</p>
+<h2 id="chapter-23-logical-operators">Chapter 2.3: Logical Operators</h2>
+<h3 id="relational-operators">Relational Operators</h3>
+<p>Check the relationships between multiple variables.</p>
+<h4 id="numeric-comparison-operators">Numeric Comparison Operators</h4>
+<p>Operators that facilitate numeric comparison between values. Typically, these are &lsquo;greater than&rsquo; (&gt;), &lsquo;greater than or equal to&rsquo; (&gt;=), &lsquo;equal to&rsquo; (==), &lsquo;less than&rsquo; (&lt;), and &lsquo;less than or equal to&rsquo; (&lt;=).</p>
+<p>These operators can sometimes be used for comparisons that are not numeric, but that nonetheless <strong>have an underlying order</strong>:</p>
+<ul>
+<li>A string of characters is &lsquo;less&rsquo; than another string if it <strong>comes earlier alphabetically</strong>. &ldquo;Apple&rdquo; would be <em>less</em> than &ldquo;Banana&rdquo;. &ldquo;Z&rdquo; would be <em>less</em> than &ldquo;a&rdquo;. “12” would be <em>less</em> than &ldquo;3&rdquo;. &ldquo;Quick&rdquo; &lt; &ldquo;Quicker&rdquo;, &ldquo;Quicker&rdquo; &lt; &ldquo;Quickly&rdquo;</li>
+<li>A date is &lsquo;less&rsquo; than another date if it <strong>comes earlier in time</strong>. January 1st, 2017 would be &lsquo;less&rsquo; than January 15th, 2017.</li>
+</ul>
+<p>It&rsquo;s also worth noting that the greater than and less than operators do work for strings as well, and they operate based on <strong>sorting the strings alphabetically</strong>. Besides, in Python, <strong>all capital letters are sorted before all lowercase letters</strong>, so a string beginning with a capital Z would be treated as less than a string beginning with a lowercase a.</p>
+<h4 id="non-numeric-equality-comparisons">Non-Numeric Equality Comparisons</h4>
+<p>Nearly any kind of data can compare for equality, even if it isn&rsquo;t numeric. We can&rsquo;t ask if an apple is greater than an orange, but we can ask if apples and oranges are &lsquo;equal&rsquo;, or the same thing.</p>
+<p>In practice, sometimes this will compare values to see if the values of two variables are the same, and other times it will compare if two variables are pointing to the same data in memory. It could be that two variables have the same values, but those values are stored in separate places, and so the computer doesn&rsquo;t recognize them as equal.</p>
+<h4 id="set-operators">Set Operators</h4>
+<p>Check to see if a value is a member of a set of multiple values. Most often this comes up in strings and lists.</p>
+<p>With strings, we can check to see if a certain smaller string occurs inside a larger string. For example, &ldquo;cde&rdquo; is in the string &ldquo;abcdefg&rdquo;, but &ldquo;ijk&rdquo; is not.</p>
+<p>With lists, we can check to see if a certain item is on our list. For example, if we had a list containing &ldquo;grapes&rdquo;, &ldquo;apples&rdquo;, and &ldquo;oranges&rdquo;, then &ldquo;apples&rdquo; would be in that set, but &ldquo;papaya&rdquo; would not.</p>
+<h4 id="relational-operators-in-python">Relational Operators in Python</h4>
+<p>In many of these examples, we&rsquo;ll have a logical expression, and we&rsquo;ll set the result of it equal to a variable. Then, we can check the variable to see what the result of the expression was. We may also print the results of a logical expression directly.</p>
+<p>Note that a single equal sign (=) is for assignment, while a double equal sign (==) is for comparison.</p>
+<p>The ==in== operator checks to see if something is contained within a list of other things. For one example, we can use the in operator in the context of strings to see if a certain smaller string is contained within a larger string. Note, the empty string ==&quot;&quot;== is in all the strings.</p>
+<h3 id="boolean-operators">Boolean Operators</h3>
+<p>Operators like “and” and “or” that act on pairs of boolean (true or false) values, or that act on single boolean values, like “not”. They check the combination of multiple relational operators.</p>
+<ul>
+<li><strong>==And==:</strong> An operator that acts on <strong>two boolean</strong> (true or false) values and evaluates to “true” <strong>if and only if both are true</strong>.</li>
+<li><strong>==Or==:</strong> An operator that acts on <strong>two boolean</strong> (true or false) values and evaluates to “true” <strong>if and only if at least one is true</strong>.</li>
+<li><strong>==Not==:</strong> An operator that acts on <strong>one boolean</strong> (true or false) value and <strong>evaluates to the opposite value</strong> (false becomes true, true becomes false).</li>
+</ul>
+<p>Priority sequence: parentheses &gt; mathematical operators &gt; not &gt; and &gt; or</p>
+<blockquote>
+<p>Refer to <a href="https://docs.python.org/3/reference/expressions.html#operator-precedence" target="_blank" rel="noopener noreffer">Operator precedence</a></p>
+</blockquote>
+<h3 id="truth-tables">Truth Tables</h3>
+<p>Tables that map out the results of a statement in boolean logic (that is, using boolean operators) depending on the values of the individual variables.
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="./images/1634803606129.png"
+        data-srcset="./images/1634803606129.png, ./images/1634803606129.png 1.5x, ./images/1634803606129.png 2x"
+        data-sizes="auto"
+        alt="./images/1634803606129.png"
+        title="enter description here" /></p>
+<p>Properties of Boolean Operators:</p>
+<ul>
+<li>First, Boolean operators are <strong>commutative</strong>. What that means is it doesn&rsquo;t matter what order they come in. ==A and B=B and A==</li>
+<li>Logical expressions or logical operators are also <strong>distributive</strong>. ==A and (B or C)=(A and B) or (A and C)==</li>
+<li>==De Morgan&rsquo;s Law #03A9F4==: ==not (A and B)=not A or not B==; ==not (A or B)=not A and not B==.</li>
+</ul>
+<h3 id="extra-materials-2">Extra materials</h3>
+<blockquote>
+<p><a href="http://www.thehelloworldprogram.com/python/python-boolean-logic-not-as-scary-as-it-sounds/" target="_blank" rel="noopener noreffer">Python Boolean Logic: Not As Scary As It Sounds</a></p>
+</blockquote>
+<h2 id="chapter-24-mathematical-operators">Chapter 2.4: Mathematical Operators</h2>
+<h3 id="basics">Basics</h3>
+<p>Operators that mimic basic mathematical functions: 
+Addition <code>+</code>
+Subtraction <code>-</code>
+Multiplication <code>*</code>
+Division <code>/</code>
+Modulus <code>%</code>
+Assignment Operator <code>=</code></p>
+<p>Note that in Python, <strong>division in Python will automatically convert integers into a float/decimal number</strong>. The reason for that is that whenever we do addition, subtraction, or multiplication on integers, we&rsquo;re guaranteed to end up with an integer. However when we do division, we might end up with a decimal number. And it&rsquo;s probably worth noting that this actually sets Python apart from other languages as well. Some other languages will <strong>automatically round down</strong> when you round integers. <strong>But if there is a float anywhere in a mathematical expression, Python automatically converts the other type to a float, and the result will also be a float.</strong> Eg. the result of <code>1.5//2</code> is <code>0.0</code>.</p>
+<p>Besides, the Modulus Operation will only return the remainder having the same sign as the divisor. Eg. the result of <code>-8%3</code> is 1, the result of <code>8%-3</code> is -1, and the result of <code>-8%-3</code> is -2.</p>
+<p>Python specifically supplies two additional operators:</p>
+<ul>
+<li><strong>Floor division</strong>, represented by a double-slash (<code>\\</code>), which is division that <strong>rounds down</strong> to the next lowest integer (not round towards 0). For example, 5 // 2 would be 2, because 5 divided by 2 is 2.5, which is rounded down to the nearest integer, 2.</li>
+<li><strong>Exponentiation</strong>, represented by a double-asterisk (<code>**</code>), which raises the first number to the second number. For example, 5 ** 2 would be 25, because 5 raised to the 2nd power is 25.</li>
+</ul>
+<h3 id="self-assignment-and-incrementing">Self-Assignment and Incrementing</h3>
+<ul>
+<li><strong>Self-Assignment</strong> means assigning a variable to a value that is in part determined by the variable itself.</li>
+<li><strong>Increment:</strong> Repeatedly adding a constant, typically one, to a variable.</li>
+</ul>
+<blockquote>
+<p>Self-assignment reveals something very important about the assignment operator: Python (and most other programming languages) will <strong>evaluate everything on the right side of the assignment before attempting to assign the result to the variable on the left</strong>. That&rsquo;s why self-assignment works: Python initially replaces the variables with their values, so by the time we assign a new value to a variable, Python doesn&rsquo;t remember that the variable receiving a new value was used in the calculation.</p>
+</blockquote>
+<ul>
+<li><strong>Self-Assignment Shortcuts:</strong> <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>**=</code>, <code>/=</code>, <code>//=</code>, <code>%=</code><br>Sometimes these shortcuts even work for those strange non-mathematical applications of these mathematical operators. For example, we can use the shortcut <code>+=</code> to add something to an existing string.</li>
+</ul>
+<h3 id="extra-materials-3">Extra materials</h3>
+<blockquote>
+<p><a href="https://thehelloworldprogram.com/python/python-operators/" target="_blank" rel="noopener noreffer">Python Operators are Mathematical!</a></p>
+</blockquote>
+<h2 id="appendix-1-python-translation-guide">Appendix 1. Python Translation Guide</h2>
+<h3 id="print-statements-and-line-ending-behaviors">Print Statements and Line-Ending Behaviors</h3>
+<style>
+table th:first-of-type {
+    width: 10%;
+}
+table th:nth-of-type(2) {
+    width: 40%;
+}
+table th:nth-of-type(3) {
+    width: 50%;
+}
+</style>
+<table>
+<thead>
+<tr>
+<th><strong>Language</strong></th>
+<th><strong>Syntax</strong></th>
+<th><strong>Notes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python</td>
+<td>print(&ldquo;Here&rsquo;s a line of code&rdquo;)<br>print(&ldquo;Here&rsquo;s another one!&quot;)</td>
+<td>By default, print() adds a line break to the end of the printed text.</td>
+</tr>
+<tr>
+<td>Java</td>
+<td>System.out.println(&ldquo;Here&rsquo;s a line of code&rdquo;);<br>System.out.println(&ldquo;Here&rsquo;s another one!&quot;);</td>
+<td>Like Python&rsquo;s print(), Java&rsquo;s System.out.println() adds a line break after the printed text. In contrast, System.out.print() will print some text without creating a new line afterward.</td>
+</tr>
+<tr>
+<td>C</td>
+<td>printf(&ldquo;Here&rsquo;s a line of code&rdquo;);<br>printf(&ldquo;Here&rsquo;s another one!&quot;);</td>
+<td>In C, the printf() function does not add a line break after the printed text. To do that, you need to include &ldquo;\n&rdquo; inside the printed text itself, e.g. printf(&ldquo;New line please!\n&rdquo;).</td>
+</tr>
+<tr>
+<td>C++</td>
+<td>std::cout &laquo; &ldquo;Here&rsquo;s a line of code&rdquo;;<br>std::cout &laquo; &ldquo;Here&rsquo;s another one!&quot;;</td>
+<td>Like C, C++&lsquo;s cout will not add a new line after the printed text. To add one, we would need to write std:cout &laquo; &ldquo;New Line please!\n&rdquo;.</td>
+</tr>
+<tr>
+<td>C#</td>
+<td>Console.WriteLine(&ldquo;Here&rsquo;s a line of code&rdquo;);<br>Console.WriteLine(&ldquo;Here&rsquo;s another one!&quot;);</td>
+<td>C#&rsquo;s Console.WriteLine() function add a line break after the printed text. Like Java, C# also has a Console.Write() function that will write without starting a new line afterward.</td>
+</tr>
+<tr>
+<td>JavaScript</td>
+<td>console.log(&ldquo;Here&rsquo;s a line of code&rdquo;)<br>console.log(&ldquo;Here&rsquo;s another one!&quot;)</td>
+<td>By default, console.log() adds a line break to the end of the printed text.</td>
+</tr>
+<tr>
+<td>VB.NET</td>
+<td>Console.WriteLine(&ldquo;Here&rsquo;s a line of code&rdquo;)<br>Console.WriteLine(&ldquo;Here&rsquo;s another one!&quot;)</td>
+<td>C# and VB.NET use the same underlying library, so you&rsquo;ll find that oftentimes syntax like Console.WriteLine is shared between them.</td>
+</tr>
+<tr>
+<td>Matlab</td>
+<td>fprintf(&ldquo;Here&rsquo;s a line of code);<br>fprintf(&ldquo;Here&rsquo;s another one!&quot;);</td>
+<td>Like C, Matlab&rsquo;s fprintf will not add a new line after the printed text. To add one, we would need to write fprintf(&ldquo;New Line please!\n&rdquo;).</td>
+</tr>
+<tr>
+<td>Swift</td>
+<td>print(&ldquo;Here&rsquo;s a line of code&rdquo;)<br>print(&ldquo;Here&rsquo;s another one!&quot;)</td>
+<td>By default, print() adds a line break to the end of the printed text.</td>
+</tr>
+<tr>
+<td>Ruby</td>
+<td>puts &ldquo;Here&rsquo;s a line of code&rdquo;<br>puts &ldquo;Here&rsquo;s another one!&rdquo;</td>
+<td>By default, puts adds a line break to the end of the printed text.</td>
+</tr>
+</tbody>
+</table>
+<p><em>Scripting languages</em> (Python, JavaScript) <strong>generally</strong> <em>do not use a semi-colon to mark the ends of lines</em>. <strong>Most</strong> <em>compiled languages</em> (Java, C, C++, C#) <em>use semi-colons</em>. There are exceptions, though; Swift and VB.NET are a compiled languages that do not use semi-colons, while MatLab is a scripting language that does.</p>
+<h3 id="comment-syntax">Comment Syntax</h3>
+<p>Python&rsquo;s comment syntax is in the minority.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Language</strong></th>
+<th><strong>Syntax</strong></th>
+<th><strong>Notes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python</td>
+<td>#This is a comment in Python<br><br>#This is a<br>#multiline comment<br>#in Python</td>
+<td>Triple quotes can also be used in Python to create multi-line comments.</td>
+</tr>
+<tr>
+<td>Java</td>
+<td>//This is a comment in Java<br><br>/* <br> * This is a<br> * multi-line comment<br> * in Java<br> */</td>
+<td>The asterisks at the beginning of each line inside the multi-line comment are customary, but not required. Java, C++, JavaScript, and C# use the same syntax.</td>
+</tr>
+<tr>
+<td>C</td>
+<td>/* This is a comment in C*/ <br><br> /*  This is a<br> * multiline comment<br> * comment in C<br> */</td>
+<td>The asterisks at the beginning of each line inside the multi-line comment are customary, but not required. C does not have a dedicated single-line comment syntax.</td>
+</tr>
+<tr>
+<td>C++</td>
+<td>//This is a comment in C++<br><br>/*<br> * This is a<br> * multi-line comment<br> * in C++<br> */</td>
+<td>The asterisks at the beginning of each line inside the multi-line comment are customary, but not required. Java, C++, JavaScript, and C# use the same syntax.</td>
+</tr>
+<tr>
+<td>C#</td>
+<td>//This is a comment in C#<br><br>/*<br> * This is a<br> * multi-line comment<br> * in C#<br> */</td>
+<td>The asterisks at the beginning of each line inside the multi-line comment are customary, but not required. Java, C++, JavaScript, and C# use the same syntax.</td>
+</tr>
+<tr>
+<td>JavaScript</td>
+<td>//This is a comment in JavaScript<br><br>/* <br> * This is a<br> * multi-line comment<br> * in JavaScript<br> */</td>
+<td>The asterisks at the beginning of each line inside the multi-line comment are customary, but not required. Java, C++, JavaScript, and C# use the same syntax.</td>
+</tr>
+<tr>
+<td>VB.NET</td>
+<td>&lsquo;This is a comment in VB.NET<br><br>&lsquo;This is a<br>&lsquo;multiline comment<br>&lsquo;in VB.NET</td>
+<td>VB.NET has no special way of creating multi-line comments.</td>
+</tr>
+<tr>
+<td>Matlab</td>
+<td>%This is a comment in Matlab<br><br>%{<br>This is a<br>multiline comment<br>in Matlab<br>%}</td>
+<td></td>
+</tr>
+<tr>
+<td>Swift</td>
+<td>//This is a comment in Swift<br><br>/* <br> This is a<br> multi-line comment<br> in Swift<br>*/</td>
+<td></td>
+</tr>
+<tr>
+<td>Ruby</td>
+<td># This is a comment in Ruby<br><br>=begin<br>This is a<br>multiline comment<br>in Ruby<br>=end</td>
+<td>Ruby is weird.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="variable-declarations-and-assignments">Variable Declarations and Assignments</h3>
+<p>Note that in Python, we create a variable by assigning it an initial value. In other languages, it&rsquo;s possible to create a variable without assigning it any value.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Language</strong></th>
+<th><strong>Syntax</strong></th>
+<th><strong>Notes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python</td>
+<td>my_int = 5<br>my_str = &ldquo;Hello world!&rdquo;</td>
+<td>Python prefers snake_case for variable style.</td>
+</tr>
+<tr>
+<td>Java</td>
+<td>int myVar = 5;<br>string myStr = &ldquo;Hello world!&quot;;</td>
+<td>The first item in the variable declaration line (<code>int, string</code>, etc.) is the data type. The variable cannot change types once declared to be a certain type. Java prefers camelCase for variable names.</td>
+</tr>
+<tr>
+<td>C, C++, C#</td>
+<td>int myVar = 5;<br>string myStr = &ldquo;Hello world!&quot;;</td>
+<td>The first item in the variable declaration line (<code>int, string</code>, etc.) is the data type. The variable cannot change types once declared to be a certain type. C prefers camelCase for variable names.</td>
+</tr>
+<tr>
+<td>JavaScript</td>
+<td>var myVar = 5;<br>var myStr = &ldquo;Hello world!&quot;;</td>
+<td><code>var</code> is used whenever creating a new variable, but it does not represent a type. JavaScript prefers camelCase for variable names.</td>
+</tr>
+<tr>
+<td>VB.NET</td>
+<td>Dim MyVar As Integer = 5<br>Dim MyStr As String = &ldquo;Hello world!&rdquo;</td>
+<td>types (<code>As Integer, As String</code>) are optional but recommended in VB.NET. VB.NET prefers camelCase for variable names, but <strong>often capitalizes the first letter</strong>, too (e.g. <code>MyVar</code> instead of <code>myVar</code>).</td>
+</tr>
+<tr>
+<td>Matlab</td>
+<td>my_var = 5<br>my_str = &ldquo;Hello world!&rdquo;</td>
+<td>Matlab has few consistent variable name styles.</td>
+</tr>
+<tr>
+<td>Swift</td>
+<td>var myVar = 5<br>var myStr = &ldquo;Hello world!&rdquo;</td>
+<td>Swift prefers camelCase for variable names.</td>
+</tr>
+<tr>
+<td>Ruby</td>
+<td>my_var = 5<br>my_str = &ldquo;Hello world!&rdquo;</td>
+<td>Ruby prefers snake_case for variable names.</td>
+</tr>
+</tbody>
+</table>
+<p>Many languages (Java, C/C++/C#, VB.NET) are statically typed, meaning that once when you create a variable, you have to decide what its type will be. Afterward, it can never take a different type. Other languages (Python, Swift, Ruby, JavaScript) are dynamically typed, meaning that a variable&rsquo;s type comes from its value. If you change its value, the variable&rsquo;s type can change.</p>
+<h3 id="operators-1">Operators</h3>
+<p>The rules of logic are generally the same across all programming languages. Python&rsquo;s <a href="http://www.mathcs.emory.edu/~valerie/courses/fall10/155/resources/op_precedence.html" target="_blank" rel="noopener noreffer">operator precedence</a> is relatively universal, although there can be slight differences (for example, not all languages have slicing, subscription, or lambda expressions). The syntax used for various operators, however, can differ.</p>
+<h4 id="relational-operators-1">Relational Operators</h4>
+<p>Most relational operators are the same in all languages. These are the same in Python, Java, C, C++, C#, JavaScript, VB.NET, Matlab, Swift, and Ruby:</p>
+<ul>
+<li>a &lt; b: Less than</li>
+<li>a &lt;= b: Less than or equal to</li>
+<li>a == b: Equal to</li>
+<li>a &gt;= b: Greater than or equal to</li>
+<li>a &gt; b: Greater than</li>
+</ul>
+<p>If a and b are not the same type, JavaScript will automatically try to convert them to the same type before comparison. To avoid this conversion, you&rsquo;d use <code>===</code>.</p>
+<p>The languages differ a little bit more with the &lsquo;not equal to&rsquo; operator:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Language</strong></th>
+<th><strong>Syntax</strong></th>
+<th><strong>Notes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python, Java, C, C++, C#</td>
+<td>a <code>!=</code> b </td>
+<td></td>
+</tr>
+<tr>
+<td>JavaScript</td>
+<td>a <code>!=</code> b </td>
+<td>If a and b are not the same type, JavaScript will automatically try to convert them to the same type before comparison. To avoid this conversion, you&rsquo;d use <code>!==</code>.</td>
+</tr>
+<tr>
+<td>VB.NET</td>
+<td>a <code>&lt;&gt;</code> b</td>
+<td>Technically, the <code>&lt;&gt;</code> operator works in most other languages as well for <em>not equal to</em>, but <code>!=</code> is more common.</td>
+</tr>
+<tr>
+<td>Matlab</td>
+<td>a <code>~=</code> b</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="boolean-operators-1">Boolean Operators</h4>
+<p>The three boolean operators&ndash;and, or, not&ndash;are generally represented in one of three ways: with symbols, with double-symbols, or with plaintext words. Different languages also use slightly different capitalizations for booleans, so we&rsquo;ll use the language-appropriate ones here, too.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Language</strong></th>
+<th><strong>Syntax</strong></th>
+<th><strong>Notes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python</td>
+<td>True <code>and</code> False  #And<br>True <code>or</code> False   #Or<br><code>not</code> True        #Not</td>
+<td>You can also use <code>&amp;</code> (for and) and `</td>
+</tr>
+<tr>
+<td>Java</td>
+<td>true <code>&amp;&amp;</code> false   #And<br>true `</td>
+<td></td>
+</tr>
+<tr>
+<td>C</td>
+<td>1 <code>&amp;&amp;</code> 0   #And<br>1 `</td>
+<td></td>
+</tr>
+<tr>
+<td>C++, C#</td>
+<td>true <code>&amp;&amp;</code> false   #And<br>true `</td>
+<td></td>
+</tr>
+<tr>
+<td>JavaScript</td>
+<td>true <code>&amp;&amp;</code> false   #And<br>true `</td>
+<td></td>
+</tr>
+<tr>
+<td>VB.NET</td>
+<td>True <code>And</code> False  #And<br>True <code>Or</code> False   #Or<br><code>Not</code> True        #Not<br>True <code>Xor</code> False  #Exclusive-Or</td>
+<td>Following its style, VB.NET <strong>capitalizes</strong> both the boolean values and the logical operators. It also offers an <strong>exclusive-or</strong> operator. It also includes two additional operators, <strong>AndAlso</strong> and <strong>OrElse</strong>, which function like <code>&amp;&amp;</code> and `</td>
+</tr>
+<tr>
+<td>Matlab</td>
+<td>true <code>&amp;</code> false  #And<br>true `</td>
+<td><code> false   #Or&lt;br&gt;</code>~<code>true        #Not&lt;br&gt;true </code>xor` false  #Exclusive-Or</td>
+</tr>
+<tr>
+<td>Swift</td>
+<td>true <code>&amp;&amp;</code> false   #And<br>true `</td>
+<td></td>
+</tr>
+<tr>
+<td>Ruby</td>
+<td>true <code>and</code> false  #And<br>true <code>&amp;&amp;</code> false   #Also And<br>true <code>or</code> false   #Or<br>true `</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="mathematical-operators">Mathematical Operators</h4>
+<p>Most languages share the same mathematical operators: it&rsquo;s hard to get away from plus for addition, minus for subtraction, etc. There are some unique ones, though: floor division, modulus, and exponentiation may differ by language.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Language</strong></th>
+<th><strong>Syntax</strong></th>
+<th><strong>Notes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python</td>
+<td>a // b  #Floor Division<br>a ** b  #Exponentiation, a to the b<br>a % b   #Modulus</td>
+<td></td>
+</tr>
+<tr>
+<td>Java</td>
+<td>a / b   //See notes<br>a % b   //Modulus</td>
+<td>Java has no floor division operator, but it does not automatically convert to floating point numbers either. If you divide two integers, it will round down like floor division. If either number is a decimal number, the result will be the real quotient. Java has no exponent operator: instead it would use Math.pow(a, b).</td>
+</tr>
+<tr>
+<td>C, C++, C#</td>
+<td>a / b   /* See notes */<br>a % b   /* Modulus */</td>
+<td>C&rsquo;s (and its derivatives&rsquo;) floor division works like Java&rsquo;s: if the numbers are integers, it will perform floor division, but if not, it will return a decimal number. C has no exponent operator, and instead uses separate functions.</td>
+</tr>
+<tr>
+<td>JavaScript</td>
+<td>a % b   //Modulus</td>
+<td>JavaScript has neither a floor division operator nor an exponent operator. It uses separate functions for both.</td>
+</tr>
+<tr>
+<td>VB.NET</td>
+<td>a \ b   &lsquo;Floor division<br>a ^ b   &lsquo;Exponentiation, a to the b<br>a mod b &lsquo;Modulus</td>
+<td>VB.NET&rsquo;s operator for modulus is just the keyword mod.</td>
+</tr>
+<tr>
+<td>Matlab</td>
+<td>a .^ b  %Exponentiation, a to the b</td>
+<td>Matlab has no dedicated operators for floor division and modulus; it uses functions instead.</td>
+</tr>
+<tr>
+<td>Swift</td>
+<td>a % b   ///Modulus</td>
+<td>Swift has no dedicated exponentiation or floor division operator; it uses functions instead.</td>
+</tr>
+<tr>
+<td>Ruby</td>
+<td>a / b   #See notes<br>a ** b  #Exponentiation, a to the b<br>a % b   #Modulus</td>
+<td>Ruby&rsquo;s division operator works like C and Java: if the numbers are integers it performs floor division, otherwise it performs regular division.</td>
+</tr>
+</tbody>
+</table>
+<p>Most languages support self-assignment like in Python: a += 5, for example, will work in almost every language listed here. Some languages, like C++ and Java, also have a shorthand or adding or subtracting one: a++ will add one to a (same as a += 1), and a&ndash; will subtract one from a (same as a -= 1).</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2021-10-24&nbsp;<a class="git-hash" href="https://github.com/ryandoren/commit/3f067ec9d421f9b20fff0fd8294f28282ca51a64" target="_blank" title="commit by Ryan Doren(55754917&#43;ryandoren@users.noreply.github.com) 3f067ec9d421f9b20fff0fd8294f28282ca51a64: 修改文件: content/posts/Gatech CS1301xI.md">
+                                    <i class="fas fa-hashtag fa-fw"></i>3f067ec</a></span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/gatech-cs1301xi/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://ryandoren.github.io/gatech-cs1301xi/" data-title="Gatech CS1301xI" data-via="xxxx"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://ryandoren.github.io/gatech-cs1301xi/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://ryandoren.github.io/gatech-cs1301xi/" data-title="Gatech CS1301xI"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://ryandoren.github.io/gatech-cs1301xi/" data-title="Gatech CS1301xI"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://ryandoren.github.io/gatech-cs1301xi/" data-title="Gatech CS1301xI"><i class="fab fa-weibo fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/the-calling-of-saint-mathew/" class="prev" rel="prev" title="卡拉瓦乔《圣马太蒙召》"><i class="fas fa-angle-left fa-fw"></i>卡拉瓦乔《圣马太蒙召》</a>
+            <a href="/gatech-cs1301xii/" class="next" rel="next" title="Gatech CS1301xII">Gatech CS1301xII<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
+            </noscript><div id="gitalk" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://github.com/gitalk/gitalk"></a>Gitalk</a>.
+            </noscript><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript><div id="fb-root" class="comment"></div>
+            <div
+                class="fb-comments"
+                data-href="https://ryandoren.github.io/gatech-cs1301xi/"
+                data-width="100%"
+                data-numposts="10"
+            ></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://developers.facebook.com/docs/plugins/comments/"></a>Facebook</a>.
+            </noscript><div id="telegram-comments" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://comments.app/">Telegram Comments</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Ryan</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.6.2/dist/gitalk.min.css"><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.css"><script type="text/javascript" src="https://.disqus.com/embed.js" defer></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/gitalk@1.6.2/dist/gitalk.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script><script type="text/javascript" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v5.0&amp;appId=&amp;autoLogAppEvents=1" defer></script><script type="text/javascript" src="https://comments.app/js/widget.js?2" defer data-comments-app-website="" data-limit="5" data-colorful="1"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{"gitalk":{"admin":[""],"clientID":"","clientSecret":"","id":"2021-10-21T00:00:00Z","owner":"","repo":"","title":"Gatech CS1301xI"},"valine":{"appId":"QGzwQXOqs5JOhN4RGPOkR2mR-MdYXbMMI","appKey":"WBmoGyJtbqUswvfLh6L8iEBr","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":true,"highlight":true,"lang":"en","pageSize":10,"placeholder":"Your comment ...","recordIP":true,"serverURLs":"https://leancloud.hugoloveit.com","visitor":true}},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
