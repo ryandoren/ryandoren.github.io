@@ -99,13 +99,47 @@ The two common errors we'll encounter with functions are:
 **If a function does not otherwise return anything, it returns None**. You can imagine adding `return None` as the last line in any function. If no other return statement has already been run, then `return None` is run and None is returned. Remember, though, running a return statement terminates the function: as soon as one runs, the entire function ends no matter what.
 
 ### Positional & Keyword Parameters
-Positional parameters are called "positional" specifically because Python assumes the match-up between argument and parameter based on position. Keyword parameter is a special kind of optional parameter to which the program may choose to assign an argument during a function call, or may ignore. Typically, keyword parameters have a default value that is used if it is not overridden by a function call.
+Positional parameters/required parameters are called "positional" specifically because Python assumes the match-up between argument and parameter based on position. Keyword parameter/named parameter/optional parameter is a special kind of optional parameter to which the program may choose to assign an argument during a function call, or may ignore. Typically, keyword parameters have a default value that is used if it is not overridden by a function call.
 
 For positional parameters, Python assumes that arguments come in the order that parameters are defined in a function definition. For keyword parameters, we have to use the variable names, because Python can't assume anything based on the order of these parameters.
 
-> **Keyword (optional) parameters must go after all positional (required) parameters.** But the order of the keyward parameters themselves is not important.
+> **Keyword (optional) parameters must go after all positional (required) parameters.**
+> ```python
+> def f(pos1, pos2, pos_or_kwd, *, **, kwd1, kwd2):
+> ```
+>   But the order of the keyward parameters themselves is not important.
 
-
+> `*name` receives a dictionary containing some keyword arguments, `*name` receives a tuple containing some positional arguments. > Eg., if we define a function like this:
+> ```python
+> def cheeseshop(kind, *arguments, **keywords):
+>     print("-- Do you have any", kind, "?")
+>     print("-- I'm sorry, we're all out of", kind)
+>     for arg in arguments:
+>         print(arg)
+>     print("-" * 40)
+>     for kw in keywords:
+>     print(kw, ":", keywords[kw])
+> ```
+> It could be called like this:
+> ```python
+> cheeseshop("Limburger", "It's very runny, sir.",
+>            "It's really very, VERY runny, sir.",
+>            shopkeeper="Michael Palin",
+>            client="John Cleese",
+>            sketch="Cheese Shop Sketch")
+> ```
+> and of course it would print:
+> ```
+> -- Do you have any Limburger ?
+> -- I'm sorry, we're all out of Limburger
+> It's very runny, sir.
+> It's really very, VERY runny, sir.
+> ----------------------------------------
+> shopkeeper : Michael Palin
+> client : John Cleese
+> sketch : Cheese Shop Sketch
+> ```
+> Note that the order in which the keyword arguments are printed is guaranteed to match the order in which they were provided in the function call.
 
 ### Extra Materials
 🐍[Python's official documentation on functions](https://docs.python.org/3/tutorial/controlflow.html#more-on-defining-functions)
