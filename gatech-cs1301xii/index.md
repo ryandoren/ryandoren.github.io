@@ -230,14 +230,16 @@ print("Done!")
 ```
 The except block with parentheses will run if any of the errors given in that parentheses were encountered. Sinece the error type `Exception` catches any kind of error, this code will never crash.
 
-### Else block
+### Else Block
 To use an else with error handling, we add it after the except blocks. The else block basically says, if no error was encountered, then run the code inside this block.
 
 > 🤔—Why we need an else block? Why not just include this code down here after the try and catch blocks?
 > 🤖—**Style** is everything!
 
-> In many languages, it's normal to have huge blocks of code inside of a try block, even though the expected errors might only occur in one or two places. The else block lets us restrict this try block to only those lines of code that might actually generate an error. The else block will only run, if no errors were encountered. So we can trust that everything inside the try block happened successfully before running the things inside that else block.
+> In many languages, it's normal to have huge blocks of code inside of a try block, even though the expected errors might only occur in one or two places. **The else block lets us restrict this try block to only those lines of code that might actually generate an error**. The else block will only run, if no errors were encountered. So we can trust that everything inside the try block happened successfully before running the things inside that else block.
 
+#### Example: File Input
+This code below opens a file and then prints every line of text that was found inside that file. And then at the end, it closes the file again. Here, we're trying to catch an IOError, an input/output error, inside this try block. It only happends when the code tries to read from a file (eg., in function `open()`).
 
 ## Appendix 1. Python Translation Guide
 <style>
