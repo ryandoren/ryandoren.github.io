@@ -244,7 +244,22 @@ To use an else with error handling, we add it after the except blocks. The else 
 > In many languages, it's normal to have huge blocks of code inside of a try block, even though the expected errors might only occur in one or two places. **The else block lets us restrict this try block to only those lines of code that might actually generate an error**. The else block will only run, if no errors were encountered. So we can trust that everything inside the try block happened successfully before running the things inside that else block.
 
 #### Example: File Input
-This code below opens a file and then prints every line of text that was found inside that file. And then at the end, it closes the file again. Here, we're trying to catch an IOError, an input/output error, inside this try block. It only happends when the code tries to read from a file (eg., in function `open()`).
+This code below opens a file and then prints every line of text that was found inside that file. And then at the end, it closes the file again. Here, we're trying to catch an IOError, an input/output error, inside this try block. It only happends when the code tries to read from a file that does not exist (eg., in function `open()`).
+```python
+try:
+    input_file = open("InputFile.txt", mode = "r")  
+except IOError as error:    
+    print("An input error occurred!")
+else:
+    for line in input_file:  
+        print(line) 
+    input_file.close()   
+```
+`open(filename)`: Takes as input a filename and returns the file. Once returned, the file can be read line-by-line or written to, depending on the mode. Mode is set with the keyword parameter “mode”, “r” for read, “w” for write, “a” for append.
+
+`filename.close()`: A method that closes the file of which it’s a member.
+
+Some languages actually require file input and output to be enclosed in try/catch blocks because of how frequently they generate errors. Python, however, has a more laissez-faire attitude and will let us mess up if we want to.
 
 ## Appendix 1. Python Translation Guide
 <style>
