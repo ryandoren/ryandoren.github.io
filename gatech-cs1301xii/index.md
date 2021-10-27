@@ -98,13 +98,13 @@ Positional parameters/required parameters are called "positional" specifically b
 
 For positional parameters, Python assumes that arguments come in the order that parameters are defined in a function definition. For keyword parameters, we have to use the variable names, because Python can't assume anything based on the order of these parameters.
 
-> **Keyword (optional) parameters must go after all positional (required) parameters.**
+> **Keyword (optional) parameters must go after all positional (required) parameters.** But the order of the keyward parameters themselves is not important.
 > ```python
-> def f(pos1, pos2, pos_or_kwd, *, **, kwd1, kwd2):
+> def f(pos1, pos2, /, pos_or_kwd, *, kwd1, kwd2):
 > ```
->   But the order of the keyward parameters themselves is not important.
+>   where `/` and `*` are **optional**. If used, these symbols indicate the kind of parameter by how the arguments may be passed to the function: parameters before the `/` are positional-only; parameters between `/` and `*` are positional-or-keyword; parameters after the `*` are keyword-only.
 
-> `*name` receives a dictionary containing some keyword arguments, `*name` receives a tuple containing some positional arguments. > Eg., if we define a function like this:
+> `*name` receives a tuple containing some positional arguments; `**name` receives a dictionary containing some keyword arguments. > Eg., if we define a function like this:
 > ```python
 > def cheeseshop(kind, *arguments, **keywords):
 >     print("-- Do you have any", kind, "?")
@@ -135,6 +135,23 @@ For positional parameters, Python assumes that arguments come in the order that 
 > sketch : Cheese Shop Sketch
 > ```
 > Note that the order in which the keyword arguments are printed is guaranteed to match the order in which they were provided in the function call.
+
+> Besides, in a function call, lists or tuples can deliver positinal arguments with the `*`-operator; and dictionaries can deliver keyword arguments with the `**`-operator:
+> ```python
+> >>> args = [3, 6]
+> >>> list(range(*args))  # call with arguments unpacked from a list
+> [3, 4, 5]
+> ```
+> ```python
+> >>>def parrot(voltage, state='a stiff', action='voom'):
+> ...    print("-- This parrot wouldn't", action, end=' ')
+> ...    print("if you put", voltage, "volts through it.", end=' ')
+> ...    print("E's", state, "!")
+> ...
+> >>>d = {"voltage": "four million", "state": "bleedin' demised", "action": "VOOM"}
+> >>>parrot(**d)  # call with arguments unpacked from a dictionary
+> -- This parrot wouldn't VOOM if you put four million volts through it. E's bleedin' demised !
+> ```
 
 ### Extra Materials
 🐍[Python's official documentation on functions](https://docs.python.org/3/tutorial/controlflow.html#more-on-defining-functions)
@@ -172,9 +189,10 @@ try:
 		myInt = int(myString)
 		print(myInt)
 except:
-		pass
+		print("Can't convert: myString not a number.")
 print("Done!")
 ```
+Every Try block in Python must has a corresponding Except block (catch block). In terms of natural language, we can think of this as saying try to do this except if something goes wrong, in which case, do this. Or in other words, try this except if this error happens.
 
 
 ## Appendix 1. Python Translation Guide
