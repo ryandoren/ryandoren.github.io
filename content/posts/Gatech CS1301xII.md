@@ -178,26 +178,70 @@ Sometimes, instead of preventing errors, we want to use the fact that an error a
 > The finally block contains code that should be executed after the code in the try block whether it succeeded or not. If the code in the try block ran without errors, then execution will jump to the finally block when the try block is done. If the code in the try block did hit an error execution, will in most languages, run what is in the catch block next and then will always run the code in the finally block. The finally block is typically used for code that **absolutely needs to run**, even if other things have gone wrong.
 
 > 🐍Python is not a language that allows a try without catching something, So we need to include both the try and the catch.
-> 🐍In Python, there is also an **Else** block for exception handling: it runs some code only if no errors arose in the Try block.
+> 🐍In Python, there is also an **Else** block for exception handling: it runs some code only if no errors arose in the Try block. Most languages have a **Finally** statement, but **Else** (at least as it applies to error handling) is relatively unique to Python.
 
-### Examples
+### Error Catcher: try-except blocks
 Three kinds of errors are specifically generated:
 - `my_int = int(my_string)`: This line generates a ValueError if `my_string` does not hold a string that can be read as an integer. For example, if `my_string` was "5" or "1885", no error would arise; if `my_string` was "Taco." or "Boggle.", an error would arise.
 - `print("String #" + 1 + ": " + my_string)`: This line generates a TypeError because we cannot use the + operator to put together strings (like "`String #`") and integers (like `1`).
 - `print(1 / 0)`: This line generates a ZeroDivisionError error because we cannot divide by zero.
 
-#### `my_int = int(my_string)`
 ```python
 myString = "This string is not a number!"
 try:
-		print("Converting myString to int...")
+		print("Converting myString to int...")  # ValueError
+		print("String #" + 1 + ": " + myString)  # TypeError
+		print(1/0)  # ZeroDivisionError
 		myInt = int(myString)
 		print(myInt)
-except:
-		print("Can't convert: myString not a number.")
+except
+		pass
 print("Done!")
 ```
+The try block attempts to run the code inside of it, but if it fails, the try block tells the execution to jump to the catch (except) block. The code would then execute whatever
+is inside that except block. Then, once these two control structures-- this try and this except-- are done, execution continues as normal.
+
 Every Try block in Python must has a corresponding Except block (catch block). In terms of natural language, we can think of this as saying try to do this except if something goes wrong, in which case, do this. Or in other words, try this except if this error happens.
+
+The keyword `as` in Python basically takes whatever the error was and assigns the message associated with that specific error to the variable name after the keyword `as`.
+```python
+except ValueError as error_message:
+		print(error_message)
+```
+Notice that no matter how many errors occurs in the try block, as soon as the code encounters the first, it jumps over the rest of the try block and starts to check the except blocks.
+
+Three kinds of except block could be used to handle **speciific errors**:
+#### Catch a specific error & customized message
+```python
+except ValueError as error:  # if a ValueError was encountered
+		print("Can't convert; myString is not a number")
+```
+#### Catch a specific error & pre-determined message
+`except` block is similar to `if` block
+```python
+except ValueError as error:  # if a ValueError was encountered
+		print(error)
+except TypeError as error:  # if a TypeError was encountered
+		print(error)
+print("Done!")
+```
+#### Catch multiple specific errors 
+```python
+except (TypeEror, ValueError) as error:
+		print("A ValueError or TypeError occurred.")
+except Exception as error:  # Catch any type of error
+		print("Some other type of error occurred.")
+print("Done!")
+```
+The except block with parentheses will run if any of the errors given in that parentheses were encountered. Sinece the error type `Exception` catches any kind of error, this code will never crash.
+
+### Else block
+To use an else with error handling, we add it after the except blocks. The else block basically says, if no error was encountered, then run the code inside this block.
+
+> 🤔—Why we need an else block? Why not just include this code down here after the try and catch blocks?
+> 🤖—**Style** is everything!
+
+> In many languages, it's normal to have huge blocks of code inside of a try block, even though the expected errors might only occur in one or two places. The else block lets us restrict this try block to only those lines of code that might actually generate an error. The else block will only run, if no errors were encountered. So we can trust that everything inside the try block happened successfully before running the things inside that else block.
 
 
 ## Appendix 1. Python Translation Guide
