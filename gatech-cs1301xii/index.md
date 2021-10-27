@@ -256,6 +256,9 @@ else:
 
 Some languages actually require file input and output to be enclosed in try/catch blocks because of how frequently they generate errors. Python, however, has a more laissez-faire attitude and will let us mess up if we want to.
 
+### Finally Block
+
+
 ## Appendix 1. Python Translation Guide
 <style>
 table th:first-of-type {
