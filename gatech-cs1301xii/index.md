@@ -91,7 +91,7 @@ The two common errors we'll encounter with functions are:
 - **Scope Error:** We tried to use a variable in a function that was created outside the function, or similarly, we tried to use a variable outside a function that was created inside the function.  The scope of any variable created inside a function ends when the function ends.
 
 ### Functions Returning None
-**If a function does not otherwise return anything, it returns None**. You can imagine adding `return None` as the last line in any function. If no other return statement has already been run, then `return None` is run and None is returned. Remember, though, running a return statement terminates the function: as soon as one runs, the entire function ends no matter what.
+When a function runs a line with a return statement, it immediately ends the function and sends the result back. But **if a function does not otherwise return anything, it returns None**. You can imagine adding `return None` as the last line in any function. If no other return statement has already been run, then `return None` is run and None is returned. Remember, though, running a return statement terminates the function: as soon as one runs, the entire function ends no matter what.
 
 ### Positional & Keyword Parameters
 Positional parameters/required parameters are called "positional" specifically because Python assumes the match-up between argument and parameter based on position. Keyword parameter/named parameter/optional parameter is a special kind of optional parameter to which the program may choose to assign an argument during a function call, or may ignore. Typically, keyword parameters have a default value that is used if it is not overridden by a function call.
@@ -198,7 +198,7 @@ is inside that except block. Then, once these two control structures-- this try 
 
 Every Try block in Python must has a corresponding Except block (catch block). In terms of natural language, we can think of this as saying try to do this except if something goes wrong, in which case, do this. Or in other words, try this except if this error happens.
 
-The keyword `as` in Python basically takes whatever the error was and assigns the message associated with that specific error to the variable name after the keyword `as`.
+The keyword `as` in Python basically takes whatever the error was and assigns the **message** associated with that specific error to the variable name after the keyword `as`.
 ```python
 except ValueError as error_message:
 		print(error_message)
@@ -257,7 +257,42 @@ else:
 Some languages actually require file input and output to be enclosed in try/catch blocks because of how frequently they generate errors. Python, however, has a more laissez-faire attitude and will let us mess up if we want to.
 
 ### Finally Block
+If an error is caught, there is no difference whether a command is inside a finally block or outside of the try-except-else blocks. However, **once there's a finally block, the code inside the finally block will still run, even if the type of error was not caught**. The code would still crash anyway if an uncaught error arose, but we can get some output first.
 
+### Nested Try-Catch-Else-Finally
+**For-loop inside try block**: any error would terminate the process.
+```python
+try:
+    input_file = open("InputFile.txt", mode = "r")
+except IOError as error:
+    print("An error occurred reading the file!")
+else:  
+    try:
+        for line in input_file:  
+            print(int(line)) 
+    except ValueError as error:    
+        print("A value error occurred!")
+    else:
+        print("No errors occurred converting the file!")
+    finally:
+        input_file.close()  
+```
+**Try block inside for-loop**: when an error occurs, the code skips the current iterationand jumps to the next one, so the file reading process continues.
+```python
+try:
+    input_file = open("NumberAndLetterFile.txt", mode = "r")  
+    try:
+        for line in input_file:  
+            print(int(line)) 
+    except ValueError as error:    
+        print("A value error occurred!")
+    else:
+        print("No errors occurred converting the file!")
+    finally:
+        input_file.close()  
+except IOError as error:
+    print("An error occurred reading the file!")
+```
 
 ## Appendix 1. Python Translation Guide
 <style>
