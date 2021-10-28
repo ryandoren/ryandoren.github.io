@@ -49,7 +49,7 @@ Fine.
 ### For Loops
 - **Loop Control Variable**: A variable whose value is the number of times a loop has run. It is used to check if the loop should keep running (e.g. if it has run as many times as it’s supposed to). **We actually can't change the variable within the loop**. Nothing we do to that variable inside the body of this loop will be carried over to the next time that loop runs. No matter what has been done with the variable within the body of the loop, it will take the next value in the list.
   
-Actually, in Python, every for loop is a for-each loop. It runs the indented code for each item in the list given. In a for loop, `range()` is used so that you know exactly how many iterations have occured, but you have to manually look up each item by its index. In a for-each loop, a pre-defined list is used, you iterate directly over the items, but you have to use other ways to get the index `(list.index(value))`.
+Actually, in Python, every for loop is a for-each loop. It runs the indented code for each item in the list given. In a for loop, `range()` is used so that you know exactly how many iterations have occurred, but you have to manually look up each item by its index. In a for-each loop, a pre-defined list is used, you iterate directly over the items, but you have to use other ways to get the index `(list.index(value))`.
 
 > 📕When we're just printing, we'll sometimes just use **commas** instead, and then we don't have to worry about actually converting an integer into a string. But `input` is a different function. It's not the `print` function, and it doesn't know how to put together variables the same way as our `print` function does. So, here, if we want to use a variable that holds an integer in the prompt that we give to our user, we have to **explicitly convert it to a string**.
 
@@ -87,7 +87,7 @@ Although we can't do a do-while loop in Python, we can create our initial variab
   > Parameters are like variables, and arguments are like values.
 
 ### Define a Function
-Note that when Python runs the code, it doesn't initially run the function body. **The header of the function definition loads into the computer's memory the knowledge that there exists a function defined on that line.** The body of the function isn't run until it's called from somewhere else in the code. And at that time execution will jump to the begining line of the function body.
+Note that when Python runs the code, it doesn't initially run the function body. **The header of the function definition loads into the computer's memory the knowledge that there exists a function defined on that line.** The body of the function isn't run until it's called from somewhere else in the code. And at that time execution will jump to the beginning line of the function body.
 
 > 🤖Define a function: Hey, there exists a function called ××××. Just keep that in mind for now.
 > 🤖Call a function: Hey, remember the function that I told you about earlier? Go ahead and run it now.
@@ -206,16 +206,16 @@ print("Done!")
 The try block attempts to run the code inside of it, but if it fails, the try block tells the execution to jump to the catch (except) block. The code would then execute whatever
 is inside that except block. Then, once these two control structures-- this try and this except-- are done, execution continues as normal.
 
-Every Try block in Python must has a corresponding Except block (catch block). In terms of natural language, we can think of this as saying try to do this except if something goes wrong, in which case, do this. Or in other words, try this except if this error happens.
+Every Try block in Python must have a corresponding Except block (catch block). In terms of natural language, we can think of this as saying try to do this except if something goes wrong, in which case, do this. Or in other words, try this except if this error happens.
 
 The keyword `as` in Python basically takes whatever the error was and assigns the **message** associated with that specific error to the variable name after the keyword `as`.
 ```python
 except ValueError as error_message:
 		print(error_message)
 ```
-Notice that no matter how many errors occurs in the try block, as soon as the code encounters the first, it jumps over the rest of the try block and starts to check the except blocks.
+Notice that no matter how many errors occur in the try block, as soon as the code encounters the first, it jumps over the rest of the try block and starts to check the except blocks.
 
-Three kinds of except block could be used to handle **speciific errors**:
+Three kinds of except block could be used to handle **specific errors**:
 #### Catch a specific error & customized message
 ```python
 except ValueError as error:  # if a ValueError was encountered
@@ -238,7 +238,7 @@ except Exception as error:  # Catch any type of error
 		print("Some other type of error occurred.")
 print("Done!")
 ```
-The except block with parentheses will run if any of the errors given in that parentheses were encountered. Sinece the error type `Exception` catches any kind of error, this code will never crash.
+The except block with parentheses will run if any of the errors given in that parentheses were encountered. Since the error type `Exception` catches any kind of error, this code will never crash.
 
 ### Else Block
 To use an else with error handling, we add it after the except blocks. The else block basically says, if no error was encountered, then run the code inside this block.
@@ -249,7 +249,7 @@ To use an else with error handling, we add it after the except blocks. The else 
 > In many languages, it's normal to have huge blocks of code inside of a try block, even though the expected errors might only occur in one or two places. **The else block lets us restrict this try block to only those lines of code that might actually generate an error**. The else block will only run, if no errors were encountered. So we can trust that everything inside the try block happened successfully before running the things inside that else block.
 
 #### Example: File Input
-This code below opens a file and then prints every line of text that was found inside that file. And then at the end, it closes the file again. Here, we're trying to catch an IOError, an input/output error, inside this try block. It only happends when the code tries to read from a file that does not exist (eg., in function `open()`).
+This code below opens a file and then prints every line of text that was found inside that file. And then at the end, it closes the file again. Here, we're trying to catch an IOError, an input/output error, inside this try block. It only happens when the code tries to read from a file that does not exist (eg., in function `open()`).
 ```python
 try:
     input_file = open("InputFile.txt", mode = "r")  
@@ -287,7 +287,7 @@ else:
     finally:
         input_file.close()  
 ```
-**Try block inside for-loop**: when an error occurs, the code skips the current iterationand jumps to the next one, so the file reading process continues.
+**Try block inside for-loop**: when an error occurs, the code skips the current iteration and jumps to the next one, so the file reading process continues.
 ```python
 try:
     input_file = open("NumberAndLetterFile.txt", mode = "r")  
@@ -321,7 +321,7 @@ table th:nth-of-type(3) {
 </style>
 
 ### Indicating Control Structures
-Python is actually considered somewhat odd in its formal use of indentation to indicate control structures. Most language indent by convention, but have more formal mechanisms to indicate the scope of a control structure.
+Python is actually considered somewhat odd in its formal use of indentation to indicate control structures. Most languages are indented by convention, but have more formal mechanisms to indicate the scope of a control structure.
 
 Most languages use brackets `{ }` to indicate the scope of a control structure. The lines inside the control structure are typically indented for readability, but it would be possible to remove all indentation and still have working code in these languages.
 
