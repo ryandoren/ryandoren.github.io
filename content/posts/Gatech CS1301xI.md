@@ -52,7 +52,7 @@ draft: false
 - **Program**: A collection of lines of code that serve one or more overall functions.
 - **Input** (files, user input, websites) 👉 code 👉 **output** (files, screen, sound)
 - **Compile**: To translate human-readable computer code into low-level commands the computer can execute. In the programming flow, this functions as reading over code and looking for errors. (proofreading by compilers)
-- **Run/Excution**: Running some code and having it actually perform its operations.
+- **Run/Execution**: Running some code and having it actually perform its operations.
 > Compiling just makes sure what we told the program to do makes sense; running checks whether the program actually do what we want it to do.
 
 Compilation could potentially be skipped.
@@ -78,7 +78,7 @@ Categorization of languages:
 > C++ and C# are two successors to the programming language C, which is a low-level language used a lot in developing operating systems, video games, and other highly complex programs. C++ adds a few more features to C, while C# is more of a high-level version. Java, C, C++, and C# are static, compiled languages; Python is the top dynamic, scripting language on this list.
 
 ### Console vs. GUI
-- Graphical user interfaces (GUIs): An output medium that uses more than just text, like forms, buttons, tabs, and more. Eg. a web brower, a word processor like Microsoft Word, a smartphone app, a modern operating system like Windows or Mac OS.
+- Graphical user interfaces (GUIs): An output medium that uses more than just text, like forms, buttons, tabs, and more. Eg. a web browser, a word processor like Microsoft Word, a smartphone app, a modern operating system like Windows or Mac OS.
 - Console: An output medium for a program to show exclusively text-based output. Eg. command line interfaces like the terminal on a Mac or the command window on a PC.
 
 ### Fundations, language, and domain 
@@ -87,7 +87,7 @@ Categorization of languages:
 - You then *apply* them to a particular **domain**.
 
 ### Python
-- Python is a **high-level, platform independent** programming language. Python abstracts further away from the inner workings of the computer than lower-level languages (like memory management), thus is easier to use.
+- Python is a **high-level, platform-independent** programming language. Python abstracts further away from the inner workings of the computer than lower-level languages (like memory management), thus is easier to use.
 - Python is **dynamic & interpreted**, which means that Python will *run our code line by line* when we ask it to without trying to compile it first. That opens up the possibility of using Python in a command line interface where we write and run lines of code one at a time. Whereas in the **scripting mode**, we write a bunch of code, then *run it all at once*.
 - The main takeaway of Python being an interpreted language is that we might not be aware of errors until we actually try to run those lines.
  ### Extra materials
@@ -109,7 +109,7 @@ Categorization of languages:
 
 ### Types of errors
 - **Compilation Errors:** Errors that occur during the computer’s read through of the code. Compilation errors in writing programs are often similar to grammatical errors in writing essays.
-  - *sytax errors*: code that doesn't work with the current programming language.
+  - *syntax errors*: code that doesn't work with the current programming language.
   - *name errors*: code that tries to use something that doesn't exist.
   - *type errors*: code that matches different types together, which doesn't make sense. Depending on the language, some of these might turn up as runtime errors instead.
 - **Runtime errors:** Errors that arise when trying to *actually execute* the code. Languages that don't have compilation will only have runtime errors. Even languages that do require compilation can have runtime errors because we can't anticipate every error just by looking at the code.
@@ -119,10 +119,10 @@ Categorization of languages:
 
 ### Types of errors in Python
 #### NameError
-An error that usually occurs when you use a variable name that doesn't yet exist. When you encounter these, *check first for misspellings*; you very likely might have misspelled a variable name, causing the computer to see it as a completely different variable! If that doesn't work, try to *find where you first defined the variable*.
+An error usually occurs when you use a variable name that doesn't yet exist. When you encounter these, *check first for misspellings*; you very likely might have misspelled a variable name, causing the computer to see it as a completely different variable! If that doesn't work, try to *find where you first defined the variable*.
 
 #### TypeError
-An error that occurs when we try to perform an operation on an object that doesn't make sense with the operation, like calculating the length of a number or to print an omelette.
+An error occurs when we try to perform an operation on an object that doesn't make sense with the operation, like calculating the length of a number or printing an omelet.
 > The function cannot deal with the object.
 
 #### AttributeError
@@ -130,7 +130,7 @@ An error occurs when we ask for information *about* a variable that doesn't ma
 > The object does not have the attribute.
 
 #### SyntaxError
-An error that occurs when the line of code we've written can't be read by the computer because it doesn't match the computer's expectation for the programming language's grammar.
+An error occurs when the line of code we've written can't be read by the computer because it doesn't match the computer's expectation for the programming language's grammar.
 
 > Usually, unclosed parentheses will cause a SyntaxError on the **next** line of *code*. But depending on your code, unclosed parentheses can actually manifest as other kinds of errors. For example, if it was actually the _last_ line that had a missing close-parentheses, you would still get a syntax error, but it would read "**unexpected EOF while parsing**". EOF stands for "end of file" and "parsing" is a fancy word for "reading", so "unexpected EOF while parsing" means that Python encountered the end of the file before it expected to. So, **when you get an error on a line that looks okay, learn to quickly check for unclosed parentheses on the line of *code* before**.
 
@@ -139,8 +139,8 @@ Check the [debugging guide](https://www.cc.gatech.edu/classes/AY2016/cs1301_spri
 
 ### Basic debugging
 - **Print Debugging:** A form of debugging where print statements are added *throughout the code* to check how the program is flowing.
-- **Scope Debugging:** A form of debugging where print statements are added to check the status of the *variables in the program at different  stages* to see how they are changing. (Debugging *small sections/scopes* of a program to make sure things have run correctly so far.)
-- **Rubber Duck Debugging:** A form of debugging where the programmer explains the logic, goals, and operations to an inanimate listener to methodically step through the code. The point is when faced with a hard to solve problem, try explaining it from scratch. Oftentimes, you'll find the solution.
+- **Scope Debugging:** A form of debugging where print statements are added to check the status of the *variables in the program at different stages* to see how they are changing. (Debugging *small sections/scopes* of a program to make sure things have run correctly so far.)
+- **Rubber Duck Debugging:** A form of debugging where the programmer explains the logic, goals, and operations to an inanimate listener to methodically step through the code. The point is when faced with a hard-to-solve problem, try explaining it from scratch. Oftentimes, you'll find the solution.
 
 > Rubber duck debugging was introduced by the 1999 book *The Pragmatic Programmer*, and it refers to a programmer who carried around a rubber duck to which to explain problems. By explaining things to the duck, the programmer often found the solution.
 
@@ -156,7 +156,7 @@ Check the [debugging guide](https://www.cc.gatech.edu/classes/AY2016/cs1301_spri
   - **Method**: A function that is *part of a class* in object-oriented programming (but colloquially, often used interchangeably with function).
 ### Programming paradigms
   - **Procedural Programming:** where procedural code is the one that directly instructs a device on how to finish a task in logical steps.
-  - **Object-Oriented Programming:** A programming paradigm where programmers define custom data types that have custom methods embedded within them. A concept or an abstraction is created before excuting some other commands.
+  - **Object-Oriented Programming:** A programming paradigm where programmers define custom data types that have custom methods embedded within them. A concept or an abstraction is created before executing some other commands.
   - **Event-Driven Programming:** A type of programming where the program generally awaits and reacts to events rather than running code linearly.
 ### Operators
 - **Operators:** Specific, simple functions that act on primitive data types, like integers and strings.
@@ -194,7 +194,7 @@ Some languages, though, allow us to use operators in creative ways. In Python, w
 
     Two common conventions are used if the name has more than one word: camel case and underscores. Each programming language has its own accepted style. **In Python, you should use underscores. In Java and C#, you would use camel case**. Other languages have their own conventions.
   - **Camel case** mushes the words together and capitalizes each word, like this: thisIsMyVariableName. Note that *the first letter of a variable's name is usually in lowercase, while the first letter of a function's name is often in uppercase*.
-  - **Underscores** just replaces spaces with underscores, usually keeping the variable name in all-lower case, like this: this_is_my_variable_name.
+  - **Underscores** just replaces spaces with underscores, usually keeping the variable name in all-lowercase, like: this_is_my_variable_name.
 
 ### Data types
 Integer, real number, character, string, boolean...self-defined types...
@@ -218,15 +218,15 @@ When we use **comma instead of plus sign**, it tells the print statement to inte
 
 You'll receive a ==ValueError== whenever you try to do a type conversion, like float or integer, on a value that can't actually be converted to that type.
 
-- ==int(variable)==: Takes as input some variable (usually a string) and attempts to convert it to an integer, returning the integer if successful or raising a ValueError if unsuccessful. This function will work if variable is a string made up **only of digits and, optionally, the negative sign**. Note that conversion from float to int by `int()` just wipe out the decical part. If you want to convert float to int type value in Python with a round figure. You have to use the `round()` function of Python inside the `int()` function.
+- ==int(variable)==: Takes as input some variable (usually a string) and attempts to convert it to an integer, returning the integer if successful or raising a ValueError if unsuccessful. This function will work if the variable is a string made up **only of digits and, optionally, the negative sign**. Note that conversion from float to int by `int()` just wiping out the decimal part. If you want to convert float to int type value in Python with a round figure. You have to use the `round()` function of Python inside the `int()` function.
 
-- ==bool(variable)==: Takes as input some variable (usually a string) and attempts to convert it to a boolean, returning the boolean value if successful or raising a ValueError if unsuccessful. **Generally, this function returns False if variable is 0 or an empty string, True if variable is anything else**.
+- ==bool(variable)==: Takes as input some variable (usually a string) and attempts to convert it to a boolean, returning the boolean value if successful or raising a ValueError if unsuccessful. **Generally, this function returns False if the variable is 0 or an empty string, True if the variable is anything else**.
 
-- ==float(variable)==: Takes as input some variable (usually a string/integer) and attempts to convert it to a float, returning the float if successful or raising a ValueError if unsuccessful. This function will work if variable is a string made up **only of digits and, optionally, a negative sign and a decimal point**.
+- ==float(variable)==: Takes as input some variable (usually a string/integer) and attempts to convert it to a float, returning the float if successful or raising a ValueError if unsuccessful. This function will work if the variable is a string made up **only of digits and, optionally, a negative sign and a decimal point**.
 
 The computer interprets anything that the user enters by the ==input(variable)== function as **a string** of characters because it has no way of knowing that it's a number. So, type conversion is needed under certain circumstances. Usually, `int(input(variable))` is used if we want to use the user input as a number.
 
-### Reserved key words in Python
+### Reserved keywords in Python
 
 ``` python 
 import keyword
@@ -351,7 +351,7 @@ table th:nth-of-type(3) {
 | Swift | print("Here's a line of code")<br>print("Here's another one!") | By default, print() adds a line break to the end of the printed text. |
 | Ruby |  puts "Here's a line of code"<br>puts "Here's another one!" | By default, puts adds a line break to the end of the printed text. |
 
-*Scripting languages* (Python, JavaScript) **generally** *do not use a semi-colon to mark the ends of lines*. **Most** *compiled languages* (Java, C, C++, C#) *use semi-colons*. There are exceptions, though; Swift and VB.NET are a compiled languages that do not use semi-colons, while MatLab is a scripting language that does.
+*Scripting languages* (Python, JavaScript) **generally** *do not use a semi-colon to mark the ends of lines*. **Most** *compiled languages* (Java, C, C++, C#) *use semi-colons*. There are exceptions, though; Swift and VB.NET are compiled languages that do not use semi-colons, while MatLab is a scripting language that does.
 
 ### Comment Syntax
 Python's comment syntax is in the minority.
