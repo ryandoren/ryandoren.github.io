@@ -298,6 +298,9 @@ try:
 except IOError as error:
     print("An error occurred reading the file!")
 ```
+### Extra Materials
+> The official [Python error documentation](https://docs.python.org/3.6/tutorial/errors.html)
+> The Python Wiki's [guide to handling exceptions](https://wiki.python.org/moin/HandlingExceptions)
 
 ## Appendix 1. Python Translation Guide
 <style>
