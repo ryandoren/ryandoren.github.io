@@ -70,6 +70,11 @@ Although we can't do a do-while loop in Python, we can create our initial variab
 > 🐍[Beginning Python Programming for Aspiring Web Developers](http://www.openbookproject.net/books/bpp4awd/ch04.html)
 > 🐍[Hands-on Python 3 Tutorial](http://anh.cs.luc.edu/python/hands-on/3.1/handsonHtml/index.html)
 
+ ![Catch all exceptions in a webpage🐱](./images/1635429173819.png)
+ 
+ ![🤔"except" catches more than just "except Exception as e? In Python 3, NOT REALLY!🙅‍"](./images/1635429356197.png)
+
+
 ## Chapter 3.4: Functions
 - **Function Call**: A place where a function is actually used in some code.
 - **Function Definition:** A segment of code that creates a function, including its name, parameters, and code, to be used by other portions of a program.
