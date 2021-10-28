@@ -7,3 +7,4 @@ draft: false
 ---
 # Unit 4
 ## Chapter 4.1: Data Structures
+Data structures are approaches to organizing abstract data types, such that the data can be accessed efficiently.
