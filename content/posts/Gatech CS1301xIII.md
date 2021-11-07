@@ -50,5 +50,23 @@ There are two important takeaways here:
 
 2. As with our function calls, we see that integers and lists behave differently. An integer will not keep its data up to date if the variable to which it is set changes, but that's not the case for a list. Again, this comes down to mutability.
 
-Python has something called immutable data types, data types whose values cannot be changed.
+### Mutability in Python
+- **Mutability:** Whether or not a variable can have its value changed after being declared.
+
+- **Mutable Variable:** A variable whose value can change after it has been declared.
+
+- **Immutable Variable:** A variable whose value cannot change after it has been declared.
+  
+**Python passes all arguments by reference**. But for all practical purposes, some data types seem to be passed by value. The reason they acted this way is because they were **immutable**.
+
+Let's talk about the way Python actually does this. We have a variable called `myInteger`, and we assign it the value `1`, we're telling it to *point to a place in memory that stores the number 1*. When we use `myInteger`, we're actually looking up its value. Now when we say `myInteger` equals `2`, what Python does is kind of weird. It *grabs a new area of memory,* puts the number 2 there, and tells `myInteger` to *point out that new location instead of the old location*. What that means is that the old value is still there in memory. The value didn't change. We didn't change the number `1`. Instead, we just created a new place in memory and told `myInteger` to point to that instead. **Changing the value of myInteger changes the spot in memory that it points to, but it doesn't actually change the value stored in the original spot of memory**. Note that a function can't change what value the variable used in the main program is pointing to. It can only change the value its own copy of that variable is pointing to. (Because the scope of variables defined in the function were until the function ended.)
+
+ The computer has to have some way of identifying the location in memory that stores the data. Multiple names or different names can point to the same place in memory, so the place memory really needs **a fundamental unchangeable name**. This is called a **memory address**. It tells the computer where to find a particular value for a particular variable name.
+```python
+print(id(variable/value))  # Printing Memory Addresses
+```
+
+> - Immutable data types: integers, float, strings (Changing them changes the address where they can be found, seem like passing by value.)
+> - Mutable data types: lists (Changing them **does not** change the address where they can be found. note that it's **changing/modifying** them, **not reassigning** them to a whole new value.)
+> - Immutable variables pointing to the same value have the same id; however, for mutable variables, even they point to the same value, they have different ids, enless they are connected by `=`
 
