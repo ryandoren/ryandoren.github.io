@@ -88,3 +88,5 @@ Methods are functions accessed through dot notation; they are functions containe
 - **Character:** A single letter, number, symbol, or special character.
 - **Unicode:** A computing industry standard that sets what hexadecimal codes correspond to what characters, so that text appears consistent across platforms. (263A should be a simple smiley emoji 😊)
 - **Hexadecimal:** A short-hand expression of the ones and zeroes that comprise computer data, comprised of 16 characters, 0 through 9 and A through F.
+- **Special Characters:** Tab, Newline characters (carriage returns & line feed)
+- **Newline Character:** A Unicode character, either LF (line feed) or CR (carriage return), that is rendered as the beginning of a new line of text. (Mac uses LF to represent its newline while Windows uses both LF and CR.)
