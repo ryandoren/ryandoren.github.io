@@ -90,3 +90,6 @@ Methods are functions accessed through dot notation; they are functions containe
 - **Hexadecimal:** A short-hand expression of the ones and zeroes that comprise computer data, comprised of 16 characters, 0 through 9 and A through F.
 - **Special Characters:** Tab, Newline characters (carriage returns & line feed)
 - **Newline Character:** A Unicode character, either LF (line feed) or CR (carriage return), that is rendered as the beginning of a new line of text. (Mac uses LF to represent its newline while Windows uses both LF and CR.)
+
+### Declare Strings
+Python won't terminate the string until it encounters the same mark that you used to start the string `'`,`'''`,`"`.
