@@ -70,3 +70,21 @@ print(id(variable/value))  # Printing Memory Addresses
 > - Mutable data types: lists (Changing them **does not** change the address where they can be found. note that it's **changing/modifying** them, **not reassigning** them to a whole new value.)
 > - Immutable variables pointing to the same value have the same id; however, for mutable variables, even they point to the same value, they have different ids, enless they are connected by `=`
 
+### Functions vs. Methods 
+Methods are functions accessed through dot notation; they are functions contained within data types. Just like functions, methods can return certain types of data as well.
+```python 
+ str.isdigit()  # a Boolean method, check to see if a string represents a number, returns either a true or a false value
+ 
+ str.isupper()  # a Boolean method, check to see if all the letters in the string are uppercase, returns either a true or a false value
+```
+
+### External Materials
+🐍[Basic Data Structures](https://runestone.academy/runestone/books/published/pythonds/BasicDS/toctree.html)
+🐍[Python Data Structures](https://python.swaroopch.com/data_structures.html)
+
+## Chapter 4.2: Strings
+### Basic Concepts
+- **String:** A data structure that holds a list of characters.
+- **Character:** A single letter, number, symbol, or special character.
+- **Unicode:** A computing industry standard that sets what hexadecimal codes correspond to what characters, so that text appears consistent across platforms. (263A should be a simple smiley emoji 😊)
+- **Hexadecimal:** A short-hand expression of the ones and zeroes that comprise computer data, comprised of 16 characters, 0 through 9 and A through F.
