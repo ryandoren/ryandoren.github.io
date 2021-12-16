@@ -242,7 +242,7 @@ In a linked list, on the other hand, it only has one item that points to a place
 E.g., going on a scavenger hunt where each clue features a puzzle you must solve to find the next clue.
 
 ### External Materials
-🐍 [Lists, from *How to Think Like a Computer Scientist*](http://interactivepython.org/courselib/static/thinkcspy/Lists/toctree.html)
+🐍 [Lists from *How to Think Like a Computer Scientist*](http://interactivepython.org/courselib/static/thinkcspy/Lists/toctree.html)
 🐍[Python Lists from *Google for Education*](https://developers.google.com/edu/python/lists)
 🐍[Python List Examples – Insert, Append, Length, Index, Remove, Pop from *The Geek Stuff*](https://www.thegeekstuff.com/2013/06/python-list/?utm_source=feedly)
 🐍[18 Most Common Python List Questions](https://www.datacamp.com/community/tutorials/18-most-common-python-list-questions-learn-python#gs.=H0VpEs)
