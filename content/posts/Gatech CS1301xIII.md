@@ -138,6 +138,7 @@ Notice that string methods **do not** actually change the value of the string. T
 
 ### External Materials
 🐍 [Strings, from How to Think Like a Computer Scientist](https://runestone.academy/runestone/books/published/thinkcspy/Strings/toctree.html)
+🐍[Python Strings from *Google for Education*](https://developers.google.com/edu/python/strings)
 
 ## Chapter 4.3: Lists
 ### Basics
