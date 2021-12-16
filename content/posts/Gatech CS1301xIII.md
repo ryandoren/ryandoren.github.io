@@ -137,8 +137,11 @@ If we just care about how many times the targeted substring has appeared in the 
 Notice that string methods **do not** actually change the value of the string. They just return what would be the value if that operation was applied. To actually save it, we would have to define antoher string and assign the return value of the string method to that newly defined string.
 
 ### External Materials
-🐍 [Strings, from How to Think Like a Computer Scientist](https://runestone.academy/runestone/books/published/thinkcspy/Strings/toctree.html)
+🐍 [Strings from *How to Think Like a Computer Scientist*](https://runestone.academy/runestone/books/published/thinkcspy/Strings/toctree.html)
 🐍[Python Strings from *Google for Education*](https://developers.google.com/edu/python/strings)
+
+> - A string literal can span multiple lines, but there must be a backslash \ at the end of each line to escape the newline. String literals inside triple quotes, """ or ''', can span multiple lines of text.
+> - Enclose the whole expression in an outer set of parenthesis -- then the expression is allowed to span multiple lines.
 
 ## Chapter 4.3: Lists
 ### Basics
@@ -204,6 +207,10 @@ list.pop([index=-1])  # removes the last item (by default) of the list and retur
 list.index(value)  # finds the index of a certain value.
 
 list.count(value)  # counts how many times a certain value appears.
+
+list.copy()  # returns a shallow copy of the list. Equivalent to a[:].
+
+list.clear()  # removes all items from the list. Equivalent to del a[:].
 ```
 
 > It's important to note that **calling the method actually changes the value of the list**. Remember, when we called methods on strings they didn't change the value of the string. That's because lists are mutable, and strings are immutable.
@@ -219,6 +226,8 @@ Generally, though, there are a couple conventions we follow to decide whether to
 
 3. **Lists are used for alike data types** by convention because we tend to *execute the same body of code* for each item in the list. Tuples are more often used to represent information that's unpacked into unique variables, those have qualitatively different meanings. And so you're not going to just run some code on every item in a tuple. For that same reason, it's more normal for **tuples to have different data types** within them because we're not generally expecting to be able to iterate over a tuple in the same way.
 
+> If you’re defining a constant set of values and all you’re going to do with it is iterate through it, use a tuple instead of a list. It will be faster than working with lists and also safer, as the tuples contain “write-protect” data.
+
 ### Stacks: LIFO Structures
 “Last-In-First-Out” (LIFO) paradigm.
 
@@ -226,12 +235,22 @@ Generally, though, there are a couple conventions we follow to decide whether to
 2. We can only access it by removing it from the list.
 
 E.g., putting dishes in the sink one on top of the other as they get dirty, then washing them when the sink gets full.
+```python
+stack=[value1, value2, value3]
+stack.append(value4)
+stack.pop()
+```
 
 ### Queues: FIFO Structures
 “First-In-First-Out” (FIFO) paradigm.
 
 1. We can only access the *least recently-added* (oldest) item on the list;
 2. We can only access it by removing it from the list.
+```python
+queue=[value1, value2, value3]
+queue.append(value4)
+queue.pop(0)
+```
 
 ### Linked List
 A list-like structure where the **location** of each item in the list is contained in the previous item in the list.
@@ -248,4 +267,16 @@ E.g., going on a scavenger hunt where each clue features a puzzle you must solve
 🐍[Python List Examples – Insert, Append, Length, Index, Remove, Pop from *The Geek Stuff*](https://www.thegeekstuff.com/2013/06/python-list/?utm_source=feedly)
 🐍[18 Most Common Python List Questions](https://www.datacamp.com/community/tutorials/18-most-common-python-list-questions-learn-python#gs.=H0VpEs)
 
-## Chapter 4.4: File Input and Output
+> - Note that, as you’re working with hashable items, checking membership (testing whether a certain element is part of your sequence) will go faster with sets than with lists.
+
+| Hashable | Non-Hashable |
+| --- | --- |
+| Floats | Dictionaries |
+| Integers | Sets |
+| Tuples | Lists |
+| Strings |   |
+| `frozenset()` |   |
+
+> - Tip: by just passing a colon : into the double brackests [ ], you will just copy the list!
+
+## Chapter 4.5: File Input and Output
