@@ -119,3 +119,19 @@ while currentLocation >= 0:
 ```
 If we just care about how many times the targeted substring has appeared in the given string, we can use the **count method**. The count method will count the number of times the string in parentheses occurs inside the string calling count.
 `myString.count(findString, [start], [end])`
+
+### Other Useful String Methods
+
+> 🐍[String Methods at Python.org](https://docs.python.org/3.7/library/stdtypes.html#string-methods)
+- `string.split([separator])` The split method divides the string calling it into several substrings based on the separator character and returns to a string list. The default separator is space. If we use **period** as the separator, every sentence except the first will start with an empty space. Second, there will be an empty string at the end, because **Python sees the period at the end of the string, and at that point, it closes off the previous string and starts a new one.** It doesn't know that it's not going to find anything in that new one. And so we end up with an extra empty string at the end of our list. The solution is to use **period space** `', '` as the separator.
+- `string.capitalize()` capitalizes the string
+- `string.lower()` all-lowercase version
+- `string.upper()` all-uppercase version
+- `string.title()` capitalizes any character found after a space
+- `string.strip([character])` strips out any whitespace before or after the string. We could also supply an argument to strip, to strip out a different character. But if we don't, it assumes to strip out spaces.
+- `string.replace(string1, string2)` replaces string1 with string2
+- `string.join(list)` uses the string calling the join method to concatenate each item from the list of strings
+> Split and join are basically reverses of each other.
+
+Notice that string methods **do not** actually change the value of the string. They just return what would be the value if that operation was applied. To actually save it, we would have to define antoher string and assign the return value of the string method to that newly defined string.
+
