@@ -246,3 +246,5 @@ E.g., going on a scavenger hunt where each clue features a puzzle you must solve
 🐍[Python Lists from *Google for Education*](https://developers.google.com/edu/python/lists)
 🐍[Python List Examples – Insert, Append, Length, Index, Remove, Pop from *The Geek Stuff*](https://www.thegeekstuff.com/2013/06/python-list/?utm_source=feedly)
 🐍[18 Most Common Python List Questions](https://www.datacamp.com/community/tutorials/18-most-common-python-list-questions-learn-python#gs.=H0VpEs)
+
+## Chapter 4.4: File Input and Output
