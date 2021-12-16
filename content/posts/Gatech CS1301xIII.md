@@ -211,5 +211,18 @@ Lists are mutable. That means if we pass a list to a function or method and chan
 
 ### Lists vs. Tuples
 Generally, though, there are a couple conventions we follow to decide whether to use lists or tuples:
+
 1. We often use tuples when we're definitely dealing with a pre-determined number of items. We use lists when the ability to add or remove from the list would actually be useful and relevant.
-2. We usually use tuples if they're qualitatively different. We use lists when the individual things on the list are qualitatively similar. Lists are used for alike data types by convention. 
+
+2. We usually use lists when the individual things on the list are qualitatively similar. We use tuples if they're qualitatively different. 
+
+3. **Lists are used for alike data types** by convention because we tend to *execute the same body of code* for each item in the list. Tuples are more often used to represent information that's unpacked into unique variables, those have qualitatively different meanings. And so you're not going to just run some code on every item in a tuple. For that same reason, it's more normal for **tuples to have different data types** within them because we're not generally expecting to be able to iterate over a tuple in the same way.
+
+### Stacks
+LIFO: last in, first out.
+The last item added is the first item removed.
+
+1. We can only add new data to the top. 
+2. The only data we can access is the data currently on the top.
+
+E.g., add an urgent task on the to-do list
