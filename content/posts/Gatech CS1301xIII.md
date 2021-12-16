@@ -108,4 +108,4 @@ s = '''123
 
 ### String Searching
 The `in` operator can be used with strings to check if a substring is part of a string.
-The find method `find(text, [start], [end])` is a member of the string type, and it takes as input the substring we want to find. It returns **the first index** where that substring was found or -1 if it wasn't found anywhere.
+The find method `find(text, [start], [end])` is a member of the string type, and it takes as input the substring we want to find. It returns **the first index** where that substring was found or -1 if it wasn't found anywhere. We can use **a while loop** to get all the indexes that the targeted substring has appeared (update the current location in the loop).
