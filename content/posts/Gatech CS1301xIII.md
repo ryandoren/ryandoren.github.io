@@ -178,27 +178,34 @@ def function(args):
 Tuples can be nested. You can have a tuple of tuples. How to access an individual value inside of a nested tuple: use two sets of brackets. `tuple[num1][num2]` The first one specifies which tuple we want and the second one specifies which value from that tuple we want.
 
 ### Lists in Python
+> 🐍[Documentation on lists from Python.org](https://docs.python.org/3.7/tutorial/datastructures.html).
+
 Everything we've seen in the past with both strings and tuples can also be used for lists. The only real difference is that whereas we define a string with quotation marks and a tuple with parentheses, we define a list with brackets. (access, slice, unpacking, function return, nested...)
 
 What differentiates lists is that they're **mutable**. That means we can change their values. We can add values to them, we can remove values from them, we can change the current value of certain values in the list. We can reorder them.
 
-`list.sort()` A method inside the list data type and sorts the values according to some internal logic. For integers it just sorts from the lowest to the highest (ascending). 
+#### List Methods
+```python
+list.sort()  # A method inside the list data type and sorts the values according to some internal logic. For integers it just sorts from the lowest to the highest (ascending). 
 
-`list.reverse()` reverses the current order of the list, not necessarily the sorted order of the list.
+list.reverse()  # reverses the current order of the list, not necessarily the sorted order of the list.
 
-`list1.extend(list2)` takes the values of list2 and puts them
+list1.extend(list2)  # takes the values of list2 and puts them
 at the end of list1.
 
-`list.insert(location, value)` inserts an item at a certain place in the list.
+list.insert(location, value)  # inserts an item at a certain place in the list.
 
-`list.remove(value)` removes a certain value.
+list.remove(value)  # removes a certain value.
 
-`del list[]` deletes items by location in the list.
+del list[]  # deletes items by location in the list.
 
-`list.pop([index=-1])` removes the last item (by default) of the list and returns it, index is optional.
+list.pop([index=-1])  # removes the last item (by default) of the list and returns it, index is optional.
 
-`list.index(value)` finds the index of a certain value.
+list.index(value)  # finds the index of a certain value.
 
-`list.count(value)` counts how many times a certain value appears.
+list.count(value)  # counts how many times a certain value appears.
+```
 
 > It's important to note that **calling the method actually changes the value of the list**. Remember, when we called methods on strings they didn't change the value of the string. That's because lists are mutable, and strings are immutable.
+
+#### List and Iteration
