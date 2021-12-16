@@ -104,5 +104,8 @@ s = '''123
 
 ### String Concatenation and Slicing
 - Concatenation: use plus operator.
-- Sliceing: remember that string is a kind of list.
+- Sliceing: Remember that string is a kind of list, so we can use `string[start:end]`[start, end) to slice strings (a positive number counts from the beginning, a negative number counts from the end.). Remember also, strings are an immutable type. That means we can't modify their values. **We can only use [ ] to access individual characters but not modify them**.
 
+### String Searching
+The `in` operator can be used with strings to check if a substring is part of a string.
+The find method `find(text, [start], [end])` is a member of the string type, and it takes as input the substring we want to find. It returns **the first index** where that substring was found or -1 if it wasn't found anywhere.
