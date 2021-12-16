@@ -108,7 +108,8 @@ s = '''123
 
 ### String Searching
 The `in` operator can be used with strings to check if a substring is part of a string.
-The **find method** `string.find(text, [start], [end])` is a member of the string type, and it takes as input the substring we want to find. It returns **the first index** where that substring was found or -1 if it wasn't found anywhere. We can use **a while loop** to get all the indexes that the targeted substring has appeared.
+
+The **find method** `string.find(text, [start], [end])` is a member of the string type, and it takes as input the substring we want to find. It returns **the first index** where that substring was found or -1 if it wasn't found anywhere. We can use **a while loop** to get all the indices that the targeted substring has appeared.
 ```python
 myString = "ABCDEEDGHYRCDELKCDEJNCECDEGGHEDCDEPJ"
 findString = "CED"
@@ -140,10 +141,17 @@ Notice that string methods **do not** actually change the value of the string. T
 
 ## Chapter 4.3: Lists
 ### Basics
-**List-like Structures:** Also referred to as sequences and collections, a data structure that holds multiple individual values gathered together under one variable name, accessed via indices.It would encompass other data structures like dictionaries and maps.
+- **List-like Structures:** Also referred to as sequences and collections, a data structure that holds multiple individual values gathered together under one variable name, accessed via indices. It would encompass other data structures like dictionaries and maps.
+- **Homogeneity:** A property of lists determining whether they can accept multiple types of variables. A homogenous list can only accept one type of variable; a nonhomogenous or heterogenous list can accept multiple types.
 
 Nearly every programming language has some concept of a list, but the terminology and the specific details differ significantly. **One major way different languages differ in their implementations of lists is mutability.** Mutability of a list involces: 
 1) whether the values of the list can be changed
 2) whether the size of the list can be changed
 
 Some list implementations will allow us to append new items to the end, while others require you to state in advance how many items can fit in the list. Generally, the latter is more common for lower level languages like C where we manage memory more deliberately.
+
+**Another major way list-like structures may differ is whether they accept multiple data types**. This is called **homogeneity and lists**. In some list implementations, every item in a list must be the same type. Other languages don't have this restriction.
+
+> A **list** is a data structure that contains multiple values **accessed via an ordered numerical index**. This is in contrast to **dictionaries and hash tables and other data structures**. They can also contain multiple values, but they can be **accessed via non-numeric indices**.
+
+List-like structures can go by various different names like *lists, arrays, tuples, vectors, tables, and more*. Oftentimes, *array* is used to refer to a more primitive structure that *only supports changing the existing values*, whereas *list* refers to more complex data structures that *support sorting and inserting and other operations*. *Tuples* are, most often, *immutable*.
