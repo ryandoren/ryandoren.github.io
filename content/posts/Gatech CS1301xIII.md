@@ -155,3 +155,14 @@ Some list implementations will allow us to append new items to the end, while ot
 > A **list** is a data structure that contains multiple values **accessed via an ordered numerical index**. This is in contrast to **dictionaries and hash tables and other data structures**. They can also contain multiple values, but they can be **accessed via non-numeric indices**.
 
 List-like structures can go by various different names like *lists, arrays, tuples, vectors, tables, and more*. Oftentimes, *array* is used to refer to a more primitive structure that *only supports changing the existing values*, whereas *list* refers to more complex data structures that *support sorting and inserting and other operations*. *Tuples* are, most often, *immutable*.
+
+### Tuples in Python
+>🐍 [Documentation on tuples from Python.org.](https://docs.python.org/3/tutorial/datastructures.html#tuples-and-sequences)
+- **Tuple:** An immutable form of a list-like structure in Python.
+- **Lists:** A mutable form of a list-like structure in Python.
+- 
+Declare a tuple: `tuple = (value1, value2, value3)`
+
+Tuples can have multiple data types within them. This follows Python's general procedure of being what we call **loosely typed**. Python never really cares about what data types you're using until you try to do something that you can't do, like multiplying a string by a float, or printing the length of an integer.
+
+Tuples can be accessed and sliced as other list-like data structures. However, they also have a fancy little syntax for **unpacking**: `(variable1, variable2, variable3) = tuple` What this does is it one by one assigns the values of the tuple to the different variables contained on the right side of this assignment statement.
