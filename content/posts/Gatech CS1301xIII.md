@@ -184,7 +184,6 @@ Everything we've seen in the past with both strings and tuples can also be used 
 
 What differentiates lists is that they're **mutable**. That means we can change their values. We can add values to them, we can remove values from them, we can change the current value of certain values in the list. We can reorder them.
 
-#### List Methods
 ```python
 list.sort()  # A method inside the list data type and sorts the values according to some internal logic. For integers it just sorts from the lowest to the highest (ascending). 
 
@@ -208,4 +207,9 @@ list.count(value)  # counts how many times a certain value appears.
 
 > It's important to note that **calling the method actually changes the value of the list**. Remember, when we called methods on strings they didn't change the value of the string. That's because lists are mutable, and strings are immutable.
 
-#### List and Iteration
+Lists are mutable. That means if we pass a list to a function or method and change the values of the list, those changes will persist out to our main program. So when dealing with lists, or any other mutable data type, we have to be careful to understand that all modifications we make to the list will persist.
+
+### Lists vs. Tuples
+Generally, though, there are a couple conventions we follow to decide whether to use lists or tuples:
+1. We often use tuples when we're definitely dealing with a pre-determined number of items. We use lists when the ability to add or remove from the list would actually be useful and relevant.
+2. We usually use tuples if they're qualitatively different. We use lists when the individual things on the list are qualitatively similar. Lists are used for alike data types by convention. 
