@@ -73,9 +73,9 @@ print(id(variable/value))  # Printing Memory Addresses
 ### Functions vs. Methods 
 Methods are functions accessed through dot notation; they are functions contained within data types. Just like functions, methods can return certain types of data as well.
 ```python 
- str.isdigit()  # a Boolean method, check to see if a string represents a number, returns either a true or a false value
+str.isdigit()  # a Boolean method, check to see if a string represents a number, returns either a true or a false value
  
- str.isupper()  # a Boolean method, check to see if all the letters in the string are uppercase, returns either a true or a false value
+str.isupper()  # a Boolean method, check to see if all the letters in the string are uppercase, returns either a true or a false value
 ```
 
 ### External Materials
@@ -115,8 +115,8 @@ myString = "ABCDEEDGHYRCDELKCDEJNCECDEGGHEDCDEPJ"
 findString = "CED"
 currentLocation = 0
 while currentLocation >= 0:
-		print(findString, "found at", currentLocation)
-		currentLocation = myString.find(findString, currentLocation+len(findString))
+	print(findString, "found at", currentLocation)
+	currentLocation = myString.find(findString, currentLocation+len(findString))
 ```
 If we just care about how many times the targeted substring has appeared in the given string, we can use the **count method**. The count method will count the number of times the string in parentheses occurs inside the string calling count.
 `myString.count(findString, [start], [end])`
@@ -158,11 +158,21 @@ List-like structures can go by various different names like *lists, arrays, tupl
 
 ### Tuples in Python
 >🐍 [Documentation on tuples from Python.org.](https://docs.python.org/3/tutorial/datastructures.html#tuples-and-sequences)
-- **Tuple:** An immutable form of a list-like structure in Python.
+- **Tuple:** An immutable form of a list-like structure in Python. Like strings, we can't add values to the end of a tuple and we can't change the current values of anything inside the tuple or sort them.
 - **Lists:** A mutable form of a list-like structure in Python.
-- 
+
 Declare a tuple: `tuple = (value1, value2, value3)`
 
 Tuples can have multiple data types within them. This follows Python's general procedure of being what we call **loosely typed**. Python never really cares about what data types you're using until you try to do something that you can't do, like multiplying a string by a float, or printing the length of an integer.
 
 Tuples can be accessed and sliced as other list-like data structures. However, they also have a fancy little syntax for **unpacking**: `(variable1, variable2, variable3) = tuple` What this does is it one by one assigns the values of the tuple to the different variables contained on the right side of this assignment statement.
+
+The most usefulness of tuples may be functions. Generally functions can only return one variable or one value. But since tuples can pack multiple values into just one, they in some way let us return multiple values  out of a function: 
+```python
+def function(args):
+	function body
+	return (value1, value2, value3)  # return a tuple allows a function to return multiple values
+	
+(variable1, variable2, variable3) = function(args)  # assignment using tuple unpacking
+```
+Tuples can be nested. You can have a tuple of tuples.
