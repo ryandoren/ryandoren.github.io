@@ -108,7 +108,7 @@ s = '''123
 
 ### String Searching
 The `in` operator can be used with strings to check if a substring is part of a string.
-The find method `find(text, [start], [end])` is a member of the string type, and it takes as input the substring we want to find. It returns **the first index** where that substring was found or -1 if it wasn't found anywhere. We can use **a while loop** to get all the indexes that the targeted substring has appeared.
+The **find method** `string.find(text, [start], [end])` is a member of the string type, and it takes as input the substring we want to find. It returns **the first index** where that substring was found or -1 if it wasn't found anywhere. We can use **a while loop** to get all the indexes that the targeted substring has appeared.
 ```python
 myString = "ABCDEEDGHYRCDELKCDEJNCECDEGGHEDCDEPJ"
 findString = "CED"
@@ -116,5 +116,6 @@ currentLocation = 0
 while currentLocation >= 0:
 		print(findString, "found at", currentLocation)
 		currentLocation = myString.find(findString, currentLocation+len(findString))
-
 ```
+If we just care about how many times the targeted substring has appeared in the given string, we can use the **count method**. The count method will count the number of times the string in parentheses occurs inside the string calling count.
+`myString.count(findString, [start], [end])`
