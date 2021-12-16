@@ -218,11 +218,31 @@ Generally, though, there are a couple conventions we follow to decide whether to
 
 3. **Lists are used for alike data types** by convention because we tend to *execute the same body of code* for each item in the list. Tuples are more often used to represent information that's unpacked into unique variables, those have qualitatively different meanings. And so you're not going to just run some code on every item in a tuple. For that same reason, it's more normal for **tuples to have different data types** within them because we're not generally expecting to be able to iterate over a tuple in the same way.
 
-### Stacks
-LIFO: last in, first out.
-The last item added is the first item removed.
+### Stacks: LIFO Structures
+“Last-In-First-Out” (LIFO) paradigm.
 
-1. We can only add new data to the top. 
-2. The only data we can access is the data currently on the top.
+1. We can only access the *most recently-added* (newest) item on the list;
+2. We can only access it by removing it from the list.
 
-E.g., add an urgent task on the to-do list
+E.g., putting dishes in the sink one on top of the other as they get dirty, then washing them when the sink gets full.
+
+### Queues: FIFO Structures
+“First-In-First-Out” (FIFO) paradigm.
+
+1. We can only access the *least recently-added* (oldest) item on the list;
+2. We can only access it by removing it from the list.
+
+### Linked List
+A list-like structure where the **location** of each item in the list is contained in the previous item in the list.
+
+In a list, each spot tends to be a reference to a particular spot in memory that might be **completely disconnected** to the other ones. In effect, each spot in the list is more like an individual variable name that **could point to anywhere in memory**.
+
+In a linked list, on the other hand, it only has one item that points to a place in memory. The first one. What would make it unique is that instead of the second spot pointing to the second address, it would be data contained in the first spot that point to the second address. Each value of the list contains the location of the next value of the list.
+
+E.g., going on a scavenger hunt where each clue features a puzzle you must solve to find the next clue.
+
+### External Materials
+🐍 [Lists, from How to Think Like a Computer Scientist](http://interactivepython.org/courselib/static/thinkcspy/Lists/toctree.html)
+🐍[Google for Education](https://developers.google.com/edu/python/lists)
+🐍[The Geek Stuff](https://www.thegeekstuff.com/2013/06/python-list/?utm_source=feedly)
+🐍[18 Most Common Python List Questions](https://www.datacamp.com/community/tutorials/18-most-common-python-list-questions-learn-python#gs.=H0VpEs)
