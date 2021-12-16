@@ -135,3 +135,15 @@ If we just care about how many times the targeted substring has appeared in the 
 
 Notice that string methods **do not** actually change the value of the string. They just return what would be the value if that operation was applied. To actually save it, we would have to define antoher string and assign the return value of the string method to that newly defined string.
 
+### External Materials
+🐍 [Strings, from How to Think Like a Computer Scientist](https://runestone.academy/runestone/books/published/thinkcspy/Strings/toctree.html)
+
+## Chapter 4.3: Lists
+### Basics
+**List-like Structures:** Also referred to as sequences and collections, a data structure that holds multiple individual values gathered together under one variable name, accessed via indices.It would encompass other data structures like dictionaries and maps.
+
+Nearly every programming language has some concept of a list, but the terminology and the specific details differ significantly. **One major way different languages differ in their implementations of lists is mutability.** Mutability of a list involces: 
+1) whether the values of the list can be changed
+2) whether the size of the list can be changed
+
+Some list implementations will allow us to append new items to the end, while others require you to state in advance how many items can fit in the list. Generally, the latter is more common for lower level languages like C where we manage memory more deliberately.
