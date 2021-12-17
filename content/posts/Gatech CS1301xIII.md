@@ -213,7 +213,11 @@ list.copy()  # returns a shallow copy of the list. Equivalent to a[:].
 list.clear()  # removes all items from the list. Equivalent to del a[:].
 ```
 
-> It's important to note that **calling the method actually changes the value of the list**. Remember, when we called methods on strings they didn't change the value of the string. That's because lists are mutable, and strings are immutable.
+> - It's important to note that **calling the method actually changes the value of the list**. Remember, when we called methods on strings they didn't change the value of the string. That's because lists are mutable, and strings are immutable.
+> 
+> - The `sorted(list)` function can also be used for sorting, but it does not change the value of the original list. It can be applied to any Iterable object, which means that it also accepts strings, sets, dictionaries when they are passed to it.
+> 
+> - Difference between .extend() and .append(): `extend()`, on the one hand, takes an iterable (list, set, tuple or string), and adds each element of the iterable to the list one at a time. `append()`, on the other hand, adds its argument to the end of the list as a single item, which means that when the `append()` function takes an iterable as its argument, it will treat it as a single object. **`extend()` is a more efficient version of calling `append()` multiple times.**
 
 Lists are mutable. That means if we pass a list to a function or method and change the values of the list, those changes will persist out to our main program. So when dealing with lists, or any other mutable data type, we have to be careful to understand that all modifications we make to the list will persist.
 
@@ -227,6 +231,58 @@ Generally, though, there are a couple conventions we follow to decide whether to
 3. **Lists are used for alike data types** by convention because we tend to *execute the same body of code* for each item in the list. Tuples are more often used to represent information that's unpacked into unique variables, those have qualitatively different meanings. And so you're not going to just run some code on every item in a tuple. For that same reason, it's more normal for **tuples to have different data types** within them because we're not generally expecting to be able to iterate over a tuple in the same way.
 
 > If you’re defining a constant set of values and all you’re going to do with it is iterate through it, use a tuple instead of a list. It will be faster than working with lists and also safer, as the tuples contain “write-protect” data.
+
+### Convert A List To...
+You convert a list to a string by using `''.join()`. This operation allows you to glue together all strings in your list together and return them as a string. **Note** that if your list only contains integers, you should convert the elements to strings before performing the join on them. Read more [here](https://docs.python.org/3/library/stdtypes.html#str.join).
+
+You can change a list to a tuple in Python by using the `tuple()` function. Pass your list to this function, and you will get a tuple back!
+
+You can change a list into a set with the `set()` function. Just pass your list to it! But remember, a set is an unordered collection of unique items. That means not only means that any **duplicates** that you might have had in your original list **will be lost** once you convert it to a set, but **also the order** of the list elements.
+
+A dictionary works with keys and values, so the conversion from a list to a dictionary might be less straightforward. You will need to make sure that elements are interpreted as key-value pairs. The way to do this is to select them with the slice notation and pass them to `zip(keys, values)` (keys/values=list[start:end:step]) which zips elements together. 
+
+### Clone Or Copy A List
+There are a lot of ways of cloning or copying a list:
+
+*   You can slice your original list and store it into a new variable: `newList = oldList[:]`
+*   You can use the built-in `list()` function: `newList = list(oldList)`
+*   You can use the `copy` library:
+    *   With the `copy()` method: `newList = copy.copy(oldList)`
+    *   If your list contains objects and you want to copy those as well, you can use `copy.deepcopy()`: `copy.deepcopy(oldList)`
+
+> **Note** that when you use the ‘simple’ copy (shallow copy) methods and has modified the copied list, if the modification is done to the first layer, then nothing would be changed to the original list; but if the modification is done to a deeper layer, the original list would also be modified. In contrast, if you use the `deepcopy()` method, nothing of the original list will be change whatever modification has been done to the copied list.
+> ```python
+> import copy as c
+> objectList1 = ['a','b',['ab','ba']]
+> objectList2 = ['a','b',['ab','ba']]
+> 
+> shallowCopiedList = objectList1[:]
+> deepCopiedList = c.deepcopy(objectList2)
+> 
+> shallowCopiedList[0] = 'c'
+> deepCopiedList[1] = 'd'
+> shallowCopiedList[2][0] = 'cc'
+> deepCopiedList[2][1] = 'dd'
+> 
+> print(objectList1)
+> print(objectList2)
+> ----------
+> ['a', 'b', ['cc', 'ba']]
+> ['a', 'b', ['ab', 'ba']]
+> ```
+
+### List Comprehension
+List comprehension is, basically speaking, a way of elegantly constructing your lists.
+```python
+myList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+[x**2 for x in range(10)]
+[x**2 for x in range(10) if x%2==0]
+[(lambda x: x*x)(x) for x in myList]  # anonymous function (lambda x: x*x)(x) is like f(x)
+
+# Counting all items in a list with count()
+list= ["a","b","b"]
+[[x,list.count(x)] for x in set(list)]
+```
 
 ### Stacks: LIFO Structures
 “Last-In-First-Out” (LIFO) paradigm.
@@ -277,6 +333,6 @@ E.g., going on a scavenger hunt where each clue features a puzzle you must solve
 | Strings |   |
 | `frozenset()` |   |
 
-> - Tip: by just passing a colon : into the double brackests [ ], you will just copy the list!
+
 
 ## Chapter 4.5: File Input and Output
