@@ -364,6 +364,20 @@ list(set(list1) & set(list2))
 list(set(list1).intersection(list2))
 ```
 ## Chapter 4.4: Dictionaries
+- **Dictionaries:** A data structure comprised of key-value pairs, where a key is entered into the dictionary to get out a value. Similar to or synonymous with Maps (a collection of keys mapped to values; Java, C++), Associative Arrays (PHP, JavaScript), and HashMaps/Hashtables (The term hash refers to the way in which the data structure is constructed). A dictionary would preserve the ability to give names to multiple values by way of keys.
+
+- **Dictionary Key:** A value then, when passed into a dictionary, returns a corresponding value, like a word and its definition. Similar to a variable.
+
+- **Dictionary Value:** A value returned in response to a key in a dictionary. Similar to a value of a variable outside a dictionary.
+
+The major difference between a dictionary and a list is that the values of the list had to be accessed via numeric identifiers called indices or indexes. But dictionaries use keys instead of numeric indices/indexes. Besides, dictionaries aren't guaranteed to preserve order. In a list, the first item is guaranteed to be the first item unless it's changed; in a dictionary, the first key-value pair added might not be the first one accessed.
+
+
+
+
+
+
+
 
 ## Chapter 4.5: File Input and Output
 **File Input and Output:** The complementary processes of saving data to a file and loading data from a file, generally such that the state of the memory of the program is the same after saving and loading have occurred.
