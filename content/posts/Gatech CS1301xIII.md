@@ -278,11 +278,28 @@ myList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 [x**2 for x in range(10)]
 [x**2 for x in range(10) if x%2==0]
 [(lambda x: x*x)(x) for x in myList]  # anonymous function (lambda x: x*x)(x) is like f(x)
+[(x, y) for x in [1,2,3] for y in [3,1,4] if x != y]
+[[row[i] for row in matrix] for i in range(4)]
 
 # Counting all items in a list with count()
 list= ["a","b","b"]
 [[x,list.count(x)] for x in set(list)]
+
+# Counting all list items with Counter()
+from collections import Counter
+list = ["a","b","b"]
+Counter(list)  #  Counter() is generally faster when you want to count all list items.
 ```
+### Split A Python List Into Evenly Sized Chunks
+To split your list up into parts of the same size, you can resort to the `zip()` function in combination with `iter()`:
+```python
+x = [1,2,3,4,5,6,7,8,9]
+y = zip(*[iter(x)]*3)  # Split x up in chunks of 3
+list(y)  # Use list() to print the result of zip()
+----------
+[(1, 2, 3), (4, 5, 6), (7, 8, 9)]
+```
+
 
 ### Stacks: LIFO Structures
 “Last-In-First-Out” (LIFO) paradigm.
@@ -333,6 +350,33 @@ E.g., going on a scavenger hunt where each clue features a puzzle you must solve
 | Strings |   |
 | `frozenset()` |   |
 
+```python
+# Flatten a list
+sum(list, [])
+print([item for sublist in listOfLists for item in sublist])
+
+# Obtain the intersection of two lists
+intersection = [list(filter(lambda x: x in list1, sublist)) for sublist in list2]
+intersection = [[x for x in sublist if x in list1] for sublist in list2]
+
+# If the order of your elements is not important and if you don’t need to worry about duplicates then you can use set intersection:
+list(set(list1) & set(list2))
+list(set(list1).intersection(list2))
+```
 
 
 ## Chapter 4.5: File Input and Output
+**File Input and Output:** The complementary processes of saving data to a file and loading data from a file, generally such that the state of the memory of the program is the same after saving and loading have occurred.
+
+Each file type has its own built-in, type-specific encoding. That encoding is properly unpacked by a program that knows how to read the file.  File types set up rules for how to interpret a file, and a program can only correctly interpret the file if it knows those rules.
+
+Many languages actually require that file input and output be enclosed within a try block. Reading simply means that we're looking at the file's contents and reading it into our program. We're not changing the contents, just inputting it into our own code. Writing, on the other hand, means we're rewriting the file from scratch. When we write to a file, we, by default, erase it and rewrite it completely from scratch. With writing, we assume the file is a snapshot of the current state of our data, not a running log of the history of all of its changes. Appending also writes to the file, but it starts on the very last line of the file. Nothing is overwritten. New data is just added to the end.
+
+### Writing Files in Python
+```python
+outputFile = open("OutputFile.text", 'w')  # w-write, r-read, a-append; Write will overwrite the current content of the file, append will add to the end of the file, and read will just read from the file without actually changing its contents.
+outputFile.write(string)  # the write method can only write strings to files. By default write does not start a new line at the end of writing a particular line.
+outputFile.writelines(list)  # takes as input a list of strings and automatically writes them to the file; doesn't append spaces or new line characters to the end of each item in the list.So, one solution would be:
+outputFile.writelines('/n'.join(list))
+outputFile.close()
+```
