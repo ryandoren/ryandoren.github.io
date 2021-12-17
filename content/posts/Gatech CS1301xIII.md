@@ -363,7 +363,7 @@ intersection = [[x for x in sublist if x in list1] for sublist in list2]
 list(set(list1) & set(list2))
 list(set(list1).intersection(list2))
 ```
-
+## Chapter 4.4: Dictionaries
 
 ## Chapter 4.5: File Input and Output
 **File Input and Output:** The complementary processes of saving data to a file and loading data from a file, generally such that the state of the memory of the program is the same after saving and loading have occurred.
@@ -373,10 +373,50 @@ Each file type has its own built-in, type-specific encoding. That encoding is pr
 Many languages actually require that file input and output be enclosed within a try block. Reading simply means that we're looking at the file's contents and reading it into our program. We're not changing the contents, just inputting it into our own code. Writing, on the other hand, means we're rewriting the file from scratch. When we write to a file, we, by default, erase it and rewrite it completely from scratch. With writing, we assume the file is a snapshot of the current state of our data, not a running log of the history of all of its changes. Appending also writes to the file, but it starts on the very last line of the file. Nothing is overwritten. New data is just added to the end.
 
 ### Writing Files in Python
+
 ```python
 outputFile = open("OutputFile.text", 'w')  # w-write, r-read, a-append; Write will overwrite the current content of the file, append will add to the end of the file, and read will just read from the file without actually changing its contents.
 outputFile.write(string)  # the write method can only write strings to files. By default write does not start a new line at the end of writing a particular line.
 outputFile.writelines(list)  # takes as input a list of strings and automatically writes them to the file; doesn't append spaces or new line characters to the end of each item in the list.So, one solution would be:
 outputFile.writelines('/n'.join(list))
+print(content, file = outputFile)  # If we supply an argument for the keyword 'file' when calling our print function, then Python will write to that file instead of to the console.
 outputFile.close()
 ```
+### Reading Files in Python
+Remember when loading from a file, the computer by default interprets everything as text. If we need to treat it as numbers or some other kind of data, we'll need to perform a type conversion.
+```python
+inputFile = open("OurtputFile.txt", 'r')
+print(inputFile.readline())  # if we want to delete the newline character of each line, use print(inputFile.readline().strip())
+myInt = int(inputFile.readline())
+
+# loading into lists
+for line in inputFile:  # starts from the line that has not been read
+	myList.append(line.strip())
+	
+inputFile.close()
+```
+### Save and Load Functions
+```python
+#Saves inList to the file
+def save(filename, inList): 
+    outputFile = open(filename, "w")
+    for item in inList: 
+        print(item, file = outputFile)   
+    outputFile.close()
+
+#Loads from filename and returns a list of the contents
+def load(filename): 
+    inputFile = open(filename, "r")
+    inList = []
+    for line in inputFile:
+        inList.append(line.strip())
+    inputFile.close()
+    return inList
+
+myList = ["David", "Lucy", "Vrushali", "Ping", "Natalie", "Dana", "Addison", "Jasmine"]
+save("OutputFile.txt", myList)
+newList = load("OutputFile.txt")
+print(newList)
+```
+### External Materials
+🐍*   [Files from *How to Think Like a Computer Scientist*](http://interactivepython.org/courselib/static/thinkcspy/Files/toctree.html)
