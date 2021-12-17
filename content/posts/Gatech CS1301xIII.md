@@ -372,7 +372,12 @@ list(set(list1).intersection(list2))
 
 The major difference between a dictionary and a list is that the values of the list had to be accessed via numeric identifiers called indices or indexes. But dictionaries use keys instead of numeric indices/indexes. Besides, dictionaries aren't guaranteed to preserve order. In a list, the first item is guaranteed to be the first item unless it's changed; in a dictionary, the first key-value pair added might not be the first one accessed.
 
+### Dictionaries in Python
+We use [brackets] for lists, (parentheses) for tuples, {curly braces} for dictionaries. Each *key/value pair* in our dictionary is defined with a syntax *key colon value*. With a dictionary, we're bundling up multiple variables, but we retain the ability to give them each their own name.
 
+Note that when we print the dictionary that we're defining, it actually prints in a *different order* than the way we defined it. Dictionaries carry no guarantee that the keys and values will be printed in the same order in which they were defined. It only guarantees that each value will stick with the correct key.
+
+The persistence of keys, though, means that in a dictionary, **keys must be immutable values**. So we can use **strings, integers, floats, tuples** as keys, but **we couldn't use a list or a dictionary as a key** because those are mutable data types. The reason for this is that if the key changes, the dictionary wouldn't know what value was associated with it. So it must guarantee that the keys cannot change. Values, on the other hand, can change.
 
 
 
