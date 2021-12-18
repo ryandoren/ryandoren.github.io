@@ -379,6 +379,22 @@ Note that when we print the dictionary that we're defining, it actually prints i
 
 The persistence of keys, though, means that in a dictionary, **keys must be immutable values**. So we can use **strings, integers, floats, tuples** as keys, but **we couldn't use a list or a dictionary as a key** because those are mutable data types. The reason for this is that if the key changes, the dictionary wouldn't know what value was associated with it. So it must guarantee that the keys cannot change. Values, on the other hand, can change.
 
+Editing a Dictionary:
+```python
+dictionary['newKey'] = newValue
+del dictionary['targetKey']
+
+if keyName in dictionary:  # check whether a key is in the dictionary
+
+# traverse every item in the dictionary
+for value in dictionary.values():  #  iterate over the values directly when not caring about keys; dictionary.values() returns a list of all the values in that dictionary
+
+for key in dictionary.keys():  #  iterate over the keys when caring about values and their corresponding keys; dictionary.keys() returns a list of all the keys in that dictionary
+	value = dictionary[key]
+	
+for (key, value) in dictionary.items():  # iterate over each tuple corresponding to a key and a value; dictionary.items() returns a list of (key, value) tuples in that dictionary
+```
+
 
 
 
