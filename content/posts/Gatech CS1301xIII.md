@@ -456,7 +456,7 @@ print("Students in Computing:", classes["Computing"])
 classes["History"].append("Francis")    
 print("Students in History:", classes["History"])
 ```
-Address book: tuples as values (has to know the indexes of address, phone number, and email)
+Address book: lists/tuples as values (has to know the indexes of address, phone number, and email)
 ```python
 addressBook = {"David": ("555 Home St", "4045551234", "david@david.com"),
                "Lucy" : ("555 Home St", "4045555678", "lucy@lucy.com"),
@@ -465,7 +465,7 @@ addressBook = {"David": ("555 Home St", "4045551234", "david@david.com"),
 print("David's Information:", addressBook["David"])
 print("Dana's Phone Number:", addressBook["Dana"][1])  # Knowing that the phone number is at index one
 ```
-Address book: dictionaries as values
+Address book: dictionaries as values (refer to these individual values by keys instead of by indices)
 ```python
 addressBook = {
 "David": {"address" : "555 Home St", "phone" : "4045551234", "email" : "david@david.com"}, 
@@ -475,7 +475,37 @@ addressBook = {
 print("David's Information:", addressBook["David"])
 print("Dana's Phone Number:", addressBook["Dana"]["phone"])
 ```
+Grading students' answer sheets
+```python
+ANSWER_KEY = {"1" : "A", "2" : "B", "3" : "C", "4" : "D", "5" : "A"}
 
+students={}
+students["David"] = {"1" : "A", "2" : "B", "3" : "A", "4" : "B", "5" : "C"}
+students["Terra"] = {"1" : "A", "2" : "B", "3" : "C", "4" : "D", "5" : "A"}
+students["Lugos"] = {"1" : "A", "2" : "C", "3" : "C", "4" : "D", "5" : "A"}
+
+#For each student and their answers
+for (student, answers) in students.items(): 
+    grade = 0   #Start grade at 0
+    #For each question and answer
+    for (question, answer) in answers.items():  
+        #If the answer matches ANSWER_KEY's answer...
+        if answer == ANSWER_KEY[question]:  
+            grade +=1   #Increment their grade
+    #Create a new key "grade" and assign it their grade
+    students[student]["grade"] = grade  
+#For each student and their answers
+for (student, answers) in students.items(): 
+    #Print the name and grade
+    print(student, ": ", answers["grade"], sep = "", end = "; ")
+```
+### External Materials
+🐍[Dictionaries from *How to Think Like a Computer Scientist*](http://interactivepython.org/courselib/static/thinkcspy/Dictionaries/toctree.html)
+🐍[20. Dictionaries from *How to Think Like a Computer Scientist: Learning with Python 3*](http://openbookproject.net/thinkcs/python/english3e/dictionaries.html)
+
+> ![enter description here](./images/1639828164603.png)
+> ![enter description here](./images/1639828373969.png)
+> ![enter description here](./images/1639828395942.png)
 
 ## Chapter 4.5: File Input and Output
 **File Input and Output:** The complementary processes of saving data to a file and loading data from a file, generally such that the state of the memory of the program is the same after saving and loading have occurred.
