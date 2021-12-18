@@ -561,4 +561,4 @@ newList = load("OutputFile.txt")
 print(newList)
 ```
 ### External Materials
-🐍*   [Files from *How to Think Like a Computer Scientist*](http://interactivepython.org/courselib/static/thinkcspy/Files/toctree.html)
+🐍[Files from *How to Think Like a Computer Scientist*](http://interactivepython.org/courselib/static/thinkcspy/Files/toctree.html)
