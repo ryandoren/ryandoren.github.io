@@ -394,10 +394,87 @@ for key in dictionary.keys():  #  iterate over the keys when caring about values
 	
 for (key, value) in dictionary.items():  # iterate over each tuple corresponding to a key and a value; dictionary.items() returns a list of (key, value) tuples in that dictionary
 ```
+### Dictionary Applications
+A dictionary of dictionaries: having names as our keys, having the value be another dictionary. And then the values for each key in that dictionary correspond to the type of data. This is getting very close to the idea of objects.
+![enter description here](./images/1639824982211.png)
 
+Word Count:
+```python
+myString = "This is the string whose words we would like to count. This string contains some repeated words, as well as some unique words. It contains punctuation, and it contains words that are capitalized in different ways. If the method we write runs correctly, it will count 4 instances of the word 'it', 3 instances of the word 'this', and 3 instances of the word 'count'."
 
+myString = myString.replace(".","") #Remove periods
+myString = myString.replace(",","") #Remove commas
+myString = myString.replace("'","") #Remove apostrophes
+myString = myString.lower() #Make all lower case
+mySplitString = myString.split() #Split by spaces
 
+wordDictionary = {} #Create empty dictionary
+for word in mySplitString:  #For each word in the split string
+    if word in wordDictionary:  #If it's already been found...
+        wordDictionary[word] += 1   #Add one to its count
+    else:   #Otherwise...
+        wordDictionary[word] = 1 #Create it with value 1
 
+print(wordDictionary)
+```
+Arrange seating chart for a wedding
+```python
+seatingChart = {"David" : 3, "Lucy" : 3, "Dana" : 2,
+                "Addison" : 2, "Vrushali" : 1, "Bilbo" : 3,
+                "Sara" : 1, "Lugos" : 1, "Mireia" : 1,
+                "Partha" : 2, "Venijamin" : 1, "Terra" : 2, 
+                "Tryphon" : 3, "Gevorg" : 1, "Raza" : 3,
+                "Rein" : 3, "Sofia" : 2, "Perle" : 2}
+
+#For each name, table pair in the seating chart
+for (name, table) in seatingChart.items():  
+    #Print the table for the name
+    print(name, " is seated at table #", table, sep="")  
+
+print()
+#For each table number
+for i in range(1, 4):   
+    print("The guests at table #", i, " are: ", sep="", end="")
+    #For each name, table pair
+    for (name, table) in seatingChart.items():  
+        #If the table numer is this number
+        if i == table:  
+            #Print the name
+            print(name, end=" ")    
+    print()
+```
+Classroom roster: lists as values
+```python
+classes = {"Math" : ["David", "Lucy", "Dana"],
+           "Physics" : ["Addison", "Vrushali", "Bilbo"],
+           "Chemistry" : ["Sara", "Lugos", "Mireia", "Perle"],
+           "Computing" : ["Partha", "Venijamin", "Terra", "Sofia"],
+           "History" : ["Tryphon", "Gevorg", "Raza", "Rein"]}
+
+print("Students in Computing:", classes["Computing"])
+#Add Francis to History
+classes["History"].append("Francis")    
+print("Students in History:", classes["History"])
+```
+Address book: tuples as values (has to know the indexes of address, phone number, and email)
+```python
+addressBook = {"David": ("555 Home St", "4045551234", "david@david.com"),
+               "Lucy" : ("555 Home St", "4045555678", "lucy@lucy.com"),
+               "Dana" : ("123 There Rd", "4045559101", "dana@dana.net")}
+
+print("David's Information:", addressBook["David"])
+print("Dana's Phone Number:", addressBook["Dana"][1])  # Knowing that the phone number is at index one
+```
+Address book: dictionaries as values
+```python
+addressBook = {
+"David": {"address" : "555 Home St", "phone" : "4045551234", "email" : "david@david.com"}, 
+"Lucy" : {"address" : "555 Home St", "phone" : "4045555678", "email" : "lucy@lucy.com"}, 
+"Dana" : {"address" : "123 Here Rd", "phone" : "4045559101", "email" : "dana@dana.net"}}
+
+print("David's Information:", addressBook["David"])
+print("Dana's Phone Number:", addressBook["Dana"]["phone"])
+```
 
 
 ## Chapter 4.5: File Input and Output
