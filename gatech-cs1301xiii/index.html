@@ -1,0 +1,916 @@
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="noodp">
+<meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
+<title>Gatech CS1301xIII.md - Worgen</title><meta name=Description content="Intro to Computing in Python by David Joyner"><meta property="og:title" content="Gatech CS1301xIII.md">
+<meta property="og:description" content="Intro to Computing in Python by David Joyner">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ryandoren.github.io/gatech-cs1301xiii/"><meta property="og:image" content="https://ryandoren.github.io/logo.png"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-10-30T00:00:00+00:00">
+<meta property="article:modified_time" content="2021-12-18T18:46:54+08:00">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://ryandoren.github.io/logo.png">
+<meta name=twitter:title content="Gatech CS1301xIII.md">
+<meta name=twitter:description content="Intro to Computing in Python by David Joyner">
+<meta name=application-name content="Worgen">
+<meta name=apple-mobile-web-app-title content="Worgen"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://ryandoren.github.io/gatech-cs1301xiii/><link rel=prev href=https://ryandoren.github.io/gatech-cs1301xii/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Gatech CS1301xIII.md","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/ryandoren.github.io\/gatech-cs1301xiii\/"},"image":["https:\/\/ryandoren.github.io\/images\/Apple-Devices-Preview.png"],"genre":"posts","wordcount":5297,"url":"https:\/\/ryandoren.github.io\/gatech-cs1301xiii\/","datePublished":"2021-10-30T00:00:00+00:00","dateModified":"2021-12-18T18:46:54+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"Ryan","logo":"https:\/\/ryandoren.github.io\/images\/avatar.jpg"},"author":{"@type":"Person","name":"Ryan"},"description":"Intro to Computing in Python by David Joyner"}</script></head>
+<body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
+<div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=Worgen><span class=header-title-pre><i class="fab fa-wolf-pack-battalion fa-fw"></i></span>Worgen</a>
+</div>
+<div class=menu>
+<div class=menu-inner><a class=menu-item href=/posts/ title=🤔💬🧠><i class="fas fa-pen-nib"></i> Posts </a><a class=menu-item href=/tags/ title=🔖📜📑><i class="fas fa-tags"></i> Tags </a><a class=menu-item href=/projects/ title=🐱‍💻🤖💻><i class="fas fa-laptop-code"></i> Projects </a><a class=menu-item href=/categories/documentation/ title=🐱‍👓🐱‍👤🐱‍🚀><i class="fab fa-black-tie"></i> Resume </a><a class=menu-item href=/about/ title=🎥📷😺><i class="fas fa-camera-retro"></i> Gallery </a><a class=menu-item href=https://github.com/ryandoren title=GitHub rel="noopener noreffer" target=_blank><i class="fab fa-github"></i> </a><span class="menu-item delimiter"></span><a href=javascript:void(0); class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+<select class=language-select id=language-select-desktop onchange="location=this.value"><option value=/gatech-cs1301xiii/ selected>English</option></select>
+</a><span class="menu-item search" id=search-desktop>
+<input type=text placeholder="Search titles or contents..." id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-desktop>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw"></i>
+</a>
+</div>
+</div>
+</div>
+</header><header class=mobile id=header-mobile>
+<div class=header-container>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=Worgen><span class=header-title-pre><i class="fab fa-wolf-pack-battalion fa-fw"></i></span>Worgen</a>
+</div>
+<div class=menu-toggle id=menu-toggle-mobile>
+<span></span><span></span><span></span>
+</div>
+</div>
+<div class=menu id=menu-mobile><div class=search-wrapper>
+<div class="search mobile" id=search-mobile>
+<input type=text placeholder="Search titles or contents..." id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-mobile>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</div>
+<a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>
+Cancel
+</a>
+</div><a class=menu-item href=/posts/ title=🤔💬🧠><i class="fas fa-pen-nib"></i>Posts</a><a class=menu-item href=/tags/ title=🔖📜📑><i class="fas fa-tags"></i>Tags</a><a class=menu-item href=/projects/ title=🐱‍💻🤖💻><i class="fas fa-laptop-code"></i>Projects</a><a class=menu-item href=/categories/documentation/ title=🐱‍👓🐱‍👤🐱‍🚀><i class="fab fa-black-tie"></i>Resume</a><a class=menu-item href=/about/ title=🎥📷😺><i class="fas fa-camera-retro"></i>Gallery</a><a class=menu-item href=https://github.com/ryandoren title=GitHub rel="noopener noreffer" target=_blank><i class="fab fa-github"></i></a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw"></i>
+</a><a href=javascript:void(0); class=menu-item title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+<select class=language-select onchange="location=this.value"><option value=/gatech-cs1301xiii/ selected>English</option></select>
+</a></div>
+</div>
+</header>
+<div class="search-dropdown desktop">
+<div id=search-dropdown-desktop></div>
+</div>
+<div class="search-dropdown mobile">
+<div id=search-dropdown-mobile></div>
+</div>
+<main class=main>
+<div class=container><div class=toc id=toc-auto>
+<h2 class=toc-title>Contents</h2>
+<div class=toc-content id=toc-content-auto></div>
+</div><article class="page single"><h1 class="single-title animated flipInX">Gatech CS1301xIII.md</h1><div class=post-meta>
+<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Ryan</a></span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-10-30>2021-10-30</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;5297 words&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;25 minutes&nbsp;<span id=/gatech-cs1301xiii/ class=leancloud_visitors data-flag-title="Gatech CS1301xIII.md">
+<i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;views
+</span>&nbsp;</div>
+</div><div class="details toc" id=toc-static kept>
+<div class="details-summary toc-title">
+<span>Contents</span>
+<span><i class="details-icon fas fa-angle-right"></i></span>
+</div>
+<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
+<ul>
+<li><a href=#unit-4>Unit 4</a>
+<ul>
+<li><a href=#chapter-41-data-structures>Chapter 4.1: Data Structures</a>
+<ul>
+<li><a href=#passing-by-value-vs-passing-by-reference>Passing by Value vs. Passing by Reference</a></li>
+<li><a href=#variable-assignments>Variable Assignments</a></li>
+<li><a href=#mutability-in-python>Mutability in Python</a></li>
+<li><a href=#functions-vs-methods>Functions vs. Methods</a></li>
+<li><a href=#external-materials>External Materials</a></li>
+</ul>
+</li>
+<li><a href=#chapter-42-strings>Chapter 4.2: Strings</a>
+<ul>
+<li><a href=#basic-concepts>Basic Concepts</a></li>
+<li><a href=#declare-strings>Declare Strings</a></li>
+<li><a href=#string-concatenation-and-slicing>String Concatenation and Slicing</a></li>
+<li><a href=#string-searching>String Searching</a></li>
+<li><a href=#other-useful-string-methods>Other Useful String Methods</a></li>
+<li><a href=#external-materials-1>External Materials</a></li>
+</ul>
+</li>
+<li><a href=#chapter-43-lists>Chapter 4.3: Lists</a>
+<ul>
+<li><a href=#basics>Basics</a></li>
+<li><a href=#tuples-in-python>Tuples in Python</a></li>
+<li><a href=#lists-in-python>Lists in Python</a></li>
+<li><a href=#lists-vs-tuples>Lists vs. Tuples</a></li>
+<li><a href=#convert-a-list-to>Convert A List To&mldr;</a></li>
+<li><a href=#clone-or-copy-a-list>Clone Or Copy A List</a></li>
+<li><a href=#list-comprehension>List Comprehension</a></li>
+<li><a href=#split-a-python-list-into-evenly-sized-chunks>Split A Python List Into Evenly Sized Chunks</a></li>
+<li><a href=#stacks-lifo-structures>Stacks: LIFO Structures</a></li>
+<li><a href=#queues-fifo-structures>Queues: FIFO Structures</a></li>
+<li><a href=#linked-list>Linked List</a></li>
+<li><a href=#external-materials-2>External Materials</a></li>
+</ul>
+</li>
+<li><a href=#chapter-44-dictionaries>Chapter 4.4: Dictionaries</a>
+<ul>
+<li><a href=#dictionaries-in-python>Dictionaries in Python</a></li>
+</ul>
+</li>
+<li><a href=#chapter-45-file-input-and-output>Chapter 4.5: File Input and Output</a>
+<ul>
+<li><a href=#writing-files-in-python>Writing Files in Python</a></li>
+<li><a href=#reading-files-in-python>Reading Files in Python</a></li>
+<li><a href=#save-and-load-functions>Save and Load Functions</a></li>
+<li><a href=#external-materials-3>External Materials</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav></div>
+</div><div class=content id=content><h1 id=unit-4>Unit 4</h1>
+<h2 id=chapter-41-data-structures>Chapter 4.1: Data Structures</h2>
+<p>Data structures are approaches to organizing abstract data types, such that the data can be accessed efficiently.</p>
+<ul>
+<li>
+<p><strong>List-Like Structures:</strong> Also referred to as sequences and collections, a data structure that holds multiple individual values gathered together under one variable name, accessed via indices. This includes structures like <strong>lists, arrays, and tuples</strong>. Lists are simultaneously a general type of data structure and a specific data type in some languages.</p>
+</li>
+<li>
+<p><strong>Index:</strong> A number used to access a particular element from a list-like data structure. Traditionally, most programming languages assign the first item of a list-like data structure the index 0.</p>
+</li>
+<li>
+<p><strong>String:</strong> A data structure that holds a list, or a string, of characters.</p>
+</li>
+<li>
+<p><strong>Lists:</strong> A data structure that holds multiple individual values gathered together under one variable name, accessed via indices. Similar to arrays and tuples.</p>
+</li>
+<li>
+<p><strong>File Input and Output:</strong> The complementary processes of saving data to a file and loading data from a file, generally such that the state of the memory of the program is the same after saving and loading have occurred.</p>
+</li>
+<li>
+<p><strong>Dictionaries:</strong> A data structure comprised of key-value pairs, where a key is entered into the dictionary to get out a value. Similar to or synonymous with Maps, Associative Arrays, HashMaps, and Hashtables.</p>
+</li>
+</ul>
+<h3 id=passing-by-value-vs-passing-by-reference>Passing by Value vs. Passing by Reference</h3>
+<ul>
+<li>
+<p><strong>Passing by value</strong>: Values themselves being passed back and forth. The functino never knows your variables and you never know the function&rsquo;s variables. When passing by value, you&rsquo;re simply handing off the value and the function can&rsquo;t actually change your variable.</p>
+</li>
+<li>
+<p><strong>Passing by reference</strong>: The function has access to your actual variables and could modify them. You and the function are accessing the same variables. When passing by reference, you&rsquo;re handing the variable itself to the function and the function can modify the variable if it wants.</p>
+</li>
+</ul>
+<p>The difference between passing by value and passing by reference comes down to whether or not you want the function to be able to change the values of the variables directly, or if you simply want it to receive the values themselves without being able to access the variables. (whether the function has the direct access to your original files📕)</p>
+<p>In some languages like C++, you can choose whether to pass a variable by value or by reference. However, Python deals with passing-by-value and passing-by-reference a little strangely. <strong>In reality, everything is passed by reference</strong>, but <em>some primitive data types like integers often appear to be passing by value</em>. This is due to mutability.
+<img class=lazyload src=/svg/loading.min.svg data-src=./images/1636285446036.png data-srcset="./images/1636285446036.png, ./images/1636285446036.png 1.5x, ./images/1636285446036.png 2x" data-sizes=auto alt=./images/1636285446036.png title="enter description here"></p>
+<h3 id=variable-assignments>Variable Assignments</h3>
+<p>When we type down an assignment statement <code>b = a</code>, did we assign <code>a</code> only to the current value of <code>b</code> or does <code>b</code> follow <code>a</code> around and copy its value whenever it changes? In other words, did we tell <code>b</code> you now equal the <strong>current value</strong> of <code>a</code> or did we tell <code>b</code> you should always equal <code>a</code>?</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=o>&gt;&gt;&gt;</span> <span class=n>a</span> <span class=o>=</span> <span class=mi>5</span>
+<span class=o>&gt;&gt;&gt;</span> <span class=n>b</span> <span class=o>=</span> <span class=n>a</span>
+<span class=o>&gt;&gt;&gt;</span> <span class=n>a</span> <span class=o>=</span> <span class=mi>7</span>
+<span class=n>a</span> <span class=o>=</span> <span class=mi>7</span><span class=p>,</span> <span class=n>b</span> <span class=o>=</span> <span class=mi>5</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=o>&gt;&gt;&gt;</span> <span class=n>a</span> <span class=o>=</span> <span class=p>[</span><span class=s2>&#34;One&#34;</span><span class=p>,</span> <span class=s2>&#34;Two&#34;</span><span class=p>,</span> <span class=s2>&#34;Three&#34;</span><span class=p>]</span>
+<span class=o>&gt;&gt;&gt;</span> <span class=n>b</span> <span class=o>=</span> <span class=n>a</span>
+<span class=o>&gt;&gt;&gt;</span> <span class=n>a</span><span class=o>.</span><span class=n>append</span><span class=p>(</span><span class=s2>&#34;Four&#34;</span><span class=p>)</span>
+<span class=n>a</span> <span class=o>=</span> <span class=p>[</span><span class=s2>&#34;One&#34;</span><span class=p>,</span> <span class=s2>&#34;Two&#34;</span><span class=p>,</span> <span class=s2>&#34;Three&#34;</span><span class=p>,</span> <span class=s2>&#34;Four&#34;</span><span class=p>],</span> <span class=n>b</span> <span class=o>=</span> <span class=p>[</span><span class=s2>&#34;One&#34;</span><span class=p>,</span> <span class=s2>&#34;Two&#34;</span><span class=p>,</span> <span class=s2>&#34;Three&#34;</span><span class=p>,</span> <span class=s2>&#34;Four&#34;</span><span class=p>]</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>There are two important takeaways here:</p>
+<ol>
+<li>
+<p>We can refer to the same data by different names&ndash; we can have multiple variables that point to the same data and if you access and modify the data via one variable name, it also modifies the data for any other variable names that point to the same data.</p>
+</li>
+<li>
+<p>As with our function calls, we see that integers and lists behave differently. An integer will not keep its data up to date if the variable to which it is set changes, but that&rsquo;s not the case for a list. Again, this comes down to mutability.</p>
+</li>
+</ol>
+<h3 id=mutability-in-python>Mutability in Python</h3>
+<ul>
+<li>
+<p><strong>Mutability:</strong> Whether or not a variable can have its value changed after being declared.</p>
+</li>
+<li>
+<p><strong>Mutable Variable:</strong> A variable whose value can change after it has been declared.</p>
+</li>
+<li>
+<p><strong>Immutable Variable:</strong> A variable whose value cannot change after it has been declared.</p>
+</li>
+</ul>
+<p><strong>Python passes all arguments by reference</strong>. But for all practical purposes, some data types seem to be passed by value. The reason they acted this way is because they were <strong>immutable</strong>.</p>
+<p>Let&rsquo;s talk about the way Python actually does this. We have a variable called <code>myInteger</code>, and we assign it the value <code>1</code>, we&rsquo;re telling it to <em>point to a place in memory that stores the number 1</em>. When we use <code>myInteger</code>, we&rsquo;re actually looking up its value. Now when we say <code>myInteger</code> equals <code>2</code>, what Python does is kind of weird. It <em>grabs a new area of memory,</em> puts the number 2 there, and tells <code>myInteger</code> to <em>point out that new location instead of the old location</em>. What that means is that the old value is still there in memory. The value didn&rsquo;t change. We didn&rsquo;t change the number <code>1</code>. Instead, we just created a new place in memory and told <code>myInteger</code> to point to that instead. <strong>Changing the value of myInteger changes the spot in memory that it points to, but it doesn&rsquo;t actually change the value stored in the original spot of memory</strong>. Note that a function can&rsquo;t change what value the variable used in the main program is pointing to. It can only change the value its own copy of that variable is pointing to. (Because the scope of variables defined in the function were until the function ended.)</p>
+<p>The computer has to have some way of identifying the location in memory that stores the data. Multiple names or different names can point to the same place in memory, so the place memory really needs <strong>a fundamental unchangeable name</strong>. This is called a <strong>memory address</strong>. It tells the computer where to find a particular value for a particular variable name.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=nb>print</span><span class=p>(</span><span class=nb>id</span><span class=p>(</span><span class=n>variable</span><span class=o>/</span><span class=n>value</span><span class=p>))</span>  <span class=c1># Printing Memory Addresses</span>
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<ul>
+<li>Immutable data types: integers, float, strings (Changing them changes the address where they can be found, seem like passing by value.)</li>
+<li>Mutable data types: lists (Changing them <strong>does not</strong> change the address where they can be found. note that it&rsquo;s <strong>changing/modifying</strong> them, <strong>not reassigning</strong> them to a whole new value.)</li>
+<li>Immutable variables pointing to the same value have the same id; however, for mutable variables, even they point to the same value, they have different ids, enless they are connected by <code>=</code></li>
+</ul>
+</blockquote>
+<h3 id=functions-vs-methods>Functions vs. Methods</h3>
+<p>Methods are functions accessed through dot notation; they are functions contained within data types. Just like functions, methods can return certain types of data as well.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=nb>str</span><span class=o>.</span><span class=n>isdigit</span><span class=p>()</span>  <span class=c1># a Boolean method, check to see if a string represents a number, returns either a true or a false value</span>
+ 
+<span class=nb>str</span><span class=o>.</span><span class=n>isupper</span><span class=p>()</span>  <span class=c1># a Boolean method, check to see if all the letters in the string are uppercase, returns either a true or a false value</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=external-materials>External Materials</h3>
+<p>🐍<a href=https://runestone.academy/runestone/books/published/pythonds/BasicDS/toctree.html target=_blank rel="noopener noreffer">Basic Data Structures</a>
+🐍<a href=https://python.swaroopch.com/data_structures.html target=_blank rel="noopener noreffer">Python Data Structures</a></p>
+<h2 id=chapter-42-strings>Chapter 4.2: Strings</h2>
+<h3 id=basic-concepts>Basic Concepts</h3>
+<ul>
+<li><strong>String:</strong> A data structure that holds a list of characters.</li>
+<li><strong>Character:</strong> A single letter, number, symbol, or special character.</li>
+<li><strong>Unicode:</strong> A computing industry standard that sets what hexadecimal codes correspond to what characters, so that text appears consistent across platforms. (263A should be a simple smiley emoji 😊)</li>
+<li><strong>Hexadecimal:</strong> A short-hand expression of the ones and zeroes that comprise computer data, comprised of 16 characters, 0 through 9 and A through F.</li>
+<li><strong>Special Characters:</strong> Tab, Newline characters (carriage returns & line feed)</li>
+<li><strong>Newline Character:</strong> A Unicode character, either LF (line feed) or CR (carriage return), that is rendered as the beginning of a new line of text. (Mac uses LF to represent its newline while Windows uses both LF and CR.)</li>
+</ul>
+<h3 id=declare-strings>Declare Strings</h3>
+<ul>
+<li>Python won&rsquo;t terminate the string until it encounters the same mark that you used to start the string <code>'</code>,<code>'''</code>,<code>"</code>.</li>
+<li>When a string is declared with triple quotation marks or triple apostrophe&rsquo;s, everything inside them will be interpreted as part of the string.</li>
+</ul>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=n>s</span> <span class=o>=</span> <span class=s1>&#39;&#39;&#39;123
+</span><span class=s1>	   456&#39;&#39;&#39;</span>
+<span class=o>----------</span>
+<span class=mi>123</span>
+<span class=mi>456</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=string-concatenation-and-slicing>String Concatenation and Slicing</h3>
+<ul>
+<li>Concatenation: use plus operator.</li>
+<li>Sliceing: Remember that string is a kind of list, so we can use <code>string[start:end]</code>[start, end) to slice strings (a positive number counts from the beginning, a negative number counts from the end.). Remember also, strings are an immutable type. That means we can&rsquo;t modify their values. <strong>We can only use <i class="far fa-square fa-fw"></i> to access individual characters but not modify them</strong>.</li>
+</ul>
+<h3 id=string-searching>String Searching</h3>
+<p>The <code>in</code> operator can be used with strings to check if a substring is part of a string.</p>
+<p>The <strong>find method</strong> <code>string.find(text, [start], [end])</code> is a member of the string type, and it takes as input the substring we want to find. It returns <strong>the first index</strong> where that substring was found or -1 if it wasn&rsquo;t found anywhere. We can use <strong>a while loop</strong> to get all the indices that the targeted substring has appeared.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=n>myString</span> <span class=o>=</span> <span class=s2>&#34;ABCDEEDGHYRCDELKCDEJNCECDEGGHEDCDEPJ&#34;</span>
+<span class=n>findString</span> <span class=o>=</span> <span class=s2>&#34;CED&#34;</span>
+<span class=n>currentLocation</span> <span class=o>=</span> <span class=mi>0</span>
+<span class=k>while</span> <span class=n>currentLocation</span> <span class=o>&gt;=</span> <span class=mi>0</span><span class=p>:</span>
+	<span class=nb>print</span><span class=p>(</span><span class=n>findString</span><span class=p>,</span> <span class=s2>&#34;found at&#34;</span><span class=p>,</span> <span class=n>currentLocation</span><span class=p>)</span>
+	<span class=n>currentLocation</span> <span class=o>=</span> <span class=n>myString</span><span class=o>.</span><span class=n>find</span><span class=p>(</span><span class=n>findString</span><span class=p>,</span> <span class=n>currentLocation</span><span class=o>+</span><span class=nb>len</span><span class=p>(</span><span class=n>findString</span><span class=p>))</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>If we just care about how many times the targeted substring has appeared in the given string, we can use the <strong>count method</strong>. The count method will count the number of times the string in parentheses occurs inside the string calling count.
+<code>myString.count(findString, [start], [end])</code></p>
+<h3 id=other-useful-string-methods>Other Useful String Methods</h3>
+<blockquote>
+<p>🐍<a href=https://docs.python.org/3.7/library/stdtypes.html#string-methods target=_blank rel="noopener noreffer">String Methods at Python.org</a></p>
+</blockquote>
+<ul>
+<li><code>string.split([separator])</code> The split method divides the string calling it into several substrings based on the separator character and returns to a string list. The default separator is space. If we use <strong>period</strong> as the separator, every sentence except the first will start with an empty space. Second, there will be an empty string at the end, because <strong>Python sees the period at the end of the string, and at that point, it closes off the previous string and starts a new one.</strong> It doesn&rsquo;t know that it&rsquo;s not going to find anything in that new one. And so we end up with an extra empty string at the end of our list. The solution is to use <strong>period space</strong> <code>', '</code> as the separator.</li>
+<li><code>string.capitalize()</code> capitalizes the string</li>
+<li><code>string.lower()</code> all-lowercase version</li>
+<li><code>string.upper()</code> all-uppercase version</li>
+<li><code>string.title()</code> capitalizes any character found after a space</li>
+<li><code>string.strip([character])</code> strips out any whitespace before or after the string. We could also supply an argument to strip, to strip out a different character. But if we don&rsquo;t, it assumes to strip out spaces.</li>
+<li><code>string.replace(string1, string2)</code> replaces string1 with string2</li>
+<li><code>string.join(list)</code> uses the string calling the join method to concatenate each item from the list of strings</li>
+</ul>
+<blockquote>
+<p>Split and join are basically reverses of each other.</p>
+</blockquote>
+<p>Notice that string methods <strong>do not</strong> actually change the value of the string. They just return what would be the value if that operation was applied. To actually save it, we would have to define antoher string and assign the return value of the string method to that newly defined string.</p>
+<h3 id=external-materials-1>External Materials</h3>
+<p>🐍 <a href=https://runestone.academy/runestone/books/published/thinkcspy/Strings/toctree.html target=_blank rel="noopener noreffer">Strings from <em>How to Think Like a Computer Scientist</em></a>
+🐍<a href=https://developers.google.com/edu/python/strings target=_blank rel="noopener noreffer">Python Strings from <em>Google for Education</em></a></p>
+<blockquote>
+<ul>
+<li>A string literal can span multiple lines, but there must be a backslash \ at the end of each line to escape the newline. String literals inside triple quotes, """ or &lsquo;'&rsquo;, can span multiple lines of text.</li>
+<li>Enclose the whole expression in an outer set of parenthesis &ndash; then the expression is allowed to span multiple lines.</li>
+</ul>
+</blockquote>
+<h2 id=chapter-43-lists>Chapter 4.3: Lists</h2>
+<h3 id=basics>Basics</h3>
+<ul>
+<li><strong>List-like Structures:</strong> Also referred to as sequences and collections, a data structure that holds multiple individual values gathered together under one variable name, accessed via indices. It would encompass other data structures like dictionaries and maps.</li>
+<li><strong>Homogeneity:</strong> A property of lists determining whether they can accept multiple types of variables. A homogenous list can only accept one type of variable; a nonhomogenous or heterogenous list can accept multiple types.</li>
+</ul>
+<p>Nearly every programming language has some concept of a list, but the terminology and the specific details differ significantly. <strong>One major way different languages differ in their implementations of lists is mutability.</strong> Mutability of a list involces:</p>
+<ol>
+<li>whether the values of the list can be changed</li>
+<li>whether the size of the list can be changed</li>
+</ol>
+<p>Some list implementations will allow us to append new items to the end, while others require you to state in advance how many items can fit in the list. Generally, the latter is more common for lower level languages like C where we manage memory more deliberately.</p>
+<p><strong>Another major way list-like structures may differ is whether they accept multiple data types</strong>. This is called <strong>homogeneity and lists</strong>. In some list implementations, every item in a list must be the same type. Other languages don&rsquo;t have this restriction.</p>
+<blockquote>
+<p>A <strong>list</strong> is a data structure that contains multiple values <strong>accessed via an ordered numerical index</strong>. This is in contrast to <strong>dictionaries and hash tables and other data structures</strong>. They can also contain multiple values, but they can be <strong>accessed via non-numeric indices</strong>.</p>
+</blockquote>
+<p>List-like structures can go by various different names like <em>lists, arrays, tuples, vectors, tables, and more</em>. Oftentimes, <em>array</em> is used to refer to a more primitive structure that <em>only supports changing the existing values</em>, whereas <em>list</em> refers to more complex data structures that <em>support sorting and inserting and other operations</em>. <em>Tuples</em> are, most often, <em>immutable</em>.</p>
+<h3 id=tuples-in-python>Tuples in Python</h3>
+<blockquote>
+<p>🐍 <a href=https://docs.python.org/3/tutorial/datastructures.html#tuples-and-sequences target=_blank rel="noopener noreffer">Documentation on tuples from Python.org.</a></p>
+</blockquote>
+<ul>
+<li><strong>Tuple:</strong> An immutable form of a list-like structure in Python. Like strings, we can&rsquo;t add values to the end of a tuple and we can&rsquo;t change the current values of anything inside the tuple or sort them.</li>
+<li><strong>Lists:</strong> A mutable form of a list-like structure in Python.</li>
+</ul>
+<p>Declare a tuple: <code>tuple = (value1, value2, value3)</code></p>
+<p>Tuples can have multiple data types within them. This follows Python&rsquo;s general procedure of being what we call <strong>loosely typed</strong>. Python never really cares about what data types you&rsquo;re using until you try to do something that you can&rsquo;t do, like multiplying a string by a float, or printing the length of an integer.</p>
+<p>Tuples can be accessed and sliced as other list-like data structures. However, they also have a fancy little syntax for <strong>unpacking</strong>: <code>(variable1, variable2, variable3) = tuple</code> What this does is it one by one assigns the values of the tuple to the different variables contained on the right side of this assignment statement.</p>
+<p>The most usefulness of tuples may be functions. Generally functions can only return one variable or one value. But since tuples can pack multiple values into just one, they in some way let us return multiple values out of a function:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=k>def</span> <span class=nf>function</span><span class=p>(</span><span class=n>args</span><span class=p>):</span>
+	<span class=n>function</span> <span class=n>body</span>
+	<span class=k>return</span> <span class=p>(</span><span class=n>value1</span><span class=p>,</span> <span class=n>value2</span><span class=p>,</span> <span class=n>value3</span><span class=p>)</span>  <span class=c1># return a tuple allows a function to return multiple values</span>
+	
+<span class=p>(</span><span class=n>variable1</span><span class=p>,</span> <span class=n>variable2</span><span class=p>,</span> <span class=n>variable3</span><span class=p>)</span> <span class=o>=</span> <span class=n>function</span><span class=p>(</span><span class=n>args</span><span class=p>)</span>  <span class=c1># assignment using tuple unpacking</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Tuples can be nested. You can have a tuple of tuples. How to access an individual value inside of a nested tuple: use two sets of brackets. <code>tuple[num1][num2]</code> The first one specifies which tuple we want and the second one specifies which value from that tuple we want.</p>
+<h3 id=lists-in-python>Lists in Python</h3>
+<blockquote>
+<p>🐍<a href=https://docs.python.org/3.7/tutorial/datastructures.html target=_blank rel="noopener noreffer">Documentation on lists from Python.org</a>.</p>
+</blockquote>
+<p>Everything we&rsquo;ve seen in the past with both strings and tuples can also be used for lists. The only real difference is that whereas we define a string with quotation marks and a tuple with parentheses, we define a list with brackets. (access, slice, unpacking, function return, nested&mldr;)</p>
+<p>What differentiates lists is that they&rsquo;re <strong>mutable</strong>. That means we can change their values. We can add values to them, we can remove values from them, we can change the current value of certain values in the list. We can reorder them.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=nb>list</span><span class=o>.</span><span class=n>sort</span><span class=p>()</span>  <span class=c1># A method inside the list data type and sorts the values according to some internal logic. For integers it just sorts from the lowest to the highest (ascending). </span>
+
+<span class=nb>list</span><span class=o>.</span><span class=n>reverse</span><span class=p>()</span>  <span class=c1># reverses the current order of the list, not necessarily the sorted order of the list.</span>
+
+<span class=n>list1</span><span class=o>.</span><span class=n>extend</span><span class=p>(</span><span class=n>list2</span><span class=p>)</span>  <span class=c1># takes the values of list2 and puts them</span>
+<span class=n>at</span> <span class=n>the</span> <span class=n>end</span> <span class=n>of</span> <span class=n>list1</span><span class=o>.</span>
+
+<span class=nb>list</span><span class=o>.</span><span class=n>insert</span><span class=p>(</span><span class=n>location</span><span class=p>,</span> <span class=n>value</span><span class=p>)</span>  <span class=c1># inserts an item at a certain place in the list.</span>
+
+<span class=nb>list</span><span class=o>.</span><span class=n>remove</span><span class=p>(</span><span class=n>value</span><span class=p>)</span>  <span class=c1># removes a certain value.</span>
+
+<span class=k>del</span> <span class=nb>list</span><span class=p>[]</span>  <span class=c1># deletes items by location in the list.</span>
+
+<span class=nb>list</span><span class=o>.</span><span class=n>pop</span><span class=p>([</span><span class=n>index</span><span class=o>=-</span><span class=mi>1</span><span class=p>])</span>  <span class=c1># removes the last item (by default) of the list and returns it, index is optional.</span>
+
+<span class=nb>list</span><span class=o>.</span><span class=n>index</span><span class=p>(</span><span class=n>value</span><span class=p>)</span>  <span class=c1># finds the index of a certain value.</span>
+
+<span class=nb>list</span><span class=o>.</span><span class=n>count</span><span class=p>(</span><span class=n>value</span><span class=p>)</span>  <span class=c1># counts how many times a certain value appears.</span>
+
+<span class=nb>list</span><span class=o>.</span><span class=n>copy</span><span class=p>()</span>  <span class=c1># returns a shallow copy of the list. Equivalent to a[:].</span>
+
+<span class=nb>list</span><span class=o>.</span><span class=n>clear</span><span class=p>()</span>  <span class=c1># removes all items from the list. Equivalent to del a[:].</span>
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<ul>
+<li>
+<p>It&rsquo;s important to note that <strong>calling the method actually changes the value of the list</strong>. Remember, when we called methods on strings they didn&rsquo;t change the value of the string. That&rsquo;s because lists are mutable, and strings are immutable.</p>
+</li>
+<li>
+<p>The <code>sorted(list)</code> function can also be used for sorting, but it does not change the value of the original list. It can be applied to any Iterable object, which means that it also accepts strings, sets, dictionaries when they are passed to it.</p>
+</li>
+<li>
+<p>Difference between .extend() and .append(): <code>extend()</code>, on the one hand, takes an iterable (list, set, tuple or string), and adds each element of the iterable to the list one at a time. <code>append()</code>, on the other hand, adds its argument to the end of the list as a single item, which means that when the <code>append()</code> function takes an iterable as its argument, it will treat it as a single object. <strong><code>extend()</code> is a more efficient version of calling <code>append()</code> multiple times.</strong></p>
+</li>
+</ul>
+</blockquote>
+<p>Lists are mutable. That means if we pass a list to a function or method and change the values of the list, those changes will persist out to our main program. So when dealing with lists, or any other mutable data type, we have to be careful to understand that all modifications we make to the list will persist.</p>
+<h3 id=lists-vs-tuples>Lists vs. Tuples</h3>
+<p>Generally, though, there are a couple conventions we follow to decide whether to use lists or tuples:</p>
+<ol>
+<li>
+<p>We often use tuples when we&rsquo;re definitely dealing with a pre-determined number of items. We use lists when the ability to add or remove from the list would actually be useful and relevant.</p>
+</li>
+<li>
+<p>We usually use lists when the individual things on the list are qualitatively similar. We use tuples if they&rsquo;re qualitatively different.</p>
+</li>
+<li>
+<p><strong>Lists are used for alike data types</strong> by convention because we tend to <em>execute the same body of code</em> for each item in the list. Tuples are more often used to represent information that&rsquo;s unpacked into unique variables, those have qualitatively different meanings. And so you&rsquo;re not going to just run some code on every item in a tuple. For that same reason, it&rsquo;s more normal for <strong>tuples to have different data types</strong> within them because we&rsquo;re not generally expecting to be able to iterate over a tuple in the same way.</p>
+</li>
+</ol>
+<blockquote>
+<p>If you’re defining a constant set of values and all you’re going to do with it is iterate through it, use a tuple instead of a list. It will be faster than working with lists and also safer, as the tuples contain “write-protect” data.</p>
+</blockquote>
+<h3 id=convert-a-list-to>Convert A List To&mldr;</h3>
+<p>You convert a list to a string by using <code>''.join()</code>. This operation allows you to glue together all strings in your list together and return them as a string. <strong>Note</strong> that if your list only contains integers, you should convert the elements to strings before performing the join on them. Read more <a href=https://docs.python.org/3/library/stdtypes.html#str.join target=_blank rel="noopener noreffer">here</a>.</p>
+<p>You can change a list to a tuple in Python by using the <code>tuple()</code> function. Pass your list to this function, and you will get a tuple back!</p>
+<p>You can change a list into a set with the <code>set()</code> function. Just pass your list to it! But remember, a set is an unordered collection of unique items. That means not only means that any <strong>duplicates</strong> that you might have had in your original list <strong>will be lost</strong> once you convert it to a set, but <strong>also the order</strong> of the list elements.</p>
+<p>A dictionary works with keys and values, so the conversion from a list to a dictionary might be less straightforward. You will need to make sure that elements are interpreted as key-value pairs. The way to do this is to select them with the slice notation and pass them to <code>zip(keys, values)</code> (keys/values=list[start🔚step]) which zips elements together.</p>
+<h3 id=clone-or-copy-a-list>Clone Or Copy A List</h3>
+<p>There are a lot of ways of cloning or copying a list:</p>
+<ul>
+<li>You can slice your original list and store it into a new variable: <code>newList = oldList[:]</code></li>
+<li>You can use the built-in <code>list()</code> function: <code>newList = list(oldList)</code></li>
+<li>You can use the <code>copy</code> library:
+<ul>
+<li>With the <code>copy()</code> method: <code>newList = copy.copy(oldList)</code></li>
+<li>If your list contains objects and you want to copy those as well, you can use <code>copy.deepcopy()</code>: <code>copy.deepcopy(oldList)</code></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>Note</strong> that when you use the ‘simple’ copy (shallow copy) methods and has modified the copied list, if the modification is done to the first layer, then nothing would be changed to the original list; but if the modification is done to a deeper layer, the original list would also be modified. In contrast, if you use the <code>deepcopy()</code> method, nothing of the original list will be change whatever modification has been done to the copied list.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=kn>import</span> <span class=nn>copy</span> <span class=k>as</span> <span class=nn>c</span>
+<span class=n>objectList1</span> <span class=o>=</span> <span class=p>[</span><span class=s1>&#39;a&#39;</span><span class=p>,</span><span class=s1>&#39;b&#39;</span><span class=p>,[</span><span class=s1>&#39;ab&#39;</span><span class=p>,</span><span class=s1>&#39;ba&#39;</span><span class=p>]]</span>
+<span class=n>objectList2</span> <span class=o>=</span> <span class=p>[</span><span class=s1>&#39;a&#39;</span><span class=p>,</span><span class=s1>&#39;b&#39;</span><span class=p>,[</span><span class=s1>&#39;ab&#39;</span><span class=p>,</span><span class=s1>&#39;ba&#39;</span><span class=p>]]</span>
+
+<span class=n>shallowCopiedList</span> <span class=o>=</span> <span class=n>objectList1</span><span class=p>[:]</span>
+<span class=n>deepCopiedList</span> <span class=o>=</span> <span class=n>c</span><span class=o>.</span><span class=n>deepcopy</span><span class=p>(</span><span class=n>objectList2</span><span class=p>)</span>
+
+<span class=n>shallowCopiedList</span><span class=p>[</span><span class=mi>0</span><span class=p>]</span> <span class=o>=</span> <span class=s1>&#39;c&#39;</span>
+<span class=n>deepCopiedList</span><span class=p>[</span><span class=mi>1</span><span class=p>]</span> <span class=o>=</span> <span class=s1>&#39;d&#39;</span>
+<span class=n>shallowCopiedList</span><span class=p>[</span><span class=mi>2</span><span class=p>][</span><span class=mi>0</span><span class=p>]</span> <span class=o>=</span> <span class=s1>&#39;cc&#39;</span>
+<span class=n>deepCopiedList</span><span class=p>[</span><span class=mi>2</span><span class=p>][</span><span class=mi>1</span><span class=p>]</span> <span class=o>=</span> <span class=s1>&#39;dd&#39;</span>
+
+<span class=nb>print</span><span class=p>(</span><span class=n>objectList1</span><span class=p>)</span>
+<span class=nb>print</span><span class=p>(</span><span class=n>objectList2</span><span class=p>)</span>
+<span class=o>----------</span>
+<span class=p>[</span><span class=s1>&#39;a&#39;</span><span class=p>,</span> <span class=s1>&#39;b&#39;</span><span class=p>,</span> <span class=p>[</span><span class=s1>&#39;cc&#39;</span><span class=p>,</span> <span class=s1>&#39;ba&#39;</span><span class=p>]]</span>
+<span class=p>[</span><span class=s1>&#39;a&#39;</span><span class=p>,</span> <span class=s1>&#39;b&#39;</span><span class=p>,</span> <span class=p>[</span><span class=s1>&#39;ab&#39;</span><span class=p>,</span> <span class=s1>&#39;ba&#39;</span><span class=p>]]</span>
+</code></pre></td></tr></table>
+</div>
+</div></blockquote>
+<h3 id=list-comprehension>List Comprehension</h3>
+<p>List comprehension is, basically speaking, a way of elegantly constructing your lists.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=n>myList</span> <span class=o>=</span> <span class=p>[</span><span class=mi>1</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>3</span><span class=p>,</span> <span class=mi>4</span><span class=p>,</span> <span class=mi>5</span><span class=p>,</span> <span class=mi>6</span><span class=p>,</span> <span class=mi>7</span><span class=p>,</span> <span class=mi>8</span><span class=p>,</span> <span class=mi>9</span><span class=p>,</span> <span class=mi>10</span><span class=p>]</span>
+<span class=p>[</span><span class=n>x</span><span class=o>**</span><span class=mi>2</span> <span class=k>for</span> <span class=n>x</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>10</span><span class=p>)]</span>
+<span class=p>[</span><span class=n>x</span><span class=o>**</span><span class=mi>2</span> <span class=k>for</span> <span class=n>x</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>10</span><span class=p>)</span> <span class=k>if</span> <span class=n>x</span><span class=o>%</span><span class=mi>2</span><span class=o>==</span><span class=mi>0</span><span class=p>]</span>
+<span class=p>[(</span><span class=k>lambda</span> <span class=n>x</span><span class=p>:</span> <span class=n>x</span><span class=o>*</span><span class=n>x</span><span class=p>)(</span><span class=n>x</span><span class=p>)</span> <span class=k>for</span> <span class=n>x</span> <span class=ow>in</span> <span class=n>myList</span><span class=p>]</span>  <span class=c1># anonymous function (lambda x: x*x)(x) is like f(x)</span>
+<span class=p>[(</span><span class=n>x</span><span class=p>,</span> <span class=n>y</span><span class=p>)</span> <span class=k>for</span> <span class=n>x</span> <span class=ow>in</span> <span class=p>[</span><span class=mi>1</span><span class=p>,</span><span class=mi>2</span><span class=p>,</span><span class=mi>3</span><span class=p>]</span> <span class=k>for</span> <span class=n>y</span> <span class=ow>in</span> <span class=p>[</span><span class=mi>3</span><span class=p>,</span><span class=mi>1</span><span class=p>,</span><span class=mi>4</span><span class=p>]</span> <span class=k>if</span> <span class=n>x</span> <span class=o>!=</span> <span class=n>y</span><span class=p>]</span>
+<span class=p>[[</span><span class=n>row</span><span class=p>[</span><span class=n>i</span><span class=p>]</span> <span class=k>for</span> <span class=n>row</span> <span class=ow>in</span> <span class=n>matrix</span><span class=p>]</span> <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>4</span><span class=p>)]</span>
+
+<span class=c1># Counting all items in a list with count()</span>
+<span class=nb>list</span><span class=o>=</span> <span class=p>[</span><span class=s2>&#34;a&#34;</span><span class=p>,</span><span class=s2>&#34;b&#34;</span><span class=p>,</span><span class=s2>&#34;b&#34;</span><span class=p>]</span>
+<span class=p>[[</span><span class=n>x</span><span class=p>,</span><span class=nb>list</span><span class=o>.</span><span class=n>count</span><span class=p>(</span><span class=n>x</span><span class=p>)]</span> <span class=k>for</span> <span class=n>x</span> <span class=ow>in</span> <span class=nb>set</span><span class=p>(</span><span class=nb>list</span><span class=p>)]</span>
+
+<span class=c1># Counting all list items with Counter()</span>
+<span class=kn>from</span> <span class=nn>collections</span> <span class=kn>import</span> <span class=n>Counter</span>
+<span class=nb>list</span> <span class=o>=</span> <span class=p>[</span><span class=s2>&#34;a&#34;</span><span class=p>,</span><span class=s2>&#34;b&#34;</span><span class=p>,</span><span class=s2>&#34;b&#34;</span><span class=p>]</span>
+<span class=n>Counter</span><span class=p>(</span><span class=nb>list</span><span class=p>)</span>  <span class=c1>#  Counter() is generally faster when you want to count all list items.</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=split-a-python-list-into-evenly-sized-chunks>Split A Python List Into Evenly Sized Chunks</h3>
+<p>To split your list up into parts of the same size, you can resort to the <code>zip()</code> function in combination with <code>iter()</code>:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=n>x</span> <span class=o>=</span> <span class=p>[</span><span class=mi>1</span><span class=p>,</span><span class=mi>2</span><span class=p>,</span><span class=mi>3</span><span class=p>,</span><span class=mi>4</span><span class=p>,</span><span class=mi>5</span><span class=p>,</span><span class=mi>6</span><span class=p>,</span><span class=mi>7</span><span class=p>,</span><span class=mi>8</span><span class=p>,</span><span class=mi>9</span><span class=p>]</span>
+<span class=n>y</span> <span class=o>=</span> <span class=nb>zip</span><span class=p>(</span><span class=o>*</span><span class=p>[</span><span class=nb>iter</span><span class=p>(</span><span class=n>x</span><span class=p>)]</span><span class=o>*</span><span class=mi>3</span><span class=p>)</span>  <span class=c1># Split x up in chunks of 3</span>
+<span class=nb>list</span><span class=p>(</span><span class=n>y</span><span class=p>)</span>  <span class=c1># Use list() to print the result of zip()</span>
+<span class=o>----------</span>
+<span class=p>[(</span><span class=mi>1</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>3</span><span class=p>),</span> <span class=p>(</span><span class=mi>4</span><span class=p>,</span> <span class=mi>5</span><span class=p>,</span> <span class=mi>6</span><span class=p>),</span> <span class=p>(</span><span class=mi>7</span><span class=p>,</span> <span class=mi>8</span><span class=p>,</span> <span class=mi>9</span><span class=p>)]</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=stacks-lifo-structures>Stacks: LIFO Structures</h3>
+<p>“Last-In-First-Out” (LIFO) paradigm.</p>
+<ol>
+<li>We can only access the <em>most recently-added</em> (newest) item on the list;</li>
+<li>We can only access it by removing it from the list.</li>
+</ol>
+<p>E.g., putting dishes in the sink one on top of the other as they get dirty, then washing them when the sink gets full.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=n>stack</span><span class=o>=</span><span class=p>[</span><span class=n>value1</span><span class=p>,</span> <span class=n>value2</span><span class=p>,</span> <span class=n>value3</span><span class=p>]</span>
+<span class=n>stack</span><span class=o>.</span><span class=n>append</span><span class=p>(</span><span class=n>value4</span><span class=p>)</span>
+<span class=n>stack</span><span class=o>.</span><span class=n>pop</span><span class=p>()</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=queues-fifo-structures>Queues: FIFO Structures</h3>
+<p>“First-In-First-Out” (FIFO) paradigm.</p>
+<ol>
+<li>We can only access the <em>least recently-added</em> (oldest) item on the list;</li>
+<li>We can only access it by removing it from the list.</li>
+</ol>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=n>queue</span><span class=o>=</span><span class=p>[</span><span class=n>value1</span><span class=p>,</span> <span class=n>value2</span><span class=p>,</span> <span class=n>value3</span><span class=p>]</span>
+<span class=n>queue</span><span class=o>.</span><span class=n>append</span><span class=p>(</span><span class=n>value4</span><span class=p>)</span>
+<span class=n>queue</span><span class=o>.</span><span class=n>pop</span><span class=p>(</span><span class=mi>0</span><span class=p>)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=linked-list>Linked List</h3>
+<p>A list-like structure where the <strong>location</strong> of each item in the list is contained in the previous item in the list.</p>
+<p>In a list, each spot tends to be a reference to a particular spot in memory that might be <strong>completely disconnected</strong> to the other ones. In effect, each spot in the list is more like an individual variable name that <strong>could point to anywhere in memory</strong>.</p>
+<p>In a linked list, on the other hand, it only has one item that points to a place in memory. The first one. What would make it unique is that instead of the second spot pointing to the second address, it would be data contained in the first spot that point to the second address. Each value of the list contains the location of the next value of the list.</p>
+<p>E.g., going on a scavenger hunt where each clue features a puzzle you must solve to find the next clue.</p>
+<h3 id=external-materials-2>External Materials</h3>
+<p>🐍 <a href=http://interactivepython.org/courselib/static/thinkcspy/Lists/toctree.html target=_blank rel="noopener noreffer">Lists from <em>How to Think Like a Computer Scientist</em></a>
+🐍<a href=https://developers.google.com/edu/python/lists target=_blank rel="noopener noreffer">Python Lists from <em>Google for Education</em></a>
+🐍<a href="https://www.thegeekstuff.com/2013/06/python-list/?utm_source=feedly" target=_blank rel="noopener noreffer">Python List Examples – Insert, Append, Length, Index, Remove, Pop from <em>The Geek Stuff</em></a>
+🐍<a href="https://www.datacamp.com/community/tutorials/18-most-common-python-list-questions-learn-python#gs.=H0VpEs" target=_blank rel="noopener noreffer">18 Most Common Python List Questions</a></p>
+<blockquote>
+<ul>
+<li>Note that, as you’re working with hashable items, checking membership (testing whether a certain element is part of your sequence) will go faster with sets than with lists.</li>
+</ul>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Hashable</th>
+<th>Non-Hashable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Floats</td>
+<td>Dictionaries</td>
+</tr>
+<tr>
+<td>Integers</td>
+<td>Sets</td>
+</tr>
+<tr>
+<td>Tuples</td>
+<td>Lists</td>
+</tr>
+<tr>
+<td>Strings</td>
+<td> </td>
+</tr>
+<tr>
+<td><code>frozenset()</code></td>
+<td> </td>
+</tr>
+</tbody>
+</table>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=c1># Flatten a list</span>
+<span class=nb>sum</span><span class=p>(</span><span class=nb>list</span><span class=p>,</span> <span class=p>[])</span>
+<span class=nb>print</span><span class=p>([</span><span class=n>item</span> <span class=k>for</span> <span class=n>sublist</span> <span class=ow>in</span> <span class=n>listOfLists</span> <span class=k>for</span> <span class=n>item</span> <span class=ow>in</span> <span class=n>sublist</span><span class=p>])</span>
+
+<span class=c1># Obtain the intersection of two lists</span>
+<span class=n>intersection</span> <span class=o>=</span> <span class=p>[</span><span class=nb>list</span><span class=p>(</span><span class=nb>filter</span><span class=p>(</span><span class=k>lambda</span> <span class=n>x</span><span class=p>:</span> <span class=n>x</span> <span class=ow>in</span> <span class=n>list1</span><span class=p>,</span> <span class=n>sublist</span><span class=p>))</span> <span class=k>for</span> <span class=n>sublist</span> <span class=ow>in</span> <span class=n>list2</span><span class=p>]</span>
+<span class=n>intersection</span> <span class=o>=</span> <span class=p>[[</span><span class=n>x</span> <span class=k>for</span> <span class=n>x</span> <span class=ow>in</span> <span class=n>sublist</span> <span class=k>if</span> <span class=n>x</span> <span class=ow>in</span> <span class=n>list1</span><span class=p>]</span> <span class=k>for</span> <span class=n>sublist</span> <span class=ow>in</span> <span class=n>list2</span><span class=p>]</span>
+
+<span class=c1># If the order of your elements is not important and if you don’t need to worry about duplicates then you can use set intersection:</span>
+<span class=nb>list</span><span class=p>(</span><span class=nb>set</span><span class=p>(</span><span class=n>list1</span><span class=p>)</span> <span class=o>&amp;</span> <span class=nb>set</span><span class=p>(</span><span class=n>list2</span><span class=p>))</span>
+<span class=nb>list</span><span class=p>(</span><span class=nb>set</span><span class=p>(</span><span class=n>list1</span><span class=p>)</span><span class=o>.</span><span class=n>intersection</span><span class=p>(</span><span class=n>list2</span><span class=p>))</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=chapter-44-dictionaries>Chapter 4.4: Dictionaries</h2>
+<ul>
+<li>
+<p><strong>Dictionaries:</strong> A data structure comprised of key-value pairs, where a key is entered into the dictionary to get out a value. Similar to or synonymous with Maps (a collection of keys mapped to values; Java, C++), Associative Arrays (PHP, JavaScript), and HashMaps/Hashtables (The term hash refers to the way in which the data structure is constructed). A dictionary would preserve the ability to give names to multiple values by way of keys.</p>
+</li>
+<li>
+<p><strong>Dictionary Key:</strong> A value then, when passed into a dictionary, returns a corresponding value, like a word and its definition. Similar to a variable.</p>
+</li>
+<li>
+<p><strong>Dictionary Value:</strong> A value returned in response to a key in a dictionary. Similar to a value of a variable outside a dictionary.</p>
+</li>
+</ul>
+<p>The major difference between a dictionary and a list is that the values of the list had to be accessed via numeric identifiers called indices or indexes. But dictionaries use keys instead of numeric indices/indexes. Besides, dictionaries aren&rsquo;t guaranteed to preserve order. In a list, the first item is guaranteed to be the first item unless it&rsquo;s changed; in a dictionary, the first key-value pair added might not be the first one accessed.</p>
+<h3 id=dictionaries-in-python>Dictionaries in Python</h3>
+<p>We use [brackets] for lists, (parentheses) for tuples, {curly braces} for dictionaries. Each <em>key/value pair</em> in our dictionary is defined with a syntax <em>key colon value</em>. With a dictionary, we&rsquo;re bundling up multiple variables, but we retain the ability to give them each their own name.</p>
+<p>Note that when we print the dictionary that we&rsquo;re defining, it actually prints in a <em>different order</em> than the way we defined it. Dictionaries carry no guarantee that the keys and values will be printed in the same order in which they were defined. It only guarantees that each value will stick with the correct key.</p>
+<p>The persistence of keys, though, means that in a dictionary, <strong>keys must be immutable values</strong>. So we can use <strong>strings, integers, floats, tuples</strong> as keys, but <strong>we couldn&rsquo;t use a list or a dictionary as a key</strong> because those are mutable data types. The reason for this is that if the key changes, the dictionary wouldn&rsquo;t know what value was associated with it. So it must guarantee that the keys cannot change. Values, on the other hand, can change.</p>
+<p>Editing a Dictionary:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=n>dictionary</span><span class=p>[</span><span class=s1>&#39;newKey&#39;</span><span class=p>]</span> <span class=o>=</span> <span class=n>newValue</span>
+<span class=k>del</span> <span class=n>dictionary</span><span class=p>[</span><span class=s1>&#39;targetKey&#39;</span><span class=p>]</span>
+
+<span class=k>if</span> <span class=n>keyName</span> <span class=ow>in</span> <span class=n>dictionary</span><span class=p>:</span>  <span class=c1># check whether a key is in the dictionary</span>
+
+<span class=c1># traverse every item in the dictionary</span>
+<span class=k>for</span> <span class=n>value</span> <span class=ow>in</span> <span class=n>dictionary</span><span class=o>.</span><span class=n>values</span><span class=p>():</span>  <span class=c1>#  iterate over the values directly when not caring about keys; dictionary.values() returns a list of all the values in that dictionary</span>
+
+<span class=k>for</span> <span class=n>key</span> <span class=ow>in</span> <span class=n>dictionary</span><span class=o>.</span><span class=n>keys</span><span class=p>():</span>  <span class=c1>#  iterate over the keys when caring about values and their corresponding keys; dictionary.keys() returns a list of all the keys in that dictionary</span>
+	<span class=n>value</span> <span class=o>=</span> <span class=n>dictionary</span><span class=p>[</span><span class=n>key</span><span class=p>]</span>
+	
+<span class=k>for</span> <span class=p>(</span><span class=n>key</span><span class=p>,</span> <span class=n>value</span><span class=p>)</span> <span class=ow>in</span> <span class=n>dictionary</span><span class=o>.</span><span class=n>items</span><span class=p>():</span>  <span class=c1># iterate over each tuple corresponding to a key and a value; dictionary.items() returns a list of (key, value) tuples in that dictionary</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=chapter-45-file-input-and-output>Chapter 4.5: File Input and Output</h2>
+<p><strong>File Input and Output:</strong> The complementary processes of saving data to a file and loading data from a file, generally such that the state of the memory of the program is the same after saving and loading have occurred.</p>
+<p>Each file type has its own built-in, type-specific encoding. That encoding is properly unpacked by a program that knows how to read the file. File types set up rules for how to interpret a file, and a program can only correctly interpret the file if it knows those rules.</p>
+<p>Many languages actually require that file input and output be enclosed within a try block. Reading simply means that we&rsquo;re looking at the file&rsquo;s contents and reading it into our program. We&rsquo;re not changing the contents, just inputting it into our own code. Writing, on the other hand, means we&rsquo;re rewriting the file from scratch. When we write to a file, we, by default, erase it and rewrite it completely from scratch. With writing, we assume the file is a snapshot of the current state of our data, not a running log of the history of all of its changes. Appending also writes to the file, but it starts on the very last line of the file. Nothing is overwritten. New data is just added to the end.</p>
+<h3 id=writing-files-in-python>Writing Files in Python</h3>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=n>outputFile</span> <span class=o>=</span> <span class=nb>open</span><span class=p>(</span><span class=s2>&#34;OutputFile.text&#34;</span><span class=p>,</span> <span class=s1>&#39;w&#39;</span><span class=p>)</span>  <span class=c1># w-write, r-read, a-append; Write will overwrite the current content of the file, append will add to the end of the file, and read will just read from the file without actually changing its contents.</span>
+<span class=n>outputFile</span><span class=o>.</span><span class=n>write</span><span class=p>(</span><span class=n>string</span><span class=p>)</span>  <span class=c1># the write method can only write strings to files. By default write does not start a new line at the end of writing a particular line.</span>
+<span class=n>outputFile</span><span class=o>.</span><span class=n>writelines</span><span class=p>(</span><span class=nb>list</span><span class=p>)</span>  <span class=c1># takes as input a list of strings and automatically writes them to the file; doesn&#39;t append spaces or new line characters to the end of each item in the list.So, one solution would be:</span>
+<span class=n>outputFile</span><span class=o>.</span><span class=n>writelines</span><span class=p>(</span><span class=s1>&#39;/n&#39;</span><span class=o>.</span><span class=n>join</span><span class=p>(</span><span class=nb>list</span><span class=p>))</span>
+<span class=nb>print</span><span class=p>(</span><span class=n>content</span><span class=p>,</span> <span class=n>file</span> <span class=o>=</span> <span class=n>outputFile</span><span class=p>)</span>  <span class=c1># If we supply an argument for the keyword &#39;file&#39; when calling our print function, then Python will write to that file instead of to the console.</span>
+<span class=n>outputFile</span><span class=o>.</span><span class=n>close</span><span class=p>()</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=reading-files-in-python>Reading Files in Python</h3>
+<p>Remember when loading from a file, the computer by default interprets everything as text. If we need to treat it as numbers or some other kind of data, we&rsquo;ll need to perform a type conversion.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=n>inputFile</span> <span class=o>=</span> <span class=nb>open</span><span class=p>(</span><span class=s2>&#34;OurtputFile.txt&#34;</span><span class=p>,</span> <span class=s1>&#39;r&#39;</span><span class=p>)</span>
+<span class=nb>print</span><span class=p>(</span><span class=n>inputFile</span><span class=o>.</span><span class=n>readline</span><span class=p>())</span>  <span class=c1># if we want to delete the newline character of each line, use print(inputFile.readline().strip())</span>
+<span class=n>myInt</span> <span class=o>=</span> <span class=nb>int</span><span class=p>(</span><span class=n>inputFile</span><span class=o>.</span><span class=n>readline</span><span class=p>())</span>
+
+<span class=c1># loading into lists</span>
+<span class=k>for</span> <span class=n>line</span> <span class=ow>in</span> <span class=n>inputFile</span><span class=p>:</span>  <span class=c1># starts from the line that has not been read</span>
+	<span class=n>myList</span><span class=o>.</span><span class=n>append</span><span class=p>(</span><span class=n>line</span><span class=o>.</span><span class=n>strip</span><span class=p>())</span>
+	
+<span class=n>inputFile</span><span class=o>.</span><span class=n>close</span><span class=p>()</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=save-and-load-functions>Save and Load Functions</h3>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=c1>#Saves inList to the file</span>
+<span class=k>def</span> <span class=nf>save</span><span class=p>(</span><span class=n>filename</span><span class=p>,</span> <span class=n>inList</span><span class=p>):</span> 
+    <span class=n>outputFile</span> <span class=o>=</span> <span class=nb>open</span><span class=p>(</span><span class=n>filename</span><span class=p>,</span> <span class=s2>&#34;w&#34;</span><span class=p>)</span>
+    <span class=k>for</span> <span class=n>item</span> <span class=ow>in</span> <span class=n>inList</span><span class=p>:</span> 
+        <span class=nb>print</span><span class=p>(</span><span class=n>item</span><span class=p>,</span> <span class=n>file</span> <span class=o>=</span> <span class=n>outputFile</span><span class=p>)</span>   
+    <span class=n>outputFile</span><span class=o>.</span><span class=n>close</span><span class=p>()</span>
+
+<span class=c1>#Loads from filename and returns a list of the contents</span>
+<span class=k>def</span> <span class=nf>load</span><span class=p>(</span><span class=n>filename</span><span class=p>):</span> 
+    <span class=n>inputFile</span> <span class=o>=</span> <span class=nb>open</span><span class=p>(</span><span class=n>filename</span><span class=p>,</span> <span class=s2>&#34;r&#34;</span><span class=p>)</span>
+    <span class=n>inList</span> <span class=o>=</span> <span class=p>[]</span>
+    <span class=k>for</span> <span class=n>line</span> <span class=ow>in</span> <span class=n>inputFile</span><span class=p>:</span>
+        <span class=n>inList</span><span class=o>.</span><span class=n>append</span><span class=p>(</span><span class=n>line</span><span class=o>.</span><span class=n>strip</span><span class=p>())</span>
+    <span class=n>inputFile</span><span class=o>.</span><span class=n>close</span><span class=p>()</span>
+    <span class=k>return</span> <span class=n>inList</span>
+
+<span class=n>myList</span> <span class=o>=</span> <span class=p>[</span><span class=s2>&#34;David&#34;</span><span class=p>,</span> <span class=s2>&#34;Lucy&#34;</span><span class=p>,</span> <span class=s2>&#34;Vrushali&#34;</span><span class=p>,</span> <span class=s2>&#34;Ping&#34;</span><span class=p>,</span> <span class=s2>&#34;Natalie&#34;</span><span class=p>,</span> <span class=s2>&#34;Dana&#34;</span><span class=p>,</span> <span class=s2>&#34;Addison&#34;</span><span class=p>,</span> <span class=s2>&#34;Jasmine&#34;</span><span class=p>]</span>
+<span class=n>save</span><span class=p>(</span><span class=s2>&#34;OutputFile.txt&#34;</span><span class=p>,</span> <span class=n>myList</span><span class=p>)</span>
+<span class=n>newList</span> <span class=o>=</span> <span class=n>load</span><span class=p>(</span><span class=s2>&#34;OutputFile.txt&#34;</span><span class=p>)</span>
+<span class=nb>print</span><span class=p>(</span><span class=n>newList</span><span class=p>)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=external-materials-3>External Materials</h3>
+<p>🐍* <a href=http://interactivepython.org/courselib/static/thinkcspy/Files/toctree.html target=_blank rel="noopener noreffer">Files from <em>How to Think Like a Computer Scientist</em></a></p>
+</div><div class=post-footer id=post-footer>
+<div class=post-info>
+<div class=post-info-line>
+<div class=post-info-mod>
+<span>Updated on 2021-12-18&nbsp;<a class=git-hash href=https://github.com/ryandoren/commit/913abbe7bdefb64025000fdd6f4bc54f40953212 target=_blank title="commit by Ryan Doren(55754917+ryandoren@users.noreply.github.com) 913abbe7bdefb64025000fdd6f4bc54f40953212: 修改文件: content/posts/Gatech CS1301xIII.md">
+<i class="fas fa-hashtag fa-fw"></i>913abbe</a></span>
+</div>
+<div class=post-info-license></div>
+</div>
+<div class=post-info-line>
+<div class=post-info-md><span>
+<a class=link-to-markdown href=/gatech-cs1301xiii/index.md target=_blank>Read Markdown</a>
+</span></div>
+<div class=post-info-share>
+<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://ryandoren.github.io/gatech-cs1301xiii/ data-title="Gatech CS1301xIII.md" data-via=xxxx><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://ryandoren.github.io/gatech-cs1301xiii/><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on Hacker News" data-sharer=hackernews data-url=https://ryandoren.github.io/gatech-cs1301xiii/ data-title="Gatech CS1301xIII.md"><i class="fab fa-hacker-news fa-fw"></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://ryandoren.github.io/gatech-cs1301xiii/ data-title="Gatech CS1301xIII.md"><i data-svg-src=https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://ryandoren.github.io/gatech-cs1301xiii/ data-title="Gatech CS1301xIII.md"><i class="fab fa-weibo fa-fw"></i></a></span>
+</div>
+</div>
+</div>
+<div class=post-info-more>
+<section class=post-tags></section>
+<section>
+<span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span>
+</section>
+</div>
+<div class=post-nav><a href=/gatech-cs1301xii/ class=prev rel=prev title="Gatech CS1301xII"><i class="fas fa-angle-left fa-fw"></i>Gatech CS1301xII</a></div>
+</div>
+<div id=comments><div id=disqus_thread class=comment></div><noscript>
+Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.
+</noscript><div id=gitalk class=comment></div><noscript>
+Please enable JavaScript to view the comments powered by <a href=https://github.com/gitalk/gitalk></a>Gitalk</a>.
+</noscript><div id=valine class=comment></div><noscript>
+Please enable JavaScript to view the comments powered by <a href=https://valine.js.org/>Valine</a>.
+</noscript><div id=fb-root class=comment></div>
+<div class=fb-comments data-href=https://ryandoren.github.io/gatech-cs1301xiii/ data-width=100% data-numposts=10></div><noscript>
+Please enable JavaScript to view the comments powered by <a href=https://developers.facebook.com/docs/plugins/comments/></a>Facebook</a>.
+</noscript><div id=telegram-comments class=comment></div><noscript>
+Please enable JavaScript to view the comments powered by <a href=https://comments.app/>Telegram Comments</a>.
+</noscript></div></article></div>
+</main><footer class=footer>
+<div class=footer-container><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank>Ryan</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div>
+</div>
+</footer></div>
+<div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top">
+<i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title="View Comments">
+<i class="fas fa-comment fa-fw"></i>
+</a>
+</div><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/gitalk@1.6.2/dist/gitalk.min.css><link rel=stylesheet href=/lib/valine/valine.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.css><script type=text/javascript src=https://.disqus.com/embed.js defer></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/gitalk@1.6.2/dist/gitalk.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js></script><script type=text/javascript src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0&appId=&autoLogAppEvents=1" defer></script><script type=text/javascript src=https://comments.app/js/widget.js?2 defer data-comments-app-website data-limit=5 data-colorful=1></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mhchem.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:10},comment:{gitalk:{admin:[""],clientID:"",clientSecret:"",id:"2021-10-30T00:00:00Z",owner:"",repo:"",title:"Gatech CS1301xIII.md"},valine:{appId:"QGzwQXOqs5JOhN4RGPOkR2mR-MdYXbMMI",appKey:"WBmoGyJtbqUswvfLh6L8iEBr",avatar:"mp",el:"#valine",emojiCDN:"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/",emojiMaps:{100:"1f4af.png",alien:"1f47d.png",anger:"1f4a2.png",angry:"1f620.png",anguished:"1f627.png",astonished:"1f632.png",black_heart:"1f5a4.png",blue_heart:"1f499.png",blush:"1f60a.png",bomb:"1f4a3.png",boom:"1f4a5.png",broken_heart:"1f494.png",brown_heart:"1f90e.png",clown_face:"1f921.png",cold_face:"1f976.png",cold_sweat:"1f630.png",confounded:"1f616.png",confused:"1f615.png",cry:"1f622.png",crying_cat_face:"1f63f.png",cupid:"1f498.png",dash:"1f4a8.png",disappointed:"1f61e.png",disappointed_relieved:"1f625.png",dizzy:"1f4ab.png",dizzy_face:"1f635.png",drooling_face:"1f924.png",exploding_head:"1f92f.png",expressionless:"1f611.png",face_vomiting:"1f92e.png",face_with_cowboy_hat:"1f920.png",face_with_hand_over_mouth:"1f92d.png",face_with_head_bandage:"1f915.png",face_with_monocle:"1f9d0.png",face_with_raised_eyebrow:"1f928.png",face_with_rolling_eyes:"1f644.png",face_with_symbols_on_mouth:"1f92c.png",face_with_thermometer:"1f912.png",fearful:"1f628.png",flushed:"1f633.png",frowning:"1f626.png",ghost:"1f47b.png",gift_heart:"1f49d.png",green_heart:"1f49a.png",grimacing:"1f62c.png",grin:"1f601.png",grinning:"1f600.png",hankey:"1f4a9.png",hear_no_evil:"1f649.png",heart:"2764-fe0f.png",heart_decoration:"1f49f.png",heart_eyes:"1f60d.png",heart_eyes_cat:"1f63b.png",heartbeat:"1f493.png",heartpulse:"1f497.png",heavy_heart_exclamation_mark_ornament:"2763-fe0f.png",hole:"1f573-fe0f.png",hot_face:"1f975.png",hugging_face:"1f917.png",hushed:"1f62f.png",imp:"1f47f.png",innocent:"1f607.png",japanese_goblin:"1f47a.png",japanese_ogre:"1f479.png",joy:"1f602.png",joy_cat:"1f639.png",kiss:"1f48b.png",kissing:"1f617.png",kissing_cat:"1f63d.png",kissing_closed_eyes:"1f61a.png",kissing_heart:"1f618.png",kissing_smiling_eyes:"1f619.png",laughing:"1f606.png",left_speech_bubble:"1f5e8-fe0f.png",love_letter:"1f48c.png",lying_face:"1f925.png",mask:"1f637.png",money_mouth_face:"1f911.png",nauseated_face:"1f922.png",nerd_face:"1f913.png",neutral_face:"1f610.png",no_mouth:"1f636.png",open_mouth:"1f62e.png",orange_heart:"1f9e1.png",partying_face:"1f973.png",pensive:"1f614.png",persevere:"1f623.png",pleading_face:"1f97a.png",pouting_cat:"1f63e.png",purple_heart:"1f49c.png",rage:"1f621.png",relaxed:"263a-fe0f.png",relieved:"1f60c.png",revolving_hearts:"1f49e.png",right_anger_bubble:"1f5ef-fe0f.png",robot_face:"1f916.png",rolling_on_the_floor_laughing:"1f923.png",scream:"1f631.png",scream_cat:"1f640.png",see_no_evil:"1f648.png",shushing_face:"1f92b.png",skull:"1f480.png",skull_and_crossbones:"2620-fe0f.png",sleeping:"1f634.png",sleepy:"1f62a.png",slightly_frowning_face:"1f641.png",slightly_smiling_face:"1f642.png",smile:"1f604.png",smile_cat:"1f638.png",smiley:"1f603.png",smiley_cat:"1f63a.png",smiling_face_with_3_hearts:"1f970.png",smiling_imp:"1f608.png",smirk:"1f60f.png",smirk_cat:"1f63c.png",sneezing_face:"1f927.png",sob:"1f62d.png",space_invader:"1f47e.png",sparkling_heart:"1f496.png",speak_no_evil:"1f64a.png",speech_balloon:"1f4ac.png","star-struck":"1f929.png",stuck_out_tongue:"1f61b.png",stuck_out_tongue_closed_eyes:"1f61d.png",stuck_out_tongue_winking_eye:"1f61c.png",sunglasses:"1f60e.png",sweat:"1f613.png",sweat_drops:"1f4a6.png",sweat_smile:"1f605.png",thinking_face:"1f914.png",thought_balloon:"1f4ad.png",tired_face:"1f62b.png",triumph:"1f624.png",two_hearts:"1f495.png",unamused:"1f612.png",upside_down_face:"1f643.png",weary:"1f629.png",white_frowning_face:"2639-fe0f.png",white_heart:"1f90d.png",wink:"1f609.png",woozy_face:"1f974.png",worried:"1f61f.png",yawning_face:"1f971.png",yellow_heart:"1f49b.png",yum:"1f60b.png",zany_face:"1f92a.png",zipper_mouth_face:"1f910.png",zzz:"1f4a4.png"},enableQQ:!0,highlight:!0,lang:"en",pageSize:10,placeholder:"Your comment ...",recordIP:!0,serverURLs:"https://leancloud.hugoloveit.com",visitor:!0}},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{algoliaAppID:"PASDMWALPK",algoliaIndex:"index.en",algoliaSearchKey:"b42948e51daaa93df92381c8e2ac0f93",highlightTag:"em",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"algolia"}}</script><script type=text/javascript src=/js/theme.min.js></script></body>
+</html>
