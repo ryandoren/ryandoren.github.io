@@ -69,7 +69,10 @@ Methods are what make encapsulation truly powerful in classes. A method is a fun
 
 In practice, the four common method types we've' discussed above -- constructors, destructors, getters, and setters -- are more important to other languages than to Python. Constructors are present, but you'll rarely use destructors in Python; and getters and setters are antithetical to "Pythonic" thinking.
 
-`__init__` is like the constructor in Python. And as a function defined inside of a class, it has a parameter list. Self is always the first parameter for any method that we define inside of a class, but it doesn't have to be the only one.
+Python doesn't provide *privacy* options for its variables and methods.
+There is no way to bindingly mark a variable or method in a Python class as private, meaning that other code can always access variables directly. By convention, we often **perceive variables or methods that we don't want other classes or functions to access with a double underscore**. The double underscore simply informs other areas of the code that those methods or variables are not meant to be used to access data that way.
+
+`__init__` is the constructor in Python. And as a function defined inside of a class, it has a parameter list. Self is always the first parameter for any method that we define inside of a class, but it doesn't have to be the only one.
 
 ```python
 #Define the class Person
@@ -89,3 +92,72 @@ print(myPerson2.firstname)  # David
 myPerson3 = Person("Vrushali")
 print(myPerson3.firstname)  # Vrushali
 ```
+Part of the benefit of getters and setters was that they allow us to run some code whenever a variable is accessed or modified.
+
+```python
+#Define class BankAccount
+class BankAccount:
+    #Initialize balance to 0
+    def __init__(self, name, balance = 0.0):
+        self.log("Account created!")
+        self.name = name
+        self.balance = balance
+
+    def getBalance(self): #Getter for balance
+        self.log("Balance checked at " + str(self.balance))
+        return self.balance
+
+    def setBalance(self, newBalance): #Setter for balance
+        self.log("Balance changed to " + str(newBalance))
+        self.balance = newBalance
+
+    def log(self, message): #Logging method
+        myLog = open("Log.txt", "a")
+        print(message, file = myLog)
+        myLog.close()
+
+myBankAccount = BankAccount("David Joyner")
+myBankAccount.setBalance(20.0)
+print(myBankAccount.getBalance())
+```
+The `log()` method will take as a parameter, the message
+to be logged; and its operation is to automatically open my log,
+print the message to that log, and then close that log. So every time an account is created, or the balance is checked, or the balance is changed, those operations will get logged to my log file.
+
+`getBalance()` is a getter for getting the balance. Its main function is to return the balance, which is the same thing as accessing the balance directly. It's also going to log every time the balance is checked.
+
+`setBalance()` is a setter that sets the value equal to a new balance, and it also logs that as well.
+
+We could actually create methods to do whatever we want. And in fact, if we were really designing a bank account class like we were designing here, we probably don't want a set balance method. How often do we just wipe out the previous balance and set it equal to a new value. That's not the way we usually use bank accounts. Usually we use them by making deposits and making withdrawals.
+
+```python
+class BankAccount:
+    def __init__(self, name, balance = 0.0):
+        self.log("Account created!")
+        self.name = name
+        self.balance = balance
+
+    def getBalance(self):
+        self.log("Balance checked at " + str(self.balance))
+        return self.balance
+
+    def deposit(self, amount):
+        self.balance += amount
+        self.log("+" + str(amount) + ": " + str(self.balance))
+
+    def withdraw(self, amount):
+        self.balance -= amount
+        self.log("-" + str(amount) + ": " + str(self.balance))
+
+    def log(self, message): #Logging method
+        myLog = open("Log.txt", "a")
+        print(message, file = myLog)
+        myLog.close()
+
+myBankAccount = BankAccount("David Joyner")
+myBankAccount.deposit(20.0)
+print(myBankAccount.getBalance())
+myBankAccount.withdraw(10.0)
+print(myBankAccount.getBalance())
+```
+### Advanced Topics in Classes in Python
