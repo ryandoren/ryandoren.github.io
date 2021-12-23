@@ -265,3 +265,14 @@ myPerson2.name.firstname = "Ryan"
 print(myPerson1.name.firstname)  # Ryan
 print(myPerson2.name.firstname)  # Ryan
 ```
+### Polymorphism and Inheritance and Abstraction
+**Abstraction:** A principle of object-oriented programming that states that only essential information should be made visible to the outside program. Certain variables only makes sense at certain levels of abstraction.
+
+**Polymorphism:** The principle that a method call can behave differently depending on the arguments and object with which it is called. Polymorphism describes the ability to write a method in each class that would allow drastically dissimilar objects to be accessed and used in the same way.
+
+**Inheritance:** A principle of object-oriented programming where classes can be created that are “subclasses” of other classes, inheriting all the variables and methods from the other class while supplying new variables, methods, or behaviors of these own. Inheritance is the idea that an object can inherit certain variables and methods from its parent.
+
+### External Materials
+🐍[Classes and Objects - the Basics](http://interactivepython.org/courselib/static/thinkcspy/ClassesBasics/toctree.html) and [Classes and Objects - Digging a Little Deeper](http://interactivepython.org/courselib/static/thinkcspy/ClassesDiggingDeeper/toctree.html), from *How to Think Like a Computer Scientist*
+
+## Chapter 5.2: Algorithms
