@@ -156,3 +156,107 @@ myBankAccount.withdraw(10.0)
 print(myBankAccount.getBalance())
 ```
 ### Advanced Topics in Classes in Python
+Combining Classes:
+```python
+ 1| class Name:
+ 2|     def __init__(self, firstname, lastname):
+ 3|         self.firstname = firstname
+ 4|         self.lastname = lastname
+ 5|
+ 6| class Student:
+ 7|     def __init__(self, studentName, enrolled):
+ 8|         self.studentName = studentName
+ 9|         self.GPA = 0.0
+10|         self.creditHours = 0
+11|         self.enrolled = enrolled
+12|         self.classes = []
+
+# Legal ways to create a new instance of Student:
+newStudent = Student(Name("David", "Joyner"), True)
+
+newName = Name("David", "Joyner")
+newStudent = Student(newName, True)
+
+newStudent = Student("David Joyner", True)
+```
+Instances as arguments (1)
+```python
+class Person:
+    def __init__(self, name, age, father=None, mother=None):
+        self.name = name
+        self.age = age
+        self.father = father
+        self.mother = mother
+
+person1=Person("Mr. Burdell",53)
+person2=Person("Mrs. Burdell",53)
+george_p=Person("George P. Burdell",25,person1, person2)
+print(george_p.name)
+print(george_p.mother.name)
+print(george_p.father.name)
+```
+Instance Assignments: when we assign an already existed instance to a new instance, we've given the new one access to the old one's actual variables (they're pointing through the same variable name). So if the new one changes the variables, it changes them from the old one as well. **Lists, dictionaries, objects, and most other data types in Python behave this way: they are mutable.**
+
+Instances as arguments (2)
+```python
+class Person:
+    def __init__(self, name, eyecolor, age):
+        self.name = name
+        self.eyecolor = eyecolor
+        self.age = age
+
+class Name:
+    def __init__(self, firstname, lastname):
+        self.firstname = firstname
+        self.lastname = lastname
+		
+def capitalizeName(name):
+    name.firstname = name.firstname.upper()
+    name.lastname = name.lastname.upper()
+	
+def capitalizeString(instring):
+    instring = instring.upper()
+
+myPerson = Person(Name("David", "Joyner"), "brown", 30)
+capitalizeName(myPerson.name)
+print(myPerson.name.firstname)  # DAVID
+print(myPerson.name.lastname)  # JOYNER
+capitalizeString(myPerson.name.firstname)
+capitalizeString(myPerson.name.lastname)
+print(myPerson.name.firstname)  # David
+print(myPerson.name.lastname)  # Joyner
+```
+When we passed in an instance of the name object, `capitalizeName` actually has access to the original variables and can change them. It's not just changing its own local copy, it's changing the real values of the variables. And so we see in the end that the strings themselves have been converted to all capital letters. It's not actually changing the firstname and lastname, it's changing what `name.firstname` and `name.lastname` point at.
+
+But when we have `capitalizeString` instead of `capitalizeName`, we pass the strings for first name and last name directly instead of passing the name object that contains them. The result here is exactly the opposite, and the reason is that strings are immutable. Here, though, it doesn't have access to name dot anything. So it can't change what name is pointing at. It tries to change the value of the string itself, but it has no access to the original variable name, so it can't actually change the values of first name and last name as far as name is concerned.
+
+So the takeaway here is that **any operations we make on mutable objects**, like name, **propagate back out to the code that called that function. Any operations we make to immutable types**, like just the plain string, **do not propagate out to our main function or to our main code.**
+
+Then what do you do if you want to make an actual copy of an instance, such that you can actually modify it separately? The basic principle is that you must **copy it at the level of the immutable data types** (string and integer are immutable, but self-defined classes are mutable). We have to construct a new instance of person and pass in those immutable data types as arguments, as opposed to just setting `myPerson2` directly equal to `myPerson1`. This forces the computer to create a new instance of person, with its own variables for name, eye color, and age.
+```python
+class Person:
+    def __init__(self, name, eyecolor, age):
+        self.name = name
+        self.eyecolor = eyecolor
+        self.age = age
+
+class Name:
+    def __init__(self, firstname, lastname):
+        self.firstname = firstname
+        self.lastname = lastname
+
+myPerson1 = Person(Name("David", "Joyner"), "brown", 30)
+myPerson2 = Person(myPerson1.name, myPerson1.eyecolor, myPerson1.age)  # myPerson1.name is not at the level of the immutable types
+myPerson3 = Person(Name(myPerson1.name.firstname, myPerson1.name.lastname), myPerson1.eyecolor, myPerson1.age)  # a real copy
+myPerson2.eyecolor = "black"
+myPerson3.eyecolor = "blue"
+print(myPerson1.eyecolor)  # brown
+print(myPerson2.eyecolor)  # black
+print(myPerson3.eyecolor)  # blue
+myPerson3.name.firstname = "Vrushali"
+print(myPerson1.name.firstname)  # David
+print(myPerson3.name.firstname)  # Vrushali
+myPerson2.name.firstname = "Ryan"
+print(myPerson1.name.firstname)  # Ryan
+print(myPerson2.name.firstname)  # Ryan
+```
