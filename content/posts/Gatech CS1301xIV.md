@@ -4,6 +4,7 @@ author: "Ryan"              # 文章作者
 description : "Intro to Computing in Python by David Joyner"    # 文章描述信息
 date: 2021-11-5            # 文章编写日期
 draft: false
+math: true
 ---
 # Unit 5
 ## Chapter 5.1: Objects
@@ -276,3 +277,26 @@ print(myPerson2.name.firstname)  # Ryan
 🐍[Classes and Objects - the Basics](http://interactivepython.org/courselib/static/thinkcspy/ClassesBasics/toctree.html) and [Classes and Objects - Digging a Little Deeper](http://interactivepython.org/courselib/static/thinkcspy/ClassesDiggingDeeper/toctree.html), from *How to Think Like a Computer Scientist*
 
 ## Chapter 5.2: Algorithms
+**Algorithm:** Technically, a collection of steps that transforms input into output; commonly, a complex set of lots of steps that is only feasible to perform with the efficiency of a computer.  They generally exist separate and apart from our particular computer implementation of them.
+
+Famous Algorithms:
+- **Data compression:** taking very large files and communicating them with a fraction of the data in a way that loses as little actual meaning as possible. Algorithms responsible for effective compression are used to run video streaming services, online multiplayer games, and more.
+
+- **Random number generation:** algorithms that take some variable input and use it to algorithmically replicate something resembling truly random numbers.
+
+- **Search algorithms:** search in the way that in internet search engines. Algorithms underlie Google's efforts to predict what you're searching for based on your keywords, relationships between websites, and past users experiences.
+
+### Complexity and Big O Notation
+**Complexity:** The rate at which the number of operations requires to run an algorithm grows based on the value of the input on which it operates. Usually when discussing complexity we talk in terms of worst case scenarios, also known as "upper bounds" on how long something could take.
+
+**Big O Notation:** A notation for expressing the **worst-case efficiency** of an algorithm in terms of the size of the input.
+
+Big o is a measure of algorithmic complexity. In big o we ask, given a data set of size n, how many operations are required to complete this algorithm? However, what we're really interested in with big o notation, are differences of **orders of magnitude**. So it's common to *leave out the coefficients* and describe algorithms simply as having o of terms just related to n (e.g., n squared) complexity. In fact, the "o" in big o notation,
+stands for the **order of the function**.
+
+There also exist **Big Ω (Omega) Notation**, which expresses the **best-case efficiency** of an algorithm, and **Big θ (Theta) Notation**, which expresses the **typical-case efficiency** of an algorithm. *Big O is used most commonly.*
+
+These various values exist, though, because some algorithms are generally very efficiency, but are very inefficient with certain types of data. For example, there exists a sorting algorithm called QuickSort that is generally extremely efficient, but whose efficiency plummets if there are a lot of duplicate values in the data set that it's sorting.
+
+Common Big O Values:
+- $ c = \pm\sqrt{a^2 + b^2} $ 和 \\( f(x)=\int_{-\infty}^{\infty} \hat{f}(\xi) e^{2 \pi i \xi x} d \xi \\)
