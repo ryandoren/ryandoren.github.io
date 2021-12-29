@@ -346,9 +346,31 @@ Sorting Algorithms take as input a list, and produce as output a sorted version 
 
 - Implementation: iterate through each item in the list one pair at a time. If that pair were in the wrong order then switch them. Repeat that process so long as a switch occurred the previous time we went through the list. When no switches are required, then that means the list was sorted. **Each time we go through the list, the bubble sort finds the largest number that has not been in the right place and puts it into the right spot by switching pairs**.
 
-The benefit of bubble sort is that it's actually pretty easy to write. It's effectively-- for each number in the list swap it if it's greater than the next number, and keep a running Boolean that says true if any swaps were necessary. You reset that boolean to false at the end of each execution, but rerun the bubble sort if it was true at the end of the execution. The drawback of a bubble sort is it's actually pretty inefficient. A lot of swaps were unnecessary. So it's probably the easiest sort to implement, but it also operates in an inefficient time--o of n squared.
+The benefit of bubble sort is that it's actually pretty easy to write. It's effectively-- for each number in the list swap it if it's greater than the next number, and keep a running Boolean that says true if any swaps were necessary. You reset that boolean to false at the end of each execution, but rerun the bubble sort if it was true at the end of the execution. The drawback of a bubble sort is it's actually pretty inefficient. A lot of swaps were unnecessary. So it's probably the easiest sort to implement, but it also operates in an inefficient time-- o of n squared.
+![enter description here](./images/1640766305307.png)
 
+```python
+def BubbleSort(list):
+    #Set swap_occurred to True to guarantee the loop runs once
+    swap_occurred = True
+    
+    #Run the loop as long as a swap occurred the previous time
+    while swap_occurred:
+        
+        #Start off assuming a swap did not occur
+        swap_occurred = False
+        
+        #For every item in the list except the last one...
+        for i in range(len(list) - 1):
 
+            #If the item should swap with the next item then swap
+            if list[i] > list[i + 1]:
+                list[i], list[i+1] = list[i + 1], list[i]
+				
+				# Record that a swap has occurred
+                swap_occurred =True
 
+    return list
+```
 
 
