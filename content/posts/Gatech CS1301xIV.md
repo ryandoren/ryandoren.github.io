@@ -319,35 +319,36 @@ table th:nth-of-type(3) {
 | Polynomial |`!$O(n^3)$` | The number of operations required increases with the size of the data set raised to a larger exponent. | "Are there any triple duplicate names in this unsorted list of names?" (Triple-Linear Search) |
 | Exponential |`!$O(2^n)$` | The number of operations required increases by a constant raised to the size of the data set. | "What is every possible 10-digit password?" |
 | Logarithmic |`!$O(log(n))$` | The number of operations required increases with the square root of the size of the data set. | "Is the name 'David' in this sorted list of names?" (Binary Search) |
-| Loglinear |`!$O(nlog(n))$` | The number of operations required increases with square root of the size of the data set times the size of the data set. (tends to be the optimal efficiency for most
-sorting algorithms) | "Sort this list of names." (Merge Sort) |
-| Factorial |`!$O(n!)$` | The number of operations required increases with the factorial of the size of the data set. (tends to come up
-a lot in recursive algorithms) | "What is shortest possible route among these multiple destinations?" |
+| Loglinear |`!$O(nlog(n))$` | The number of operations required increases with square root of the size of the data set times the size of the data set. (tends to be the optimal efficiency for most sorting algorithms) | "Sort this list of names." (Merge Sort) |
+| Factorial |`!$O(n!)$` | The number of operations required increases with the factorial of the size of the data set. (tends to come up a lot in recursive algorithms) | "What is shortest possible route among these multiple destinations?" |
+
+### Recursion
+> 🤡 The definition of recursion is "see the definition of recursion".
+
+Recursion is a programming method characterized by functions that, during their operation, call additional copies of themselves; see also, recursion. Recursion involves breaking down a problem into smaller instances recursively until each of them can be independently solved. Solutions to these smaller instances combine to form the solution for the original problem. It keeps calling another version of itself until it reaches some default condition. 
+
+This is a little bit related to our idea of a **stack**. We kept adding new functions on top of the stack until we reached the bottom. And then we removed them in the opposite order from how we added them. This is why we noted that the stack was more common than the queue in computing, where calls are added to the top until one is ready to return something.  The important thing is that **the first one to return was the last one to be called.** Examples include facrotial,  Fibonacci sequence
+
+The recursive implementation of Fibonacci is very inefficient. We could make it more efficient if we replace these calls of Fibonacci directly with a function that looks up and sees "have I already calculated the Fibonacci number at this location?" And if so, just go ahead and grab that value instead of recalculating it manually. We would probably do that with a *dictionary*, where the keys in the dictionary are locations in the sequence and the values are the Fibonacci numbers at those locations. In doing so, we remove all those duplicate calls to Fibonacci with the same value that are used before.
+
+**Head recursion and tail recursion**: Head recursion occurs when the recursive call is near the beginning of the function, before other reasoning or code. Tail recursion occurs when the recursive call is closer to the end of the function, after some other reasoning or code.
+![enter description here](./images/1640764277074.png)
+Notice that the way I've written this function right now it would first print all the files in the current folder and then it would dive into the sub folders. So if we ran this we would see all the files and directory first, followed by all the files in the first folder found within directory, followed by all the files found in the first folder within that folder, and so on. If I had reversed these though, then it would first print the files located in the deepest subfolder of directory. And the very last thing it would do is print the files located in the current directory itself. That's because it would be making that recursive function call at the beginning instead of at the end. Calling the recursive function as shown here, at the end, is called tail recursion. Whereas if it was at the start, it would be called head recursion.
+
+### Sorting Algorithms
+Sorting Algorithms take as input a list, and produce as output a sorted version of that list. The only stipulation is the algorithm must have some way to judge whether one item is greater than, less than, or equal to another. Examples include bubble sort,  insertion sort, selection sort, merge sort, shell sort, quick sort, and heap sort.
+
+> 🥇For some awesome visualizations of sorting algorithms in action, check out [Toptal's web site](https://www.toptal.com/developers/sorting-algorithms).
+
+#### Bubble Sort
+- Difficulty: ⭐
+- Complexity: `!$O(n^2)$`
+
+- Implementation: iterate through each item in the list one pair at a time. If that pair were in the wrong order then switch them. Repeat that process so long as a switch occurred the previous time we went through the list. When no switches are required, then that means the list was sorted. **Each time we go through the list, the bubble sort finds the largest number that has not been in the right place and puts it into the right spot by switching pairs**.
+
+The benefit of bubble sort is that it's actually pretty easy to write. It's effectively-- for each number in the list swap it if it's greater than the next number, and keep a running Boolean that says true if any swaps were necessary. You reset that boolean to false at the end of each execution, but rerun the bubble sort if it was true at the end of the execution. The drawback of a bubble sort is it's actually pretty inefficient. A lot of swaps were unnecessary. So it's probably the easiest sort to implement, but it also operates in an inefficient time--o of n squared.
 
 
 
 
 
-
-
-
-
-
-### 公式
-#### 行内公式
-这是行内公式 `!$ \Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt\,.$`
-#### 块公式
-```mathjax!
-$$\Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt\,.$$
-```
-
-#### 带编号的公式
-`!$\eqref{ref1}$`
-
-```mathjax!
-\begin{equation}
-\int_0^\infty \frac{x^22}{e^x-1}\,dx = \frac{\pi^4}{15}\label{ref1}
-\end{equation}
-```
-
-`!$\eqref{ref1}$`
