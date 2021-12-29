@@ -8,7 +8,7 @@
 <meta property="og:description" content="Intro to Computing in Python by David Joyner">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://ryandoren.github.io/gatech-cs1301xiv/"><meta property="og:image" content="https://ryandoren.github.io/logo.png"><meta property="article:section" content="posts">
-<meta property="article:modified_time" content="2021-12-29T20:40:35+08:00">
+<meta property="article:modified_time" content="2021-12-29T20:46:46+08:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://ryandoren.github.io/logo.png">
 <meta name=twitter:title content="Gatech CS1301xIV">
@@ -16,7 +16,7 @@
 <meta name=application-name content="Worgen">
 <meta name=apple-mobile-web-app-title content="Worgen"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://ryandoren.github.io/gatech-cs1301xiv/><link rel=next href=https://ryandoren.github.io/the-calling-of-saint-mathew/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Gatech CS1301xIV","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/ryandoren.github.io\/gatech-cs1301xiv\/"},"image":["https:\/\/ryandoren.github.io\/images\/Apple-Devices-Preview.png"],"genre":"posts","wordcount":5475,"url":"https:\/\/ryandoren.github.io\/gatech-cs1301xiv\/","dateModified":"2021-12-29T20:40:35+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"Ryan","logo":"https:\/\/ryandoren.github.io\/images\/avatar.jpg"},"author":{"@type":"Person","name":"Ryan"},"description":"Intro to Computing in Python by David Joyner"}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://ryandoren.github.io/gatech-cs1301xiv/><link rel=next href=https://ryandoren.github.io/the-calling-of-saint-mathew/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Gatech CS1301xIV","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/ryandoren.github.io\/gatech-cs1301xiv\/"},"image":["https:\/\/ryandoren.github.io\/images\/Apple-Devices-Preview.png"],"genre":"posts","wordcount":5530,"url":"https:\/\/ryandoren.github.io\/gatech-cs1301xiv\/","dateModified":"2021-12-29T20:46:46+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"Ryan","logo":"https:\/\/ryandoren.github.io\/images\/avatar.jpg"},"author":{"@type":"Person","name":"Ryan"},"description":"Intro to Computing in Python by David Joyner"}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
@@ -88,7 +88,7 @@ Cancel
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">Gatech CS1301xIV</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Ryan</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=0001-01-01>0001-01-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;5475 words&nbsp;
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=0001-01-01>0001-01-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;5530 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;26 minutes&nbsp;<span id=/gatech-cs1301xiv/ class=leancloud_visitors data-flag-title="Gatech CS1301xIV">
 <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;views
 </span>&nbsp;</div>
@@ -131,6 +131,7 @@ Cancel
 <li><a href=#linear-search-vs-merge-sort--binary-search>Linear Search vs. Merge Sort + Binary Search</a></li>
 </ul>
 </li>
+<li><a href=#external-materials-1>External Materials</a></li>
 </ul>
 </li>
 </ul>
@@ -1017,12 +1018,19 @@ However, all three have the same worst case scenario, <code>!$O(n^2)$</code>.</p
 </ul>
 <p>So if we have an <strong>unsorted</strong> list and we&rsquo;re <strong>only looking for one value</strong>, then <strong>a linear search will always be more efficient than sorting and then using a binary search</strong>. However, if you&rsquo;re going to be searching more than once, that advantage disappears pretty quickly.</p>
 <p>Imagine you have a list with 100 elements. Sorting that list will require about 800 operations, and then you need at most 7 searches to find any given item in that list. A single linear search on an unsorted list of 100 takes 100 operations. So if we&rsquo;re going to do as few as nine searches per time, it&rsquo;s actually more efficient to do a merge sort followed by binary searches. The merge sort incurs a one time flat cost of 800 operations, but the binary search saves us 93 operations per time. So at nine searches, it will require 900 operations with a linear search, but 863 with a merge sort followed by binary searches. Then for every subsequent round, we&rsquo;re saving 93 additional operations by sorting first.</p>
+<h3 id=external-materials-1>External Materials</h3>
+<ul>
+<li><a href=http://interactivepython.org/courselib/static/thinkcspy/GeneralIntro/Algorithms.html target=_blank rel="noopener noreffer">The Basics of Algorithms</a>, from How to Think Like a Computer Scientist</li>
+<li><a href=http://interactivepython.org/courselib/static/thinkcspy/IntroRecursion/toctree.html target=_blank rel="noopener noreffer">Recursion</a>, from How to Think Like a Computer Scientist</li>
+<li>For lots of further reading on Algorithms, check out these chapters in Interactive Python&rsquo;s <a href=https://interactivepython.org/runestone/static/pythonds/index.html target=_blank rel="noopener noreffer">book</a>.</li>
+<li>For awesome visualizations of sorting algorithms, check out <a href=https://www.toptal.com/developers/sorting-algorithms target=_blank rel="noopener noreffer">Toptal</a>, <a href=https://visualgo.net/sorting target=_blank rel="noopener noreffer">VisuAlgo</a>, or the <a href=https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html target=_blank rel="noopener noreffer">University of San Francisco&rsquo;s page</a>.</li>
+</ul>
 </div><div class=post-footer id=post-footer>
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>Updated on 2021-12-29&nbsp;<a class=git-hash href=https://github.com/ryandoren/commit/cb24067bf46cc72d30029b3c4ee33ccb816dcb65 target=_blank title="commit by Ryan Doren(55754917+ryandoren@users.noreply.github.com) cb24067bf46cc72d30029b3c4ee33ccb816dcb65: 修改文件: content/posts/Gatech CS1301xIV.md">
-<i class="fas fa-hashtag fa-fw"></i>cb24067</a></span>
+<span>Updated on 2021-12-29&nbsp;<a class=git-hash href=https://github.com/ryandoren/commit/e9845c2c564ffeb69b544f69dbd80cc77c129034 target=_blank title="commit by Ryan Doren(55754917+ryandoren@users.noreply.github.com) e9845c2c564ffeb69b544f69dbd80cc77c129034: 修改文件: content/posts/Gatech CS1301xIV.md">
+<i class="fas fa-hashtag fa-fw"></i>e9845c2</a></span>
 </div>
 <div class=post-info-license></div>
 </div>
