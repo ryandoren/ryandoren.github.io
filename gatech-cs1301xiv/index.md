@@ -336,11 +336,12 @@ Sorting Algorithms take as input a list, and produce as output a sorted version 
 
 #### Bubble Sort
 - Difficulty: ⭐
+- Efficiency: ⚡
 - Complexity: `!$O(n^2)$`
 
 - Implementation: iterate through each item in the list one pair at a time. If that pair were in the wrong order then switch them. Repeat that process so long as a switch occurred the previous time we went through the list. When no switches are required, then that means the list was sorted. **Each time we go through the list, the bubble sort finds the largest number that has not been in the right place and puts it into the right spot by switching pairs**.
 
-The benefit of bubble sort is that it's actually pretty easy to write. It's effectively-- for each number in the list swap it if it's greater than the next number, and keep a running Boolean that says true if any swaps were necessary. You reset that boolean to false at the end of each execution, but rerun the bubble sort if it was true at the end of the execution. The drawback of a bubble sort is it's actually pretty inefficient. A lot of swaps were unnecessary. So it's probably the easiest sort to implement, but it also operates in an inefficient time-- o of n squared.
+The benefit of bubble sort is that it's actually pretty easy to write. It's effectively-- for each number in the list swap it if it's greater than the next number, and keep a running Boolean that says true if any swaps were necessary. You reset that boolean to false at the end of each execution, but rerun the bubble sort if it was true at the end of the execution. The drawback of a bubble sort is it's actually pretty inefficient. A lot of swaps were unnecessary. So it's probably the easiest sort to implement, but it also operates in an inefficient time-- o of n squared. (Orange arrows stand for iterations)
 ![enter description here](./images/1640766305307.png)
 
 ```python
@@ -367,5 +368,135 @@ def BubbleSort(list):
     return list
 ```
 
+#### Selection Sort
+- Difficulty: ⭐⭐
+- Efficiency: ⚡⚡
+- Complexity: `!$O(n^2)$`
 
+- Implementation: go through the list, find the lowest or the first item, and move that item to the beginning. Then go through starting with the second item, find the next lowest item, and continue. **Each time we go through the list, the selection sort finds the smallest number that has not been in the right place and puts it into the right spot directly**.
 
+Because on that first run, it guaranteed it would find the very first number that should be in the list, it starts the second run by searching just from the second number onwards. After each run of selection sort, a new number at the beginning of the list is now in the right location. 
+
+Notice also that if a number ends up accidentally in the right location after a certain run, it doesn't save selection sort an execution, because it tries to move that number into its current location. Thus, **with selection sort we guarantee we're going to go through the list n times**, where n is the number of items in the list. Because even if an element in the list is already in the right place, it still runs one time to try and put it in the right place. So like bubble sort, selection sort runs in o of n squared. We still repeatedly compare every pair but we track the lowest and move it to the beginning.
+
+Selection sort cannot skip iterations of the sort, so there will always be one fewer iteration than items in the list. The answer is one fewer iteration because when items 1 through n - 1 are sorted, item n is guaranteed to be sorted, too. (Orange arrows stand for iterations)
+![enter description here](./images/1640774106002.png)
+```python
+def SelectionSort(list):
+    for i in range(len(list)):
+        
+        #Assume first that current item is already correct...
+        minIndex = i
+
+        #For each index from i to the end...
+        for j in range(i + 1, len(list)):
+            if list[j]<list[minIndex]:
+                minIndex=j
+		#Save the current minimum value since we're about to delete it
+        minValue = list[minIndex]
+        
+        #Delete the minimum value from its current index
+        del list[minIndex]
+        
+        #Insert the minimum value at its new index
+        list.insert(i, minValue)
+
+    return list
+```
+
+#### Insertion Sort
+- Difficulty: ⭐⭐⭐
+- Efficiency: ⚡⚡⚡
+- Complexity: `!$O(n^2)$`
+- Implementation: It moves one item at a time through the list in order, and puts each item in the right location relative to the items that have already been sorted. Once it processes that last number, it guarantees that the list is in the correct order. 
+ 
+Like selection sort and bubble sort, insertion sort still runs in O of n squared. It runs once for each item in the list, and within each run, it compares it to every previous item in the list. 
+![enter description here](./images/1640774930657.png)
+
+> **Efficiency ranking on average: bubble sort < selection sort < insertion sort**. 
+> However, all three have the same worst case scenario, `!$O(n^2)$`.
+
+#### Merge Sort
+- Difficulty: ⭐⭐⭐⭐
+- Efficiency: ⚡⚡⚡⚡
+- Complexity: `!$O(nlog(n))$`
+- Implementation: The first sort will always be breaking the list into individual lists. Then, on each step of the merge, it's going to merge two adjacent lists. It does this by going through both lists, one item at a time, and comparing the lowest item from each list. Whichever one is lower is added to the new list.
+
+What makes merge sort interesting and efficient is that it's recursive. It recursively splits up a list until it has lists of only one item, and then it recursively merges two lists together. That merge function operates by taking the smallest number at the front of each list and repeating that until both lists are empty. The result is an efficiency of `!$O(nlog(n))$`, which is significantly more efficient than bubble insertion or selection sorts. 
+
+Where does merge sort get this drastic uptick in efficiency? It comes from merge sort's knowledge that each smaller list will already sorted when it's time to merge them. There are several other sorting algorithms as well, like the shell sort, the heap sort, and the quick sort. And these are all relatively close to the merge sort in terms of efficiency.
+![enter description here](./images/1640776820226.png)
+
+```python
+def MergeSort(list):
+    
+    #MergeSort should recursively run on the left
+	#and right sides of list until it's given a list of only
+	#one item. So, if list has only one item, we should just
+	#return that one-item list.
+    
+    if len(list) <= 1:
+        return list
+    
+    #Otherwise, we should call MergeSort separately on the
+    #left and right sides. Since each successive call to
+    #MergeSort sends half as many items, we're guaranteed
+    #to eventually send it a list with only one item, at
+    #which point we'll stop calling MergeSort again.
+    else:
+
+        #Floor division on the length of the list will
+        #find us the index of the middle value.
+        midpoint = len(list) // 2
+
+        #list[:midpoint] will get the left side of the
+        #list based on list slicing syntax. So, we want
+        #to sort the left side of the list alone and
+        #assign the result to the new smaller list left.
+        left = MergeSort(list[:midpoint])
+
+        #And same for the right side.
+        right = MergeSort(list[midpoint:])
+
+        #So, left and right now hold sorted lists of
+        #each half of the original list. They might
+        #each have only one item, or they could each
+        #have several items.
+
+        #Now we want to compare the first items in each
+        #list one-by-one, adding the smaller to our new
+        #result list until one list is completely empty.
+
+        newlist = []
+        while len(left) and len(right) > 0:
+
+            #If the first number in left is lower, add
+            #it to the new list and remove it from left
+            if left[0] < right[0]:
+                newlist.append(left[0])
+                del left[0]
+
+            #Otherwise, add the first number from right
+            #to the new list and remove it from right
+            else:
+                newlist.append(right[0])
+                del right[0]
+
+        #When the while loop above is done, it means
+        #one of the two lists is empty. Because both
+        #lists were sorted, we can now add the remainder
+        #of each list to the new list. The empty list
+        #will have no items to add, and the non-empty
+        #list will add its items in order.
+
+        newlist.extend(left)
+        newlist.extend(right)
+
+        #newlist is now the sorted version of list! So,
+        #we can return it. If this was a recursive call
+        #to MergeSort, then this sends a sorted half-
+        #list up the ladder. If this was the original
+        #call, then this is the final sorted list.
+
+        return newlist
+```
