@@ -299,4 +299,55 @@ There also exist **Big Ω (Omega) Notation**, which expresses the **best-case 
 These various values exist, though, because some algorithms are generally very efficiency, but are very inefficient with certain types of data. For example, there exists a sorting algorithm called QuickSort that is generally extremely efficient, but whose efficiency plummets if there are a lot of duplicate values in the data set that it's sorting.
 
 Common Big O Values:
-- $ c = \pm\sqrt{a^2 + b^2} $ 和 \\( f(x)=\int_{-\infty}^{\infty} \hat{f}(\xi) e^{2 \pi i \xi x} d \xi \\)
+<style>
+table th:first-of-type {
+    width: 10%;
+}
+table th:nth-of-type(2) {
+    width: 20%;
+}
+table th:nth-of-type(3) {
+    width: 35%;
+}
+</style>
+
+| Name | Big O Notation | Definition | Example |
+| :---: | :---: | --- | --- |
+| Constant |`!$O(1)$` | The same number of operations is required regardless of the size of the data set. | "Is the first name in the data set 'David'?" |
+| Linear |`!$O(n)$` | The number of operations required increases linearly with the size of the data set. | "Is the name 'David' in this unsorted list of names?" (Linear Search) |
+| Quadratic |`!$O(n^2)$` | The number of operations required increases with the size of the data set squared. | "Are there any duplicate names in this unsorted list of names?" (Double-Linear Search) |
+| Polynomial |`!$O(n^3)$` | The number of operations required increases with the size of the data set raised to a larger exponent. | "Are there any triple duplicate names in this unsorted list of names?" (Triple-Linear Search) |
+| Exponential |`!$O(2^n)$` | The number of operations required increases by a constant raised to the size of the data set. | "What is every possible 10-digit password?" |
+| Logarithmic |`!$O(log(n))$` | The number of operations required increases with the square root of the size of the data set. | "Is the name 'David' in this sorted list of names?" (Binary Search) |
+| Loglinear |`!$O(nlog(n))$` | The number of operations required increases with square root of the size of the data set times the size of the data set. (tends to be the optimal efficiency for most
+sorting algorithms) | "Sort this list of names." (Merge Sort) |
+| Factorial |`!$O(n!)$` | The number of operations required increases with the factorial of the size of the data set. (tends to come up
+a lot in recursive algorithms) | "What is shortest possible route among these multiple destinations?" |
+
+
+
+
+
+
+
+
+
+
+### 公式
+#### 行内公式
+这是行内公式 `!$ \Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt\,.$`
+#### 块公式
+```mathjax!
+$$\Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt\,.$$
+```
+
+#### 带编号的公式
+`!$\eqref{ref1}$`
+
+```mathjax!
+\begin{equation}
+\int_0^\infty \frac{x^22}{e^x-1}\,dx = \frac{\pi^4}{15}\label{ref1}
+\end{equation}
+```
+
+`!$\eqref{ref1}$`
