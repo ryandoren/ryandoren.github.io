@@ -531,3 +531,9 @@ Just look at the complexity we can get the conclusion that, in general, linear s
 So if we have an **unsorted** list and we're **only looking for one value**, then **a linear search will always be more efficient than sorting and then using a binary search**. However, if you're going to be searching more than once, that advantage disappears pretty quickly. 
 
 Imagine you have a list with 100 elements. Sorting that list will require about 800 operations, and then you need at most 7 searches to find any given item in that list. A single linear search on an unsorted list of 100 takes 100 operations. So if we're going to do as few as nine searches per time, it's actually more efficient to do a merge sort followed by binary searches. The merge sort incurs a one time flat cost of 800 operations, but the binary search saves us 93 operations per time. So at nine searches, it will require 900 operations with a linear search, but 863 with a merge sort followed by binary searches. Then for every subsequent round, we're saving 93 additional operations by sorting first.
+
+### External Materials
+*   [The Basics of Algorithms](http://interactivepython.org/courselib/static/thinkcspy/GeneralIntro/Algorithms.html), from How to Think Like a Computer Scientist
+*   [Recursion](http://interactivepython.org/courselib/static/thinkcspy/IntroRecursion/toctree.html), from How to Think Like a Computer Scientist
+*   For lots of further reading on Algorithms, check out these chapters in Interactive Python's [book](https://interactivepython.org/runestone/static/pythonds/index.html).
+*   For awesome visualizations of sorting algorithms, check out [Toptal](https://www.toptal.com/developers/sorting-algorithms), [VisuAlgo](https://visualgo.net/sorting), or the [University of San Francisco's page](https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html).
