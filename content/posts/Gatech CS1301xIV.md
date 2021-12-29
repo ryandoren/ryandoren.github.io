@@ -506,3 +506,11 @@ def MergeSort(list):
 
         return newlist
 ```
+
+### Search Algorithms
+Search Algorithms take as input a list and a value for which to search, and produce as output the index or indices where that  value was found in the list. Search algorithms are far more efficient than sorting algorithms. In many ways sorting algorithms are just repeated search algorithms that react to the results by moving values around. Thus, a sorting algorithm operates kind of like searching for each value in the list, one by one.
+
+#### Linear Search
+- Complexity: `!$O(n)$`
+
+A linear search is exactly what you would do if you were searching for a name on an **unsorted** list or a number in an **unsorted** list of numbers. You check every item one by one, and when you found the right one you'd stop. The benefit of the linear search is that it works whether or not the list is sorted.
