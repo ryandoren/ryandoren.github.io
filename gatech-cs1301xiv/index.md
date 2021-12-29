@@ -508,3 +508,21 @@ Search Algorithms take as input a list and a value for which to search, and prod
 - Complexity: `!$O(n)$`
 
 A linear search is exactly what you would do if you were searching for a name on an **unsorted** list or a number in an **unsorted** list of numbers. You check every item one by one, and when you found the right one you'd stop. The benefit of the linear search is that it works whether or not the list is sorted.
+
+#### Binary Search
+- Complexity: `!$O(log(n))$`
+
+A binary search on the other hand, works only if the list is **already sorted**. It's a recursive method. And it starts by selecting the middle item from the list. If there is no middle item, it'll choose randomly. Or it might always use the lower, one or the higher one, doesn't really matter which.
+
+#### Linear Search vs. Merge Sort + Binary Search
+The drawback of binary search is that the list must be sorted. So, is it more efficient to do a linear search, or is it more efficient to do a binary search after doing a merge sort?
+
+Just look at the complexity we can get the conclusion that, in general, linear search is going to be much more efficient. And that has nothing to do with the efficiency of the binary search, since merge sort is already `!$log(n)$` times slower than a linear search. 
+
+- Complexity of Linear Search: `!$O(n)$`
+- Complexity of Merge Sort + Binary Search: `!$O(nlog(n))+O(log(n))$`
+
+So if we have an **unsorted** list and we're **only looking for one value**, then **a linear search will always be more efficient than sorting and then using a binary search**. However, if you're going to be searching more than once, that advantage disappears pretty quickly. 
+
+Imagine you have a list with 100 elements. Sorting that list will require about 800 operations, and then you need at most 7 searches to find any given item in that list. A single linear search on an unsorted list of 100 takes 100 operations. So if we're going to do as few as nine searches per time, it's actually more efficient to do a merge sort followed by binary searches. The merge sort incurs a one time flat cost of 800 operations, but the binary search saves us 93 operations per time. So at nine searches, it will require 900 operations with a linear search, but 863 with a merge sort followed by binary searches. Then for every subsequent round, we're saving 93 additional operations by sorting first.
+
