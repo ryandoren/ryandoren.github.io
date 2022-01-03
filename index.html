@@ -123,11 +123,11 @@ Unit 3 Chapter 3.1: Basics of Control Structures Control Structures: Statements
 <a href=/the-calling-of-saint-mathew/>Read More</a></div>
 </article><article class="single summary" itemscope itemtype=http://schema.org/Article><h1 class=single-title itemprop="name headline">
 <a href=/leetcode-with-python/>LeetCode with Python</a>
-</h1><div class=post-meta><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Ryan</a></span>&nbsp;<span class=post-publish>published on <time datetime=0001-01-01>0001-01-01</time></span></div><div class=content>Microsoft 开始之前 1. 只出现一次的数字 题目描述： 给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。
+</h1><div class=post-meta><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Ryan</a></span>&nbsp;<span class=post-publish>published on <time datetime=0001-01-01>0001-01-01</time></span></div><div class=content>Microsoft 经典题目 最大子序和 算法面试题汇总 开始之前 只出现一次的数字 题目描述： 给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。
 示例 1:
 1 2 输入: [2,2,1] 输出: 1 示例 2:
 1 2 输入: [4,1,2,1,2] 输出: 4 说明： 你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？
-提示：位运算、集合 </div><div class=post-footer>
+提示：位运算、集合 代码： 1 2 3 4 5 6 class Solution: def singleNumber(self, nums: List[int]) -> int: target=0 for i in range(len(nums)): target=target^nums[i] return target 🐍Python 异或（exclusive or，^）：A B有且仅有一者为真 🐍计算过程：基于二进制基础上，将A ^ B 按位异或的过程为，先将A和B分别转换为二进制，按位异或得到结果后再组合起来，最后转换为十进制。 🐍例如：5 ^ 3 的结果为6是因为 5 = 0101(b) 3 = 0011(b) 0^0 ->0 1^0 ->1 0^1 ->1 1^1 ->0 0110(b) 转换为十进制：6</div><div class=post-footer>
 <a href=/leetcode-with-python/>Read More</a></div>
 </article></div></div>
 </main><footer class=footer>

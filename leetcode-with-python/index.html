@@ -8,7 +8,7 @@
 <meta property="og:description" content="Tearing LeetCode Problems">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://ryandoren.github.io/leetcode-with-python/"><meta property="og:image" content="https://ryandoren.github.io/logo.png"><meta property="article:section" content="posts">
-<meta property="article:modified_time" content="2022-01-03T15:28:46+08:00">
+<meta property="article:modified_time" content="2022-01-03T15:36:16+08:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://ryandoren.github.io/logo.png">
 <meta name=twitter:title content="LeetCode with Python">
@@ -16,7 +16,7 @@
 <meta name=application-name content="Worgen">
 <meta name=apple-mobile-web-app-title content="Worgen"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://ryandoren.github.io/leetcode-with-python/><link rel=next href=https://ryandoren.github.io/the-calling-of-saint-mathew/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"LeetCode with Python","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/ryandoren.github.io\/leetcode-with-python\/"},"image":["https:\/\/ryandoren.github.io\/images\/Apple-Devices-Preview.png"],"genre":"posts","wordcount":26,"url":"https:\/\/ryandoren.github.io\/leetcode-with-python\/","dateModified":"2022-01-03T15:28:46+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"Ryan","logo":"https:\/\/ryandoren.github.io\/images\/avatar.jpg"},"author":{"@type":"Person","name":"Ryan"},"description":"Tearing LeetCode Problems"}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://ryandoren.github.io/leetcode-with-python/><link rel=next href=https://ryandoren.github.io/the-calling-of-saint-mathew/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"LeetCode with Python","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/ryandoren.github.io\/leetcode-with-python\/"},"image":["https:\/\/ryandoren.github.io\/images\/Apple-Devices-Preview.png"],"genre":"posts","wordcount":79,"url":"https:\/\/ryandoren.github.io\/leetcode-with-python\/","dateModified":"2022-01-03T15:36:16+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"Ryan","logo":"https:\/\/ryandoren.github.io\/images\/avatar.jpg"},"author":{"@type":"Person","name":"Ryan"},"description":"Tearing LeetCode Problems"}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
@@ -88,7 +88,7 @@ Cancel
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">LeetCode with Python</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Ryan</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=0001-01-01>0001-01-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;26 words&nbsp;
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=0001-01-01>0001-01-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;79 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;<span id=/leetcode-with-python/ class=leancloud_visitors data-flag-title="LeetCode with Python">
 <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;views
 </span>&nbsp;</div>
@@ -101,9 +101,18 @@ Cancel
 <ul>
 <li><a href=#microsoft>Microsoft</a>
 <ul>
+<li><a href=#经典题目>经典题目</a>
+<ul>
+<li><a href=#最大子序和>最大子序和</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href=#算法面试题汇总>算法面试题汇总</a>
+<ul>
 <li><a href=#开始之前>开始之前</a>
 <ul>
-<li><a href=#1-只出现一次的数字>1. 只出现一次的数字</a></li>
+<li><a href=#只出现一次的数字>只出现一次的数字</a></li>
 </ul>
 </li>
 </ul>
@@ -111,8 +120,11 @@ Cancel
 </ul>
 </nav></div>
 </div><div class=content id=content><h1 id=microsoft>Microsoft</h1>
+<h2 id=经典题目>经典题目</h2>
+<h3 id=最大子序和>最大子序和</h3>
+<h1 id=算法面试题汇总>算法面试题汇总</h1>
 <h2 id=开始之前>开始之前</h2>
-<h3 id=1-只出现一次的数字>1. 只出现一次的数字</h3>
+<h3 id=只出现一次的数字>只出现一次的数字</h3>
 <ul>
 <li>题目描述：</li>
 </ul>
@@ -145,13 +157,45 @@ Cancel
 <p>你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？</p>
 <ul>
 <li>提示：位运算、集合</li>
+<li>代码：</li>
 </ul>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=k>class</span> <span class=nc>Solution</span><span class=p>:</span>
+    <span class=k>def</span> <span class=nf>singleNumber</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>nums</span><span class=p>:</span> <span class=n>List</span><span class=p>[</span><span class=nb>int</span><span class=p>])</span> <span class=o>-&gt;</span> <span class=nb>int</span><span class=p>:</span>
+        <span class=n>target</span><span class=o>=</span><span class=mi>0</span>
+        <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=nb>len</span><span class=p>(</span><span class=n>nums</span><span class=p>)):</span>
+            <span class=n>target</span><span class=o>=</span><span class=n>target</span><span class=o>^</span><span class=n>nums</span><span class=p>[</span><span class=n>i</span><span class=p>]</span>
+        <span class=k>return</span> <span class=n>target</span>
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>🐍Python 异或（exclusive or，^）：<strong>A B有且仅有一者为真</strong>
+🐍计算过程：基于二进制基础上，将A ^ B <strong>按位</strong>异或的过程为，先将A和B分别转换为二进制，按位异或得到结果后再组合起来，最后转换为十进制。
+<img class=lazyload src=/svg/loading.min.svg data-src=./images/1641194916400.png data-srcset="./images/1641194916400.png, ./images/1641194916400.png 1.5x, ./images/1641194916400.png 2x" data-sizes=auto alt=./images/1641194916400.png title="enter description here">
+🐍例如：5 ^ 3 的结果为6是因为
+5 = 0101(b)
+3 = 0011(b)
+0^0 ->0
+1^0 ->1
+0^1 ->1
+1^1 ->0
+0110(b) 转换为十进制：6</p>
+</blockquote>
 </div><div class=post-footer id=post-footer>
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>Updated on 2022-01-03&nbsp;<a class=git-hash href=https://github.com/ryandoren/commit/fd14656c5c3ee19843dc6e925ade179fd6afa131 target=_blank title="commit by Ryan Doren(55754917+ryandoren@users.noreply.github.com) fd14656c5c3ee19843dc6e925ade179fd6afa131: 添加附件 : content/posts/images/1641194916400.png">
-<i class="fas fa-hashtag fa-fw"></i>fd14656</a></span>
+<span>Updated on 2022-01-03&nbsp;<a class=git-hash href=https://github.com/ryandoren/commit/3c14eefffaf544f2768f414a4c4de5dc37cd44a6 target=_blank title="commit by Ryan Doren(55754917+ryandoren@users.noreply.github.com) 3c14eefffaf544f2768f414a4c4de5dc37cd44a6: 修改文件: content/posts/LeetCode with Python.md">
+<i class="fas fa-hashtag fa-fw"></i>3c14eef</a></span>
 </div>
 <div class=post-info-license></div>
 </div>
