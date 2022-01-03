@@ -50,7 +50,7 @@ class Solution:
 > 知识点：数组；双指针；排序
 - 题目描述：
 
-给你两个按 非递减顺序 排列的整数数组 nums1 和 nums2，另有两个整数 m 和 n ，分别表示 nums1 和 nums2 中的元素数目。请你 合并 nums2 到 nums1 中，使合并后的数组同样按 非递减顺序 排列。
+给你两个按 **非递减顺序** 排列的整数数组 nums1 和 nums2，另有两个整数 m 和 n ，分别表示 nums1 和 nums2 中的元素数目。请你 合并 nums2 到 nums1 中，使合并后的数组同样按 非递减顺序 排列。
 
 注意：最终，合并后数组不应由函数返回，而是存储在数组 nums1 中。为了应对这种情况，nums1 的初始长度为 m + n，其中前 m 个元素表示应合并的元素，后 n 个元素为 0 ，应忽略。nums2 的长度为 n 。
 
@@ -83,18 +83,85 @@ class Solution:
 
 - 进阶：你可以设计实现一个时间复杂度为 O(m + n) 的算法解决此问题吗？
 
-法一：动态规划，时间复杂度`!$O(n)$`，空间复杂度`!$O(1)$`
+法一：直接合并排序（略）
+时间复杂度`!$O((m+n)log(m+n))$`，空间复杂度`!$O(log(m+n))$`
+
+法二：双指针
+时间和空间复杂度均为`!$O(m+n)$`
 ```python
 class Solution:
-    def maxSubArray(self, nums: List[int]) -> int:
-        pre, maxValue = 0, nums[0]
-        for i in range(len(nums)):
-            pre = max(pre+nums[i], nums[i])
-            maxValue = max(maxValue, pre)
-        return maxValue
+    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+        """
+        Do not return anything, modify nums1 in-place instead.
+        """
+        sorted = []
+        p1, p2 = 0, 0
+        while p1 < m or p2 < n:
+            if p1 == m:
+                sorted.append(nums2[p2])
+                p2 += 1
+            elif p2 == n:
+                sorted.append(nums1[p1])
+                p1 += 1
+            elif nums1[p1] < nums2[p2]:
+                sorted.append(nums1[p1])
+                p1 += 1
+            else:
+                sorted.append(nums2[p2])
+                p2 += 1
+        nums1[:] = sorted
+```
+法三：双向逆指针，从后向前遍历两个数组，取两者之中的较大者放进nums1的最后面，避免直接覆盖nums1中的元素
+时间复杂度`!$O(m+n)$`，空间复杂度`!$O(1)$`
+```python
+class Solution:
+    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+        """
+        Do not return anything, modify nums1 in-place instead.
+        """
+        p1, p2 = m - 1, n - 1
+        tail = m + n - 1
+        while p1 >= 0 or p2 >= 0:
+            if p1 == -1:
+                nums1[tail] = nums2[p2]
+                p2 -= 1
+            elif p2 == -1:
+                nums1[tail] = nums1[p1]
+                p1 -= 1
+            elif nums1[p1] > nums2[p2]:
+                nums1[tail] = nums1[p1]
+                p1 -= 1
+            else:
+                nums1[tail] = nums2[p2]
+                p2 -= 1
+            tail -= 1
 ```
 
-### 买卖股票的最佳时机
+### 121. 买卖股票的最佳时机[enter description here](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/solution/121-mai-mai-gu-piao-de-zui-jia-shi-ji-by-leetcode-/)
+> 知识点：数组；动态规划
+- 题目描述：
+
+给定一个数组 prices ，它的第 i 个元素 prices[i] 表示一支给定股票第 i 天的价格。你只能选择 某一天 买入这只股票，并选择在 未来的某一个不同的日子 卖出该股票。设计一个算法来计算你所能获取的最大利润。
+
+返回你可以从这笔交易中获取的最大利润。如果你不能获取任何利润，返回 0 。
+
+示例 1：
+```
+输入：[7,1,5,3,6,4]
+输出：5
+解释：在第 2 天（股票价格 = 1）的时候买入，在第 5 天（股票价格 = 6）的时候卖出，最大利润 = 6-1 = 5 。
+     注意利润不能是 7-1 = 6, 因为卖出价格需要大于买入价格；同时，你不能在买入前卖出股票。
+```
+示例 2：
+```
+输入：prices = [7,6,4,3,1]
+输出：0
+解释：在这种情况下, 没有交易完成, 所以最大利润为 0。
+```
+- 提示：
+![enter description here](./images/1641218224432.png)
+
+
 
 ### 验证回文串
 
