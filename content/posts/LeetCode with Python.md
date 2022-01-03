@@ -1,5 +1,5 @@
 ---
-title: LeetCode with Python
+title: LeetCode with Python: Microsoft
 author: "Ryan"              # 文章作者
 description : "Tearing LeetCode Problems"    # 文章描述信息
 date: 2021-1-5            # 文章编写日期
@@ -7,7 +7,8 @@ draft: false
 ---
 # Microsoft
 ## 经典题目
-### 最大子序和
+### [53. 最大子序和](https://leetcode-cn.com/problems/maximum-subarray/solution/zui-da-zi-xu-he-by-leetcode-solution/)
+> 知识点：数组；前缀和；哨兵；动态规划；贪心；分治
 - 题目描述：
 
 给你一个整数数组 nums ，请你找出一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。
@@ -32,16 +33,22 @@ draft: false
 - 提示：
 
 1 <= nums.length <= 105
--104 <= nums[i] <= 104
-
+104 <= nums[i] <= 104
 
 - 进阶：如果你已经实现复杂度为 O(n) 的解法，尝试使用更为精妙的 分治法 求解。
+
+法一：动态规划，复杂度`!$O(n)$`
+```python
+
+```
+
 
 
 
 # 算法面试题汇总
 ## 开始之前
-### 只出现一次的数字
+### 136. [只出现一次的数字](https://leetcode-cn.com/problems/single-number/solution/zhi-chu-xian-yi-ci-de-shu-zi-by-leetcode-solution/)
+> 知识点：异或、位运算、集合
 - 题目描述：
 
 给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。 
@@ -60,7 +67,6 @@ draft: false
 
 你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？ 
 
-- 提示：位运算、集合
 - 代码：
 ```python
 class Solution:
