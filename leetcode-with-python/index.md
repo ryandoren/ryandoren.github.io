@@ -2,7 +2,7 @@
 
 # 2020名企高频面试题
 ## 经典题目
-### [53. 最大子序和](https://leetcode-cn.com/problems/maximum-subarray/solution/zui-da-zi-xu-he-by-leetcode-solution/)
+### [53. 最大子序和 (Easy)](https://leetcode-cn.com/problems/maximum-subarray/solution/zui-da-zi-xu-he-by-leetcode-solution/)
 > 知识点：数组；动态规划；贪心；分治
 - 题目描述：
 
@@ -41,7 +41,7 @@ class Solution:
         return maxValue
 ```
 
-### [88. 合并两个有序数组](https://leetcode-cn.com/problems/merge-sorted-array/solution/he-bing-liang-ge-you-xu-shu-zu-by-leetco-rrb0/)
+### [88. 合并两个有序数组 (Easy)](https://leetcode-cn.com/problems/merge-sorted-array/solution/he-bing-liang-ge-you-xu-shu-zu-by-leetco-rrb0/)
 > 知识点：数组；双指针；排序
 - 题目描述：
 
@@ -132,8 +132,8 @@ class Solution:
             tail -= 1
 ```
 
-### 121. 买卖股票的最佳时机[enter description here](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/solution/121-mai-mai-gu-piao-de-zui-jia-shi-ji-by-leetcode-/)
-> 知识点：数组；动态规划
+### [121. 买卖股票的最佳时机 (Easy)](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/solution/121-mai-mai-gu-piao-de-zui-jia-shi-ji-by-leetcode-/)
+> 知识点：数组
 - 题目描述：
 
 给定一个数组 prices ，它的第 i 个元素 prices[i] 表示一支给定股票第 i 天的价格。你只能选择 某一天 买入这只股票，并选择在 未来的某一个不同的日子 卖出该股票。设计一个算法来计算你所能获取的最大利润。
@@ -154,13 +154,120 @@ class Solution:
 解释：在这种情况下, 没有交易完成, 所以最大利润为 0。
 ```
 - 提示：
-![enter description here](./images/1641218224432.png)
+![enter description here](./images/1641218303430.png)
 
+法一：一次遍历，找到历史最低点
+时间复杂度`!$O(n)$`
+```python
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+		inf = int(1e9)
+        min_price = inf
+        max_profit = 0
+        for price in prices:
+            max_profit = max(price - min_price, max_profit)
+            min_price = min(price, min_price)
+        return max_profit
+```
 
+### [125. 验证回文串 (Easy)](https://leetcode-cn.com/problems/valid-palindrome/solution/yan-zheng-hui-wen-chuan-by-leetcode-solution/)
+> 知识点：字符串，双指针
+- 题目描述：
 
-### 验证回文串
+给定一个字符串，验证它是否是回文串，只考虑字母和数字字符，可以忽略字母的大小写。
 
-### 二叉树的层序遍历
+说明：本题中，我们将空字符串定义为有效的回文串。
+
+示例 1：
+```
+输入: "A man, a plan, a canal: Panama"
+输出: true
+解释："amanaplanacanalpanama" 是回文串
+```
+示例 2：
+```
+输入: "race a car"
+输出: false
+解释："raceacar" 不是回文串
+```
+- 提示：
+![enter description here](./images/1641219588516.png)
+
+法一：字符串反转
+时间复杂度`!$O(|s|)$`，空间复杂度`!$O(|s|)$`
+```python
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        sgood = "".join(ch.lower() for ch in s if ch.isalnum())
+    	return sgood == sgood[::-1]
+```
+法二：双指针
+时间复杂度`!$O(|s|)$`，空间复杂度`!$O(|s|)$`
+```python
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        sgood = "".join(ch.lower() for ch in s if ch.isalnum())
+        n = len(sgood)
+        left, right = 0, n - 1
+        
+        while left < right:
+            if sgood[left] != sgood[right]:
+                return False
+            left, right = left + 1, right - 1
+        return True
+```
+
+### [107. 二叉树的层序遍历 Ⅱ (Medium)](https://leetcode-cn.com/problems/binary-tree-level-order-traversal-ii/solution/er-cha-shu-de-ceng-ci-bian-li-ii-by-leetcode-solut/)
+> 知识点：树；广度优先搜索
+- 题目描述：
+给定一个二叉树，返回其节点值自底向上的层序遍历。 （即按从叶子节点所在层到根节点所在的层，逐层从左向右遍历）
+
+例如：给定二叉树 [3,9,20,null,null,15,7],
+```
+    3
+   / \
+  9  20
+    /  \
+   15   7
+```
+返回其自底向上的层序遍历为：
+```
+[
+  [15,7],
+  [9,20],
+  [3]
+]
+```
+
+法一：广度优先搜索
+时间复杂度`!$O(n)$`，空间复杂度`!$O(n)$`
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def levelOrderBottom(self, root: TreeNode) -> List[List[int]]:
+        if not root:  # root为空的情况
+            return []
+        levelOrder = []
+        q = collections.deque([root])
+        while q:
+            level = []
+            size = len(q)
+            for i in range(size):
+                node = q.popleft()
+                level.append(node.val)
+                if node.left:
+                    q.append(node.left)
+                if node.right:
+                    q.append(node.right)
+            levelOrder.append(level)
+        return levelOrder[::-1]  # 倒序返回
+```
+
 
 ### 复制带随机指针的链表
 
