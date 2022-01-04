@@ -1,6 +1,6 @@
-# LeetCode with Python
+# LeetCode with Python——2020名企高频面试题
 
-# 2020名企高频面试题
+# Microsoft
 ## 经典题目
 ### [53. 最大子序和 (Easy)](https://leetcode-cn.com/problems/maximum-subarray/solution/zui-da-zi-xu-he-by-leetcode-solution/)
 > 知识点：数组；动态规划；贪心；分治
