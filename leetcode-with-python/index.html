@@ -8,7 +8,7 @@
 <meta property="og:description" content="Tearing LeetCode Problems">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://ryandoren.github.io/leetcode-with-python/"><meta property="og:image" content="https://ryandoren.github.io/logo.png"><meta property="article:section" content="posts">
-<meta property="article:modified_time" content="2022-01-04T14:04:50+08:00">
+<meta property="article:modified_time" content="2022-01-04T14:22:08+08:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://ryandoren.github.io/logo.png">
 <meta name=twitter:title content="LeetCode with Python">
@@ -16,7 +16,7 @@
 <meta name=application-name content="Worgen">
 <meta name=apple-mobile-web-app-title content="Worgen"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://ryandoren.github.io/leetcode-with-python/><link rel=next href=https://ryandoren.github.io/the-calling-of-saint-mathew/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"LeetCode with Python","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/ryandoren.github.io\/leetcode-with-python\/"},"image":["https:\/\/ryandoren.github.io\/images\/Apple-Devices-Preview.png"],"genre":"posts","wordcount":945,"url":"https:\/\/ryandoren.github.io\/leetcode-with-python\/","dateModified":"2022-01-04T14:04:50+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"Ryan","logo":"https:\/\/ryandoren.github.io\/images\/avatar.jpg"},"author":{"@type":"Person","name":"Ryan"},"description":"Tearing LeetCode Problems"}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://ryandoren.github.io/leetcode-with-python/><link rel=next href=https://ryandoren.github.io/the-calling-of-saint-mathew/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"LeetCode with Python","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/ryandoren.github.io\/leetcode-with-python\/"},"image":["https:\/\/ryandoren.github.io\/images\/Apple-Devices-Preview.png"],"genre":"posts","wordcount":997,"url":"https:\/\/ryandoren.github.io\/leetcode-with-python\/","dateModified":"2022-01-04T14:22:08+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"Ryan","logo":"https:\/\/ryandoren.github.io\/images\/avatar.jpg"},"author":{"@type":"Person","name":"Ryan"},"description":"Tearing LeetCode Problems"}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
@@ -88,7 +88,7 @@ Cancel
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">LeetCode with Python</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Ryan</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=0001-01-01>0001-01-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;945 words&nbsp;
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=0001-01-01>0001-01-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;997 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;<span id=/leetcode-with-python/ class=leancloud_visitors data-flag-title="LeetCode with Python">
 <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;views
 </span>&nbsp;</div>
@@ -147,6 +147,83 @@ Cancel
 <li><a href=#删除链表的倒数第n个节点>删除链表的倒数第N个节点</a></li>
 <li><a href=#合并两个有序链表>合并两个有序链表</a></li>
 <li><a href=#反转链表>反转链表</a></li>
+</ul>
+</li>
+<li><a href=#堆与栈>堆与栈</a>
+<ul>
+<li><a href=#有效的括号>有效的括号</a></li>
+<li><a href=#会议室->会议室 Ⅱ</a></li>
+<li><a href=#前k个高频单词>前K个高频单词</a></li>
+<li><a href=#移除无效的括号>移除无效的括号</a></li>
+</ul>
+</li>
+<li><a href=#哈希表>哈希表</a>
+<ul>
+<li><a href=#两数之和>两数之和</a></li>
+<li><a href=#字母异位词分组>字母异位词分组</a></li>
+<li><a href=#和为k的子数组>和为K的子数组</a></li>
+<li><a href=#验证外星语词典>验证外星语词典</a></li>
+</ul>
+</li>
+<li><a href=#树>树</a>
+<ul>
+<li><a href=#验证二叉搜索树>验证二叉搜索树</a></li>
+<li><a href=#二叉树中的最大路径和>二叉树中的最大路径和</a></li>
+<li><a href=#二叉树的右视图>二叉树的右视图</a></li>
+<li><a href=#二叉树的最近公共祖先>二叉树的最近公共祖先</a></li>
+<li><a href=#二叉树的直径>二叉树的直径</a></li>
+<li><a href=#另一个树的子树>另一个树的子树</a></li>
+</ul>
+</li>
+<li><a href=#分治算法>分治算法</a>
+<ul>
+<li><a href=#合并k个排序链表>合并K个排序链表</a></li>
+<li><a href=#数组中的第k个最大元素>数组中的第K个最大元素</a></li>
+<li><a href=#搜索二维矩阵->搜索二维矩阵 Ⅱ</a></li>
+<li><a href=#最接近原点的k个点>最接近原点的K个点</a></li>
+</ul>
+</li>
+<li><a href=#回溯算法>回溯算法</a>
+<ul>
+<li><a href=#电话号码的字母组合>电话号码的字母组合</a></li>
+<li><a href=#括号生成>括号生成</a></li>
+<li><a href=#全排列>全排列</a></li>
+<li><a href=#单词搜索>单词搜索</a></li>
+</ul>
+</li>
+<li><a href=#图论>图论</a>
+<ul>
+<li><a href=#单词接龙>单词接龙</a></li>
+<li><a href=#火星词典>火星词典</a></li>
+<li><a href=#删除无效的括号>删除无效的括号</a></li>
+<li><a href=#腐烂的橘子>腐烂的橘子</a></li>
+<li><a href=#查找集群内的关键链接>查找集群内的关键链接</a></li>
+</ul>
+</li>
+<li><a href=#动态规划>动态规划</a>
+<ul>
+<li><a href=#最长回文子串>最长回文子串</a></li>
+<li><a href=#最小路径和>最小路径和</a></li>
+<li><a href=#爬楼梯>爬楼梯</a></li>
+<li><a href=#编辑距离>编辑距离</a></li>
+<li><a href=#单词拆分>单词拆分</a></li>
+<li><a href=#零钱兑换>零钱兑换</a></li>
+</ul>
+</li>
+<li><a href=#数学>数学</a>
+<ul>
+<li><a href=#整数反转>整数反转</a></li>
+<li><a href=#字符串转换整数>字符串转换整数</a></li>
+<li><a href=#二进制求和>二进制求和</a></li>
+<li><a href=#快乐数>快乐数</a></li>
+</ul>
+</li>
+<li><a href=#模拟面试>模拟面试</a>
+<ul>
+<li><a href=#翻转二叉树>翻转二叉树</a></li>
+<li><a href=#复原ip地址>复原IP地址</a></li>
+<li><a href=#比较版本号>比较版本号</a></li>
+<li><a href=#鸡蛋掉落>鸡蛋掉落</a></li>
 </ul>
 </li>
 </ul>
@@ -693,6 +770,56 @@ Cancel
 <h3 id=删除链表的倒数第n个节点>删除链表的倒数第N个节点</h3>
 <h3 id=合并两个有序链表>合并两个有序链表</h3>
 <h3 id=反转链表>反转链表</h3>
+<h2 id=堆与栈>堆与栈</h2>
+<h3 id=有效的括号>有效的括号</h3>
+<h3 id=会议室->会议室 Ⅱ</h3>
+<h3 id=前k个高频单词>前K个高频单词</h3>
+<h3 id=移除无效的括号>移除无效的括号</h3>
+<h2 id=哈希表>哈希表</h2>
+<h3 id=两数之和>两数之和</h3>
+<h3 id=字母异位词分组>字母异位词分组</h3>
+<h3 id=和为k的子数组>和为K的子数组</h3>
+<h3 id=验证外星语词典>验证外星语词典</h3>
+<h2 id=树>树</h2>
+<h3 id=验证二叉搜索树>验证二叉搜索树</h3>
+<h3 id=二叉树中的最大路径和>二叉树中的最大路径和</h3>
+<h3 id=二叉树的右视图>二叉树的右视图</h3>
+<h3 id=二叉树的最近公共祖先>二叉树的最近公共祖先</h3>
+<h3 id=二叉树的直径>二叉树的直径</h3>
+<h3 id=另一个树的子树>另一个树的子树</h3>
+<h2 id=分治算法>分治算法</h2>
+<h3 id=合并k个排序链表>合并K个排序链表</h3>
+<h3 id=数组中的第k个最大元素>数组中的第K个最大元素</h3>
+<h3 id=搜索二维矩阵->搜索二维矩阵 Ⅱ</h3>
+<h3 id=最接近原点的k个点>最接近原点的K个点</h3>
+<h2 id=回溯算法>回溯算法</h2>
+<h3 id=电话号码的字母组合>电话号码的字母组合</h3>
+<h3 id=括号生成>括号生成</h3>
+<h3 id=全排列>全排列</h3>
+<h3 id=单词搜索>单词搜索</h3>
+<h2 id=图论>图论</h2>
+<h3 id=单词接龙>单词接龙</h3>
+<h3 id=火星词典>火星词典</h3>
+<h3 id=删除无效的括号>删除无效的括号</h3>
+<h3 id=腐烂的橘子>腐烂的橘子</h3>
+<h3 id=查找集群内的关键链接>查找集群内的关键链接</h3>
+<h2 id=动态规划>动态规划</h2>
+<h3 id=最长回文子串>最长回文子串</h3>
+<h3 id=最小路径和>最小路径和</h3>
+<h3 id=爬楼梯>爬楼梯</h3>
+<h3 id=编辑距离>编辑距离</h3>
+<h3 id=单词拆分>单词拆分</h3>
+<h3 id=零钱兑换>零钱兑换</h3>
+<h2 id=数学>数学</h2>
+<h3 id=整数反转>整数反转</h3>
+<h3 id=字符串转换整数>字符串转换整数</h3>
+<h3 id=二进制求和>二进制求和</h3>
+<h3 id=快乐数>快乐数</h3>
+<h2 id=模拟面试>模拟面试</h2>
+<h3 id=翻转二叉树>翻转二叉树</h3>
+<h3 id=复原ip地址>复原IP地址</h3>
+<h3 id=比较版本号>比较版本号</h3>
+<h3 id=鸡蛋掉落>鸡蛋掉落</h3>
 <h1 id=算法面试题汇总>算法面试题汇总</h1>
 <h2 id=开始之前>开始之前</h2>
 <h3 id=136-只出现一次的数字httpsleetcode-cncomproblemssingle-numbersolutionzhi-chu-xian-yi-ci-de-shu-zi-by-leetcode-solution>136. <a href=https://leetcode-cn.com/problems/single-number/solution/zhi-chu-xian-yi-ci-de-shu-zi-by-leetcode-solution/ target=_blank rel="noopener noreffer">只出现一次的数字</a></h3>
@@ -771,8 +898,8 @@ a ^ b ^ c = a ^ c ^ b；异或运算具有交换律</p>
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>Updated on 2022-01-04&nbsp;<a class=git-hash href=https://github.com/ryandoren/commit/24aa64361a8efc5b8451c40aa208f33142d34138 target=_blank title="commit by Ryan Doren(55754917+ryandoren@users.noreply.github.com) 24aa64361a8efc5b8451c40aa208f33142d34138: 修改文件: content/posts/LeetCode with Python.md">
-<i class="fas fa-hashtag fa-fw"></i>24aa643</a></span>
+<span>Updated on 2022-01-04&nbsp;<a class=git-hash href=https://github.com/ryandoren/commit/fb34e8aa1f60ba52d629f574689291538268ec3f target=_blank title="commit by Ryan Doren(55754917+ryandoren@users.noreply.github.com) fb34e8aa1f60ba52d629f574689291538268ec3f: 修改文件: content/posts/LeetCode with Python.md">
+<i class="fas fa-hashtag fa-fw"></i>fb34e8a</a></span>
 </div>
 <div class=post-info-license></div>
 </div>
