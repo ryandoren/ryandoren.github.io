@@ -319,7 +319,64 @@ class Solution:
 ![enter description here](./images/1641300674530.png)
 
 #### 题解
-法一：有丝分裂
+法一：哈希表 (字典)
+时间复杂度 `!$O(n)$`，空间复杂度 `!$O(n)$`
+
+首先创建一个哈希表，再遍历原链表，遍历的同时再不断创建新节点
+我们将原节点作为key，新节点作为value放入哈希表中
+![enter description here](./images/1641305093741.png)
+第二步我们再遍历原链表，这次我们要将新链表的next和random指针给设置上
+![enter description here](./images/1641305100865.png)
+从上图中我们可以发现，原节点和新节点是一一对应的关系，所以
+- map.get(原节点)，得到的就是对应的新节点
+- map.get(原节点.next)，得到的就是对应的新节点.next
+- map.get(原节点.random)，得到的就是对应的新节点.random
+
+所以，我们只需要再次遍历原链表，然后设置：
+- 新节点.next -> map.get(原节点.next)
+- 新节点.random -> map.get(原节点.random)
+
+这样新链表的next和random都被串联起来了
+
+最后，我们返回map.get(head)，也就是对应的新链表的头节点，就可以解决此问题了。
+
+```python
+"""
+# Definition for a Node.
+class Node:
+    def __init__(self, x: int, next: 'Node' = None, random: 'Node' = None):
+        self.val = int(x)
+        self.next = next
+        self.random = random
+"""
+class Solution(object):
+    def copyRandomList(self, head):
+        if not head:
+            return None
+        # 创建一个哈希表，key是原节点，value是新节点    
+        d = dict()
+        p = head
+        # 将原节点和新节点放入哈希表中
+        while p:
+            new_node = Node(p.val,None,None)
+            d[p] = new_node
+            p = p.next
+        p = head
+        # 遍历原链表，设置新节点的next和random
+        while p:
+            # p是原节点，d[p]是对应的新节点，p.next是原节点的下一个
+            # d[p.next]是原节点下一个对应的新节点
+            if p.next:
+                d[p].next = d[p.next]
+            # p.random是原节点随机指向
+            # d[p.random]是原节点随机指向  对应的新节点    
+            if p.random:
+                d[p].random = d[p.random]
+            p = p.next
+        # 返回头结点，即原节点对应的value(新节点)
+        return d[head]
+```
+法二：有丝分裂
 时间复杂度 $O(n)$，空间复杂度 $O(1)$
 ```python
 """
@@ -359,64 +416,67 @@ class Solution(object):
             p = p.next
         return dummy.next	
 ```
-法二：回溯 + 哈希表
-时间复杂度 $O(n)$，空间复杂度 $O(n)$
-```python
-"""
-# Definition for a Node.
-class Node:
-    def __init__(self, x: int, next: 'Node' = None, random: 'Node' = None):
-        self.val = int(x)
-        self.next = next
-        self.random = random
-"""
-class Solution(object):
-    def copyRandomList(self, head):
-        if not head:
-            return None
-        # 创建一个哈希表，key是原节点，value是新节点    
-        d = dict()
-        p = head
-        # 将原节点和新节点放入哈希表中
-        while p:
-            new_node = Node(p.val,None,None)
-            d[p] = new_node
-            p = p.next
-        p = head
-        # 遍历原链表，设置新节点的next和random
-        while p:
-            # p是原节点，d[p]是对应的新节点，p.next是原节点的下一个
-            # d[p.next]是原节点下一个对应的新节点
-            if p.next:
-                d[p].next = d[p.next]
-            # p.random是原节点随机指向
-            # d[p.random]是原节点随机指向  对应的新节点    
-            if p.random:
-                d[p].random = d[p.random]
-            p = p.next
-        # 返回头结点，即原节点对应的value(新节点)
-        return d[head]
-```
 
-### LRU缓存机制
+### LRU缓存机制 (Medium)
+> [力扣链接](https://leetcode-cn.com/problems/lru-cache/solution/lruhuan-cun-ji-zhi-by-leetcode-solution/)
+> 知识点：哈希表；链表
 #### 题目描述
+请你设计并实现一个满足  LRU (最近最少使用) 缓存 约束的数据结构。
+实现 LRUCache 类：
+- `LRUCache(int capacity)` 以 **正整数** 作为容量 `capacity` 初始化 LRU 缓存
+- `int get(int key)` 如果关键字 `key` 存在于缓存中，则返回关键字的值，否则返回 `-1` 。
+- `void put(int key, int value)` 如果关键字 `key` 已经存在，则变更其数据值 `value` ；如果不存在，则向缓存中插入该组 `key-value` 。如果插入操作导致关键字数量超过 `capacity` ，则应该 逐出 最久未使用的关键字。
+
+函数 `get` 和 `put` 必须以 `!$O(1)$` 的平均时间复杂度运行。
+
+示例：
+```
+输入
+["LRUCache", "put", "put", "get", "put", "get", "put", "get", "get", "get"]
+[[2], [1, 1], [2, 2], [1], [3, 3], [2], [4, 4], [1], [3], [4]]
+输出
+[null, null, null, 1, null, -1, null, -1, 3, 4]
+
+解释
+LRUCache lRUCache = new LRUCache(2);
+lRUCache.put(1, 1); // 缓存是 {1=1}
+lRUCache.put(2, 2); // 缓存是 {1=1, 2=2}
+lRUCache.get(1);    // 返回 1
+lRUCache.put(3, 3); // 该操作会使得关键字 2 作废，缓存是 {1=1, 3=3}
+lRUCache.get(2);    // 返回 -1 (未找到)
+lRUCache.put(4, 4); // 该操作会使得关键字 1 作废，缓存是 {4=4, 3=3}
+lRUCache.get(1);    // 返回 -1 (未找到)
+lRUCache.get(3);    // 返回 3
+lRUCache.get(4);    // 返回 4
+```
+提示：
+![enter description here](./images/1641305530986.png)
 
 #### 题解
+法一：哈希表 + 双向链表
+```python
 
+```
 
 ### 岛屿数量
+> [力扣链接](https://leetcode-cn.com/problems/lru-cache/solution/lruhuan-cun-ji-zhi-by-leetcode-solution/)
+> 知识点：哈希表；链表
 #### 题目描述
 
 #### 题解
 
 
 ### 接雨水
+> [力扣链接](https://leetcode-cn.com/problems/lru-cache/solution/lruhuan-cun-ji-zhi-by-leetcode-solution/)
+> 知识点：哈希表；链表
 #### 题目描述
 
 #### 题解
 
 
 ### 最小覆盖子串
+> [力扣链接](https://leetcode-cn.com/problems/lru-cache/solution/lruhuan-cun-ji-zhi-by-leetcode-solution/)
+> 知识点：哈希表；链表
 #### 题目描述
 
 #### 题解
