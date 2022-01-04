@@ -1,11 +1,11 @@
 ---
-title: LeetCode with Python
+title: LeetCode with Python——2020名企高频面试题
 author: "Ryan"              # 文章作者
 description : "Tearing LeetCode Problems"    # 文章描述信息
 date: 2021-1-5            # 文章编写日期
 draft: false
 ---
-# 2020名企高频面试题
+# Microsoft
 ## 经典题目
 ### [53. 最大子序和 (Easy)](https://leetcode-cn.com/problems/maximum-subarray/solution/zui-da-zi-xu-he-by-leetcode-solution/)
 > 知识点：数组；动态规划；贪心；分治
