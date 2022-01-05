@@ -123,14 +123,13 @@ Unit 3 Chapter 3.1: Basics of Control Structures Control Structures: Statements
 <a href=/the-calling-of-saint-mathew/>Read More</a></div>
 </article><article class="single summary" itemscope itemtype=http://schema.org/Article><h1 class=single-title itemprop="name headline">
 <a href=/leetcode-with-python/>LeetCode with Python——2020名企高频面试题</a>
-</h1><div class=post-meta><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Ryan</a></span>&nbsp;<span class=post-publish>published on <time datetime=0001-01-01>0001-01-01</time></span></div><div class=content>Microsoft 经典题目 53. 最大子序和 (Easy) 力扣链接 知识点：数组；动态规划；贪心；分治
+</h1><div class=post-meta><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Ryan</a></span>&nbsp;<span class=post-publish>published on <time datetime=0001-01-01>0001-01-01</time></span></div><div class=content>Microsoft 主题要点 无论你是面试什么岗位，面试官基本都会从以下几个方面全面考察候选人的技术水平。当然，除了这些面试考点以外，你还需要了解目标岗位的其他技术要求，及时查漏补缺，充分备战技术面试。 算法和数据结构一直是技术面试的重点和难点。近年来，很多知名企业如谷歌, 脸书等在面试过程中都会有特定的电话面试环节, 专门用来面算法题。这些企业通常会使用在线协同代码编程网站，需要面试者用一小时解决 4 道算法问题，面试官可以实时看到候选人所写的代码。除了远程面试外, 在 Onsite 面试中还会有白板写代码等环节。 名企面试重点梳理 与其他公司相比，头部互联网公司对面试者的算法水平要求更高，经常出中等及以上难度的题目。不止要求面试者能写出算法，还要求时间复杂度最小，找出最优方式，这就需要我们针对一道题目思考多种解决办法；同时需要注意算法中对异常情况的处理。 除了这些算法外，有的面试官还会临时给一些有规律的数据，让你写出一种算法或给出思路，考验你的逻辑思维能力。想要锻炼算法思维，在学习过程中，需要先掌握一类算法，钻研透了再去掌握另一类，这样在遇到新问题时才能举一反三。在面试中如果遇到卡壳的情况也不用太紧张，面试官会给你一定的提示，你可以根据已掌握的算法，尽量说出解题思路，在思考的过程中也能消除紧张，也许很快就能想出问题的解答思路。
+经典题目 53. 最大子序和 (Easy) 力扣链接 知识点：数组；动态规划；贪心；分治
 题目描述 给你一个整数数组 nums ，请你找出一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。
 示例 1：
 1 2 3 输入：nums = [-2,1,-3,4,-1,2,1,-5,4] 输出：6 解释：连续子数组 [4,-1,2,1] 的和最大，为 6 。 示例 2：
 1 2 输入：nums = [1] 输出：1 示例 3：
-1 2 输入：nums = [5,4,-1,7,8] 输出：23 提示： 进阶：如果你已经实现复杂度为 O(n) 的解法，尝试使用更为精妙的 分治法 求解。
-题解 法一：动态规划，时间复杂度!$O(n)$，空间复杂度!$O(1)$
-1 2 3 4 5 6 7 class Solution: def maxSubArray(self, nums: List[int]) -> int: pre, maxValue = 0, nums[0] for i in range(len(nums)): pre = max(pre+nums[i], nums[i]) maxValue = max(maxValue, pre) return maxValue 88.</div><div class=post-footer>
+1 2 输入：nums = [5,4,-1,7,8] 输出：23 提示： 进阶：如果你已经实现复杂度为 O(n) 的解法，尝试使用更为精妙的 分治法 求解。</div><div class=post-footer>
 <a href=/leetcode-with-python/>Read More</a></div>
 </article><ul class=pagination><li class="page-item active">
 <span class=page-link>
