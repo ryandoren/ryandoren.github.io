@@ -836,12 +836,68 @@ class Solution:
 
 ## 堆与栈
 ### 20. 有效的括号 (Easy)
-> [力扣链接](https://leetcode-cn.com/problems/minimum-window-substring/solution/zui-xiao-fu-gai-zi-chuan-by-leetcode-solution/)
-> 知识点：哈希表；字符串；滑动窗口
+> [力扣链接](https://leetcode-cn.com/problems/valid-parentheses/solution/)
+> 知识点：栈；哈希表；字符串
 #### 题目描述
+给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串 s ，判断字符串是否有效。
+
+有效字符串需满足：
+1. 左括号必须用相同类型的右括号闭合。
+2. 左括号必须以正确的顺序闭合。
+ 
+
+示例 1：
+```
+输入：s = "()"
+输出：true
+```
+示例 2：
+```
+输入：s = "()[]{}"
+输出：true
+```
+示例 3：
+```
+输入：s = "(]"
+输出：false
+```
+示例 4：
+```
+输入：s = "([)]"
+输出：false
+```
+示例 5：
+```
+输入：s = "{[]}"
+输出：true
+```
+
+提示：
+![enter description here](./images/1641381431568.png)
 
 #### 题解
-
+法一：直接遍历（慢）
+```python
+class Solution:
+    def isValid(self, s: str) -> bool:
+        if len(s)%2 != 0:
+            return False
+        while '()' in s or '[]' in s or '{}' in s:
+            s = s.replace('[]','').replace('()','').replace('{}','')
+        return True if s == '' else False
+```
+法二：字典（哈希表）
+```python
+class Solution:
+    def isValid(self, s: str) -> bool:
+		if len(s)%2 != 0: return False
+        dic = {'{': '}',  '[': ']', '(': ')', '?': '?'}
+        stack = ['?']
+        for c in s:
+            if c in dic: stack.append(c)
+            elif dic[stack.pop()] != c: return False 
+        return len(stack) == 1
+```
 
 ### 会议室 Ⅱ
 
