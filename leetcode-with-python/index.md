@@ -668,13 +668,12 @@ class Solution:
         
         return ans
 ```
-### 76. 最小覆盖子串
+### 76. 最小覆盖子串 (Hard)
 > [力扣链接](https://leetcode-cn.com/problems/minimum-window-substring/solution/zui-xiao-fu-gai-zi-chuan-by-leetcode-solution/)
 > 知识点：哈希表；字符串；滑动窗口
 #### 题目描述
 
 #### 题解
-
 
 
 ## 数组
@@ -683,6 +682,12 @@ class Solution:
 ### 盛最多水的容器
 
 ### 15. 三数之和 (Medium)
+> [力扣链接](https://leetcode-cn.com/problems/minimum-window-substring/solution/zui-xiao-fu-gai-zi-chuan-by-leetcode-solution/)
+> 知识点：哈希表；字符串；滑动窗口
+#### 题目描述
+
+#### 题解
+
 
 ### 下一个排列
 
@@ -691,6 +696,12 @@ class Solution:
 ### 在排序数组中查找元素的第一个和最后一个位置
 
 ### 54. 螺旋矩阵 (Medium)
+> [力扣链接](https://leetcode-cn.com/problems/minimum-window-substring/solution/zui-xiao-fu-gai-zi-chuan-by-leetcode-solution/)
+> 知识点：哈希表；字符串；滑动窗口
+#### 题目描述
+
+#### 题解
+
 
 ### 合并区间
 
@@ -722,6 +733,12 @@ class Solution:
 
 ## 堆与栈
 ### 20. 有效的括号 (Easy)
+> [力扣链接](https://leetcode-cn.com/problems/minimum-window-substring/solution/zui-xiao-fu-gai-zi-chuan-by-leetcode-solution/)
+> 知识点：哈希表；字符串；滑动窗口
+#### 题目描述
+
+#### 题解
+
 
 ### 会议室 Ⅱ
 
@@ -731,10 +748,22 @@ class Solution:
 
 ## 哈希表
 ### 1. 两数之和 (Easy)
+> [力扣链接](https://leetcode-cn.com/problems/minimum-window-substring/solution/zui-xiao-fu-gai-zi-chuan-by-leetcode-solution/)
+> 知识点：哈希表；字符串；滑动窗口
+#### 题目描述
+
+#### 题解
+
 
 ### 字母异位词分组
 
-### 和为K的子数组
+### 560. 和为K的子数组 (Medium)
+> [力扣链接](https://leetcode-cn.com/problems/minimum-window-substring/solution/zui-xiao-fu-gai-zi-chuan-by-leetcode-solution/)
+> 知识点：哈希表；字符串；滑动窗口
+#### 题目描述
+
+#### 题解
+
 
 ### 验证外星语词典
 
@@ -806,6 +835,12 @@ class Solution:
 ### 翻转二叉树
 
 ### 93. 复原IP地址 (Medium)
+> [力扣链接](https://leetcode-cn.com/problems/minimum-window-substring/solution/zui-xiao-fu-gai-zi-chuan-by-leetcode-solution/)
+> 知识点：哈希表；字符串；滑动窗口
+#### 题目描述
+
+#### 题解
+
 
 ### 比较版本号
 
