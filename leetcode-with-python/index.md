@@ -412,7 +412,7 @@ class Solution(object):
         return dummy.next	
 ```
 
-### LRU缓存机制 (Medium)
+### 146. LRU缓存机制 (Medium)
 > [力扣链接](https://leetcode-cn.com/problems/lru-cache/solution/lruhuan-cun-ji-zhi-by-leetcode-solution/)
 > 知识点：哈希表；链表
 #### 题目描述
@@ -450,28 +450,216 @@ lRUCache.get(4);    // 返回 4
 #### 题解
 法一：哈希表 + 双向链表
 ```python
+class DLinkedNode:
+    def __init__(self, key=0, value=0):
+        self.key = key
+        self.value = value
+        self.prev = None
+        self.next = None
 
+
+class LRUCache:
+
+    def __init__(self, capacity: int):
+        self.cache = {}
+        # 使用伪头部和伪尾部节点    
+        self.head = DLinkedNode()
+        self.tail = DLinkedNode()
+        self.head.next = self.tail
+        self.tail.prev = self.head
+        self.capacity = capacity
+        self.size = 0
+
+    def get(self, key: int) -> int:
+        if key not in self.cache:
+            return -1
+        # 如果 key 存在，先通过哈希表定位，再移到头部
+        node = self.cache[key]
+        self.moveToHead(node)
+        return node.value
+
+    def put(self, key: int, value: int) -> None:
+        if key not in self.cache:
+            # 如果 key 不存在，创建一个新的节点
+            node = DLinkedNode(key, value)
+            # 添加进哈希表
+            self.cache[key] = node
+            # 添加至双向链表的头部
+            self.addToHead(node)
+            self.size += 1
+            if self.size > self.capacity:
+                # 如果超出容量，删除双向链表的尾部节点
+                removed = self.removeTail()
+                # 删除哈希表中对应的项
+                self.cache.pop(removed.key)
+                self.size -= 1
+        else:
+            # 如果 key 存在，先通过哈希表定位，再修改 value，并移到头部
+            node = self.cache[key]
+            node.value = value
+            self.moveToHead(node)
+    
+    def addToHead(self, node):
+        node.prev = self.head
+        node.next = self.head.next
+        self.head.next.prev = node
+        self.head.next = node
+    
+    def removeNode(self, node):
+        node.prev.next = node.next
+        node.next.prev = node.prev
+
+    def moveToHead(self, node):
+        self.removeNode(node)
+        self.addToHead(node)
+
+    def removeTail(self):
+        node = self.tail.prev
+        self.removeNode(node)
+        return node
 ```
 
-### 岛屿数量
-> [力扣链接](https://leetcode-cn.com/problems/lru-cache/solution/lruhuan-cun-ji-zhi-by-leetcode-solution/)
-> 知识点：哈希表；链表
+### 200. 岛屿数量 (Medium)
+> [力扣链接](https://leetcode-cn.com/problems/number-of-islands/solution/dao-yu-shu-liang-by-leetcode/)
+> 知识点：深度优先搜索；广度优先搜索；并查集
 #### 题目描述
+给你一个由 '1'（陆地）和 '0'（水）组成的的二维网格，请你计算网格中岛屿的数量。
+
+岛屿总是被水包围，并且每座岛屿只能由水平方向和/或竖直方向上相邻的陆地连接形成。
+
+此外，你可以假设该网格的四条边均被水包围。
+
+示例1：
+```
+输入：grid = [
+  ["1","1","1","1","0"],
+  ["1","1","0","1","0"],
+  ["1","1","0","0","0"],
+  ["0","0","0","0","0"]
+]
+输出：1
+```
+示例2：
+```
+输入：grid = [
+  ["1","1","0","0","0"],
+  ["1","1","0","0","0"],
+  ["0","0","1","0","0"],
+  ["0","0","0","1","1"]
+]
+输出：3
+```
+提示：
+![enter description here](./images/1641359887249.png)
 
 #### 题解
+法一：深度优先搜索-DFS (借助栈/递归实现)
+时间复杂度 `!$O(MN)$`，空间复杂度 `!$O(MN)$`
+```python
+class Solution:
+    def numIslands(self, grid: [[str]]) -> int:
+        def dfs(grid, i, j):
+            if not 0 <= i < len(grid) or not 0 <= j < len(grid[0]) or grid[i][j] == '0': return
+            grid[i][j] = '0'
+            dfs(grid, i + 1, j)
+            dfs(grid, i, j + 1)
+            dfs(grid, i - 1, j)
+            dfs(grid, i, j - 1)
+        count = 0
+        for i in range(len(grid)):
+            for j in range(len(grid[0])):
+                if grid[i][j] == '1':
+                    dfs(grid, i, j)
+                    count += 1
+        return count
+```
+法二：广度优先搜索-BFS (借助队列实现)
+时间复杂度 `!$O(MN)$`，空间复杂度 `!$O(min(M,N))$`
+```python
+class Solution:
+    def numIslands(self, grid: [[str]]) -> int:
+        def bfs(grid, i, j):
+            queue = [[i, j]]
+            while queue:
+                [i, j] = queue.pop(0)
+                if 0 <= i < len(grid) and 0 <= j < len(grid[0]) and grid[i][j] == '1':
+                    grid[i][j] = '0'
+                    queue += [[i + 1, j], [i - 1, j], [i, j - 1], [i, j + 1]]
+        count = 0
+        for i in range(len(grid)):
+            for j in range(len(grid[0])):
+                if grid[i][j] == '0': continue
+                bfs(grid, i, j)
+                count += 1
+        return count
+```
 
-
-### 接雨水
-> [力扣链接](https://leetcode-cn.com/problems/lru-cache/solution/lruhuan-cun-ji-zhi-by-leetcode-solution/)
-> 知识点：哈希表；链表
+### 42. 接雨水 (Hard)
+> [力扣链接](https://leetcode-cn.com/problems/trapping-rain-water/solution/jie-yu-shui-by-leetcode/)
+> 知识点：栈；双指针
 #### 题目描述
+给定 n 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。
+
+示例1：
+![enter description here](./images/1641361628766.png)
+```
+输入：height = [0,1,0,2,1,0,1,3,2,1,2,1]
+输出：6
+解释：上面是由数组 [0,1,0,2,1,0,1,3,2,1,2,1] 表示的高度图，在这种情况下，可以接 6 个单位的雨水（蓝色部分表示雨水）。
+```
+示例2：
+```
+输入：height = [4,2,0,3,2,5]
+输出：9
+```
+提示：
+![enter description here](./images/1641361596900.png)
 
 #### 题解
+法一：双指针
+时间复杂度 `!$O(n)$`，空间复杂度 `!$O(1)$`
+```python
+class Solution:
+    def trap(self, height: List[int]) -> int:
+        ans = 0
+        left, right = 0, len(height) - 1
+        leftMax = rightMax = 0
 
-
-### 最小覆盖子串
-> [力扣链接](https://leetcode-cn.com/problems/lru-cache/solution/lruhuan-cun-ji-zhi-by-leetcode-solution/)
-> 知识点：哈希表；链表
+        while left < right:
+            leftMax = max(leftMax, height[left])
+            rightMax = max(rightMax, height[right])
+            if height[left] < height[right]:
+                ans += leftMax - height[left]
+                left += 1
+            else:
+                ans += rightMax - height[right]
+                right -= 1
+        
+        return ans
+```
+法二：单调栈
+```python
+class Solution:
+    def trap(self, height: List[int]) -> int:
+        ans = 0
+        stack = []
+        n = len(height)
+        for i, h in enumerate(height):
+            while stack and h > height[stack[-1]]:
+                top = stack.pop()
+                if not stack:
+                    break
+                left = stack[-1]
+                currWidth = i - left - 1
+                currHeight = min(height[left], height[i]) - height[top]
+                ans += currWidth * currHeight
+            stack.append(i)
+        
+        return ans
+```
+### 76. 最小覆盖子串
+> [力扣链接](https://leetcode-cn.com/problems/minimum-window-substring/solution/zui-xiao-fu-gai-zi-chuan-by-leetcode-solution/)
+> 知识点：哈希表；字符串；滑动窗口
 #### 题目描述
 
 #### 题解
