@@ -881,7 +881,7 @@ class Solution:
             s = s.replace('[]','').replace('()','').replace('{}','')
         return True if s == '' else False
 ```
-法二：字典（哈希表）
+法二：哈希表，键为右括号，值为相同类型的左括号
 ```python
 class Solution:
     def isValid(self, s: str) -> bool:
