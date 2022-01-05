@@ -41,7 +41,8 @@
 进阶：如果你已经实现复杂度为 O(n) 的解法，尝试使用更为精妙的 分治法 求解。
 
 #### 题解
-法一：动态规划，时间复杂度`!$O(n)$`，空间复杂度`!$O(1)$`
+法一：动态规划
+时间复杂度`!$O(n)$`，空间复杂度`!$O(1)$`
 ```python
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
@@ -685,9 +686,64 @@ class Solution:
 > [力扣链接](https://leetcode-cn.com/problems/minimum-window-substring/solution/zui-xiao-fu-gai-zi-chuan-by-leetcode-solution/)
 > 知识点：哈希表；字符串；滑动窗口
 #### 题目描述
+给你一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？请你找出所有和为 0 且不重复的三元组。
+
+注意：答案中不可以包含重复的三元组。
+
+示例 1：
+```
+输入：nums = [-1,0,1,2,-1,-4]
+输出：[[-1,-1,2],[-1,0,1]]
+```
+示例 2：
+```
+输入：nums = []
+输出：[]
+```
+示例 3：
+```
+输入：nums = [0]
+输出：[]
+```
+
+提示：
+![enter description here](./images/1641366887187.png)
 
 #### 题解
-
+法一：排序+双指针
+时间复杂度`!$O(n^2)$`，空间复杂度`!$O(1)$`
+```python
+class Solution:
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+        
+        n=len(nums)
+        res=[]
+        if(not nums or n<3):
+            return []
+        nums.sort()
+        res=[]
+        for i in range(n):
+            if(nums[i]>0):
+                return res
+            if(i>0 and nums[i]==nums[i-1]):
+                continue
+            L=i+1
+            R=n-1
+            while(L<R):
+                if(nums[i]+nums[L]+nums[R]==0):
+                    res.append([nums[i],nums[L],nums[R]])
+                    while(L<R and nums[L]==nums[L+1]):
+                        L=L+1
+                    while(L<R and nums[R]==nums[R-1]):
+                        R=R-1
+                    L=L+1
+                    R=R-1
+                elif(nums[i]+nums[L]+nums[R]>0):
+                    R=R-1
+                else:
+                    L=L+1
+        return res
+```
 
 ### 下一个排列
 
@@ -696,12 +752,54 @@ class Solution:
 ### 在排序数组中查找元素的第一个和最后一个位置
 
 ### 54. 螺旋矩阵 (Medium)
-> [力扣链接](https://leetcode-cn.com/problems/minimum-window-substring/solution/zui-xiao-fu-gai-zi-chuan-by-leetcode-solution/)
-> 知识点：哈希表；字符串；滑动窗口
+> [力扣链接](https://leetcode-cn.com/problems/spiral-matrix/solution/)
+> 知识点：矩阵
 #### 题目描述
+给你一个 m 行 n 列的矩阵 matrix ，请按照 顺时针螺旋顺序 ，返回矩阵中的所有元素。
+
+示例 1：
+![enter description here](./images/1641380832188.png)
+```
+输入：matrix = [[1,2,3],[4,5,6],[7,8,9]]
+输出：[1,2,3,6,9,8,7,4,5]
+```
+示例 2：
+![enter description here](./images/1641380847218.png)
+```
+输入：matrix = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]
+输出：[1,2,3,4,8,12,11,10,9,5,6,7]
+```
+
+提示：
+![enter description here](./images/1641380864081.png)
 
 #### 题解
+```python
+class Solution:
+    def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
+        res = []
+        if matrix is None: return res
+        top,bottom,left,right = 0, len(matrix) - 1, 0, len(matrix[0]) - 1
+        while True:
+            for i in range(left,right+1): #➡️
+                res.append(matrix[top][i])
+            top += 1 
+            if top > bottom: break
+            for i in range(top,bottom+1): #⬇️
+                res.append(matrix[i][right])
+            right -= 1
+            if right < left: break
+            for i in range(right,left-1,-1): #⬅️
+                res.append(matrix[bottom][i])
+            bottom -= 1
+            if bottom < top: break
+            for i in range(bottom,top-1,-1): #⬆️
+                res.append(matrix[i][left])
+            left += 1
+            if left > right: break
+        return res
 
+```
 
 ### 合并区间
 
