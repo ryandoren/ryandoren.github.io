@@ -903,7 +903,13 @@ class Solution:
 
 ### 前K个高频单词
 
-### 移除无效的括号
+### 1249. 移除无效的括号 (Medium)
+> [力扣链接](https://leetcode-cn.com/problems/minimum-window-substring/solution/zui-xiao-fu-gai-zi-chuan-by-leetcode-solution/)
+> 知识点：哈希表；字符串；滑动窗口
+#### 题目描述
+
+#### 题解
+
 
 ## 哈希表
 ### 1. 两数之和 (Easy)
